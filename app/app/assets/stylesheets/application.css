@@ -1,0 +1,555 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+
+/* Generic styles for basics and the navbar, copyrighted to wrapbootstra.com */
+ body {
+     overflow-x: hidden;
+     background-color: #f0f0f0;
+ }
+
+ p {
+     font-size: 20px;
+ }
+
+ p.small {
+     font-size: 16px;
+ }
+
+ a,
+ a:hover,
+ a:focus,
+ a:active,
+ a.active {
+     outline: 0;
+     color: #18bc9c;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+     font-weight: 700;
+ }
+
+ hr.star-light,
+ hr.star-primary {
+     margin: 25px auto 30px;
+     padding: 0;
+     max-width: 250px;
+     border: 0;
+     border-top: solid 5px;
+     text-align: center;
+ }
+
+ hr.star-light:after,
+ hr.star-primary:after {
+     content: "\f005";
+     display: inline-block;
+     position: relative;
+     top: -.8em;
+     padding: 0 .25em;
+     font-family: FontAwesome;
+     font-size: 2em;
+ }
+
+ hr.star-light {
+     border-color: #fff;
+ }
+
+ hr.star-light:after {
+     color: #fff;
+     background-color: #18bc9c;
+ }
+
+ hr.star-primary {
+     border-color: #2c3e50;
+ }
+
+ hr.star-primary:after {
+     color: #2c3e50;
+     background-color: #fff;
+ }
+
+ .img-centered {
+     margin: 0 auto;
+ }
+
+ header {
+     text-align: center;
+     color: #fff;
+     background: #18bc9c;
+ }
+
+ header .container {
+     padding-top: 100px;
+     padding-bottom: 50px;
+ }
+
+ header img {
+     display: block;
+     margin: 0 auto 20px;
+ }
+
+ header .intro-text .name {
+     display: block;
+     text-transform: uppercase;
+     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+     font-size: 2em;
+     font-weight: 700;
+ }
+
+ header .intro-text .skills {
+     font-size: 1.25em;
+     font-weight: 300;
+ }
+
+ @media(min-width:768px) {
+     header .container {
+         padding-top: 200px;
+         padding-bottom: 100px;
+     }
+
+     header .intro-text .name {
+         font-size: 4.75em;
+     }
+
+     header .intro-text .skills {
+         font-size: 1.75em;
+     }
+ }
+
+ @media(min-width:768px) {
+     .navbar-fixed-top {
+         padding: 25px 0;
+         -webkit-transition: padding .3s;
+         -moz-transition: padding .3s;
+         transition: padding .3s;
+     }
+
+     .navbar-fixed-top .navbar-brand {
+         font-size: 2em;
+         -webkit-transition: all .3s;
+         -moz-transition: all .3s;
+         transition: all .3s;
+     }
+
+     .navbar-fixed-top.navbar-shrink {
+         padding: 10px 0;
+     }
+
+     .navbar-fixed-top.navbar-shrink .navbar-brand {
+         font-size: 1.5em;
+     }
+ }
+
+ .navbar {
+     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+     font-weight: 700;
+ }
+
+ .navbar a:focus {
+     outline: 0;
+ }
+
+ .navbar .navbar-nav {
+     letter-spacing: 1px;
+ }
+
+ .navbar .navbar-nav li a:focus {
+     outline: 0;
+ }
+
+ .navbar-default,
+ .navbar-inverse {
+     border: 0;
+ }
+
+/* Styles for input text fields from http://callmenick.com/2014/04/22/various-css-input-text-styles/ */
+ section {
+     width: 40%;
+     min-width: 450px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ section h2 {
+     margin: 0;
+     font-size: 3em;
+     margin-bottom: 10px;
+ }
+
+ section.success {
+     color: #fff;
+     background: #18bc9c;
+ }
+
+ @media(max-width:767px) {
+     section {
+         padding: 75px 0;
+     }
+
+     section.first {
+         padding-top: 75px;
+     }
+ }
+
+ section {
+   margin-bottom: 60px;
+   padding: 30px;
+   background-color: #efefef;
+ }
+
+ section div {
+   margin-bottom: 10px;
+ }
+
+ section:last-child {
+   margin-bottom: 0;
+ }
+
+ /* form elements */
+ label {
+   display: block;
+   font-size: 14pt;
+ }
+
+ input[type="text"],input[type="email"],input[type="password"] {
+   display: block;
+   margin: 0;
+   width: 100%;
+   font-family: "Open Sans", sans-serif;
+   font-size: 18px;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+   box-shadow: none;
+   -webkit-border-radius: none;
+   -moz-border-radius: none;
+   -ms-border-radius: none;
+   -o-border-radius: none;
+   border-radius: none;
+ }
+
+ input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus {
+   outline: none;
+ }
+
+ /* lists */
+ ul.input-list {
+   list-style: none;
+   margin: 0 -10px;
+   padding: 0;
+ }
+ ul.input-list li {
+   display: block;
+   padding: 0 10px;
+   width: 50%;
+   float: left;
+ }
+
+ @media all and (max-width: 800px) {
+   ul.input-list {
+     margin: 0;
+   }
+   ul.input-list li {
+     padding: 0;
+     width: 100%;
+     float: none;
+     margin-bottom: 10px;
+   }
+ }
+ /* ============================================================
+   STYLE 1 [input box]
+ ============================================================ */
+ .style-1 input[type="text"],input[type="email"],input[type="password"] {
+   padding: 10px;
+   border: solid 1px gainsboro;
+   -webkit-transition: box-shadow 0.3s, border 0.3s;
+   -moz-transition: box-shadow 0.3s, border 0.3s;
+   -o-transition: box-shadow 0.3s, border 0.3s;
+   transition: box-shadow 0.3s, border 0.3s;
+ }
+ .style-1 input[type="text"]:focus,input[type="email"]:focus ,input[type="password"]:focus, .style-1 input[type="text"].focus,input[type="email"].focus,input[type="password"].focus {
+   border: solid 1px #707070;
+   -webkit-box-shadow: 0 0 5px 1px #969696;
+   -moz-box-shadow: 0 0 5px 1px #969696;
+   box-shadow: 0 0 5px 1px #969696;
+ }
+ /* Styles for the footer */
+ .ftr {
+   text-align: center;
+   background-color: #f8f8f8;
+   padding-top: 25px;
+   padding-bottom: 25px;
+ }
+/* Styles for the image grid from http://tympanus.net/codrops/2014/06/19/ideas-for-subtle-hover-effects/ */
+.grid {
+	position: relative;
+	margin: 0 auto auto;
+	padding: 1em 0 4em;
+	max-width: 1000px;
+	list-style: none;
+	text-align: center;
+}
+
+/* Common style */
+.grid figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 10px 1%;
+	min-width: 320px;
+	max-width: 480px;
+	max-height: 360px;
+	width: 48%;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/*---------------*/
+/***** Sadie *****/
+/*---------------*/
+
+figure.effect-sadie figcaption::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: -webkit-linear-gradient(top, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+	background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+	content: '';
+	opacity: 0;
+	-webkit-transform: translate3d(0,50%,0);
+	transform: translate3d(0,50%,0);
+}
+
+figure.effect-sadie h2 {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	color: #484c61;
+	-webkit-transition: -webkit-transform 0.35s, color 0.35s;
+	transition: transform 0.35s, color 0.35s;
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+}
+
+figure.effect-sadie figcaption::before,
+figure.effect-sadie p {
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-sadie p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 2em;
+	width: 100%;
+	opacity: 0;
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+}
+
+figure.effect-sadie:hover h2 {
+	color: #fff;
+	-webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+	transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+}
+
+figure.effect-sadie:hover figcaption::before ,
+figure.effect-sadie:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+@media screen and (max-width: 50em) {
+	.content {
+		padding: 0 10px;
+		text-align: center;
+	}
+	.grid figure {
+		display: inline-block;
+		float: none;
+		margin: 10px auto;
+		width: 100%;
+	}
+}
+/* Styles for input radiobuttons and checkboxes from http://bootsnipp.com/snippets/featured/checkboxradio-css-only*/
+.btn span.fa {
+	opacity: 0;
+}
+.btn.active span.fa {
+	opacity: 1;
+}
+
+/* Styles for outlined buttons from http://bootsnipp.com/snippets/featured/outlined-flat-buttons */
+.btn {
+	letter-spacing: 1px;
+	text-decoration: none;
+	background: none;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+	font-size:14px;
+	line-height:20px;
+	font-weight:700;
+	border: 3px solid;
+	padding:8px 20px;
+}
+
+.btn-outlined {
+    border-radius: 0;
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+            transition: all 0.3s;
+}
+
+.btn-outlined.btn-theme {
+    background: none;
+    color: #6f5499;
+	border-color: #6f5499;
+}
+
+.btn-outlined.btn-theme:hover,
+.btn-outlined.btn-theme:active {
+    color: #FFF;
+    background: #6f5499;
+    border-color: #6f5499;
+}
+
+.btn-outlined.btn-grey {
+    background: none;
+    color: #777777;
+	border-color: #777777;
+}
+
+.btn-outlined.btn-grey:hover,
+.btn-outlined.btn-grey:active {
+    color: #FFF;
+    background: #777777;
+    border-color: #777777;
+}
+
+.btn-outlined.btn-white {
+    background: none;
+    color: #FFFFFF;
+	border-color: #FFFFFF;
+}
+
+.btn-outlined.btn-white:hover,
+.btn-outlined.btn-white:active {
+    color: #6f5499;
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+.btn-xs{
+	font-size:11px;
+	line-height:14px;
+	border: 1px solid;
+	padding:5px 10px;
+}
+
+.btn-sm{
+	font-size:12px;
+	line-height:16px;
+	border: 2px solid;
+	padding:8px 15px;
+}
+
+.btn-lg{
+	font-size:18px;
+	line-height:22px;
+	border: 4px solid;
+	padding:13px 40px;
+}
