@@ -1,0 +1,35 @@
+    <section>  
+      <h2><center>Sign up</center></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <ul class="input-list style-1 clearfix">
+          
+    <%= f.label :email %></center>
+    <%= f.email_field :email, autofocus: true %>
+   
+        </ul>
+    <br>      
+   <ul class="input-list style-1 clearfix">
+          
+    <%= f.label :password %>
+    
+    <%= f.password_field :password, autocomplete: "off" %>
+  
+        </ul>
+    <br>
+   <ul class="input-list style-1 clearfix">
+          
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+ 
+        </ul>
+     <br>   
+  <div class="actions">
+    <%=f.submit "Sign up", :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
+  </div>
+<% end %>
+<br>
+<%= render "devise/shared/links" %>
+</section>

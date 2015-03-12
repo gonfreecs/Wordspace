@@ -44,7 +44,6 @@
  h4,
  h5,
  h6 {
-     text-transform: uppercase;
      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
      font-weight: 700;
  }
@@ -161,7 +160,6 @@
  }
 
  .navbar {
-     text-transform: uppercase;
      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
      font-weight: 700;
  }
@@ -232,7 +230,7 @@
    font-size: 14pt;
  }
 
- input[type="text"] {
+ input[type="text"],input[type="email"],input[type="password"] {
    display: block;
    margin: 0;
    width: 100%;
@@ -250,7 +248,8 @@
    -o-border-radius: none;
    border-radius: none;
  }
- input[type="text"]:focus {
+
+ input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus {
    outline: none;
  }
 
@@ -281,7 +280,7 @@
  /* ============================================================
    STYLE 1 [input box]
  ============================================================ */
- .style-1 input[type="text"] {
+ .style-1 input[type="text"],input[type="email"],input[type="password"] {
    padding: 10px;
    border: solid 1px gainsboro;
    -webkit-transition: box-shadow 0.3s, border 0.3s;
@@ -289,7 +288,7 @@
    -o-transition: box-shadow 0.3s, border 0.3s;
    transition: box-shadow 0.3s, border 0.3s;
  }
- .style-1 input[type="text"]:focus, .style-1 input[type="text"].focus {
+ .style-1 input[type="text"]:focus,input[type="email"]:focus ,input[type="password"]:focus, .style-1 input[type="text"].focus,input[type="email"].focus,input[type="password"].focus {
    border: solid 1px #707070;
    -webkit-box-shadow: 0 0 5px 1px #969696;
    -moz-box-shadow: 0 0 5px 1px #969696;
@@ -484,7 +483,6 @@ figure.effect-sadie:hover p {
 	font-size:14px;
 	line-height:20px;
 	font-weight:700;
-	text-transform:uppercase;
 	border: 3px solid;
 	padding:8px 20px;
 }
