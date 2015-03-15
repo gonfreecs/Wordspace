@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :articles
-
-  mount RedactorRails::Engine => '/redactor_rails'
   devise_for :users
   get 'main/index'
   root 'main#index'

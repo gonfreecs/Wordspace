@@ -12,8 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require redactor-rails
- *= redactor-rails/plugins
  *= require font-awesome
  */
 
@@ -182,14 +180,6 @@
  .navbar-inverse {
      border: 0;
  }
-
- .editor {
-        width: 60%;
-        min-width: 450px;
-        margin-left: auto;
-        margin-right: auto;
-
-}
 
 /* Styles for input text fields from http://callmenick.com/2014/04/22/various-css-input-text-styles/ */
  section {
