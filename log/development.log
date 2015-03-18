@@ -1,0 +1,429 @@
+
+
+Started GET "/" for ::1 at 2015-03-18 19:54:43 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 1089ms (Views: 1052.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/articles-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 19:54:45 +0200
+
+
+Started GET "/assets/home-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 19:54:45 +0200
+
+
+Started GET "/assets/redactor-rails/index-006fe699e5a62203636875167e9be116.css?body=1" for ::1 at 2015-03-18 19:54:45 +0200
+
+
+Started GET "/assets/password-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 19:54:45 +0200
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-03-18 19:54:50 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mtM98Gnbl0RsE5BJkaWKCf1axKqf9HM701g0QaZQcXoMqGxB5UXvZ9yT77tArQRwBoElBQFgZnyrC4uRH6r5xQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-03-18 19:54:50 +0200
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 451ms (Views: 450.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-03-18 19:54:53 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (63.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (94.5ms)
+Completed 200 OK in 536ms (Views: 535.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-03-18 19:54:57 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WpH9jLAVu9sGZncRXwJpzuZ/e4w9LMau6jCfR7zhsrVbcUnm47873/RMQ4c9lwzTMPYfCuOrsFY0IESGS7lCvg==", "user"=>{"email"=>"vc", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WpH9jLAVu9sGZncRXwJpzuZ/e4w9LMau6jCfR7zhsrVbcUnm47873/RMQ4c9lwzTMPYfCuOrsFY0IESGS7lCvg==", "user"=>{"email"=>"vc", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 467ms (Views: 465.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-03-18 19:55:00 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (86.6ms)
+Completed 200 OK in 549ms (Views: 547.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-03-18 19:55:06 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1dUovWh76yDSaNhJRQmGt3EowM3YmGAJLIf5y4abGnbUNZzXO9FrJCBC7N8nnOOqp6GkSwYfFvHylyIKccPqfQ==", "user"=>{"email"=>"fvfdgdfgdfg", "firstname"=>"", "lastname"=>"", "is_female"=>"false", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "is_sponsor"=>"0"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'fvfdgdfgdfg' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 543ms (Views: 511.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-18 19:55:33 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 841ms (Views: 809.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/articles-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 19:55:34 +0200
+
+
+Started GET "/assets/password-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 19:55:34 +0200
+
+
+Started GET "/assets/home-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 19:55:34 +0200
+
+
+Started GET "/assets/redactor-rails/index-006fe699e5a62203636875167e9be116.css?body=1" for ::1 at 2015-03-18 19:55:34 +0200
+
+
+Started GET "/users/sign_up" for ::1 at 2015-03-18 19:55:37 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 566ms (Views: 499.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2015-03-18 19:55:40 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3sk9OTxlpYrtEYjFbJjORMjqk8BX8MDZNIGxxNl91eDfKYlTb88ljh87vFMODatZHmP3Rol3tiHqkWoFLiUl6w==", "user"=>{"email"=>"d,sfjndsfkj", "firstname"=>"askdhjbasdhjbasdjhb", "lastname"=>"", "is_female"=>"false", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "is_sponsor"=>"0"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'd,sfjndsfkj' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered devise/shared/_links.html.erb (3.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 493ms (Views: 463.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-03-18 20:16:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1137ms (Views: 1103.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/articles-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 20:16:41 +0200
+
+
+Started GET "/assets/home-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 20:16:41 +0200
+
+
+Started GET "/assets/password-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 20:16:41 +0200
+
+
+Started GET "/assets/redactor-rails/index-006fe699e5a62203636875167e9be116.css?body=1" for ::1 at 2015-03-18 20:16:41 +0200
+
+
+Started GET "/" for ::1 at 2015-03-18 20:18:13 +0200
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 505ms (Views: 503.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/articles-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap-3d4ac324e8c8a16c343c471da829ffcc.css?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/home-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/bootstrap_and_overrides-77b9ba7badc3d77d41f8a253eafac6af.css?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome-d6a0daf938b6bd65d3c9d544b603c784.css?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/main-93bac2b2c1293b56745bae5c06bf1b70.css?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/password-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/application-f4d81fa20cb25631d20b5179398bce89.css?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/redactor-rails/index-006fe699e5a62203636875167e9be116.css?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/bootstrap-91416daf9f05a6e9ca13ef54aa8dcb39.js?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/twitter/bootstrap/alert-4fa131fff2ae05a1d89df662cd4a8531.js?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/scaffolds-406b715b147934763d5304dcce4f2575.css?body=1" for ::1 at 2015-03-18 20:18:13 +0200
+
+
+Started GET "/assets/redactor-rails/css/redactor-006fe699e5a62203636875167e9be116.css?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/font-awesome-f1f64beee85cc8d3badf3f4a4c68cc61.css?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap/transition-49c071d4d736acca69daed5bd6c4fdbd.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap/modal-d403efa7333c333fdeecc5daa727c437.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap/dropdown-89b3696cc302eaf377aca640fae08632.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap/tooltip-1727c885f6618bb619e6a29ef0496d11.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap/popover-c19ae92999a32fa658ffe5d5cc13d195.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap/collapse-cfd6f6e5cff9c41e78cc52464a71358b.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap-4a7c8463ef111cbe52eec5efe89f8319.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap/carousel-ac6115504ba6a31f58406c5978a6aa20.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap/tab-fab339701c02e2cb7d02570dd26fcf10.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy-f3a0e91892e9edb7ccced4ed84ff23ec.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap/button-dcd83af4b8aa46a9026dec4ea360a003.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/twitter/bootstrap/affix-745457a96802e8f61e15a7622b54b68f.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/redactor-rails/redactor-1499e668f233ebd2ff87f6ebc980ee79.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/redactor-rails/config-6e12a2defcd11714404a06cb1fc5015e.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/clips-0ccb5233e10f48822327513187294f30.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/fontfamily-24e2e0345acd77ddfd5d3bb8e5728d66.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/fullscreen-7b220aa28c5c5e2aa14cfc735fc0261a.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/home-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/redactor-rails/plugins-e4d090ece6b24f82a8c7c10a9bee91ed.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/redactor-rails/index-32fa657642dde78dbd397dc903f2c543.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/fontcolor-cf9aab502d635a1479bedcf907c074b5.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/fontsize-3791997a7ea67fc7f2cf41d98c8403d9.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/textdirection-402ec4952acb4ae60f9988c68366e229.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/main-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/articles-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/password-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/assets/application-747921f7ea02a8bfbfa1aafb555633e8.js?body=1" for ::1 at 2015-03-18 20:18:14 +0200
+
+
+Started GET "/articles/new" for ::1 at 2015-03-18 20:18:21 +0200
+Processing by ArticlesController#new as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for ::1 at 2015-03-18 20:18:22 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (45.4ms)
+Completed 200 OK in 572ms (Views: 549.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/articles-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 20:18:22 +0200
+
+
+Started GET "/assets/home-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 20:18:22 +0200
+
+
+Started GET "/assets/password-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 20:18:22 +0200
+
+
+Started GET "/assets/redactor-rails/index-006fe699e5a62203636875167e9be116.css?body=1" for ::1 at 2015-03-18 20:18:22 +0200
+
+
+Started GET "/articles/4/" for ::1 at 2015-03-18 20:18:24 +0200
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mArticle Load (0.8ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 4]]
+Completed 404 Not Found in 29ms
+
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=4):
+  app/controllers/articles_controller.rb:80:in `set_article'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (23.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (53.0ms)
+
+
+Started GET "/articles/2/" for ::1 at 2015-03-18 20:18:33 +0200
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=2):
+  app/controllers/articles_controller.rb:80:in `set_article'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (16.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (32.8ms)
+
+
+Started GET "/articles/2/" for ::1 at 2015-03-18 20:18:40 +0200
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArticle Load (0.6ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 2]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=2):
+  app/controllers/articles_controller.rb:80:in `set_article'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (15.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (34.2ms)
+
+
+Started GET "/articles/new" for ::1 at 2015-03-18 20:18:41 +0200
+Processing by ArticlesController#new as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for ::1 at 2015-03-18 20:18:41 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 521ms (Views: 519.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/4/" for ::1 at 2015-03-18 20:18:41 +0200
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 4]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=4):
+  app/controllers/articles_controller.rb:80:in `set_article'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (19.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (41.3ms)
+
+
+Started GET "/articles/new" for ::1 at 2015-03-18 20:18:43 +0200
+Processing by ArticlesController#new as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/articles/5/" for ::1 at 2015-03-18 20:18:44 +0200
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 5]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=5):
+  app/controllers/articles_controller.rb:80:in `set_article'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (21.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (43.8ms)
