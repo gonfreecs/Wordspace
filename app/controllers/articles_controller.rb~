@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
+#loading all variables
 load_and_authorize_resource
+#rescre from invalid articles ids
 rescue_from(ActiveRecord::RecordNotFound) {
     raise(CanCan::AccessDenied, 'Article is not found')
   }
@@ -27,7 +29,8 @@ rescue_from(ActiveRecord::RecordNotFound) {
 
   def edit
   end
+  #This is to allow access to certain article parameters(title,bod, writerID,timin,id,image)
   def article_params
-   params.require(:article).permit(:title, :body, :user_id, :timing, :id)
+   params.require(:article).permit(:title, :body, :user_id, :timing, :id, :image)
     end
 end

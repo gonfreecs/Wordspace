@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 #loading all variables
 load_and_authorize_resource
-#rescre from invalid articles ids
+#rescue from invalid articles ids
 rescue_from(ActiveRecord::RecordNotFound) {
     raise(CanCan::AccessDenied, 'Article is not found')
   }

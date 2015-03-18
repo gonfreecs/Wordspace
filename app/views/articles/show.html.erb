@@ -19,11 +19,12 @@
 </div>
 <!-- this is the article info part -->
  <div class="col-md-2">
+  <div class="col-md-offset-1">
  <div class="Articleinfo">	
   <h5> By: </h5><%= @user.firstname.html_safe %> <%= @user.lastname.html_safe %> 
  <h5> created at: </h5> <%=  @article.created_at.to_s[0,10] %> 
  </div>
- <!-- this is the edit and delete buttons section. Using CanCan to check whether the user is able to edit or delete if yes the bttons are shown and if no the buttons are not, editing redirects to the edit page and the delete button asks if the user is sure he/seh wants to delete then if the answer is yes the article is deleted -->
+ <!-- this is the edit and delete buttons section. Using CanCan to check whether the user is able to edit or delete if yes the buttons are shown and if no the buttons are not, editing redirects to the edit page and the delete button asks if the user is sure he/she wants to delete then if the answer is yes the article is deleted -->
  <div class="ArticleButtons">				
  	<% if can? :update, @article %>
 	<%= link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_article_path(@article), class: "btn btn-outlined btn-grey" %>
@@ -35,6 +36,7 @@
               method: :delete,
               data: { confirm: 'Are you sure you want to delete this article?' }, class: "btn btn-outlined btn-grey" %>
 	<% end %>
+	</div>
 </div>
  </div>
  <div class="col-md-2"></div>

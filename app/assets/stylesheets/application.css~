@@ -556,11 +556,13 @@ figure.effect-sadie:hover p {
 /*--------Article --------*/
 .Articleinfo {
 	position: relative ;
-	 padding: 60px 0px 0px 0px;
+	 padding-top: 4% ;
+	  padding-left: 10% ;
 }
 .ArticleButtons {
 	position: relative ;
-	 padding: 210px 0px 0px 0px;
+	 padding-top: 4% ;
+	  padding-left: 5% ;
 }
 .polaroid {
   position: relative;
@@ -586,5 +588,5 @@ figure.effect-sadie:hover p {
   color: #888;
 }
 .limitSize img{
-  max-width: 880px  ;
+  max-width: 890px  ;
 }
