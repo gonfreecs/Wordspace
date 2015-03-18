@@ -1,5 +1,19 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  #Ensuring user is logged in to create,edit etc
+  before_action :authenticate_user! ,only:[:create,:new,:update,:destroy,:edit]
+  #Can Be replace with CanCan
+  before_action :authorize, :only => [:edit, :destroy]
+
+  #Check If user is the Article Creator
+  def authorize
+    @article = Article.find(params[:id])
+    unless @article.user_id == current_user.id
+      flash[:notice] = "You are not the creator of this article, therefore you're not permitted to edit or destroy this article"
+      #redirect_to root_path # or anything you prefer
+      return false # Important to let rails know that the controller should not be executed
+    end
+  end
 
   # GET /articles
   # GET /articles.json
@@ -61,13 +75,13 @@ class ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def article_params
-      params.require(:article).permit(:title, :body, :image)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def article_params
+    params.require(:article).permit(:title, :body, :image)
+  end
 end
