@@ -555,14 +555,12 @@ figure.effect-sadie:hover p {
 }
 /*--------Article --------*/
 .Articleinfo {
-	position: relative ;
-	 padding-top: 4% ;
-	  padding-left: 10% ;
+	
+	
 }
 .ArticleButtons {
-	position: relative ;
-	 padding-top: 4% ;
-	  padding-left: 5% ;
+
+	 
 }
 .polaroid {
   position: relative;
