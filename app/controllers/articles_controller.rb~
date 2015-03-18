@@ -1,0 +1,33 @@
+class ArticlesController < ApplicationController
+load_and_authorize_resource
+rescue_from(ActiveRecord::RecordNotFound) {
+    raise(CanCan::AccessDenied, 'Article is not found')
+  }
+  def new
+  end
+
+  def index
+  end
+
+  def show
+  @user=User.find(@article.user_id)
+  
+
+  end
+
+  def create
+  end
+
+  def update
+  end
+
+  def destroy	
+  @article.destroy
+  end
+
+  def edit
+  end
+  def article_params
+   params.require(:article).permit(:title, :body, :user_id, :timing, :id)
+    end
+end

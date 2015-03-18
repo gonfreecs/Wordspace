@@ -1,7 +1,26 @@
 Rails.application.routes.draw do
+  get 'errors/show'
+
+  get 'error/show'
+
+  get 'articles/show'
+
+  get 'articles/index'
+
+  get 'articles/edit'
+
+  get 'articles/update'
+
+  get 'articles/destroy'
+
+  get 'articles/new'
+
+  get 'articles/create'
+
   devise_for :users
   get 'main/index'
   root 'main#index'
+ resources:articles
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,90 @@
+    <section>  
+      <h2><center>Sign up</center></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <ul class="input-list style-1 clearfix">
+    <!-- email field--> 
+    <%= f.label :email %></center>
+    <%= f.email_field :email, autofocus: true %>
+   
+        </ul>
+    <br>   
+    <!-- /email field--> 
+
+    <!-- firstname text field -->
+
+    <ul class="input-list style-1 clearfix">
+          
+    <%= f.label :firstname, "First name" %></center>
+    <%= f.text_field :firstname, autofocus: true %>
+   
+        </ul>
+    <br>  
+    <!-- /firstname text field--> 
+
+    <!-- lastname text field -->
+    <ul class="input-list style-1 clearfix">
+          
+    <%= f.label :lastname, "Last name" %></center>
+    <%= f.text_field :lastname, autofocus: true %>
+   
+        </ul>
+
+    <br>
+     <!-- ./lastname text field --> 
+
+   <!-- gender radio buttons--> 
+       <ul class="input-list style-1 clearfix">     
+    <%= f.radio_button(:is_female, true) %><span style="font-weight: bold; font-size: 12pt;"> Female</span>
+   
+        </ul>
+ 
+  <ul class="input-list style-1 clearfix">
+    
+   <%= f.radio_button(:is_female, false) %><span style="font-weight: bold; font-size: 12pt;"> Male</span>
+      </ul>
+    <br>      
+  
+     <!-- /gender radio buttons--> 
+
+      <!-- password and password confirmation fields --> 
+
+   <ul class="input-list style-1 clearfix">
+          
+    <%= f.label :password %>
+    
+    <%= f.password_field :password, autocomplete: "off" %>
+  
+        </ul>
+    <br>
+   <ul class="input-list style-1 clearfix">
+          
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+ 
+        </ul>
+     <br>   
+
+   <!-- /password and password confirmation fields -->
+
+      <!-- sponsor checkbox-->  
+       <ul class="input-list style-1 clearfix">
+     <%= f.check_box :is_sponsor, {}, 2 %><span style="font-weight: bold; font-size: 12pt;"> Become a sponsor</span>
+     </ul>
+       <!-- /sponsor checkbox--> 
+     <br>   
+<br>
+
+ <ul class="input-list style-1 clearfix">
+  <div class="actions">
+    <%=f.submit '<span class="fa fa-search"></span>'.html_safe, :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
+  </div>
+<% end %>
+</ul>
+<br>
+ <ul class="input-list style-1 clearfix">
+<%= render "devise/shared/links" %>
+</ul>
+</section>

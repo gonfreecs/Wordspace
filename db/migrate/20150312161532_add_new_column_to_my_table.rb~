@@ -1,0 +1,5 @@
+class AddNewColumnToMyTable < ActiveRecord::Migration
+  def change
+  	add_column :Artilce, :user_id, :integer1
+  end
+end

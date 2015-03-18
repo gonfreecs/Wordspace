@@ -553,3 +553,38 @@ figure.effect-sadie:hover p {
 	border: 4px solid;
 	padding:13px 40px;
 }
+/*--------Article --------*/
+.Articleinfo {
+	position: relative ;
+	 padding: 60px 0px 0px 0px;
+}
+.ArticleButtons {
+	position: relative ;
+	 padding: 210px 0px 0px 0px;
+}
+.polaroid {
+  position: relative;
+  width: 540px;
+}
+ 
+.polaroid img {
+  
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+          
+}
+ 
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 800 18px/1 'Kaushan Script', cursive;
+  color: #888;
+}
+.limitSize img{
+  max-width: 890px  ;
+}
