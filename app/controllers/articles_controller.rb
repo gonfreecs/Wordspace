@@ -14,7 +14,7 @@
 	  # GET /articles/1
 	  # GET /articles/1.json
 	   def show
-	  @user=User.find(@article.user_id)	  
+	 # @user=User.find(@article.user_id)
 	  end
 
 	  # GET /articles/new
@@ -29,8 +29,7 @@
 	  # POST /articles
 	  # POST /articles.json
 	  def create
-	    @article = Article.new(article_params)
-	    @article.user=current_user
+	   # @article.user=current_user
 
 	    respond_to do |format|
 	      if @article.save
@@ -73,6 +72,6 @@
 
 	  # Never trust parameters from the scary internet, only allow the white list through.
 	  def article_params
-	   params.require(:article).permit(:title, :body, :user_id, :timing, :id, :image)
+			params.require(:article).permit(:title, :body, :user_id, :id, :image)
 	    end
 	end
