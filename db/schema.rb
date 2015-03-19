@@ -10,7 +10,6 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
 ActiveRecord::Schema.define(version: 20150312185137) do
 
   create_table "articles", force: :cascade do |t|
@@ -38,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150312185137) do
 
   add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable"
   add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type"
+
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
