@@ -427,3 +427,65 @@ ActiveRecord::RecordNotFound (Couldn't find Article with 'id'=5):
   Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.5ms)
   Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
   Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (43.8ms)
+
+
+Started GET "/" for ::1 at 2015-03-18 21:55:13 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1070ms (Views: 1035.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/articles-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 21:55:14 +0200
+
+
+Started GET "/assets/home-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 21:55:14 +0200
+
+
+Started GET "/assets/password-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 21:55:14 +0200
+
+
+Started GET "/assets/redactor-rails/index-006fe699e5a62203636875167e9be116.css?body=1" for ::1 at 2015-03-18 21:55:14 +0200
+
+
+Started GET "/articles/new" for ::1 at 2015-03-18 21:55:19 +0200
+Processing by ArticlesController#new as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for ::1 at 2015-03-18 21:55:19 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 621ms (Views: 549.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/articles-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 21:55:19 +0200
+
+
+Started GET "/assets/home-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 21:55:19 +0200
+
+
+Started GET "/assets/password-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-18 21:55:19 +0200
+
+
+Started GET "/assets/redactor-rails/index-006fe699e5a62203636875167e9be116.css?body=1" for ::1 at 2015-03-18 21:55:19 +0200
+
+
+Started POST "/users/sign_in" for ::1 at 2015-03-18 21:55:30 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rvqv7Z6GfoeWeBeo/+CqO0NQDLLbTcKbdWz6Qcj85OOvGhuHzSz+g2RSIz6ddc8mldloNAXKtGOrfCGAP6QU6A==", "user"=>{"email"=>"andrewtawf@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "andrewtawf@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-03-18 16:28:49.582159"], ["current_sign_in_at", "2015-03-18 19:55:30.444933"], ["sign_in_count", 6], ["updated_at", "2015-03-18 19:55:30.447590"], ["id", 8]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles/new
+Completed 302 Found in 143ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/articles/new" for ::1 at 2015-03-18 21:55:30 +0200
+Processing by ArticlesController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered articles/_form.html.erb (5.3ms)
+  Rendered articles/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 529ms (Views: 508.5ms | ActiveRecord: 0.6ms)
