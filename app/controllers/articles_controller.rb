@@ -14,7 +14,7 @@
 	  # GET /articles/1
 	  # GET /articles/1.json
 	   def show
-	 # @user=User.find(@article.user_id)
+	  @user=User.find(@article.user_id)
 	  end
 
 	  # GET /articles/new
@@ -29,7 +29,7 @@
 	  # POST /articles
 	  # POST /articles.json
 	  def create
-	   # @article.user=current_user
+	    @article.user=current_user
 
 	    respond_to do |format|
 	      if @article.save
