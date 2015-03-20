@@ -10,9 +10,9 @@ class Ability
 		can :create, Article
 		if user.is_moderator
 			can :destroy, Article
+			can :read,Sponsor
 		end
  	end
-
 
 
 
