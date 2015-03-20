@@ -5,7 +5,7 @@
 	rescue_from(ActiveRecord::RecordNotFound) {
 	    raise(CanCan::AccessDenied, 'Article is not found')
 		  }
-
+		  # check if cancel => no updates performed
 	before_filter :check_for_cancel, :only => [:create, :update]
 	  # GET /articles
 	  # GET /articles.json
@@ -65,7 +65,7 @@
 	      format.json { head :no_content }
 	    end
 	  end
-
+# Cancel an update and return to article page
 def check_for_cancel
   if params[:commit] == "Cancel"
     redirect_to @article
