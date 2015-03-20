@@ -45,10 +45,7 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
-<<<<<<< HEAD
     cancan (1.6.10)
-=======
->>>>>>> updatemyprofiles
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -185,10 +182,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-<<<<<<< HEAD
   cancan
-=======
->>>>>>> updatemyprofiles
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
@@ -197,11 +191,8 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   rails (= 4.2.0)
-<<<<<<< HEAD
   redactor-rails
-=======
   rmagick
->>>>>>> updatemyprofiles
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
