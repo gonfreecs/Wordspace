@@ -5,6 +5,8 @@
 	rescue_from(ActiveRecord::RecordNotFound) {
 	    raise(CanCan::AccessDenied, 'Article is not found')
 		  }
+
+	before_filter :check_for_cancel, :only => [:create, :update]
 	  # GET /articles
 	  # GET /articles.json
 	  def index
@@ -64,6 +66,11 @@
 	    end
 	  end
 
+def check_for_cancel
+  if params[:commit] == "Cancel"
+    redirect_to @article
+  end
+end
 	  private
 	  # Use callbacks to share common setup or constraints between actions.
 	  def set_article
