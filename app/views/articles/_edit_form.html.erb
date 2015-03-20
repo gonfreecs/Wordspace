@@ -1,4 +1,5 @@
 
+
 <%= form_for @article, html: { multipart: true } do |f| %>
 <!-- Check if there are any errors and display them -->
 <% if @article.errors.any? %>
@@ -31,12 +32,13 @@
       <p><%= f.text_area :body,:class => "redactor", :rows => 40, :cols => 120%></p>
     </div>
   </div>
-  <!-- Submit Article -->
+  <!-- Update Article -->
   <div class="row">
     <div class="col-sm-12">
       <div class="actions">
-        <%=f.submit "Publish", :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
-      
+        <%=f.submit "Save Changes", :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
+        <!-- Cancel Updates -->
+        <%=link_to 'Cancel', @article, :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
 
 
       </div>
