@@ -4711,3 +4711,591 @@ Processing by ArticlesController#edit as HTML
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 10]]
   Rendered articles/edit.html.erb within layouts/application (1.0ms)
 Completed 200 OK in 435ms (Views: 431.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/aricles" for ::1 at 2015-03-20 14:58:28 +0200
+
+ActionController::RoutingError (No route matches [GET] "/aricles"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.5ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (60.7ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (113.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.8ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (35.8ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (58.3ms)
+
+
+Started GET "/aricles" for ::1 at 2015-03-20 14:58:34 +0200
+
+ActionController::RoutingError (No route matches [GET] "/aricles"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.9ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.0ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.5ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (27.8ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (43.1ms)
+
+
+Started GET "/aricles/20" for ::1 at 2015-03-20 14:58:36 +0200
+
+ActionController::RoutingError (No route matches [GET] "/aricles/20"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (12.1ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (26.7ms)
+
+
+Started GET "/articles/20" for ::1 at 2015-03-20 14:58:43 +0200
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mArticle Load (13.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 10]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered articles/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1821ms (Views: 1614.3ms | ActiveRecord: 57.9ms)
+
+
+Started GET "/articles/20" for ::1 at 2015-03-20 14:58:45 +0200
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 20]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered articles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 337ms (Views: 330.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/articles-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/home-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome-d6a0daf938b6bd65d3c9d544b603c784.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/bootstrap_and_overrides-77b9ba7badc3d77d41f8a253eafac6af.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/main-93bac2b2c1293b56745bae5c06bf1b70.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap-3d4ac324e8c8a16c343c471da829ffcc.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/error-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/password-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/errors-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/scaffolds-5f760042e14fb799dc55948e0fdfeb35.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/application-1fa5f36644cbbafaa17e82bbb0c68481.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/css/redactor-006fe699e5a62203636875167e9be116.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/index-006fe699e5a62203636875167e9be116.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/font-awesome-f1f64beee85cc8d3badf3f4a4c68cc61.css?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/bootstrap-91416daf9f05a6e9ca13ef54aa8dcb39.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/alert-4fa131fff2ae05a1d89df662cd4a8531.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/transition-49c071d4d736acca69daed5bd6c4fdbd.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/modal-d403efa7333c333fdeecc5daa727c437.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/dropdown-89b3696cc302eaf377aca640fae08632.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy-f3a0e91892e9edb7ccced4ed84ff23ec.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/tab-fab339701c02e2cb7d02570dd26fcf10.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/tooltip-1727c885f6618bb619e6a29ef0496d11.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/popover-c19ae92999a32fa658ffe5d5cc13d195.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/button-dcd83af4b8aa46a9026dec4ea360a003.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/collapse-cfd6f6e5cff9c41e78cc52464a71358b.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/carousel-ac6115504ba6a31f58406c5978a6aa20.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap/affix-745457a96802e8f61e15a7622b54b68f.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter/bootstrap-4a7c8463ef111cbe52eec5efe89f8319.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/redactor-1499e668f233ebd2ff87f6ebc980ee79.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/config-6e12a2defcd11714404a06cb1fc5015e.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/index-32fa657642dde78dbd397dc903f2c543.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/clips-0ccb5233e10f48822327513187294f30.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/fontcolor-cf9aab502d635a1479bedcf907c074b5.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/fontfamily-24e2e0345acd77ddfd5d3bb8e5728d66.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/fontsize-3791997a7ea67fc7f2cf41d98c8403d9.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/fullscreen-7b220aa28c5c5e2aa14cfc735fc0261a.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/plugins/textdirection-402ec4952acb4ae60f9988c68366e229.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/redactor-rails/plugins-e4d090ece6b24f82a8c7c10a9bee91ed.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/articles-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/error-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/errors-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/home-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/main-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/password-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/application-d289893e898ba5e08631c533026119a2.js?body=1" for ::1 at 2015-03-20 14:58:46 +0200
+
+
+Started GET "/assets/twitter-bootstrap-static/twitter/fonts/glyphicons-halflings-regular.woff" for ::1 at 2015-03-20 14:58:48 +0200
+
+ActionController::RoutingError (No route matches [GET] "/assets/twitter-bootstrap-static/twitter/fonts/glyphicons-halflings-regular.woff"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.6ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (1.0ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (37.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (60.5ms)
+
+
+Started GET "/assets/fontawesome-webfont-e1e9796e37de923cfba919958e1e7fb0.woff" for ::1 at 2015-03-20 14:58:48 +0200
+
+
+Started GET "/assets/fontawesome-webfont-e1e9796e37de923cfba919958e1e7fb0.woff?v=4.3.0" for ::1 at 2015-03-20 14:58:48 +0200
+
+
+Started GET "/assets/twitter-bootstrap-static/twitter/fonts/glyphicons-halflings-regular.ttf" for ::1 at 2015-03-20 14:58:48 +0200
+
+ActionController::RoutingError (No route matches [GET] "/assets/twitter-bootstrap-static/twitter/fonts/glyphicons-halflings-regular.ttf"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.1ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (15.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (31.4ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/twitter/fonts/glyphicons-halflings-regular.svg" for ::1 at 2015-03-20 14:58:49 +0200
+
+ActionController::RoutingError (No route matches [GET] "/assets/twitter-bootstrap-static/twitter/fonts/glyphicons-halflings-regular.svg"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.1ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (12.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (29.1ms)
+
+
+Started GET "/articles/20/edit" for ::1 at 2015-03-20 14:58:50 +0200
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 10]]
+  Rendered articles/edit.html.erb within layouts/application (23.2ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (The partial name (edit form) is not a valid Ruby identifier; make sure your partial name starts with a lowercase letter or underscore, and is followed by any combination of letters, numbers and underscores.):
+    1: <%= render 'edit form' %>
+  app/views/articles/edit.html.erb:1:in `_app_views_articles_edit_html_erb__455335797025529498_70228259823220'
+
+
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.5ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.7ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (13.0ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (35.2ms)
+
+
+Started GET "/articles/20/edit" for ::1 at 2015-03-20 14:58:51 +0200
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 10]]
+  Rendered articles/edit.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (The partial name (edit form) is not a valid Ruby identifier; make sure your partial name starts with a lowercase letter or underscore, and is followed by any combination of letters, numbers and underscores.):
+    1: <%= render 'edit form' %>
+  app/views/articles/edit.html.erb:1:in `_app_views_articles_edit_html_erb__455335797025529498_70228315357100'
+
+
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.7ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (13.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /Users/Mayar/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (27.6ms)
+
+
+Started GET "/articles/20/edit" for ::1 at 2015-03-20 14:59:03 +0200
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 10]]
+  Rendered articles/_edit_form.html.erb (139.8ms)
+  Rendered articles/edit.html.erb within layouts/application (394.1ms)
+Completed 200 OK in 831ms (Views: 827.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/articles/20" for ::1 at 2015-03-20 14:59:13 +0200
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+inpGPoU4fpcfdvgmFuEq86WuCbXK7I4ycdZ1We21WinD428506BpFxWkGnFpnHx69zMh1JkifONi6zvPomaVA==", "article"=>{"title"=>"EA", "body"=>"<p>Internship for EA!!</p><p>Ok</p><p>DON'T APPLY!!</p><p>Okk</p>"}, "commit"=>"Save Changes", "id"=>"20"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?  [["body", "<p>Internship for EA!!</p><p>Ok</p><p>DON'T APPLY!!</p><p>Okk</p>"], ["updated_at", "2015-03-20 12:59:13.482480"], ["id", 20]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles/20
+Completed 302 Found in 17ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/articles/20" for ::1 at 2015-03-20 14:59:13 +0200
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 20]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered articles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 375ms (Views: 371.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/20/edit" for ::1 at 2015-03-20 14:59:15 +0200
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 10]]
+  Rendered articles/_edit_form.html.erb (1.8ms)
+  Rendered articles/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 385ms (Views: 381.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/articles/20" for ::1 at 2015-03-20 14:59:20 +0200
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jwJ+O3fJuxkjia5VsmtdaMRBzdTqgNg8T43m+oPyge7SJBqfapPbRyOi5dzvlqgy4Qu5dW/P4/cLwRPA2s3O0g==", "article"=>{"title"=>"EA", "body"=>"<p>Internship for EA!!</p><p>Ok</p><p>DON'T APPLY!!</p>"}, "commit"=>"Save Changes", "id"=>"20"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 10]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?  [["body", "<p>Internship for EA!!</p><p>Ok</p><p>DON'T APPLY!!</p>"], ["updated_at", "2015-03-20 12:59:20.162072"], ["id", 20]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles/20
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/articles/20" for ::1 at 2015-03-20 14:59:20 +0200
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 20]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered articles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 357ms (Views: 352.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/20/edit" for ::1 at 2015-03-20 14:59:21 +0200
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 10]]
+  Rendered articles/_edit_form.html.erb (1.0ms)
+  Rendered articles/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 358ms (Views: 353.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/20" for ::1 at 2015-03-20 14:59:25 +0200
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 10]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered articles/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 355ms (Views: 350.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/20/edit" for ::1 at 2015-03-20 14:59:28 +0200
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 20]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 10]]
+  Rendered articles/_edit_form.html.erb (1.7ms)
+  Rendered articles/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 332ms (Views: 325.2ms | ActiveRecord: 0.3ms)
