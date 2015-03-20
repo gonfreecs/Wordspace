@@ -15,6 +15,9 @@ class ApplicationController < ActionController::Base
     	#fields for signing up
         def configure_permitted_parameters
             devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :is_female, :is_sponsor, :firstname, :lastname) }
+           # add avatar ,email password field to account_update
+            devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password,
+      :password_confirmation, :current_password, :avatar, :avatar_cache) }
 
         end
 
