@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sponsors
+
   resources :articles
 
   mount RedactorRails::Engine => '/redactor_rails'
