@@ -1,10 +1,17 @@
 class SponsorsController < ApplicationController
   before_action :set_sponsor, only: [:show, :edit, :update, :destroy]
-  before_filter :check_for_approve , :check_for_reject
- 
+  before_filter :check_for_approve , :check_for_reject # GET /sponsors
+  
+
+  # GET /sponsors.json
   def index
-    authorize! :read, Sponsor
+    if current_user.try(:is_moderator?)
+
     @reqspon = User.where("is_sponsor == '2'")
+ 
+  else
+    redirect_to root_path
+     end
   end
 
 
