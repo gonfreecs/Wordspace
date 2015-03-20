@@ -48,3 +48,27 @@
 </div>
  <div class="col-md-2"></div>
  </div>
+ 
+
+ <!....This is the part where we call all comments.....>
+ 
+  <%= render :partial => 'comment', :collection => @article.comments %>
+  
+  <div class="col-md-2"></div>
+  
+   <!....This is the form for creating a new comment.....>
+   <% if can? :create, @comment %>
+<%= form_for @comment do|f| %>
+
+  <%= f.hidden_field :article_id, :value => @article.id%>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+   
+    <%= f.text_area :des %>
+    
+    <%= f.submit "Add Comment" %>
+  <% end %>
+  <% end %>
+
+  
+  
+

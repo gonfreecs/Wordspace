@@ -13,8 +13,15 @@
 
 	  # GET /articles/1
 	  # GET /articles/1.json
+	  #inistantiation of Comment and Reply objects 
 	   def show
 	  @user=User.find(@article.user_id)
+	  @comment = Comment.new(params[:comment])
+	  #@comment.update_attributes(:user_id=> current_user.id, :article_id=> @article.id)
+	  @replies = Reply.all
+	  @reply = Reply.new(params[:reply])
+	  #@reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
+  
 	  end
 
 	  # GET /articles/new

@@ -12,4 +12,5 @@ class Article < ActiveRecord::Base
   validates :title, :presence => true
   validates :image, :presence => true
   validate :image_size
+  has_many :comments, :dependent => :destroy
 end
