@@ -4,12 +4,11 @@ class Ability
  	can :show, Article
  	if user != nil
  		can :update, Article do |article|
- 			 article.user_id == user.id	      
+ 			 article.user_id == user.id
  		end
 		can :create, Article
 		if user.is_moderator
 			can :destroy, Article
-			can :manage,Sponsor
 		end
  	end
 
