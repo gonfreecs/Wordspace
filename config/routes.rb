@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  #adding resources 
+
+  #adding resources
+  resources :sponsors
   resources :articles
 	resources :comments
 	resources :replies

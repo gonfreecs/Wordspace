@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150320160850) do
     t.string   "lastname"
     t.text     "about_me"
     t.boolean  "is_female",              default: false
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
