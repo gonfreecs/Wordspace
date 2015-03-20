@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
  mount_uploader :avatar, AvatarUploader
-
+# to upload avatar
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
  	#:recoverable, 
@@ -19,4 +19,5 @@ class User < ActiveRecord::Base
 
   validates_integrity_of  :avatar
   validates_processing_of :avatar
+# to upload avatar
 end

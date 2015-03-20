@@ -43654,3 +43654,239 @@ Processing by MainController#index as HTML
   Rendered main/index.html.erb within layouts/application (2.1ms)
   [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
 Completed 200 OK in 701ms (Views: 673.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-20 09:20:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 2767ms (Views: 2740.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2015-03-20 09:32:30 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 723ms (Views: 654.9ms | ActiveRecord: 1.6ms)
+
+
+Started PUT "/users" for 127.0.0.1 at 2015-03-20 09:32:44 +0200
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+WFOB0oprz4MhEnWyCGDWFnzwsHT9XWxUI+baFstGcrSlJjzZljAnIXKracD/LBjacU5KbRwRV/hxZgoZVHsPQ==", "user"=>{"firstname"=>"mohab", "lastname"=>"ashraf", "is_female"=>"false", "email"=>"mohabashraf466@gmail.com", "about_me"=>"", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fa4148a1f78 @tempfile=#<Tempfile:/tmp/RackMultipart20150320-24988-uyjvjf.jpg>, @original_filename="s.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"s.jpg\"\r\nContent-Type: image/jpeg\r\n">, "avatar_cache"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+Unpermitted parameters: firstname, lastname, is_female, about_me
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "avatar" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["avatar", "s.jpg"], ["updated_at", "2015-03-20 07:32:44.469201"], ["id", 8]]
+  [1m[35m (127.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 342ms (ActiveRecord: 129.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-20 09:32:44 +0200
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 366ms (Views: 364.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-20 09:35:22 +0200
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 358ms (Views: 357.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2015-03-20 09:35:26 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 353ms (Views: 350.6ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/users" for 127.0.0.1 at 2015-03-20 09:35:42 +0200
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kpx2KPpjXX6qBMkpzaREqv84IJqfCqSerTkyzOyLRQu5aaDc1hIy3CNKLVgGeXeRzw7bcviPlHAcczGM0vew/A==", "user"=>{"firstname"=>"mohab", "lastname"=>"ashraf", "is_female"=>"false", "email"=>"mohabashraf466@gmail.com", "about_me"=>"", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x000000042f7cf0 @tempfile=#<Tempfile:/tmp/RackMultipart20150320-24988-h7f50p.jpg>, @original_filename="s.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"s.jpg\"\r\nContent-Type: image/jpeg\r\n">, "avatar_cache"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+Unpermitted parameters: firstname, lastname, is_female, about_me
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "avatar" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["avatar", "s.jpg"], ["updated_at", "2015-03-20 07:35:42.958596"], ["id", 8]]
+  [1m[36m (107.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 306ms (ActiveRecord: 108.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-20 09:35:43 +0200
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 308ms (Views: 306.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-03-20 09:35:47 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1H1dGgYdtx6rFYrBJ+UC7uoLmZGDnDu67Y9/CuqJ7a3/iIvuKmzYvCJbbrDsODHV2j1ieeQZC1RcxXxK1PUYWg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-20 09:35:47 +0200
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 304ms (Views: 303.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-20 09:35:49 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 355ms (Views: 352.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-03-20 09:35:53 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (8.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 358ms (Views: 356.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-03-20 09:36:16 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ynle6OElwXdxFAu3d1vh9k6rPC3jMOAoZPFc5HQpsbzbOCzkb8gR9P6G2ir5lGB554RMUNLWAPv9h+Q0fB83+Q==", "user"=>{"email"=>"mohabashraf46ss6@gmail.com", "firstname"=>"mohab", "lastname"=>"asg", "is_female"=>"false", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "is_sponsor"=>"0"}, "commit"=>"Sign up"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mohabashraf46ss6@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "firstname", "lastname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["email", "mohabashraf46ss6@gmail.com"], ["encrypted_password", "$2a$10$yywsAwg6448ustJOzp23WOzrz.76ZcJGYBJYnfAtcguSIh8c3lsZu"], ["firstname", "mohab"], ["lastname", "asg"], ["created_at", "2015-03-20 07:36:17.171723"], ["updated_at", "2015-03-20 07:36:17.171723"]]
+  [1m[36m (132.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-03-20 07:36:17.309741"], ["current_sign_in_at", "2015-03-20 07:36:17.309741"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-03-20 07:36:17.312449"], ["id", 9]]
+  [1m[35m (125.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 476ms (ActiveRecord: 260.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-20 09:36:17 +0200
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 9]]
+Completed 200 OK in 325ms (Views: 324.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2015-03-20 09:36:22 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 9]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 334ms (Views: 331.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/users" for 127.0.0.1 at 2015-03-20 09:36:36 +0200
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fuzW0mugR/m0sRwAt0rBl6n2iw2NiCayAnraFKS7bZ/HraTe5U2XejsjzZ05hUAYANn7cLxuxmGbDGLErI3r2g==", "user"=>{"firstname"=>"mohab", "lastname"=>"asg", "is_female"=>"false", "email"=>"mohabashraf46ss6@gmail.com", "about_me"=>"", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00000005deed88 @tempfile=#<Tempfile:/tmp/RackMultipart20150320-24988-1kyi2ho.jpg>, @original_filename="mohab.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"mohab.jpg\"\r\nContent-Type: image/jpeg\r\n">, "avatar_cache"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+Unpermitted parameters: firstname, lastname, is_female, about_me
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "avatar" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["avatar", "mohab.jpg"], ["updated_at", "2015-03-20 07:36:36.221672"], ["id", 9]]
+  [1m[35m (120.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 317ms (ActiveRecord: 121.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-20 09:36:36 +0200
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 9]]
+Completed 200 OK in 319ms (Views: 317.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-03-20 09:36:40 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"v867tvbDS55KuuO0C/hAZ9XZlggdvUm6IcES4YUWM+QGj8m6eC6bHcUoMimFN8HofPbmdSxbqWm4t6oxjSC1oQ=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-20 09:36:40 +0200
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 327ms (Views: 325.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-20 09:36:42 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 331ms (Views: 329.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-20 09:36:45 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sxWwPRQl8r/YLth40jkc/yvdj05+wgQp2yvMi+cgfOjwQCjx2HTGfL7iZ/MF1Qk4OzAIHSXVrtsIRSUqLROmAw==", "user"=>{"email"=>"mohabashraf466@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "mohabashraf466@gmail.com"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-03-20 06:26:26.926047"], ["current_sign_in_at", "2015-03-20 07:36:45.891447"], ["sign_in_count", 8], ["updated_at", "2015-03-20 07:36:45.895169"], ["id", 8]]
+  [1m[35m (96.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 290ms (ActiveRecord: 97.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-20 09:36:46 +0200
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 321ms (Views: 320.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2015-03-20 09:36:49 +0200
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 343ms (Views: 340.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users" for 127.0.0.1 at 2015-03-20 09:37:00 +0200
+Processing by Devise::RegistrationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5SPiSbP2rIGmrSbwuBpYqsefsF/bCf8QekFg+SlNMiBifjKqyjD+c8BlDr+NWdkAlYV3/fOeiyjDy+TfhJXz6g=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  [1m[35m (111.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 121ms (ActiveRecord: 112.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-20 09:37:00 +0200
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 361ms (Views: 360.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-03-20 09:37:03 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 339ms (Views: 337.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-03-20 09:37:08 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"srH8F1xv5uB8TUzFcieXUWxwNVZ6iX6MHg1XgwzNwksajsenHFtZdNkgn49J2puUZDVBHMV0ronSsNH8F4FBZg==", "user"=>{"email"=>"mohabashraf466@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "mohabashraf466@gmail.com"]]
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"srH8F1xv5uB8TUzFcieXUWxwNVZ6iX6MHg1XgwzNwksajsenHFtZdNkgn49J2puUZDVBHMV0ronSsNH8F4FBZg==", "user"=>{"email"=>"mohabashraf466@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.html.erb (3.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 507ms (Views: 331.2ms | ActiveRecord: 0.0ms)
