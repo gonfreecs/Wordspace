@@ -7,7 +7,7 @@
 	 <!....This is the comment information.....>
   <font size="5" <i><b><%=h User.find(comment.user_id).firstname %> said:</b></i></font><br />
   <font size="3"><%=h comment.des %></font>
-   <!....This is the check to see whether you are allowed to edit or delete a comment.....>
+   <!...This is the check to see whether you are allowed to edit or delete a comment.....>
     <!....And thus showing the corresponding buttons or not .....>
   <% if can? :destroy, comment %>
   <%= link_to 'Delete', comment,

@@ -24,9 +24,9 @@
  	 <div class="col-md-11">
    <!....This is where we loop to show all replies.....>
    <!....but only if the reply and the comment have the same comment id.....>
+   <br />
   <% @replies.each do|r| %>
   <% if r.comment_id == comment.id %>
-  
   <font size="4"><i><b><%=h User.find(r.user_id).firstname %> replied:</b></i></font><br />
   &nbsp;&nbsp;&nbsp;<%=h r.des %><br />
    <!....This is the check to see whether you are allowed to edit or delete a comment.....>
