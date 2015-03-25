@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'main/index'
   root 'main#index'
  resources:articles
+#route to profile
+ resources :users, :only => :show
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
