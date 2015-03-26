@@ -19,7 +19,11 @@
                 <li class="list-group-item text-muted" contenteditable="false">Profile</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">firstname</strong></span> <%= @user.firstname %></li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">lastname</strong></span> <%= @user.lastname %></li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Gender</strong></span> <%= @user.is_female %></li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Gender</strong></span> <% if @user.is_female %>
+                    female 
+                    <%else%>
+                    male
+                    </li><%end%>
              
             </ul>
            <div class="panel panel-default">
@@ -43,10 +47,10 @@
                 <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i>
 
                 </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Shares</strong></span> 125</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Likes</strong></span> 13</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Shares</strong></span> 0</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Likes</strong></span> 0</li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong class="">Posts</strong></span> <%= @user.articles.count %></li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Followers</strong></span> 78</li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Followers</strong></span> 0</li>
             </ul>
             <div class="panel panel-default">
                 <div class="panel-heading">Social Media</div>
@@ -81,7 +85,7 @@
 							
 							</p>
 							<p>
-							
+							<%= link_to 'Show',article %>
 							</p>
 						</div>
 					</div>
