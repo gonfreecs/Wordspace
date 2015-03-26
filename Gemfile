@@ -1,4 +1,5 @@
 source 'https://rubygems.org' 
+gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
 gem 'social-share-button'
 # for avatar upload (carrierwave	)
 gem "carrierwave"

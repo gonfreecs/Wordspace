@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/evansobkowicz/awesome-share-buttons.git
+  revision: eadb9ba540732e4db156ead649dcb662f41e105a
+  specs:
+    awesome-share-buttons (1.1)
+      coffee-rails
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -184,6 +192,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome-share-buttons!
   byebug
   cancan
   carrierwave

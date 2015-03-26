@@ -15,7 +15,7 @@
  *= require redactor-rails
  *= redactor-rails/plugins
  *= require font-awesome
- *= require social-share-button
+ *= require awesome-share-buttons
  */
 
 /* Generic styles for basics and the navbar, copyrighted to wrapbootstra.com */
