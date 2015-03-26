@@ -21,12 +21,15 @@
 function sbarp() {
     if($(document).width() > 990) {
       $('#search-container').css({top: 97});
+      $('#search-container div').width("72.5%");
       $('#search').removeClass('hidden');
     } else if($(document).width() > 767) {
       $('#search-container').css({top: 150});
+      $('#search-container div').width("72.5%");
       $('#search').removeClass('hidden');
     } else {
       $('#search-container').css({top: 50});
+      $('#search-container div').width("90%");
       makevisible();
       $('#search').addClass('hidden');
     }
