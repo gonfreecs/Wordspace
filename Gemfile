@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+source 'https://rubygems.org' 
+gem 'social-share-button'
 # for avatar upload (carrierwave	)
 gem "carrierwave"
 gem "rmagick"
