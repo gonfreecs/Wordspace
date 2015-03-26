@@ -19,4 +19,3 @@
 //= require redactor-rails/plugins
 //= require_tree .
 #= require social-share-button
-*= require social-share-button

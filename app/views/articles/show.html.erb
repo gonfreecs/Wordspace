@@ -1,4 +1,5 @@
 <div class="row">
+
 <!-- empty column for layouts -->
 <!-- main image for the article setting image width & hight to not get out of the border if there is no image for the article a default one is set-->
 <div class="col-md-2"></div>
@@ -18,10 +19,9 @@
  <div class="col-md-2">
  <br>
   <div class="col-md-offset-2">
-
+<%= social_share_button_tag(@article.title, :'data-source' => "https://raw.github.com/vkulpa/social-share-button/master/lib/assets/images/sprites/social-share-button/tumblr.png", :'data-type' => 'photo') %>
   <h5 > By: </h5> <p><%= @user.firstname %> <%= @user.lastname %> </p>
  <h5> created at: </h5> <p> <%=  @article.created_at.to_s[0,10] %> </p>
-
  <!-- this is the edit and delete buttons section. Using CanCan to check whether the user is able to edit or delete if yes the buttons are shown and if no the buttons are not, editing redirects to the edit page and the delete button asks if the user is sure he/she wants to delete then if the answer is yes the article is deleted -->
  	<% if can? :update, @article %>
 	<%= link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_article_path(@article), class: "btn btn-outlined btn-grey" %>
