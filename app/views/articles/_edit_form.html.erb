@@ -32,6 +32,11 @@
       <p><%= f.text_area :body,:class => "redactor", :rows => 40, :cols => 120%></p>
     </div>
   </div>
+  <div class="col-sm-12">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+      <p><%= f.text_field :tag_list %></p>
+    </div>
+  </div>
   <!-- Update Article -->
   <div class="row">
     <div class="col-sm-12">

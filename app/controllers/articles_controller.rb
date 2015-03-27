@@ -33,6 +33,7 @@
 
 	  # GET /articles/1/edit
 	  def edit
+	  	  @article = Article.find(params[:id])
 	  end
 
 	  # POST /articles
@@ -86,6 +87,6 @@ end
 
 	  # Never trust parameters from the scary internet, only allow the white list through.
 	  def article_params
-			params.require(:article).permit(:title, :body, :user_id, :id, :image)
+			params.require(:article).permit(:title, :body, :user_id, :id, :image , :tag_list)
 	    end
 	end

@@ -4,7 +4,8 @@ class Article < ActiveRecord::Base
   mount_uploader :image, ImgUploader
   belongs_to:user
   validates :user_id, presence: true
-
+  # Alias for acts_as_taggable_on :tags
+  acts_as_taggable 
 
   #Check if image size is larger than 5 MB
   def image_size
