@@ -7,6 +7,8 @@
 		  }
 		  # check if cancel => no updates performed
 	before_filter :check_for_cancel, :only => [:create, :update]
+
+	 before_filter :check_for_report, :only => [:show]
 	  # GET /articles
 	  # GET /articles.json
 	  def index
@@ -78,6 +80,16 @@ def check_for_cancel
     redirect_to @article
   end
 end
+
+def check_for_report
+    flash[:notice] = "Widget was successfully created."
+  if params[:type] == "Report"
+    @article = Article.find(params[:format])
+    @article.update_attributes(:is_reported => true)
+    render action: 'show'
+  end
+end
+
 	  private
 	  # Use callbacks to share common setup or constraints between actions.
 	  def set_article

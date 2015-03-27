@@ -1,6 +1,6 @@
 class SponsorsController < ApplicationController
   before_action :set_sponsor, only: [:show, :edit, :update, :destroy]
-  before_filter :check_for_approve , :check_for_reject # GET /sponsors
+  before_filter :check_for_approve , :check_for_reject 
   
 
   # GET /sponsors.json
