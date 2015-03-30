@@ -1,3 +1,4 @@
+# CommentsController
 class CommentsController < ApplicationController
   # loading all variables
   load_and_authorize_resource
@@ -26,10 +27,7 @@ class CommentsController < ApplicationController
   end
 
   def show
-    # @user=User.find(@article.user_id)
     @reply = Reply.new(params[:reply])
-    # @reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
-    # redirect_to(@comment.article)
   end
 
   def update
@@ -39,7 +37,7 @@ class CommentsController < ApplicationController
     else
       flash[:notice] = "Error creating comment: #{@comment.errors}"
       redirect_to(@comment.article)
-end
+    end
   end
 
   def edit

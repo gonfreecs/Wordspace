@@ -1,3 +1,4 @@
+# SponsorsController
 class SponsorsController < ApplicationController
   before_action :set_sponsor, only: [:show, :edit, :update, :destroy]
   before_action :check_for_approve, :check_for_reject # GET /sponsors
@@ -10,30 +11,26 @@ class SponsorsController < ApplicationController
 
     else
       redirect_to root_path
-     end
+    end
   end
 
   def check_for_approve
-    flash[:notice] = 'Widget was successfully created.'
-    if params[:type] == 'Approve'
-      @car = User.find(params[:format])
-      @car.update_attributes(is_sponsor: 1)
-      redirect_to sponsors_path
-    end
-end
+    return false if params[:type] != 'Approve'
+    @car = User.find(params[:format])
+    @car.update_attributes(is_sponsor: 1)
+    redirect_to sponsors_path
+  end
 
   def check_for_reject
-    flash[:notice] = 'Widget was successfully created.'
-    if params[:type] == 'Reject'
-      @car = User.find(params[:format])
-      @car.update_attributes(is_sponsor: 0)
-      redirect_to sponsors_path
-    end
-end
+    return false if params[:type] != 'Reject'
+    @car = User.find(params[:format])
+    @car.update_attributes(is_sponsor: 0)
+    redirect_to sponsors_path
+  end
 
   private
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet
   def sponsor_params
     params[:sponsor]
   end
