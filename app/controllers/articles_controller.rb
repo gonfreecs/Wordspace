@@ -20,10 +20,8 @@ class ArticlesController < ApplicationController
   def show
     @user = User.find(@article.user_id)
     @comment = Comment.new(params[:comment])
-    # @comment.update_attributes(:user_id=> current_user.id, :article_id=> @article.id)
     @replies = Reply.all
     @reply = Reply.new(params[:reply])
-    # @reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
   end
 
   # GET /articles/new
@@ -42,7 +40,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html { redirect_to @article, notice: 'Article was created.' }
       else
         format.html { render :new }
       end
@@ -54,11 +52,12 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to @article, notice: 'Article was updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        format.json render json: @article.errors,
+                           status: :unprocessable_entity
       end
     end
   end
@@ -68,15 +67,14 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Article was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Article was destroyed.' }
       format.json { head :no_content }
     end
   end
   # Cancel an update and return to article page
   def check_for_cancel
-    if params[:commit] == 'Cancel'
-      redirect_to @article
-    end
+    return false if params[:commit] != 'Cancel'
+    redirect_to @article
   end
 
   private
@@ -86,7 +84,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet
   def article_params
     params.require(:article).permit(:title, :body, :user_id, :id, :image)
   end
