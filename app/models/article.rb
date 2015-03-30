@@ -1,3 +1,4 @@
+# Article Model
 class Article < ActiveRecord::Base
   # adding The uploader to Image field
   # adding relation between user and articles

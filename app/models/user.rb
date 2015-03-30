@@ -1,3 +1,4 @@
+# User Model
 class User < ActiveRecord::Base
   # to upload avatar for user
   mount_uploader :avatar, AvatarUploader
