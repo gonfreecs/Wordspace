@@ -82,25 +82,14 @@ def check_for_cancel
   end
 end
 
-
-
-
+# Report an article
 def report
-	
-
 	reportarticleh = {"user_id" => current_user.id,
 										"article_id" => params[:id]}
-	Reportarticle.create(reportarticleh)
-	 
+	Reportarticle.create(reportarticleh)	 
 	 @article =Article.find( params[:id])
 	redirect_to @article
 end
-
-
-
-
-
-
 
 	  private
 	  # Use callbacks to share common setup or constraints between actions.

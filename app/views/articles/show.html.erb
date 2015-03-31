@@ -1,3 +1,4 @@
+<!-- A simple note displayed on the top to notify the user whether he/she reported this article before -->
 <% if Reportarticle.where("user_id = ? AND article_id = ?", current_user.id ,params[:id]).present? %>
 <%= flash[:notice] = "You have reported this article." %>
 <% end %>
