@@ -35,12 +35,12 @@ function sbarp() {
     }
 }
 function makehidden() {
-  $('#search-container').css({opacity: 1}).animate({opacity: 0}, 200);
+  $('#search-container').css({opacity: 1}).animate({opacity: 0}, 20);
   $('#search-container').toggle(200);
 }
 function makevisible() {
   $('#search-container').css({display: 'block'});
-  $('#search-container').css({opacity: 0}).animate({opacity: 1}, 200);
+  $('#search-container').css({opacity: 0}).animate({opacity: 1}, 20);
   $('#searchbox').focus();
 }
 $( document ).ready(function() {

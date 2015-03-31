@@ -327,10 +327,10 @@
 	float: left;
 	overflow: hidden;
 	margin: 10px 1%;
-	min-width: 320px;
-	max-width: 480px;
-	max-height: 360px;
-	width: 48%;
+	min-width: 240px;
+	max-width: 400px;
+	max-height: 280px;
+	width: 31%;
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
@@ -379,6 +379,7 @@
 }
 
 .grid figure h2 {
+  font-size: 18pt;
 	word-spacing: -0.15em;
 	font-weight: 300;
 }
@@ -420,7 +421,7 @@ figure.effect-sadie h2 {
 	top: 50%;
 	left: 0;
 	width: 100%;
-	color: #484c61;
+	color: #cccccc;
 	-webkit-transition: -webkit-transform 0.35s, color 0.35s;
 	transition: transform 0.35s, color 0.35s;
 	-webkit-transform: translate3d(0,-50%,0);
