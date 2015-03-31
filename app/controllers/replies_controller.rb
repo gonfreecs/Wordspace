@@ -1,3 +1,4 @@
+# RepliesController
 class RepliesController < ApplicationController
   # loading all variables
   load_and_authorize_resource
@@ -35,7 +36,7 @@ class RepliesController < ApplicationController
     else
       flash[:notice] = "Error creating reply: #{@reply.errors}"
       redirect_to(@reply.comment.article)
-end
+    end
   end
 
   def edit
