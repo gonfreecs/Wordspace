@@ -1,10 +1,30 @@
 Rails.application.routes.draw do
 
+  get 'bids/index'
+
+  get 'bids/new'
+
+  get 'bids/show'
+
+  get 'bids/create'
+
+  get 'bids/update'
+
+  get 'bids/destroy'
+
+  get 'bids/edit'
+
   #adding resources
   resources :sponsors
-  resources :articles
+  resource :articles do
+    collection do
+     get 'bid'
+   end
+end
+resources :articles
 	resources :comments
 	resources :replies
+  resources :bids
   mount RedactorRails::Engine => '/redactor_rails'
   devise_for :users
   get 'main/index'

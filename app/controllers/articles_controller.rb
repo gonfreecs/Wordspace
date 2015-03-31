@@ -15,7 +15,7 @@
 
 	  # GET /articles/1
 	  # GET /articles/1.json
-	  #inistantiation of Comment and Reply objects 
+	  #inistantiation of Comment and Reply objects
 	   def show
 	  @user=User.find(@article.user_id)
 	  @comment = Comment.new(params[:comment])
@@ -23,7 +23,7 @@
 	  @replies = Reply.all
 	  @reply = Reply.new(params[:reply])
 	  #@reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
-  
+
 	  end
 
 	  # GET /articles/new
@@ -77,6 +77,10 @@ def check_for_cancel
   if params[:commit] == "Cancel"
     redirect_to @article
   end
+end
+def bid
+	@ar= Article.find(params[:a2_id])
+	redirect_to :controller => :bids	, :action => :create, :a_id => @ar.id
 end
 	  private
 	  # Use callbacks to share common setup or constraints between actions.

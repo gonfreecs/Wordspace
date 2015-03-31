@@ -33,6 +33,12 @@
               method: :delete,
               data: { confirm: 'Are you sure you want to delete this article?' }, class: "btn btn-outlined btn-grey" %>
 	<% end %>
+
+		<% if can? :bid, @article %>
+		<%= link_to "Label", :controller => :articles	, :action => :bid, :a2_id=>@article.id%>
+		<% end %>
+
+
 </div>
  </div>
  <div class="col-md-2"></div>
@@ -48,27 +54,22 @@
 </div>
  <div class="col-md-2"></div>
  </div>
- 
 
  <!....This is the part where we call all comments.....>
- 
+
   <%= render :partial => 'comment', :collection => @article.comments %>
-  
+
   <div class="col-md-2"></div>
-  
+
    <!....This is the form for creating a new comment.....>
    <% if can? :create, @comment %>
 <%= form_for @comment do|f| %>
 
   <%= f.hidden_field :article_id, :value => @article.id%>
   <%= f.hidden_field :user_id, :value => current_user.id %>
-   
+
     <%= f.text_area :des %>
-    
+
     <%= f.submit "Add Comment" %>
   <% end %>
   <% end %>
-
-  
-  
-
