@@ -2,6 +2,7 @@
 class Article < ActiveRecord::Base
   # adding The uploader to Image field
   # adding relation between user and articles
+  acts_as_taggable
   mount_uploader :image, ImgUploader
   belongs_to :user
 
