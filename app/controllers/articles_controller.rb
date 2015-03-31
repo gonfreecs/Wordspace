@@ -7,6 +7,8 @@
 		  }
 		  # check if cancel => no updates performed
 	before_filter :check_for_cancel, :only => [:create, :update]
+
+	
 	  # GET /articles
 	  # GET /articles.json
 	  def index
@@ -23,6 +25,7 @@
 	  @replies = Reply.all
 	  @reply = Reply.new(params[:reply])
 	  #@reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
+
   
 	  end
 
@@ -78,6 +81,27 @@ def check_for_cancel
     redirect_to @article
   end
 end
+
+
+
+
+def report
+	
+
+	reportarticleh = {"user_id" => current_user.id,
+										"article_id" => params[:id]}
+	Reportarticle.create(reportarticleh)
+	 
+	 @article =Article.find( params[:id])
+	redirect_to @article
+end
+
+
+
+
+
+
+
 	  private
 	  # Use callbacks to share common setup or constraints between actions.
 	  def set_article

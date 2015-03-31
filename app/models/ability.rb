@@ -11,6 +11,7 @@ class Ability
  			 article.user_id == user.id
  		end
  		can :create, Article
+ 		can :report, Article
 
 		can :update, Comment do |c|
  			 c.user_id == user.id

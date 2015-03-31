@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   #adding resources
   resources :sponsors
-  resources :articles
+  resources :articles do
+  member do
+    get 'report'
+  end
+end
 	resources :comments
 	resources :replies
   mount RedactorRails::Engine => '/redactor_rails'
@@ -10,6 +14,8 @@ Rails.application.routes.draw do
   get 'main/index'
   root 'main#index'
  resources:articles
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

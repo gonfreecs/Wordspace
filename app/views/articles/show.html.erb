@@ -1,3 +1,7 @@
+<% if Reportarticle.where("user_id = ? AND article_id = ?", current_user.id ,params[:id]).present? %>
+<%= flash[:notice] = "You have reported this article." %>
+<% end %>
+
 <div class="row">
 <!-- empty column for layouts -->
 <!-- main image for the article setting image width & hight to not get out of the border if there is no image for the article a default one is set-->
@@ -48,7 +52,8 @@
 </div>
  <div class="col-md-2"></div>
  </div>
- 
+
+<%= link_to 'Report this article', action: "report" %> 
 
  <!....This is the part where we call all comments.....>
  
