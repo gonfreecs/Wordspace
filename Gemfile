@@ -26,6 +26,8 @@ gem 'devise'
 gem 'redactor-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+# Gems for search
+gem 'squeel'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

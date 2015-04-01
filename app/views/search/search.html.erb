@@ -1,0 +1,19 @@
+<div style="width: 72.5%; text-align: left; margin-left: auto; margin-right: auto;">
+  <% if @articles.empty? %>
+    <h1>Sorry no rsults found for "<%= @query_str %>"</h1>
+  <% else %>
+    <h1>Search results for "<%= @query_str %>"</h1>
+  <% end %>
+</div>
+<div class="row grid">
+  <% @articles.each do|a| %>
+  <figure class="effect-sadie">
+    <img src="<%= a.image %>" alt="<%= a.title %>"/>
+    <figcaption>
+      <h2><span><%= a.title %></span></h2>
+      <p><%= truncate(a.plain_body, :length => 80) %></p>
+      <%= link_to 'View more', a %>
+    </figcaption>
+  </figure>
+  <% end %>
+</div>
