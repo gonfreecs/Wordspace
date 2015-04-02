@@ -9,7 +9,7 @@
   <font size="3"><%=h comment.des %></font>
    <!....This is the check to see whether you are allowed to edit or delete a comment.....>
     <!....And thus showing the corresponding buttons or not .....>
-  <% if can? :destroy, comment %>
+  <% if can? :destroy, comment or current_user.is_moderator %>
   <%= link_to 'Delete', comment,
     :confirm => 'Are you sure?',
     :method => :delete %>
@@ -17,7 +17,7 @@
   <% if can? :update, comment %>
     <%= link_to 'Edit', edit_comment_path(comment)%>
   <% end %>
-  
+
   </div>
    <div class="row">
  	 <div class="col-md-1"></div>
@@ -31,7 +31,7 @@
   &nbsp;&nbsp;&nbsp;<%=h r.des %><br />
    <!....This is the check to see whether you are allowed to edit or delete a comment.....>
     <!....And thus showing the corresponding buttons or not .....>
-  <% if can? :destroy, r %>
+  <% if can? :destroy, r or currrent_user.is_moderator %>
   <%= link_to 'Delete', r,
     :confirm => 'Are you sure?',
     :method => :delete %>
@@ -46,13 +46,13 @@
   <!....This is the form for creating a new reply.....>
   <% if can? :create, comment %>
   <%= form_for @reply do|f| %>
-  
+
   <%= f.hidden_field :article_id, :value => comment.article_id %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.hidden_field :comment_id, :value => comment.id %>
-   
+
     <%= f.text_area :des %>
-    
+
     <%= f.submit "Add Reply" %>
   <% end %>
 <% end %>

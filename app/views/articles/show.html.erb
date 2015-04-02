@@ -48,27 +48,50 @@
 </div>
  <div class="col-md-2"></div>
  </div>
- 
+
 
  <!....This is the part where we call all comments.....>
- 
+
   <%= render :partial => 'comment', :collection => @article.comments %>
-  
+
   <div class="col-md-2"></div>
-  
+
    <!....This is the form for creating a new comment.....>
    <% if can? :create, @comment %>
 <%= form_for @comment do|f| %>
 
   <%= f.hidden_field :article_id, :value => @article.id%>
   <%= f.hidden_field :user_id, :value => current_user.id %>
-   
+
     <%= f.text_area :des %>
-    
+
     <%= f.submit "Add Comment" %>
   <% end %>
   <% end %>
 
-  
-  
 
+	 <ul class="nav nav-pills">
+	  <li role="presentation" class="tabClicker" data-tab="tabs-1" > <a href="#reportedArticles">Reported Articles</a></li>
+	  <li role="presentation" class="tabClicker" data-tab="tabs-2" ><a href="#reportedComments">Reported Comments </a></li>
+	  <li role="presentation" class="tabClicker" data-tab="tabs-3"><a href="#dismissedArticles">Dismissed Articles </a></li>
+		<li role="presentation" class="tabClicker" data-tab="tabs-4"><a href="#dismissedComments">Dismissed Comments </a></li>
+	</ul>
+
+	<div id="tabs-1" class="tabContent" >articles we dismiss we delete </div>
+		<div id="tabs-2" class="tabContent">comments we dismiss we delete</div>
+		<div id="tabs-3" class="tabContent" >articles we delete</div>
+		<div id="tabs-4" class="tabContent" >comments we delete</div>
+	 <script>
+	  $(function() {
+	     $(".tabClicker").click(function() {
+	      var tab = $(this).attr("data-tab");
+	       $(".tabContent").hide();
+	       $("#" + tab).show();
+	    });
+	});
+	 </script>
+	     <style>
+	      .tabContent {
+	      display:none;
+	   }
+	   </style>

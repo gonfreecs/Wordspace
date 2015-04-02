@@ -13,6 +13,7 @@
 
 	  # GET /articles/1
 	  # GET /articles/1.json
+	  #inistantiation of Comment and Reply objects 
 	   def show
 	  @user=User.find(@article.user_id)
 	  @comment = Comment.new(params[:comment])

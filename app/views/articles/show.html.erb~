@@ -55,7 +55,7 @@
   <%= render :partial => 'comment', :collection => @article.comments %>
   
   <div class="col-md-2"></div>
-  <div class="col-md-10">
+  
    <!....This is the form for creating a new comment.....>
    <% if can? :create, @comment %>
 <%= form_for @comment do|f| %>
@@ -68,7 +68,18 @@
     <%= f.submit "Add Comment" %>
   <% end %>
   <% end %>
-  </div>
+  
+  
+  <%= tabs_tag do |tab| %>
+  <%= tab.home      'Homepage' %>
+  <%= tab.dashboard 'Dashboard', articles_path %>
+<% end %>
+
+
+<p>The name of current tab is <%= current_tab %>.</p>
+
+
+
 
   
   

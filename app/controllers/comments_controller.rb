@@ -6,9 +6,11 @@ class CommentsController < ApplicationController
 	rescue_from(ActiveRecord::RecordNotFound) {
 	    raise(CanCan::AccessDenied, 'Comment is not found')
 		  }
+		  
+		  # POST action
+		  # Create and save comment inistance
   def create
   
-  # @comment = Comment.new(params[:comment])
     if @comment.save
       flash[:notice] = 'Comment was successfully created.'
       redirect_to(@comment.article)
@@ -19,7 +21,8 @@ class CommentsController < ApplicationController
     
   end
  
-  
+  # Delete action
+  # Delete comment inistance
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
@@ -27,12 +30,15 @@ class CommentsController < ApplicationController
   end
   def index
   end
+  # GET action
+  # show comment
   def show
-  		 #@user=User.find(@article.user_id)
+  
 	  @reply = Reply.new(params[:reply])
-	  #@reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
-    #redirect_to(@comment.article)
+	  
   end
+  # PUT action
+  # update comment inistance
   def update
 
 			 if @comment.update(params[:comment])
@@ -48,6 +54,8 @@ class CommentsController < ApplicationController
   end
   def new
   end
+  
+	  # Never trust parameters from the scary internet, only allow the white list through.
 	def comment_params
 			params.require(:comment).permit(:user_id, :article_id, :des)
 	end
