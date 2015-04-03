@@ -1,0 +1,16 @@
+<!% @users= User.where(:banned => 1) %>
+
+<% if @users != nil %>
+<% @users.each do|u| %>
+  
+  <b> <%=h u.firstname %> </b>
+  
+  <%= link_to 'Un-ban', u, :method => :unban %>
+   
+  <br />
+  <br />
+  <% end %>
+  
+   <% else %>
+  <p> Nothing to display </p>
+  <% end %>

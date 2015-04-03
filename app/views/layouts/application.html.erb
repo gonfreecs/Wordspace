@@ -47,7 +47,7 @@
                     <li>
                         <a href="#search"><span class="fa fa-search"></span></a>
                     </li>
-                   
+
 
 
 
@@ -58,20 +58,23 @@
                       <ul class="dropdown-menu" role="menu" style="width: 100%">
                        		<li><%= link_to "Write Article", new_article_path%></li>
                          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete%></li>
+                         <li><%= link_to "Reports", :controller => :moderators, :action => :reports %></li>
+                        <li><%= link_to "Banned Users", :controller => :moderators, :action => :banned_users %></li>
+
                       </ul>
-              
+
                     </li>
                     <!-- showing sign in and sign up if user not signed in -->
             <%else%>
-                    
+
                     <li>
                          <%= link_to "Sign in", new_user_session_path %>
                     </li>
                     <li>
                         <%= link_to "Sign up", new_user_registration_path%>
                     </li>
-            <% end %> 
-                    
+            <% end %>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

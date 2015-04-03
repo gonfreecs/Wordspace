@@ -24,6 +24,13 @@
  	 <div class="col-md-11">
    <!....This is where we loop to show all replies.....>
    <!....but only if the reply and the comment have the same comment id.....>
+
+<button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  View All Replies
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+
    <br />
   <% @replies.each do|r| %>
   <% if r.comment_id == comment.id %>
@@ -37,12 +44,18 @@
     :method => :delete %>
   <% end %>
   <% if can? :update, r %>
+	<button class="glyphicon glyphicon-edit" >
     <%= link_to 'Edit', edit_reply_path(r)%>
+	</button>
   <% end %>
   <br />
   <br />
   <% end %>
   <% end %>
+
+</div>
+</div>
+
   <!....This is the form for creating a new reply.....>
   <% if can? :create, comment %>
   <%= form_for @reply do|f| %>

@@ -1,0 +1,20 @@
+
+<!% @comments = Comment.find(Reported_comments.uniq.pluck(:comment_id)) %>
+
+<% if @comments != nil %>
+<% @comments.each do|c| %>
+  
+  <font size="4"><i><b><%=h User.find(c.user_id).firstname %> :</b></i></font><br />
+  &nbsp;&nbsp;&nbsp;<%=h c.des %><br />
+   
+   <%= link_to 'Dismiss', c, :method => :dismiss %>
+  
+  <%= link_to 'Delete', c, :confirm => 'Are you sure?', :method => :delete %>
+   
+  <br />
+  <br />
+  <% end %>
+  
+  <% else %>
+  <p> Nothing to display </p>
+  <% end %>
