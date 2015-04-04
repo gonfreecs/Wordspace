@@ -12,9 +12,9 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     if params[:tag]
-      @articles = Article.tagged_with(params[:tag],:on => :tags)
+      @articles = Article.tagged_with(params[:tag], on: 'tags')
     elsif params[:category]
-      @articles = Article.tagged_with(params[:category], :on => :categories)
+      @articles = Article.tagged_with(params[:category], on: 'categories')
     else
       @articles = Article.all
     end
