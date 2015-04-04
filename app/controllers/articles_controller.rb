@@ -25,8 +25,7 @@
 	  @replies = Reply.all
 	  @reply = Reply.new(params[:reply])
 	  #@reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
-
-  
+	  @report = Reportarticle.where("user_id = ? AND article_id = ?", current_user.id ,params[:id])  
 	  end
 
 	  # GET /articles/new
