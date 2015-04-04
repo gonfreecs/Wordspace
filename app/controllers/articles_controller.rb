@@ -12,7 +12,9 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     if params[:tag]
-      @articles = Article.tagged_with(params[:tag])
+      @articles = Article.tagged_with(params[:tag],:on => :tags)
+    elsif params[:category]
+      @articles = Article.tagged_with(params[:category], :on => :categories)
     else
       @articles = Article.all
     end
@@ -91,6 +93,6 @@ class ArticlesController < ApplicationController
   # Never trust parameters from the scary internet
   def article_params
     params.require(:article).permit(:title, :body, :user_id, :id, :image,
-                                    :tag_list)
+                                    :tag_list, :category_list)
   end
 end
