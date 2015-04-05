@@ -48,7 +48,7 @@ class CommentsController < ApplicationController
   end
   def new
   end
-
+  #Report a comment
   def report  
   reportcommenth = {"user_id" => current_user.id,
                     "comment_id" => @comment.id}

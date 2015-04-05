@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     get 'report'
   end
 end
-	resources :comments do
+	#specifying route for report action in comment controller
+  resources :comments do
   member do
     get 'report'
   end
