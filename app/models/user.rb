@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  #:recoverable,
+  # :recoverable,
 
   # making firstname and lastname required
   validates :firstname, presence: true
