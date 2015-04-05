@@ -49,7 +49,7 @@ class CommentsController < ApplicationController
   def new
   end
 
-  def report
+  def report  
   reportcommenth = {"user_id" => current_user.id,
                     "comment_id" => @comment.id}
   Reportcomment.create(reportcommenth)   

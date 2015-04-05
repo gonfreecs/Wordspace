@@ -7,7 +7,12 @@ Rails.application.routes.draw do
     get 'report'
   end
 end
-	resources :comments
+	resources :comments do
+  member do
+    get 'report'
+  end
+end
+  resources :comments
 	resources :replies
   mount RedactorRails::Engine => '/redactor_rails'
   devise_for :users
