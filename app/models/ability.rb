@@ -31,7 +31,7 @@ class Ability
 
       # Author: Mayar
       # Date: 5.4.2015
-      # Only managize managers can update magaiznes
+      # Only managize managers can update magazines
       can :update, Magazine do |m|
         (m.users.include? user)
       end
