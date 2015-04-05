@@ -14,6 +14,7 @@
   <strong>Image:</strong>
   <%= @magazine.image %>
 </p>
-
-<%= link_to 'Edit', edit_magazine_path(@magazine) %> |
+<% if can? :update, @magazine %>
+<%= link_to 'Edit', edit_magazine_path(@magazine) %> 
+<% end %>|
 <%= link_to 'Back', magazines_path %>

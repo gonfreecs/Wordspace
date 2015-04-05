@@ -13,7 +13,6 @@ class Ability
       end
       can :create, Article
       can :create, Magazine
-      can :update, Magazine
       can :update, Comment do |c|
         c.user_id == user.id
       end
@@ -30,6 +29,16 @@ class Ability
       end
       can :create, Reply
 
+      # Author: Mayar
+      # Date: 5.4.2015
+      # Only managize managers can update magaiznes
+      can :update, Magazine do |m|
+        (m.users.include? user)
+      end
+      
+
+
+
       if user.is_moderator
         can :destroy, Article
         can :destroy, Comment
@@ -37,5 +46,6 @@ class Ability
         can :destroy, Magazine
       end
     end
-  end
- end
+end
+end
+
