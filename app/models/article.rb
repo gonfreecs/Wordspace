@@ -3,11 +3,9 @@ class Article < ActiveRecord::Base
   # adding The uploader to Image field
   # adding relation between user and articles
   mount_uploader :image, ImgUploader
-#  each article belongs to  user 
-  belongs_to:user
+  #  each article belongs to  user
+  belongs_to :user
   validates :user_id, presence: true
-
-
 
   # Check if image size is larger than 5 MB
   def image_size

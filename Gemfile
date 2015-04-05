@@ -1,4 +1,4 @@
-source 'https://rubygems.org' 
+source 'https://rubygems.org'
 gem 'acts-as-taggable-on', '~> 3.4'
 # for social share button
 gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
