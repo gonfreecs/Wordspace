@@ -19,6 +19,9 @@ class Ability
  		can :destroy, Comment do |co|
  			 co.user_id == user.id
  		end
+ 		can :report, Comment do |comment|
+ 			 Aricle.find(comment.article_id).user_id == user.id
+ 		end
 		can :create, Comment
 
 		can :update, Reply do |r|

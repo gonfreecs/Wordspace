@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+  has_many :reportcomments
+  has_many :comments, through: :reportcomments
 
-	has_many :reportarticles
+	
+  has_many :reportarticles
 	has_many :articles, through: :reportarticles
 # to upload avatar for user
  mount_uploader :avatar, AvatarUploader

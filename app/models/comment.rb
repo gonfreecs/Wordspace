@@ -1,4 +1,7 @@
 class Comment < ActiveRecord::Base
+	has_many :users, through: :reportcomments
+	has_many :reportcomments
+
 	# A comment belongs to an Article and has many replies and has a field for description
 	belongs_to :article
 	validates_presence_of :des 

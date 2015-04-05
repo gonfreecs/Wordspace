@@ -17,6 +17,9 @@
   <% if can? :update, comment %>
     <%= link_to 'Edit', edit_comment_path(comment)%>
   <% end %>
+  <% if can? :report, comment %>
+    <%= link_to 'Report', comments_path(@comment) %> 
+  <% end %>
   
   </div>
    <div class="row">
