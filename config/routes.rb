@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   devise_for :users
   get 'main/index'
   root 'main#index'
-<<<<<<< HEAD
- resources:articles
-#route to profile
- resources :users, :only => :show
+  resources :articles
+  # mohab
+  # 1.4.2015
+  # route to profile
+  resources :users, only: :show
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -66,7 +67,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-=======
-  resources :articles
->>>>>>> 1b23ad1dcd3df787884ec7cef58e6fff5845059d
 end
