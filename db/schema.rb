@@ -11,92 +11,94 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_150_331_213_038) do
-  create_table 'articles', force: :cascade do |t|
-    t.string 'title'
-    t.text 'body'
-    t.string 'image'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'user_id'
+ActiveRecord::Schema.define(version: 20150331213038) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
-  create_table 'comments', force: :cascade do |t|
-    t.integer 'article_id'
-    t.text 'des'
-    t.integer 'user_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "comments", force: :cascade do |t|
+    t.integer  "article_id"
+    t.text     "des"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'redactor_assets', force: :cascade do |t|
-    t.integer 'user_id'
-    t.string 'data_file_name',               null: false
-    t.string 'data_content_type'
-    t.integer 'data_file_size'
-    t.integer 'assetable_id'
-    t.string 'assetable_type',    limit: 30
-    t.string 'type',              limit: 30
-    t.integer 'width'
-    t.integer 'height'
-    t.datetime 'created_at'
-    t.datetime 'updated_at'
+  create_table "redactor_assets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index 'redactor_assets', %w(assetable_type assetable_id), name: 'idx_redactor_assetable'
-  add_index 'redactor_assets', %w(assetable_type type assetable_id), name: 'idx_redactor_assetable_type'
+  add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable"
+  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type"
 
-  create_table 'replies', force: :cascade do |t|
-    t.text 'des'
-    t.integer 'user_id'
-    t.integer 'article_id'
-    t.integer 'comment_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "replies", force: :cascade do |t|
+    t.text     "des"
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.integer  "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'taggings', force: :cascade do |t|
-    t.integer 'tag_id'
-    t.integer 'taggable_id'
-    t.string 'taggable_type'
-    t.integer 'tagger_id'
-    t.string 'tagger_type'
-    t.string 'context',       limit: 128
-    t.datetime 'created_at'
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
   end
 
-  add_index 'taggings', %w(tag_id taggable_id taggable_type context tagger_id tagger_type), name: 'taggings_idx', unique: true
-  add_index 'taggings', %w(taggable_id taggable_type context), name: 'index_taggings_on_taggable_id_and_taggable_type_and_context'
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
-  create_table 'tags', force: :cascade do |t|
-    t.string 'name'
-    t.integer 'taggings_count', default: 0
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
   end
 
-  add_index 'tags', ['name'], name: 'index_tags_on_name', unique: true
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'email',                  default: '',    null: false
-    t.string 'encrypted_password',     default: '',    null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.integer 'sign_in_count',          default: 0,     null: false
-    t.datetime 'current_sign_in_at'
-    t.datetime 'last_sign_in_at'
-    t.string 'current_sign_in_ip'
-    t.string 'last_sign_in_ip'
-    t.datetime 'created_at'
-    t.datetime 'updated_at'
-    t.integer 'is_sponsor',             default: 0
-    t.boolean 'is_moderator',           default: false
-    t.string 'firstname'
-    t.string 'lastname'
-    t.text 'about_me'
-    t.boolean 'is_female',              default: false
-    t.string 'avatar'
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,     null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "is_sponsor",             default: 0
+    t.boolean  "is_moderator",           default: false
+    t.string   "firstname"
+    t.string   "lastname"
+    t.text     "about_me"
+    t.boolean  "is_female",              default: false
+    t.string   "avatar"
   end
 
-  add_index 'users', ['email'], name: 'index_users_on_email', unique: true
-  add_index 'users', ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
 end
