@@ -4,8 +4,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
 gem 'social-share-button'
 # for avatar upload (carrierwave	)
-gem "carrierwave"
-gem "rmagick"
+gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -29,8 +28,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'redactor-rails'
-gem "carrierwave"
-gem "mini_magick"
+gem 'carrierwave'
+gem 'mini_magick'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -39,12 +38,12 @@ gem "mini_magick"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "twitter-bootstrap-rails"
-gem "font-awesome-rails"
+gem 'twitter-bootstrap-rails'
+gem 'font-awesome-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-   gem 'cancan'
+  gem 'cancan'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-
-  #adding resources
+  # adding resources
   resources :sponsors
   resources :articles
-	resources :comments
-	resources :replies
+  resources :comments
+  resources :replies
   mount RedactorRails::Engine => '/redactor_rails'
   devise_for :users
   get 'main/index'
   root 'main#index'
+<<<<<<< HEAD
  resources:articles
 #route to profile
  resources :users, :only => :show
@@ -66,4 +66,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+=======
+  resources :articles
+>>>>>>> 1b23ad1dcd3df787884ec7cef58e6fff5845059d
 end
