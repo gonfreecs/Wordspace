@@ -4,8 +4,8 @@
 class Magazine < ActiveRecord::Base
   # Author: Mohammed El-Ansary
   # 5.4.2015
-  # adding The uploader to Image field
-  # adding relation between magazines and articles, users
+  # The uploader to Image field
+  # Relation between magazines and articles, users
   mount_uploader :image, ImgUploader
   has_many :articles
   has_and_belongs_to_many :users
