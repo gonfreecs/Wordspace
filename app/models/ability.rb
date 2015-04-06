@@ -14,6 +14,7 @@ class Ability
       can :create, Article
       can :create, Magazine
       can :update, Magazine
+      can :join, Magazine
       can :update, Comment do |c|
         c.user_id == user.id
       end

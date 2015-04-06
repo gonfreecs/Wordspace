@@ -81,6 +81,14 @@ class MagazinesController < ApplicationController
     redirect_to @magazine
   end
 
+  def join
+    joinh = { "user_id" => current_user.id, "magazine_id" => params[:id] }
+    Requestjoiningmagazine.create(joinh)
+    flash[:notice] = "A joining request has been sent."
+    @magazine = Magazine.find(params[:id])
+    redirect_to @magazine
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

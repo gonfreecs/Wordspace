@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= flash[:notice]%>
 <p>
   <strong>Name:</strong>
   <%= @magazine.name %>
@@ -16,4 +16,5 @@
 </p>
 
 <%= link_to 'Edit', edit_magazine_path(@magazine) %> |
-<%= link_to 'Back', magazines_path %>
+<%= link_to 'Back', magazines_path %> |
+<%= link_to 'Join this magazine', action: "join" %>
