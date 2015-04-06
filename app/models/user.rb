@@ -1,5 +1,6 @@
 # User Model
 class User < ActiveRecord::Base
+  # many-to-many relationship between user requests joining magazine
   has_many :requestjoiningmagazines
   has_many :magazines, through: :requestjoiningmagazines
 

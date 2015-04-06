@@ -83,6 +83,7 @@ class MagazinesController < ApplicationController
     redirect_to @magazine
   end
 
+  # Request joining a magazine
   def join
     joinh = { "user_id" => current_user.id, "magazine_id" => params[:id] }
     Requestjoiningmagazine.create(joinh)
