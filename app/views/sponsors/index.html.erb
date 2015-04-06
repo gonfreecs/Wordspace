@@ -1,38 +1,45 @@
-<div class="editor" >
-<h1>Sponsoring requests</h1>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "cbpFWTabs.js" %>
+<% end %>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "modernizr.custom.js" %>
+<% end %>
+<section>
+<div class= "row">
+      <div class="tabs tabs-style-circle">
+        <div class= "col-md-2">
 
-   <div class="row">
-    <div class="col-sm-3 ">
-    Name
-    </div>
-       <div class="col-sm-3 ">
-    email
-    </div>
-   </div>
+        <nav>
+          <ul>
 
-    <% @reqspon.each do |s| %>
-    
-      <div class="row">
-      <div class="col-sm-3 ">
-      <% @s = s %>
-      <%= s.firstname %>  &nbsp;<%= s.lastname %>
+            <li><a href="#section-circle-1" class="icon icon-plug"><span></span></a></li>
+            <li><a href="#section-circle-2" class="icon icon-gift"><span>Gifts</span></a></li>
+            <li><a href="#section-circle-3" class="icon icon-box"><span>Boxes</span></a></li>
+            <li><a href="#section-circle-4" class="icon icon-date"><span>Prints</span></a></li>
+            <li><a href="#section-circle-5" class="icon icon-plane"><span>Fun</span></a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="col-sm-3 ">
-      <%= s.email %>
+      <div class= "col-md-8">
+        <div class="content-wrap">
+
+          <section id="section-circle-1"><div class ="well">asdasdasd</div></section>
+          <section id="section-circle-2"><p>2</p></section>
+          <section id="section-circle-3"><p>3</p></section>
+          <section id="section-circle-4"><p>4</p></section>
+          <section id="section-circle-5"><p>5</p></section>
+        </div><!-- /content -->
       </div>
+      </div><!-- /tabs -->
 
-      <div class="col-sm-3 ">
-       <%= link_to 'Approve', sponsors_path(@s,:type =>"Approve") %>
-       </div>
+  </div>
+</section>
+    <script>
+      (function() {
 
-       <div class="col-sm-3 ">
-       <%= link_to 'Reject', sponsors_path(@s,:type =>"Reject") %> 
-       </div>
-       </div>
-   <%end%>
-  <% if @reqspon.size == 0 %>
-    <em>No sponsoring requests are found</em>
-  <% end %>
+        [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+          new CBPFWTabs( el );
+        });
 
-
-</div>
+      })();
+    </script>

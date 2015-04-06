@@ -35,7 +35,8 @@
           can :index, :sponsor
     		end
         if user.is_sponsor
-          can :create, Bid 
+          can :create, Bid
+          can :show, :sponsor
           can :bid, Article do|a|
             !a.is_sponsored && Bid.where({:user_id => user.id, :article_id => a.id })==[]
           end
