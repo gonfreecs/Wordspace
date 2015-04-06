@@ -49,13 +49,21 @@
  <div class="col-md-2"></div>
  </div>
 
+<hr>
+<div class="row">
+<div class="col-md-2"></div>
+
+<font size="6"><strong> Comments </strong></font>
 
  <!....This is the part where we call all comments.....>
 
   <%= render :partial => 'comment', :collection => @article.comments %>
 
-  <div class="col-md-2"></div>
+</div>
+<div class = "row">
 
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
    <!....This is the form for creating a new comment.....>
    <% if can? :create, @comment %>
 <%= form_for @comment do|f| %>
@@ -63,35 +71,11 @@
   <%= f.hidden_field :article_id, :value => @article.id%>
   <%= f.hidden_field :user_id, :value => current_user.id %>
 
-    <%= f.text_area :des %>
+    <%= f.text_area :des, :class =>"form-control", :placeholder=>"Write your comment here...",:type=>"text" %>
 
-    <%= f.submit "Add Comment" %>
+    <%= f.submit "Add Comment" ,:type=>"text", :class =>"btn btn-default" %>
   <% end %>
   <% end %>
-
-
-	 <ul class="nav nav-pills">
-	  <li role="presentation" class="tabClicker" data-tab="tabs-1" > <a href="#reportedArticles">Reported Articles</a></li>
-	  <li role="presentation" class="tabClicker" data-tab="tabs-2" ><a href="#reportedComments">Reported Comments </a></li>
-	  <li role="presentation" class="tabClicker" data-tab="tabs-3"><a href="#dismissedArticles">Dismissed Articles </a></li>
-		<li role="presentation" class="tabClicker" data-tab="tabs-4"><a href="#dismissedComments">Dismissed Comments </a></li>
-	</ul>
-
-	<div id="tabs-1" class="tabContent" >articles we dismiss we delete </div>
-		<div id="tabs-2" class="tabContent">comments we dismiss we delete</div>
-		<div id="tabs-3" class="tabContent" >articles we delete</div>
-		<div id="tabs-4" class="tabContent" >comments we delete</div>
-	 <script>
-	  $(function() {
-	     $(".tabClicker").click(function() {
-	      var tab = $(this).attr("data-tab");
-	       $(".tabContent").hide();
-	       $("#" + tab).show();
-	    });
-	});
-	 </script>
-	     <style>
-	      .tabContent {
-	      display:none;
-	   }
-	   </style>
+</div>
+<div class="col-md-2"></div>
+</div>

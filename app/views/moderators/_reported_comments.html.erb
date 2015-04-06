@@ -3,18 +3,36 @@
 
 <% if @comments != nil %>
 <% @comments.each do|c| %>
-  
-  <font size="4"><i><b><%=h User.find(c.user_id).firstname %> :</b></i></font><br />
-  &nbsp;&nbsp;&nbsp;<%=h c.des %><br />
-   
-   <%= link_to 'Dismiss', c, :method => :dismiss %>
-  
-  <%= link_to 'Delete', c, :confirm => 'Are you sure?', :method => :delete %>
-   
-  <br />
-  <br />
-  <% end %>
-  
+
+<div class="row">
+    <div class="col-md-2"></div>
+<div class="col-md-2">
+  <div class="commenterImage">
+  <img src= "http://fc00.deviantart.net/fs71/f/2013/012/5/f/portrait_of_anime__black_skinned_boy__by_sunoflove-d5r9fau.png" >
+  </div>
+</div><!-- /col-sm-1 -->
+<div class="col-md-8">
+<div class="panel panel-default">
+  <div class="panel-heading">
+
+<strong><font size="5"><%= User.find(c.user_id).firstname %></font></strong> <span class="text-muted">on <%= comment.created_at.to_s[0,10] %></span>
+
+<%= link_to '<font size ="5" color="black" ><span class = "fa fa-trash" ></span></font>'.html_safe , c,
+:confirm => 'Are you sure?',
+:method => :delete %>
+
+<%= link_to '<font size ="5" color="black" ><span class = "fa fa-pencil-square-o" ></span></font>'.html_safe , c, :method => :dismiss%>
+
+
+</div><!-- /panel panel-heading -->
+<div class="panel-body">
+ <font size ="3"><%= c.des %></font>
+</div><!-- /panel-body -->
+</div><!-- /panel panel-default -->
+</div><!-- /10 -->
+  <div class="col-md-2"></div>
+</div> <!-- /row -->
+<%end%>
   <% else %>
   <p> Nothing to display </p>
   <% end %>

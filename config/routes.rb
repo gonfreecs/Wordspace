@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   get 'main/index'
   root 'main#index'
  resources:articles
- get "moderators/reports" => 'moderators#reports', :as => :reports
- get "moderators/banned_users" => 'moderators#banned_users', :as => :banned_users
- resources :moderators
+ #get "moderators/reports" => 'moderators#reports', :as => :reports
+ #get "moderators/banned_users" => 'moderators#banned_users', :as => :banned_users
+ #resources :moderators
+ get "users/reports" => 'users#reports', :as => :reports
+ get "users/banned_users" => 'users#banned_users', :as => :banned_users
+ resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
