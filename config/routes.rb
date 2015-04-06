@@ -1,18 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'bids/index'
-
-  get 'bids/new'
-
-  get 'bids/show'
-
-  get 'bids/create'
-
-  get 'bids/update'
-
-  get 'bids/destroy'
-
-  get 'bids/edit'
+  resources :bids
 
   #adding resources
   resources :sponsors

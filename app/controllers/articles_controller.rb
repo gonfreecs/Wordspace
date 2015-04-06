@@ -23,7 +23,7 @@
 	  @replies = Reply.all
 	  @reply = Reply.new(params[:reply])
 	  #@reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
-
+		@bid=Bid.new
 	  end
 
 	  # GET /articles/new
@@ -79,8 +79,7 @@ def check_for_cancel
   end
 end
 def bid
-	@ar= Article.find(params[:a2_id])
-	redirect_to :controller => :bids	, :action => :create, :a_id => @ar.id
+
 end
 	  private
 	  # Use callbacks to share common setup or constraints between actions.

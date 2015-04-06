@@ -30,16 +30,22 @@
  p.small {
      font-size: 16px;
  }
-
+.button-wrap{
+  background-color: transparent !important ;
+}
  a,
- a:hover,
+
  a:focus,
- a:active,
+
  a.active {
      outline: 0;
      color: #18bc9c;
  }
-
+ a:hover,a:hover{
+   text-decoration: none ;
+   background-color: transparent ;
+   color: black ;
+ }
  h1,
  h2,
  h3,
@@ -568,17 +574,17 @@ figure.effect-sadie:hover p {
   position: relative;
   width: 540px;
 }
- 
+
 .polaroid img {
-  
+
   border: 10px solid #fff;
   border-bottom: 45px solid #fff;
   -webkit-box-shadow: 3px 3px 3px #777;
      -moz-box-shadow: 3px 3px 3px #777;
           box-shadow: 3px 3px 3px #777;
-          
+
 }
- 
+
 .polaroid p {
   position: absolute;
   text-align: center;
