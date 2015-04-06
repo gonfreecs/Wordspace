@@ -2,6 +2,9 @@
 # 5.4.2015
 # Magazines model
 class Magazine < ActiveRecord::Base
+  has_many :requestjoiningmagazines
+  has_many :users, through: :requestjoiningmagazines
+
   # Author: Mohammed El-Ansary
   # 5.4.2015
   # The uploader to Image field
