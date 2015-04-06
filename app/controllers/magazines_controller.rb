@@ -21,6 +21,8 @@ class MagazinesController < ApplicationController
   # GET /magazines/1
   # GET /magazines/1.json
   def show
+    @users = @magazine.users
+    @articles = Article.where(magazine_id: params[:id])
   end
 
   # GET /magazines/new
