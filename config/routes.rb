@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
-
-  #adding resources
+  # adding resources
   resources :sponsors
   resources :articles
-	resources :comments
-	resources :replies
+  resources :comments
+  resources :replies
   mount RedactorRails::Engine => '/redactor_rails'
   devise_for :users
   get 'main/index'
   root 'main#index'
- resources:articles
-#route to profile
- resources :users, :only => :show
+  resources :articles
+  # mohab
+  # 1.4.2015
+  # route to profile
+  resources :users, only: :show
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
