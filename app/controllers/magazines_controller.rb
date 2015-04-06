@@ -21,6 +21,8 @@ class MagazinesController < ApplicationController
   # GET /magazines/1
   # GET /magazines/1.json
   def show
+    @join = Requestjoiningmagazine
+    .where('user_id = ? AND magazine_id = ?', current_user.id, params[:id])
   end
 
   # GET /magazines/new
@@ -84,7 +86,6 @@ class MagazinesController < ApplicationController
   def join
     joinh = { "user_id" => current_user.id, "magazine_id" => params[:id] }
     Requestjoiningmagazine.create(joinh)
-    flash[:notice] = "A joining request has been sent."
     @magazine = Magazine.find(params[:id])
     redirect_to @magazine
   end

@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-<%= flash[:notice]%>
+<% if @join.present? %>
+<%= flash[:notice] = "You have requested joining this magazine." %>
+<% end %>
 <p>
   <strong>Name:</strong>
   <%= @magazine.name %>
