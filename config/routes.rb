@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
   resources :magazines
-  resources :magazinesjoin
   resources :magazines do
     member do
       get 'join'
+    end
+  end
+  resources :magazines do
+    member do
+      get 'showrequests'
+    end
+  end
+  resources :magazines do
+    member do
+      get 'approverequest'
     end
   end
 

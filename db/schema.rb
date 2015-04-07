@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150407103735) do
+ActiveRecord::Schema.define(version: 20150406201640) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -30,16 +30,6 @@ ActiveRecord::Schema.define(version: 20150407103735) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "joinmagazines", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "magazine_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "joinmagazines", ["magazine_id"], name: "index_joinmagazines_on_magazine_id"
-  add_index "joinmagazines", ["user_id"], name: "index_joinmagazines_on_user_id"
 
   create_table "magazines", force: :cascade do |t|
     t.string   "name"

@@ -85,10 +85,30 @@ class MagazinesController < ApplicationController
 
   # Request joining a magazine
   def join
-    joinh = { "user_id" => current_user.id, "magazine_id" => params[:id] }
+    joinh = { 'user_id' => current_user.id, 'magazine_id' => params[:id] }
     Requestjoiningmagazine.create(joinh)
     @magazine = Magazine.find(params[:id])
     redirect_to @magazine
+  end
+
+  def showrequests
+    @request = Requestjoiningmagazine.where('magazine_id = ?', params[:id])
+    @users = []
+    @request.each do |r|
+      @users.push(User.find(r.user_id))
+    end
+  end
+
+  def approverequest
+    @req = Requestjoiningmagazine.where("user_id = ? AND magazine_id = ?", params[:user], params[:id])
+    @req.destroy_all
+    joinh = { 'user_id' => params[:user], 'magazine_id' => params[:id] }
+    Requestjoiningmagazine.destroy_all(joinh)
+
+    @magazine = Magazine.find(params[:id])
+    @user = User.find(params[:user])
+    @magazine.users << @user
+    redirect_to :action => :showrequests
   end
 
   private

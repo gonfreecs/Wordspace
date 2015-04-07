@@ -1,0 +1,37 @@
+<div class="editor" >
+<h1>Joining requests</h1>
+
+   <div class="row">
+    <div class="col-sm-3 ">
+    Name
+    </div>
+       <div class="col-sm-3 ">
+    email
+    </div>
+   </div>
+   
+    <% @users.each do |user| %>
+
+      <div class="row">
+      <div class="col-sm-3 ">
+      <%= user.firstname %>  &nbsp;<%= user.lastname %>
+      </div>
+      <div class="col-sm-3 ">
+      <%= user.email %>
+      </div>
+
+      <div class="col-sm-3 ">
+       <%= link_to 'Approve', {:action => "approverequest", :user => user.id } %>
+       </div>
+
+       <div class="col-sm-3 ">
+       <%= link_to 'Reject', sponsors_path(@s,:type =>"Reject") %>
+       </div>
+       </div>
+   <%end%>
+  <% if @users.size == 0 %>
+    <em>No Joining requests are found</em>
+  <% end %>
+
+
+</div>
