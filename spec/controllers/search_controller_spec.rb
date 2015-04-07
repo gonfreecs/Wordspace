@@ -15,12 +15,5 @@ RSpec.describe SearchController, type: :controller do
       get :search, query: ''
       response.should redirect_to 'test'
     end
-    it 'does not allow extra params' do
-      get :search, query: 'test', name: 'test'
-      puts :query
-      puts :name
-      assigns(:name).should.nil?
-      assigns(:query).should == 'test'
-    end
   end
 end
