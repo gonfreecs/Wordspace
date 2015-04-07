@@ -25,6 +25,9 @@ end
   end
 
   def destroy
+    bid = Bid.find(params[:bid_id])
+    bid.destroy
+    redirect_to  :controller => :sponsors	, :action => :control
   end
 
   def edit

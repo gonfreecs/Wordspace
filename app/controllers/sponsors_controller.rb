@@ -11,7 +11,7 @@ class SponsorsController < ApplicationController
 
 
   end
-def show
+def control
   @pending_bids= Bid.where({user_id:12 }).pending.order(created_at: :desc)
   @accepted_bids= Bid.where({user_id:12 }).accepted.order(created_at: :desc)
 

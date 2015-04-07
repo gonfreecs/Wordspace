@@ -57,6 +57,11 @@
                       <ul class="dropdown-menu" role="menu" style="width: 100%">
 
                        		<li><%= link_to "Write Article", new_article_path%></li>
+                           <% if current_user.is_sponsor %>
+                           <li>
+                             <%= link_to "Sponsor Controls", :controller => :sponsors	, :action => :control %>
+                           </li>
+                           <%end %>
                            <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
                          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete%></li>
                          </ul>

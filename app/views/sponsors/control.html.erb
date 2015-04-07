@@ -1,0 +1,70 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "cbpFWTabs.js" %>
+<% end %>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "modernizr.custom.js" %>
+<% end %>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+  <h1><span class="fa fa-cog"></span> Sponsor Controls </h1>
+  </div>
+  <div class= "row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+<section>
+<div class="row">
+      <div class="tabs tabs-style-circle">
+        <div class= "col-md-4">
+          <br><br><br><br><br>
+        <nav>
+          <ul>
+
+            <li><font size="6"><a href="#section-circle-1" class="fa fa-money" ><span>Pending</span></a></font></li>
+              <li><font size="6"><a href="#section-circle-2" class="fa fa-newspaper-o"><span>Articles</span></a></font></li>
+                <li><font size="6"><a href="#section-circle-3" class="fa fa-code "><span>Ads</span></a></font></li>
+                <li><font size="6"><a href="#section-circle-4" class="fa fa-plus-square "><span>New Ad</span></a></font></li>
+
+          </ul>
+        </nav>
+      </div>
+      <div class= "col-md-8">
+        <div class="content-wrap">
+
+          <section id="section-circle-1">
+            <%@pending_bids.each do |bid|%>
+            <div class ="well">	<img src= <%= Article.find(bid.article_id).image %> height="200" width="200" class="center">
+              <h5><%= link_to Article.find(bid.article_id).title , Article.find(bid.article_id) %></h5>
+
+          <h6>  By:  <%= User.find(Article.find(bid.article_id).user_id).firstname %>
+            <%= User.find(Article.find(bid.article_id).user_id).lastname %></h6>
+            <%= link_to '<span class="fa fa-trash"></span>'.html_safe,  controller: :bids	, action: :destroy, bid_id: bid.id %>
+          </div>
+            <%end%></section>
+          <section id="section-circle-2">
+             <%  @accepted_bids.each do |bid|%>
+              <div class ="well">	<img src= <%= Article.find(bid.article_id).image %> height="200" width="200" class="center">
+                <h5><%= link_to Article.find(bid.article_id).title , Article.find(bid.article_id) %></h5>
+
+            <h6>  By:  <%= User.find(Article.find(bid.article_id).user_id).firstname %>
+              <%= User.find(Article.find(bid.article_id).user_id).lastname %></h6>
+            </div>
+              <%end%></section>
+          <section id="section-circle-3"><p>3</p></section>
+          <section id="section-circle-4"><p>4</p></section>
+          <section id="section-circle-5"><p>5</p></section>
+        </div><!-- /content -->
+      </div>
+      </div><!-- /tabs -->
+    </div>
+
+</section>
+</div>
+</div>
+    <script>
+      (function() {
+        [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+          new CBPFWTabs( el );
+        });
+      })();
+    </script>

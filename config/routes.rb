@@ -15,10 +15,16 @@ Rails.application.routes.draw do
   get 'bids/edit'
 
   #adding resources
-  resources :sponsors
+  resources :sponsors do
+    collection do
+      get 'control'
+      get 'delete'
+    end
+  end
   resource :articles do
     collection do
      get 'bid'
+
    end
 end
 resources :articles
