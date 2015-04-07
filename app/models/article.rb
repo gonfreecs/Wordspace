@@ -1,7 +1,11 @@
+# Article Model
 class Article < ActiveRecord::Base
   # adding The uploader to Image field
   # adding relation between user and articles
   mount_uploader :image, ImgUploader
+  # mohab
+  # 1.4.2015
+  #  each article belongs to  user
   belongs_to :user
   validates :user_id, presence: true
   # Alias for acts_as_taggable_on :tags

@@ -5,6 +5,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module WordSp
+  # Application
   class Application < Rails::Application
 # mohab
 # 3.4.2015
@@ -46,6 +47,4 @@ end
 
     config.active_record.raise_in_transactional_callbacks = true
   end
-
-
 end

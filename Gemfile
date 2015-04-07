@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # 3.4.2015
 # add tag gem
 gem 'acts-as-taggable-on', '~> 3.4'
+# mohab
+# 1/4/2015
+# for social share button
 gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
 gem 'social-share-button'
 # for avatar upload (carrierwave	)
@@ -43,7 +46,6 @@ gem 'mini_magick'
 # gem 'capistrano-rails', group: :development
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
-
 group :development, :test do
   # mohab
   # 3.4.2015
