@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320160850) do
+
+ActiveRecord::Schema.define(version: 20150327090927) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -20,41 +21,60 @@ ActiveRecord::Schema.define(version: 20150320160850) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+
+  create_table 'comments', force: :cascade do |t|
+    t.integer 'article_id'
+    t.text 'des'
+    t.integer 'user_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.integer  "article_id"
-    t.text     "des"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'redactor_assets', force: :cascade do |t|
+    t.integer 'user_id'
+    t.string 'data_file_name',               null: false
+    t.string 'data_content_type'
+    t.integer 'data_file_size'
+    t.integer 'assetable_id'
+    t.string 'assetable_type',    limit: 30
+    t.string 'type',              limit: 30
+    t.integer 'width'
+    t.integer 'height'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  create_table "redactor_assets", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "data_file_name",               null: false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.integer  "assetable_id"
-    t.string   "assetable_type",    limit: 30
-    t.string   "type",              limit: 30
-    t.integer  "width"
-    t.integer  "height"
+  add_index 'redactor_assets', %w(assetable_type assetable_id), name: 'idx_redactor_assetable'
+  add_index 'redactor_assets', %w(assetable_type type assetable_id), name: 'idx_redactor_assetable_type'
+
+  create_table 'replies', force: :cascade do |t|
+    t.text 'des'
+    t.integer 'user_id'
+    t.integer 'article_id'
+    t.integer 'comment_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
     t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
-  add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable"
-  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type"
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
-  create_table "replies", force: :cascade do |t|
-    t.text     "des"
-    t.integer  "user_id"
-    t.integer  "article_id"
-    t.integer  "comment_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
   end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -76,9 +96,9 @@ ActiveRecord::Schema.define(version: 20150320160850) do
     t.text     "about_me"
     t.boolean  "is_female",              default: false
     t.string   "avatar"
+
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
+  add_index 'users', ['email'], name: 'index_users_on_email', unique: true
+  add_index 'users', ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
 end
