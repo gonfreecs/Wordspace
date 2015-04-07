@@ -19,4 +19,5 @@
 <%= link_to 'Edit', edit_magazine_path(@magazine) %> |
 <%= link_to 'Back', magazines_path %> |
 <! link to request joining magazine>
-<%= link_to 'Join this magazine', action: "join" %>
+<%= link_to 'Join this magazine', action: "join" %> |
+<%= link_to 'View joining requests', {:controller => 'magazinesjoin', :action => 'index', :magazine => @magazine.id }%>

@@ -2,6 +2,8 @@
 # 5.4.2015
 # Magazines model
 class Magazine < ActiveRecord::Base
+  has_many :joinmagazines
+  has_many :magazines, through: :joinmagazines
   # many-to-many relationship between magazine
   # requested to join to by many users
   has_many :requestjoiningmagazines
