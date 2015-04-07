@@ -38,7 +38,14 @@ class ArticlesController < ApplicationController
   def create
     @article.user = current_user
 
+    # Author: Mayar
+    # Date: 7.4.2015
+    # Description: adding magazine parameter to article of magazine
+   unless params[:magazine_id].nil?
+  @article.magazine_id = params[:magazine_id]
+    end
     respond_to do |format|
+
       if @article.save
         format.html { redirect_to @article, notice: 'Article was created.' }
       else
@@ -86,6 +93,6 @@ class ArticlesController < ApplicationController
 
   # Never trust parameters from the scary internet
   def article_params
-    params.require(:article).permit(:title, :body, :user_id, :id, :image)
+    params.require(:article).permit(:title, :body, :user_id, :id, :image, :magazine_id)
   end
 end

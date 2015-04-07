@@ -22,13 +22,11 @@
 <% if can? :update, @magazine %>
 <%= link_to 'Edit', edit_magazine_path(@magazine) %> 
 <%end%>
-<!---------------------------->
+
 <% if can? :update, @magazine %>
-<% if can? :create, @article %> 
-<%= form_for @article do|f| %>
-    <%= f.hidden_field :magazine_id, :value => @magazine.id%>
-<%= link_to "New Article",  new_article_form(@article) %>
+    
+<%= link_to "New Article",  new_article_path(magazine_id: @magazine.id) %>
+
 <%end%>
-<%end%>
-<% end %>
+
 

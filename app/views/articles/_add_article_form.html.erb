@@ -29,8 +29,6 @@
         <p><%= f.text_area :body,:class => "redactor", :rows => 40, :cols => 120%></p>
       </div>
     </div>
-    <%= form_for @article do|f| %>
-    <%= f.hidden_field :magazine_id, :value => @magazine.id%>
     <!-- Submit Article -->
     <div class="row">
       <div class="col-sm-12">
