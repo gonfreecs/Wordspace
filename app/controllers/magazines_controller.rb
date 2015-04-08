@@ -9,9 +9,6 @@ class MagazinesController < ApplicationController
     fail(CanCan::AccessDenied, 'Article is not found')
   end
   before_action :set_magazine, only: [:show, :edit, :update, :destroy]
-  # check if cancel => no updates performed
-  before_action :check_for_cancel, only: [:create, :update]
-
   # GET /magazines
   # GET /magazines.json
   def index
@@ -73,12 +70,6 @@ class MagazinesController < ApplicationController
       format.html { redirect_to magazines_url, notice: 'Magazine was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  # Cancel an update and return to magazine page
-  def check_for_cancel
-    return false if params[:commit] != 'Cancel'
-    redirect_to @magazine
   end
 
   private
