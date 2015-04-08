@@ -93,8 +93,11 @@ class MagazinesController < ApplicationController
     redirect_to @magazine
   end
 
-  # Show joining requests to a magazine
   def showrequests
+    #Author:Mina Hany
+    #5.4.2015
+    #Obtain all requests having the magaine id and get the
+    #corresponding users and put them in array to view them
     @request = Requestjoiningmagazine.where('magazine_id = ?', params[:id])
     @users = []
     @request.each do |r|
@@ -102,8 +105,11 @@ class MagazinesController < ApplicationController
     end
   end
 
-  # Approve joining requests to a magazine
   def approverequest
+    #Author:Mina Hany
+    #5.4.2015
+    #Remove the specified request from the joining requests and
+    #add the specified user to magaine's collaborators
     @req = Requestjoiningmagazine.where(
       "user_id = ? AND magazine_id = ?",
       params[:user],
@@ -115,8 +121,10 @@ class MagazinesController < ApplicationController
     redirect_to action: :showrequests
   end
 
-  # Reject joining requests to a magazine
   def rejectrequest
+    #Author:Mina Hany
+    #5.4.2015
+    #Remove the specified request from the joining requests
     @req = Requestjoiningmagazine.where(
       "user_id = ? AND magazine_id = ?",
       params[:user],
