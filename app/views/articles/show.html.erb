@@ -19,6 +19,8 @@
               <p><%= @user.firstname %> <%= @user.lastname %> </p>
               <h5> created at: </h5>
               <p> <%=  @article.created_at.to_s[0,10] %> </p>
+              <% if @article.promoted %>
+              <% else%>
               <% if can? :promotion , @article %>
           <%= form_for @article do|f| %>
             <% if can? :promotion_gold, @article %>
@@ -39,6 +41,7 @@
             <%= f.hidden_field :image, :value => @article.image%>
             <%= f.submit "Promote Article" %>
           <% end %>
+        <% end %>
         <% end %>
               <!-- this is the edit and delete buttons section. Using CanCan to check whether the user is able to edit or delete if yes the buttons are shown and if no the buttons are not, editing redirects to the edit page and the delete button asks if the user is sure he/she wants to delete then if the answer is yes the article is deleted -->
               <% if can? :update, @article %>
