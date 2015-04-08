@@ -8,7 +8,7 @@
 		  # check if cancel => no updates performed
 	before_filter :check_for_cancel, :only => [:create, :update]
 
-	
+
 	  # GET /articles
 	  # GET /articles.json
 	  def index
@@ -17,7 +17,7 @@
 
 	  # GET /articles/1
 	  # GET /articles/1.json
-	  #inistantiation of Comment and Reply objects 
+	  #inistantiation of Comment and Reply objects
 	   def show
 	  @user=User.find(@article.user_id)
 	  @comment = Comment.new(params[:comment])
@@ -25,7 +25,7 @@
 	  @replies = Reply.all
 	  @reply = Reply.new(params[:reply])
 	  #@reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
-	  @report = Reportarticle.where("user_id = ? AND article_id = ?", current_user.id ,params[:id])  
+	  @report = Reportarticle.where("user_id = ? AND article_id = ?", current_user.id ,params[:id])
 	  end
 
 	  # GET /articles/new
