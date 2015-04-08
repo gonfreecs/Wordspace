@@ -23,7 +23,7 @@
            can :promotion, Article do |article|
           article.user_id == user.id
           article.promoted == false
-          user.budget > 1000 
+          user.budget > 4000 
         end
         can :destroy, Comment do |co|
           co.user_id == user.id
