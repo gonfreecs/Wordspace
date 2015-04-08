@@ -17,12 +17,10 @@
 
         <div class="col-sm-3 ">
           <%= link_to 'Approve', {controller: :collaboration_invitations, action: :check_for_approve}, i2: i %>
-          <!-- <%= link_to 'Approve', invitations_path(@i,:type =>"Approve") %> -->
          </div>
 
          <div class="col-sm-3 ">
            <%= link_to 'Reject', {controller: :collaboration_invitations, action: :check_for_reject}, i2: i %>
-        <!-- <%= link_to 'Reject', invitations_path(@i,:type =>"Reject") %> -->
          </div>
          </div>
      <%end%>
