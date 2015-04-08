@@ -32,13 +32,23 @@ gem 'mini_magick'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+
+
+
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
+gem 'simplecov', group: :test
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  gem 'rspec-rails', '~> 3.0'
+
+  gem 'factory_girl_rails'
   gem 'cancan'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
