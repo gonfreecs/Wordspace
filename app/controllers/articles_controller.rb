@@ -24,9 +24,13 @@
 	  @reply = Reply.new(params[:reply])
 	  #@reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
 
-		@bid=Bid.new
+	if @article.ad_title != nil
 
+		@bid= Bid.where({article_id:@article.id})[0]
+		@ad= Ad.where({title: @article.ad_title, user_id: @bid.user_id})[0]
+@des= @ad.des
 
+	end
 
 	  end
 

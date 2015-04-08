@@ -12,7 +12,8 @@ class BidsController < ApplicationController
   def create
     @bid = Bid.new( :user_id =>current_user.id, :status=> "pending")
     @title=params[:title2]
-    @bid.ad_id=Ad.where({title:  @title ,user_id:current_user.id}).id
+    @ad=Ad.where({title:  @title ,user_id:current_user.id})
+    @bid.ad_id=@ad[0].id
     @article_id= params[:article_id]
     @offer= params[:offer2]
     @offer3 = params[:offer3]
