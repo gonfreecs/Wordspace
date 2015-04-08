@@ -83,8 +83,11 @@ class MagazinesController < ApplicationController
     redirect_to @magazine
   end
 
-  # Request joining a magazine
   def join
+    #Author:Mina Hany
+    #4.4.2015
+    #A hash is created containing user's id who wants to join a magazine
+    #and that magazine's id and it is added to model contaioning joining requests
     joinh = { "user_id" => current_user.id, "magazine_id" => params[:id] }
     Requestjoiningmagazine.create(joinh)
     @magazine = Magazine.find(params[:id])
