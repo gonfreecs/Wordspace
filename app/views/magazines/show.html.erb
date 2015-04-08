@@ -1,0 +1,92 @@
+        <div class="view-wrapper">
+          <div class="row">
+            <div class="col-sm-3">
+              <img class="magimg" src="<%= @magazine.image %>" alt="<%= @magazine.name %>"/>
+            </div>
+            <div class="col-sm-3">
+              <h2><%= @magazine.name %></h2>
+              <!--user can  follow and unfollow magazine-->  
+
+                  <% if can? :follow , @magazine %> 
+                  <%if (current_user.following?(@magazine)==false)%>
+                  
+                  <%=link_to'<span class="label label-primary" style="cursor: pointer">Follow</span>'.html_safe, follow_magazine_path(@magazine),
+                  method: :put ,
+                  class: "Follow" %>
+                 
+                    <%end%>
+                <%if (current_user.following?(@magazine)==true)%> 
+
+                  <%=link_to'<span class="label label-primary" style="cursor: pointer">Unfollow</span>'.html_safe, unfollow_magazine_path(@magazine),
+                  method: :put ,
+                  class: "unfollow" %>
+                    <%end%>
+                      <%= @magazine.followers_count%>
+                      <%end%>
+            </div>
+            <div class="col-sm-3">
+              <br>
+              
+                  
+
+                       
+                      
+
+              <a href="#" data-toggle="modal" data-target="#info">View info</a>
+              <br>
+              <a href="#">Edit info</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="row grid">
+              <% if @articles.empty? %>
+                <h2>No articles yet</h2>
+              <% end %>
+              <% @articles.each do|a| %>
+                <figure class="effect-sadie">
+                  <img src="<%= a.image %>" alt="<%= a.title %>"/>
+                  <figcaption>
+                    <h2><span><%= a.title %></span></h2>
+                    <p><%= truncate(a.plain_body, :length => 80) %></p>
+                    <%= link_to 'View more', a %>
+                  </figcaption>
+                </figure>
+              <% end %>
+            </div>
+          </div>
+              <div class="row">
+             <%if can? :invite, @magazine%>
+                  <%=link_to'<span class="label label-primary" style="cursor: pointer">Invite</span>'.html_safe ,controller: :magazines,action: :invite %>
+                    <input type="text" name="FirstName" value="Enter user email">
+                    
+              <%end%> 
+
+
+
+              </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="desc" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="desc">Description</h4>
+              </div>
+              <div class="modal-body">
+                <%= @magazine.decription %>
+              </div>
+              <div class="modal-header">
+                <h4 class="modal-title">Collaborators</h4>
+              </div>
+              <div class="modal-body">
+                <% @users.each do |u| %>
+                  <!-- change to  link_to u.firstname, u -->
+                  <img style="width: 50px; height: 50px;"src = "<%= u.avatar %>" alt="<%= u.firstname %>"/>
+                  <a href ="#"> <%= u.firstname %></a>
+                  <br>
+                <% end %>
+              </div>
+            </div>
+        </div>
+

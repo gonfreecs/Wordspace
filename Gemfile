@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 # for avatar upload (carrierwave	)
-gem "carrierwave"
-gem "rmagick"
+gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -25,24 +24,25 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'redactor-rails'
-gem "mini_magick"
+
+gem 'mini_magick'
+gem 'acts_as_follower'
+
+gem 'activeadmin', github: 'gregbell/active_admin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-#Acts_as_votable
-gem 'acts_as_votable'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "twitter-bootstrap-rails"
-gem "font-awesome-rails"
+gem 'twitter-bootstrap-rails'
+gem 'font-awesome-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-   gem 'cancan'
+  gem 'cancan'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
