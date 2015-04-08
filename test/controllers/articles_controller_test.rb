@@ -5,11 +5,13 @@ class ArticlesControllerTest < ActionController::TestCase
     @article = articles(:one)
   end
 
+
   test 'should get index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:articles)
   end
+
 
   test 'should get new' do
     get :new
