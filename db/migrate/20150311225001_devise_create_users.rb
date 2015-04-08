@@ -1,6 +1,4 @@
-# mohab
-# 1.4.2015
-add field to user
+
 class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
