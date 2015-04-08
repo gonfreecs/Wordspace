@@ -39,11 +39,14 @@ gem 'coffee-script-source', '1.8.0'
 # gem 'capistrano-rails', group: :development
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
+%w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+  gem lib, :git => "git://github.com/rspec/#{lib}.git", :branch => 'master'
+end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'cancan'
-
+  
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
