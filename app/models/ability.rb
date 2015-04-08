@@ -20,11 +20,22 @@
           # 5.4.2015
           # check  promote  if current user 
           # and not promoted before
-          # and user budget greater than 4000
+          # and user budget is classified as gold or silver or bronze
              can :promotion, Article do |article|
+            article.promoted == false
+            article.user_id == user.id
+          end
+             can :promotion_gold, Article do |article|
+            article.user_id == user.id
+            user.budget > 4000000
+          end
+             can :promotion_silver, Article do |article|
             article.user_id == user.id
             user.budget > 40000
-            article.promoted == false
+          end
+          can :promotion_bronze, Article do |article|
+            article.user_id == user.id
+            user.budget > 4000
           end
           can :destroy, Comment do |co|
             co.user_id == user.id

@@ -19,10 +19,20 @@
             <p><%= @user.firstname %> <%= @user.lastname %> </p>
             <h5> created at: </h5>
             <p> <%=  @article.created_at.to_s[0,10] %> </p>
-            <% if can? :promotion, @article %>
+            <% if can? :promotion , @article %>
         <%= form_for @article do|f| %>
+          <% if can? :promotion_gold, @article %>
+          <%= f.select :promotevalue, [[1000000,1000000],[2000000,200000],[3000000,3000000]] %>
+           <% else %>
+            <% if can? :promotion_silver, @article %>
+         <%= f.select :promotevalue, [[10000,10000],[20000,20000],[30000,3000]] %>
+           <% else%>
+            <% if can? :promotion_bronze, @article %>
+          <%= f.select :promotevalue, [[100,100],[200,200],[300,300]] %>
+           <% end %>
+           <% end %>
+           <% end %>
           <%= f.hidden_field :promoted, :value => true%>
-          <%= f.select :promotevalue, [[1000,1000],[2000,2000],[30000,3000]] %>
           <%= f.hidden_field :title, :value => @article.title%>
           <%= f.hidden_field :user_id, :value => current_user.id %>
           <%= f.hidden_field :id, :value => @article.id%>
