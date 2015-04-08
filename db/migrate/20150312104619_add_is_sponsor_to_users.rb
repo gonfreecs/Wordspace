@@ -1,9 +1,4 @@
-# mohab
-# 1.4.2015
-# User database
-# has attribute boolean sponser , moderator and gender
-# first and last name
-# about me
+
 class AddIsSponsorToUsers < ActiveRecord::Migration
   def change
     # adding extra columns to users table

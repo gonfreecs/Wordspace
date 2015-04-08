@@ -1,6 +1,4 @@
-# mohab
-# 1.4.2015
-# database for article
+
 class CreateArticles < ActiveRecord::Migration
   def change
     create_table :articles do |t|
