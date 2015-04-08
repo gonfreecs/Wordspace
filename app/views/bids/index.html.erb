@@ -1,2 +1,38 @@
-<h1>Bids#index</h1>
-<p>Find me in app/views/bids/index.html.erb</p>
+<div class="editor" >
+<h1>Bidding requests</h1>
+
+   <div class="row">
+    <div class="col-sm-3 ">
+    Article
+    </div>
+       <div class="col-sm-3 ">
+    Offer
+    </div>
+   </div>
+
+    <% @bids.each do |s| %>
+    <%@article =Article.find(s.article_id) %>
+      <div class="row">
+      <div class="col-sm-3 ">
+      <% @s = s %>
+      <%= @article.title %>  &nbsp;
+      </div>
+      <div class="col-sm-3 ">
+      <%= s.status %>
+      </div>
+
+      <div class="col-sm-3 ">
+       <%= link_to 'Approve', sponsors_path(@s,:type =>"Approve") %>
+       </div>
+
+       <div class="col-sm-3 ">
+       <%= link_to 'Reject', sponsors_path(@s,:type =>"Reject") %>
+       </div>
+       </div>
+   <%end%>
+  <% if @bids.size == 0 %>
+    <em>No sponsoring requests are found</em>
+  <% end %>
+
+
+</div>

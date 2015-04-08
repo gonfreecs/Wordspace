@@ -22,6 +22,7 @@
   resources :articles
   	resources :comments
   	resources :replies
+    resources :bids
     mount RedactorRails::Engine => '/redactor_rails'
     devise_for :users
     get 'main/index'

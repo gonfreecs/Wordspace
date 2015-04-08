@@ -1,6 +1,9 @@
 class BidsController < ApplicationController
   authorize_resource
   def index
+    @user= current_user
+    @bids =  Bid.all
+    #where('user_id == ?', @user.id)
   end
 
   def new
@@ -35,9 +38,21 @@ class BidsController < ApplicationController
 
   end
 end
+
   def update
   end
 
+  def approve
+    @bid = Bid.find(params[:id])
+    @bid.update(status: 'accepted')
+    redirect_to :back
+  end
+
+  def reject
+    @bid = Bid.find(params[:id])
+    @bid.destroy
+
+end
   def destroy
 
     bid = Bid.find(params[:bid_id])

@@ -24,6 +24,11 @@
 	 <br>
 	  <div class="col-md-offset-2">
 
+			<% if can? :update, @article %>
+				Owns
+			<%end %>
+
+
 	  <h5 > By: </h5> <p><%= @user.firstname %> <%= @user.lastname %> </p>
 	 <h5> created at: </h5> <p> <%=  @article.created_at.to_s[0,10] %> </p>
 

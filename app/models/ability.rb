@@ -10,6 +10,7 @@
      		can :update, Article do |article|
      			 article.user_id == user.id
      		end
+        can :index , Bid
      		can :create, Article
 
     		can :update, Comment do |c|
