@@ -26,6 +26,7 @@ class MagazinesController < ApplicationController
   # GET /magazines/new
   def new
     @magazine = Magazine.new
+    
   end
 
   # GET /magazines/1/edit
