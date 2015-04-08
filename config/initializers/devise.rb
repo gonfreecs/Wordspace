@@ -230,11 +230,9 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
-<<<<<<< HEAD
+
   config.mailer_sender = "youremail@domain.com"
-=======
-  config.mailer_sender = 'youremail@domain.com'
->>>>>>> 1b23ad1dcd3df787884ec7cef58e6fff5845059d
+
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
