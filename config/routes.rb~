@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  #adding resources
+  resources :sponsors
   resources :articles
 	resources :comments
 	resources :replies
