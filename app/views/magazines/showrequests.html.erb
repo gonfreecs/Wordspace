@@ -10,6 +10,7 @@
     </div>
    </div>
 
+    <! display list of user requested joining the magazine >
     <% @users.each do |user| %>
 
       <div class="row">
@@ -20,7 +21,7 @@
       <%= user.email %>
       </div>
 
-      
+
       <div class="col-sm-3 ">
        <%= link_to 'Approve', {:action => "approverequest", :user => user.id } %>
        </div>

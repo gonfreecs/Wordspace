@@ -91,6 +91,7 @@ class MagazinesController < ApplicationController
     redirect_to @magazine
   end
 
+  # Show joining requests to a magazine
   def showrequests
     @request = Requestjoiningmagazine.where('magazine_id = ?', params[:id])
     @users = []
@@ -99,6 +100,7 @@ class MagazinesController < ApplicationController
     end
   end
 
+  # Approve joining requests to a magazine
   def approverequest
     @req = Requestjoiningmagazine
     .where("user_id = ? AND magazine_id = ?", params[:user], params[:id])
@@ -109,6 +111,7 @@ class MagazinesController < ApplicationController
     redirect_to action: :showrequests
   end
 
+  # Reject joining requests to a magazine
   def rejectrequest
     @req = Requestjoiningmagazine.where(
       "user_id = ? AND magazine_id = ?",
