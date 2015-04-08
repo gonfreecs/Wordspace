@@ -11,6 +11,7 @@ class BidsController < ApplicationController
 
   def create
     @bid = Bid.new( :user_id =>current_user.id, :status=> "pending")
+
     @article_id= params[:article_id]
     @offer= params[:offer2]
     @offer3 = params[:offer3]
@@ -22,18 +23,26 @@ class BidsController < ApplicationController
 
     end
     @bid.article_id = @article_id
+
       if @bid.save
         flash[:notice] = 'Bid was successfully created.'
         redirect_to article_path(@bid.article_id)
       else
         flash[:notice] = "Error creating Bid: #{@bid.errors}"
+
         redirect_to(@bid.article_id)
+
   end
 end
   def update
   end
 
   def destroy
+
+    bid = Bid.find(params[:bid_id])
+    bid.destroy
+    redirect_to  :controller => :sponsors	, :action => :control
+
   end
 
   def edit

@@ -33,9 +33,17 @@
     			can :destroy, Comment
     			can :destroy, Reply
           can :index, :sponsor
+
+          can :control, :sponsor
     		end
         if user.is_sponsor
-          can :create, Bid 
+          can :create, Bid
+          can :show, :sponsor
+          can :destroy, Bid do|b|
+            b.user_id==User.id
+          end
+
+
           can :bid, Article do|a|
             !a.is_sponsored && Bid.where({:user_id => user.id, :article_id => a.id })==[]
           end

@@ -12,6 +12,12 @@ class SponsorsController < ApplicationController
 
   end
 
+def control
+  @pending_bids= Bid.where({user_id:12 }).pending.order(created_at: :desc)
+  @accepted_bids= Bid.where({user_id:12 }).accepted.order(created_at: :desc)
+
+end
+
 
   def check_for_approve
     flash[:notice] = "Widget was successfully created."
