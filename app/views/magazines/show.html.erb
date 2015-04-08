@@ -20,4 +20,6 @@
 <%= link_to 'Back', magazines_path %> |
 <! link to request joining magazine>
 <%= link_to 'Join this magazine', action: "join" %> |
+<% if @magazine.users.exists?(current_user) %>
 <%= link_to 'View joining requests', action: 'showrequests'%>
+<% end %>

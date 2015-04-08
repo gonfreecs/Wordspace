@@ -9,7 +9,7 @@
     email
     </div>
    </div>
-   
+
     <% @users.each do |user| %>
 
       <div class="row">
@@ -20,12 +20,14 @@
       <%= user.email %>
       </div>
 
+      
       <div class="col-sm-3 ">
        <%= link_to 'Approve', {:action => "approverequest", :user => user.id } %>
        </div>
 
+
        <div class="col-sm-3 ">
-       <%= link_to 'Reject', sponsors_path(@s,:type =>"Reject") %>
+       <%= link_to 'Reject', {:action => "rejectrequest", :user => user.id } %>
        </div>
        </div>
    <%end%>

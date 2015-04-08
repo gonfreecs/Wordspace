@@ -15,6 +15,11 @@ Rails.application.routes.draw do
       get 'approverequest'
     end
   end
+  resources :magazines do
+    member do
+      get 'rejectrequest'
+    end
+  end
 
   # adding resources
   resources :sponsors

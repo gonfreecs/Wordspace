@@ -100,15 +100,22 @@ class MagazinesController < ApplicationController
   end
 
   def approverequest
-    @req = Requestjoiningmagazine.where("user_id = ? AND magazine_id = ?", params[:user], params[:id])
+    @req = Requestjoiningmagazine
+    .where("user_id = ? AND magazine_id = ?", params[:user], params[:id])
     @req.destroy_all
-    joinh = { 'user_id' => params[:user], 'magazine_id' => params[:id] }
-    Requestjoiningmagazine.destroy_all(joinh)
-
     @magazine = Magazine.find(params[:id])
     @user = User.find(params[:user])
     @magazine.users << @user
-    redirect_to :action => :showrequests
+    redirect_to action: :showrequests
+  end
+
+  def rejectrequest
+    @req = Requestjoiningmagazine.where(
+      "user_id = ? AND magazine_id = ?",
+      params[:user],
+      params[:id])
+    @req.destroy_all
+    redirect_to action: :showrequests
   end
 
   private
