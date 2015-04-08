@@ -4,7 +4,9 @@
             put 'follow'=> "magazines#follow"
           put 'unfollow'=> "magazines#unfollow"
         put 'invite'=> "magazines#invite"
-        
+
+
+
         end
       end
 
@@ -13,6 +15,12 @@
       resources :articles
       resources :comments
       resources :replies
+      resources :collaboration_invitations do
+      collection do
+        get 'check_for_approve'
+        get 'check_for_reject'
+end
+end
       mount RedactorRails::Engine => '/redactor_rails'
       devise_for :users
       get 'main/index'
