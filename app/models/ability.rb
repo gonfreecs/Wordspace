@@ -15,6 +15,16 @@ class Ability
       can :update, Comment do |c|
         c.user_id == user.id
       end
+      # mohab
+      # 5.4.2015
+      # check  promote  if current user 
+      # and not promoted before
+      # and user budget greater than 4000
+         can :promotion, Article do |article|
+        article.user_id == user.id
+        article.promoted == false
+        user.budget > 1000 
+      end
       can :destroy, Comment do |co|
         co.user_id == user.id
       end
