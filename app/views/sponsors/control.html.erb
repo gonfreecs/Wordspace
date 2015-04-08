@@ -16,7 +16,7 @@
 <div class="row">
       <div class="tabs tabs-style-circle">
         <div class= "col-md-4">
-          <br><br><br><br><br>
+
         <nav>
           <ul>
 
@@ -50,9 +50,12 @@
               <%= User.find(Article.find(bid.article_id).user_id).lastname %></h6>
             </div>
               <%end%></section>
-          <section id="section-circle-3"><p>3</p></section>
+          <section id="section-circle-3">  <%@ads.each do |ad|%>
+            	<%=ad.des.html_safe %>
+              <h5><%=ad.title %></h5> 
+            <%end%></section>
           <section id="section-circle-4"><p><%= render :partial => 'newad'%></p></section>
-          
+
         </div><!-- /content -->
       </div>
       </div><!-- /tabs -->

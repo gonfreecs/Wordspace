@@ -1,6 +1,6 @@
   Rails.application.routes.draw do
 
-  get 'ads/create'
+    resources :ads
 
     resources :bids do
       collection do

@@ -66,6 +66,7 @@
 							<br>
 							<h2>Send a custom offer</h2>
 						<h5>	<%= number_field_tag :offer3, in: 1.0..20.0, step: 1.0 %>cents/view</h5>
+						<h5>	title of add	<%= text_field_tag :title2 %> </h5>
 					<button type="submit"> <font size="5"color=#0099FF><span class="fa fa-share-square-o"></span></font></button>	  <a class="action" type="" data-dialog-close><font size="5"color=#0099FF><span class="fa fa-times"></span></font></a><% end %>
 
 
@@ -100,8 +101,12 @@
 	</div>
 	 <div class="col-md-2"></div>
 	 </div>
-
-	 <!....This is the part where we call all comments.....>
+	<% if @article.title !=nil %>
+	<div class ="row">
+		<%=@des %>
+	</div>
+	 <%end %>
+	<!....This is the part where we call all comments.....>
 
 	  <%= render :partial => 'comment', :collection => @article.comments %>
 

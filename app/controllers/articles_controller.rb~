@@ -20,7 +20,12 @@
 	  @replies = Reply.all
 	  @reply = Reply.new(params[:reply])
 	  #@reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
-  
+  	if @article.title != 	nil
+		@bid=Bid.where({article_id: @article.id})
+		@sponsor=@bid.user_id
+	@ad= Ad.where({user_id: @sponsor , title: @article.title})
+	@des=@ad.des.html_safe
+	end
 	  end
 
 	  # GET /articles/new
