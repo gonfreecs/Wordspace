@@ -22,11 +22,13 @@
       </div>
 
       <div class="col-sm-3 ">
-       <%= link_to 'Approve', sponsors_path(@s,:type =>"Approve") %>
+       <%=link_to'Approve', approve_bid_path(@s.id),
+                method: :put%>
        </div>
 
        <div class="col-sm-3 ">
-       <%= link_to 'Reject', sponsors_path(@s,:type =>"Reject") %>
+         <%=link_to'Approve', reject_bid_path(@s.id),
+                  method: :put%>
        </div>
        </div>
    <%end%>

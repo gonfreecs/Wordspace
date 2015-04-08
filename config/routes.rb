@@ -1,7 +1,12 @@
   Rails.application.routes.draw do
 
     resources :ads
-
+    resources :bids do
+    member do
+      put 'approve' => 'bids#approve'
+      put 'reject' => 'bids#reject'
+    end
+  end
     resources :bids do
       collection do
         get 'destroy'
