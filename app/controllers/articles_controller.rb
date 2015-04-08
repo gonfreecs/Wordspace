@@ -81,11 +81,14 @@ def check_for_cancel
   end
 end
 
-# Report an article
 def report
+	#Author:Mina Hany
+  #3.4.2015
+  #A hash is created containing user's id who wants to report an article
+  #and that article's id and it is added to model contaioning reported requests
 	reportarticleh = {"user_id" => current_user.id,
 										"article_id" => params[:id]}
-	Reportarticle.create(reportarticleh)	 
+	Reportarticle.create(reportarticleh)
 	 @article =Article.find( params[:id])
 	redirect_to @article
 end
