@@ -21,8 +21,10 @@ class MagazinesController < ApplicationController
   # GET /magazines/1
   # GET /magazines/1.json
   def show
-    @join = Requestjoiningmagazine
-    .where('user_id = ? AND magazine_id = ?', current_user.id, params[:id])
+    @join = Requestjoiningmagazine.where(
+      'user_id = ? AND magazine_id = ?',
+      current_user.id,
+      params[:id])
   end
 
   # GET /magazines/new
@@ -102,8 +104,10 @@ class MagazinesController < ApplicationController
 
   # Approve joining requests to a magazine
   def approverequest
-    @req = Requestjoiningmagazine
-    .where("user_id = ? AND magazine_id = ?", params[:user], params[:id])
+    @req = Requestjoiningmagazine.where(
+      "user_id = ? AND magazine_id = ?",
+      params[:user],
+      params[:id])
     @req.destroy_all
     @magazine = Magazine.find(params[:id])
     @user = User.find(params[:user])
