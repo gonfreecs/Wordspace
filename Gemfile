@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+# mohab
+# 3.4.2015
+# add tag gem
 gem 'acts-as-taggable-on', '~> 3.4'
 # mohab
 # 1/4/2015
@@ -7,6 +10,7 @@ gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
 gem 'social-share-button'
 # for avatar upload (carrierwave	)
 gem 'carrierwave'
+gem 'rmagick'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -43,6 +47,11 @@ gem 'mini_magick'
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
 group :development, :test do
+  # mohab
+  # 3.4.2015
+  # rspec test and factory gems
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'cancan'
@@ -52,4 +61,13 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+group :test do
+  # mohab
+  # 3.4.2015
+  # rspec test
+  gem 'faker'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
 end

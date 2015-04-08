@@ -1,3 +1,4 @@
+
 # Article Controller
 class ArticlesController < ApplicationController
   # loading all variables
@@ -29,10 +30,10 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  # GET /articles/1/edit
-  def edit
-  end
-
+	  # GET /articles/1/edit
+	  def edit
+	  	  @article = Article.find(params[:id])
+	  end
   # POST /articles
   # POST /articles.json
   def create
@@ -76,6 +77,7 @@ class ArticlesController < ApplicationController
     return false if params[:commit] != 'Cancel'
     redirect_to @article
   end
+end
 
   private
 

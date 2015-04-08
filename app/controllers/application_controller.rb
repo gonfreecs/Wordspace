@@ -25,8 +25,8 @@ class ApplicationController < ActionController::Base
     # add avatar ,email password field to account_update
     devise_parameter_sanitizer.for(:account_update) do |u|
       u.permit(:firstname, :lastname, :email, :password,
-               :password_confirmation, :about_me, :current_password, :avatar,
-               :avatar_cache)
+               :password_confirmation, :about_me, :current_password, 
+               :avatar,:avatar_cache)
     end
   end
 end

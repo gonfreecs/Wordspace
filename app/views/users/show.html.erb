@@ -1,5 +1,5 @@
-<hr class=" ">
-<div class="container targe">
+<hr class="container">
+<div class="container target">
     <div class="row">
         <div class="col-sm-10">
              <h1 class=""><%= @user.firstname %></h1>
@@ -7,13 +7,9 @@
          <!--  <button type="button" class="btn btn-success">Book me!</button>  <button type="button" class="btn btn-info">Send me a message</button>
 <br> -->
         </div>
-        <% if @user.avatar.url == nil %>
-        <div class="col-sm-2"><a  class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.rlsandbox.com/img/profile.jpg"></a>
-          <%else%>
-      <div class="col-sm-2"><a  class="pull-right"><img title="profile image" class="img-circle img-responsive" <%=image_tag(@user.avatar.url)   %></a>
+      <div class="col-sm-2"><a href="#" class="pull-right"><img title="profile image" class="img-circle img-responsive" <%=image_tag(@user.avatar.url)   %></a>
 
         </div>
-        <%end%>
     </div>
   <br>
     <div class="row">
