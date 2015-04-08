@@ -13,9 +13,10 @@ class SponsorsController < ApplicationController
   end
 
 def control
-  @pending_bids= Bid.where({user_id:12 }).pending.order(created_at: :desc)
-  @accepted_bids= Bid.where({user_id:12 }).accepted.order(created_at: :desc)
-
+  @pending_bids= Bid.where({user_id:current_user.id }).pending.order(created_at: :desc)
+  @accepted_bids= Bid.where({user_id:current_user.id }).accepted.order(created_at: :desc)
+  @ads=Ad.where({user_id:current_user.id})
+  @ad=Ad.new
 end
 
 

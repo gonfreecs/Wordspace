@@ -1,7 +1,12 @@
   Rails.application.routes.draw do
 
-    resources :bids
+  get 'ads/create'
 
+    resources :bids do
+      collection do
+        get 'destroy'
+      end
+    end
     #adding resources
     resources :sponsors do
       collection do
@@ -17,7 +22,6 @@
   resources :articles
   	resources :comments
   	resources :replies
-    resources :bids
     mount RedactorRails::Engine => '/redactor_rails'
     devise_for :users
     get 'main/index'

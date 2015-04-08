@@ -13,3 +13,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( modernizr.custom.js )
 Rails.application.config.assets.precompile += %w( dialogFx.js )
 Rails.application.config.assets.precompile += %w( classie.js )
+Rails.application.config.assets.precompile += %w( cbpFWTabs.js )

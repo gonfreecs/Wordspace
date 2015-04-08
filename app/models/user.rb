@@ -13,6 +13,7 @@
    #adding relation between user and articles
    has_many :articles
    has_many :bids
+   has_many :ads
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable and :omniauthable
    	#:recoverable,
