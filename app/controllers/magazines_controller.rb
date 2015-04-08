@@ -92,13 +92,13 @@
       redirect_to :back
     end
 
-    def invite
-       inviteUser = CollaborationInvitation
-        = {"user_id" => current_user.id,"magazine_id" => params[:id]}
-        .create(inviteUser)   
-        @magazine =Magazine.find( params[:id])
-     redirect_to @magazine           
-    end
+    #def invite
+
+     #   inviteUser = {"user_id" => current_user.id,"magazine_id" => params[:id]}
+      #  CollaborationInvitation.create(inviteUser)   
+       # @magazine =Magazine.find( params[:id])
+     #redirect_to @magazine           
+    #end
 
 
     # Cancel an update and return to magazine page
