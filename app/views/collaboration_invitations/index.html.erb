@@ -16,11 +16,12 @@
         </div>
 
         <div class="col-sm-3 ">
-          <%= link_to 'Approve', {controller: :collaboration_invitations, action: :check_for_approve}, i2: i %>
+          <%= link_to 'Approve', {controller: :collaboration_invitations, method: :check_for_approve} %>
+
          </div>
 
          <div class="col-sm-3 ">
-           <%= link_to 'Reject', {controller: :collaboration_invitations, action: :check_for_reject}, i2: i %>
+           <%= link_to 'Reject', {controller: :collaboration_invitations, action: :check_for_reject} %>
          </div>
          </div>
      <%end%>
