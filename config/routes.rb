@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   mount RedactorRails::Engine => '/redactor_rails'
   devise_for :users
   get 'main/index'
-  root 'main#index'
-  resources :articles
   # Search url matching
   get '/search' => 'search#search'
 end
