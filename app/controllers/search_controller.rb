@@ -6,6 +6,8 @@ class SearchController < ApplicationController
     @query_str = ActionView::Base.full_sanitizer.sanitize(params[:query])
     if @query_str.length > 0
       @query_string = '%' << @query_str << '%'
+      @query_string = @query_string.gsub('_', '\\_')
+      @query_string = @query_string.gsub('%', '\\%')
       @articles = Article.where('(title LIKE ?) OR (plain_body LIKE ?)',
                                 @query_string, @query_string)
     else
