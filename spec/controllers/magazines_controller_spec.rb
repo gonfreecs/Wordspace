@@ -13,4 +13,24 @@ RSpec.describe MagazinesController, type: :controller do
       expect(@user.magazines).to match_array([(assigns(:magazine))])
     end
   end
+  describe 'DELETE #destroy' do
+    it 'allows moderators to delete magazines' do
+      @user = create(:user, is_moderator: true)
+      sign_in @user
+      @m1 = create(:magazine)
+      @instance1 = Magazine.last
+      delete :destroy, id: @m1.id,
+                       magazine: FactoryGirl.attributes_for(:magazine)
+      @instance2 = Magazine.last
+      expect(@instance1) != @instance2
+    end
+  end
+  describe 'GET #show' do
+    it 'allows anybody to view magazines' do
+      @m1 = create(:magazine)
+      get :show, id: @m1.id,
+                 magazine: FactoryGirl.attributes_for(:magazine)
+      expect(assigns(:magazine)).to match(@m1)
+    end
+  end
 end
