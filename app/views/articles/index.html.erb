@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
+
 <h1>Listing Articles</h1>
+
 <table>
   <thead>
     <tr>
@@ -9,6 +11,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+
   <tbody>
     <% @articles.each do |article| %>
       <tr>
@@ -22,7 +25,9 @@
     <% end %>
   </tbody>
 </table>
+
 <br>
+
 <%= link_to 'New Article', new_article_path %>
 =======
 <h1>Articles#index</h1>

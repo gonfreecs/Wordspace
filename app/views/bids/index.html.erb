@@ -1,0 +1,41 @@
+<div class="editor" >
+<h1>Bidding requests</h1>
+
+   <div class="row">
+    <div class="col-sm-3 ">
+    Article
+    </div>
+       <div class="col-sm-3 ">
+    Offer
+    </div>
+   </div>
+
+    <% @bids.each do |s| %>
+    <%@article =Article.find(s.article_id) %>
+      <div class="row">
+      <div class="col-sm-3 ">
+      <% @s = s %>
+      <%= @article.title %>  &nbsp;
+      </div>
+      <div class="col-sm-3 ">
+      <%= s.status %>
+      <%= s.offer %>
+      </div>
+
+      <div class="col-sm-3 ">
+       <%=link_to'Approve', approve_bid_path(@s.id),
+                method: :put%>
+       </div>
+
+       <div class="col-sm-3 ">
+         <%=link_to'Reject', reject_bid_path(@s.id),
+                  method: :put%>
+       </div>
+       </div>
+   <%end%>
+  <% if @bids.size == 0 %>
+    <em>No sponsoring requests are found</em>
+  <% end %>
+
+
+</div>

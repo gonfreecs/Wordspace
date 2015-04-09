@@ -1,5 +1,4 @@
 # encoding: utf-8
-# RedactorRailsPictureUploader
 class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   include RedactorRails::Backend::CarrierWave
 
@@ -29,18 +28,18 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  # Limit Image Size To 800x800 pixels
+  #Limit Image Size To 800x800 pixels
   process :read_dimensions
-  process resize_to_limit: [800, 800]
+  process :resize_to_limit => [800, 800]
 
   # Create different versions of your uploaded files:
-  #  version :thumb do
-  #    process :resize_to_fill => [118, 100]
-  #  end
+#  version :thumb do
+#    process :resize_to_fill => [118, 100]
+#  end
 
-  #  version :content do
-  #    process :resize_to_limit => [800, 800]
-  #  end
+#  version :content do
+#    process :resize_to_limit => [800, 800]
+#  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -49,8 +48,7 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   end
 
   # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here,
-  # see uploader/store.rb for details.
+  # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
   #   "something.jpg" if original_filename
   # end
