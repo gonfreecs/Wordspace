@@ -8,7 +8,7 @@ class Magazine < ActiveRecord::Base
   # adding relation between magazines and articles, users
   mount_uploader :image, ImgUploader
   has_many :articles
-  #has_many :collaborators 
+  # has_many :collaborators
   acts_as_followable
   has_and_belongs_to_many :users
 

@@ -73,12 +73,11 @@
       end
     end
 
-
     # Author:Bassem
     # 31/03/2015
     # Here is how the user follow a magazine
     def follow
-      @magazine= Magazine.find(params[:id])
+      @magazine = Magazine.find(params[:id])
       current_user.follow(@magazine)
       redirect_to :back
     end
@@ -92,14 +91,13 @@
       redirect_to :back
     end
 
-    #def invite
+    # def invite
 
-     #   inviteUser = {"user_id" => current_user.id,"magazine_id" => params[:id]}
-      #  CollaborationInvitation.create(inviteUser)   
-       # @magazine =Magazine.find( params[:id])
-     #redirect_to @magazine           
-    #end
-
+    #   inviteUser = {"user_id" => current_user.id,"magazine_id" => params[:id]}
+    #  CollaborationInvitation.create(inviteUser)
+    # @magazine =Magazine.find( params[:id])
+    # redirect_to @magazine
+    # end
 
     # Cancel an update and return to magazine page
     def check_for_cancel

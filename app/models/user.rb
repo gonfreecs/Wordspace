@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # :recoverable,
 
-   has_many :collaboration_invitation
-   has_many :magazines, through: :collaboration_invitation
+  has_many :collaboration_invitation
+  has_many :magazines, through: :collaboration_invitation
 
   # making firstname and lastname required
   validates :firstname, presence: true
