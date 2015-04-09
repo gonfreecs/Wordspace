@@ -1,9 +1,9 @@
+# Bids Controller
 class BidsController < ApplicationController
   authorize_resource
   def index
-    @user= current_user
-    @bids =  Bid.all
-    #where('user_id == ?', @user.id)
+    @user = current_user
+    @bids =  Bid.where('status == 2 and user_id == ?', @user.id)
   end
 
   def new
@@ -15,8 +15,7 @@ class BidsController < ApplicationController
   def create
     @bid = Bid.new( :user_id =>current_user.id, :status=> "pending")
     @title=params[:title2]
-    @ad=Ad.where({title:  @title ,user_id:current_user.id})
-    @bid.ad_id=@ad[0].id
+    @bid.ad_id=Ad.where({title:  @title ,user_id:current_user.id}).id
     @article_id= params[:article_id]
     @offer= params[:offer2]
     @offer3 = params[:offer3]
@@ -51,9 +50,10 @@ end
 
   def reject
     @bid = Bid.find(params[:id])
-    @bid.destroy
+    @bid.update(status: 'rejected')
+    redirect_to :back
+  end
 
-end
   def destroy
 
     bid = Bid.find(params[:bid_id])

@@ -2,11 +2,11 @@
 
     resources :ads
     resources :bids do
-    member do
-      put 'approve' => 'bids#approve'
-      put 'reject' => 'bids#reject'
+      member do
+          put 'approve' => "bids#approve"
+        put 'reject' => "bids#reject"
+      end
     end
-  end
     resources :bids do
       collection do
         get 'destroy'

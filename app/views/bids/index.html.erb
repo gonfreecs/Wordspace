@@ -19,6 +19,7 @@
       </div>
       <div class="col-sm-3 ">
       <%= s.status %>
+      <%= s.offer %>
       </div>
 
       <div class="col-sm-3 ">
@@ -27,7 +28,7 @@
        </div>
 
        <div class="col-sm-3 ">
-         <%=link_to'Approve', reject_bid_path(@s.id),
+         <%=link_to'Reject', reject_bid_path(@s.id),
                   method: :put%>
        </div>
        </div>
