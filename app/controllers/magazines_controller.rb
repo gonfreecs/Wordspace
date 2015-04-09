@@ -6,7 +6,7 @@ class MagazinesController < ApplicationController
   load_and_authorize_resource
   # rescue from invalid articles ids
   rescue_from(ActiveRecord::RecordNotFound) do
-    fail(CanCan::AccessDenied, 'Article is not found')
+    fail(CanCan::AccessDenied, 'Magazine is not found')
   end
   before_action :set_magazine, only: [:show, :edit, :update, :destroy]
   # GET /magazines
