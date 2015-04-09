@@ -20,10 +20,9 @@ class BidsController < ApplicationController
     @offer= params[:offer2]
     @offer3 = params[:offer3]
     if(@offer !=nil)
-      @bid.offer=@offer
+      @bid.offer = @offer
     else
-
-        @bid.offer=@offer3
+      @bid.offer = @offer3
 
     end
     @bid.article_id = @article_id
