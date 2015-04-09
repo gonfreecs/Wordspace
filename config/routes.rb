@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
-
-  #adding resources
+  # adding resources
 
   resources :sponsors
   resources :articles
@@ -12,12 +10,11 @@ Rails.application.routes.draw do
   get 'main/index'
   root 'main#index'
 
-  resources:articles do
+  resources :articles do
     member do
-      put 'like'=> "articles#upvote"
-      put 'unlike'=> "articles#downvote"
+      put 'like' => 'articles#upvote'
+      put 'unlike' => 'articles#downvote'
     end
-
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -74,5 +71,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
 end

@@ -5,7 +5,6 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module WordSp
-
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -23,7 +22,4 @@ module WordSp
 
     config.active_record.raise_in_transactional_callbacks = true
   end
-
-
-
 end
