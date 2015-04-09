@@ -43,7 +43,11 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article.user = current_user
-
+    # Author: Mohammed El-Ansary
+    # 1.4.2015
+    # Filling the plain body which is used in the search
+    @article.plain_body = ActionView::Base.full_sanitizer
+      .sanitize(@article.body)
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was created.' }
