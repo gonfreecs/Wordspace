@@ -1,3 +1,6 @@
+# Author: Mohammed El-Ansary
+# 7.4.2015
+# Search Controller Tests
 require 'rails_helper'
 RSpec.describe SearchController, type: :controller do
   describe 'GET #search' do
@@ -5,7 +8,7 @@ RSpec.describe SearchController, type: :controller do
       request.env['HTTP_REFERER'] = 'test'
     end
     it 'filters wildcards before search' do
-      a1 = create(:article)
+      create(:article)
       get :search, query: '_'
       expect(assigns(:articles)).to match_array([])
       get :search, query: '%'
@@ -14,7 +17,7 @@ RSpec.describe SearchController, type: :controller do
     it 'returns correct search results' do
       a1 = create(:article)
       a2 = create(:article, title: 'Text', plain_body: 'xxxxtestxxxx')
-      a3 = create(:article, title: 'Mohammed', plain_body: 'Ansary')
+      create(:article, title: 'Mohammed', plain_body: 'Ansary')
       get :search, query: 'xxxxtestxxxx'
       expect(assigns(:articles)).to match_array([a1, a2])
     end
