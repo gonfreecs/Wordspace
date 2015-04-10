@@ -6,12 +6,9 @@ class MagazinesController < ApplicationController
   load_and_authorize_resource
   # rescue from invalid articles ids
   rescue_from(ActiveRecord::RecordNotFound) do
-    fail(CanCan::AccessDenied, 'Article is not found')
+    fail(CanCan::AccessDenied, 'Magazine is not found')
   end
   before_action :set_magazine, only: [:show, :edit, :update, :destroy]
-  # check if cancel => no updates performed
-  before_action :check_for_cancel, only: [:create, :update]
-
   # GET /magazines
   # GET /magazines.json
   def index
@@ -34,6 +31,12 @@ class MagazinesController < ApplicationController
   def edit
   end
 
+  # To improve code style
+  def error
+    format.json do
+      render json: @magazine.errors, status: :unprocessable_entity
+    end
+  end
   # POST /magazines
   # POST /magazines.json
   def create
@@ -44,11 +47,11 @@ class MagazinesController < ApplicationController
     @magazine.users << current_user
     respond_to do |format|
       if @magazine.save
-        format.html { redirect_to @magazine, notice: 'Magazine was successfully created.' }
+        format.html { redirect_to @magazine, notice: 'Successfully created.' }
         format.json { render :show, status: :created, location: @magazine }
       else
         format.html { render :new }
-        format.json { render json: @magazine.errors, status: :unprocessable_entity }
+        error
       end
     end
   end
@@ -58,11 +61,11 @@ class MagazinesController < ApplicationController
   def update
     respond_to do |format|
       if @magazine.update(magazine_params)
-        format.html { redirect_to @magazine, notice: 'Magazine was successfully updated.' }
+        format.html { redirect_to @magazine, notice: 'Successfully updated.' }
         format.json { render :show, status: :ok, location: @magazine }
       else
         format.html { render :edit }
-        format.json { render json: @magazine.errors, status: :unprocessable_entity }
+        error
       end
     end
   end
@@ -72,15 +75,11 @@ class MagazinesController < ApplicationController
   def destroy
     @magazine.destroy
     respond_to do |format|
-      format.html { redirect_to magazines_url, notice: 'Magazine was successfully destroyed.' }
+      format.html do
+        redirect_to magazines_url, notice: 'Successfully destroyed.'
+      end
       format.json { head :no_content }
     end
-  end
-
-  # Cancel an update and return to magazine page
-  def check_for_cancel
-    return false if params[:commit] != 'Cancel'
-    redirect_to @magazine
   end
 
   private
@@ -90,7 +89,8 @@ class MagazinesController < ApplicationController
     @magazine = Magazine.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet
+  # only allow the white list through.
   def magazine_params
     params.require(:magazine).permit(:name, :decription, :image)
   end

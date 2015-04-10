@@ -16,6 +16,7 @@ class Magazine < ActiveRecord::Base
   end
 
   validates :name, presence: true
+  validates :decription, presence: true
   validates :image, presence: true
   validate :image_size
 end
