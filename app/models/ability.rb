@@ -7,12 +7,14 @@ class Ability
     can :index, Article
     can :show, Comment
     can :show, Reply
+    can :show, Magazine
     unless user.nil?
       can :update, Article do |article|
         article.user_id == user.id
       end
       can :create, Article
-
+      can :create, Magazine
+      can :update, Magazine
       can :update, Comment do |c|
         c.user_id == user.id
       end
@@ -33,6 +35,7 @@ class Ability
         can :destroy, Article
         can :destroy, Comment
         can :destroy, Reply
+        can :destroy, Magazine
       end
     end
   end
