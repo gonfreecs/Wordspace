@@ -37,6 +37,10 @@ class MagazinesController < ApplicationController
   # POST /magazines
   # POST /magazines.json
   def create
+    # Author:Mohammed El-Ansary
+    # 5.4.2015
+    # Adds current user to the magazine's list of contributers
+    # and also adds the magazine to the user's list of magazines
     @magazine.users << current_user
     respond_to do |format|
       if @magazine.save
