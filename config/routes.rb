@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   root 'articles#index'
-=======
   resources :magazines
 
   # adding resources
->>>>>>> master
   resources :sponsors
   resources :articles
   resources :comments

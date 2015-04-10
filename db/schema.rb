@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20150405142118) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "user_id"
-    t.integer  "magazine_id", default: 0
     t.text     "plain_body"
+    t.integer  "magazine_id", default: 0
   end
 
   create_table "comments", force: :cascade do |t|
