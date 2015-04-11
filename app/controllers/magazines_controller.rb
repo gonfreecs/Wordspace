@@ -83,12 +83,6 @@ class MagazinesController < ApplicationController
     end
   end
 
-  # Cancel an update and return to magazine page
-  def check_for_cancel
-    return false if params[:commit] != 'Cancel'
-    redirect_to @magazine
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.

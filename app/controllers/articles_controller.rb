@@ -38,14 +38,19 @@ class ArticlesController < ApplicationController
   def create
     @article.user = current_user
 
-      # Author: Mayar
-      # Date: 7.4.2015
-      # Description: adding magazine parameter to article of magazine
-      unless params[:magazine_id].nil?
-        @article.magazine_id = params[:magazine_id]
-      end
-    respond_to do |format|
+    # Author: Mayar
+    # Date: 7.4.2015
+    # Description: adding magazine parameter to article of magazine
+    unless params[:magazine_id].nil?
+      @article.magazine_id = params[:magazine_id]
+    end
 
+    # Author: Mohammed El-Ansary
+    # 1.4.2015
+    # Filling the plain body which is used in the search
+    @article.plain_body = ActionView::Base.full_sanitizer
+      .sanitize(@article.body)
+    respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was created.' }
       else
