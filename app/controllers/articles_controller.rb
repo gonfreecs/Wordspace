@@ -31,10 +31,9 @@
                 @article = Article.new
               end
 
-            	  # GET /articles/1/edit
-            	  def edit
-            	  	  @article = Article.find(params[:id])
-            	  end
+              # GET /articles/1/edit
+              def edit
+              end
               # POST /articles
               # POST /articles.json
               def create
@@ -82,14 +81,14 @@
 
               private
 
-              # Use callbacks to share common setup or constraints between actions.
-              def set_article
-                @article = Article.find(params[:id])
-              end
+            # Use callbacks
+            # to share common setup or constraints between actions.
+            def set_article
+              @article = Article.find(params[:id])
+            end
 
-              # Never trust parameters from the scary internet
-              def article_params
-                params.require(:article).permit(:title, :body, :user_id, 
-                                                :id, :image, :tag_list)
-              end
-
+            # Never trust parameters from the scary internet
+            def article_params
+              params.require(:article).permit(:title, :body, :user_id,
+                                              :id, :image, :tag_list)
+            end
