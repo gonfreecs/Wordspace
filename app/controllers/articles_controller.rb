@@ -96,6 +96,7 @@ class ArticlesController < ApplicationController
     redirect_to @article
   end
 
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
