@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406023125) do
+ActiveRecord::Schema.define(version: 20150408172909) do
+
+  create_table "ads", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "des"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -21,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150406023125) do
     t.datetime "updated_at",                   null: false
     t.integer  "user_id"
     t.boolean  "is_sponsored", default: false
+    t.string   "ad_title"
   end
 
   create_table "bids", force: :cascade do |t|
@@ -30,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150406023125) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "offer"
+    t.integer  "ad_id"
   end
 
   create_table "comments", force: :cascade do |t|

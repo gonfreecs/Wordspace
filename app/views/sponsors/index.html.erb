@@ -11,7 +11,7 @@
    </div>
 
     <% @reqspon.each do |s| %>
-    
+
       <div class="row">
       <div class="col-sm-3 ">
       <% @s = s %>
@@ -26,7 +26,7 @@
        </div>
 
        <div class="col-sm-3 ">
-       <%= link_to 'Reject', sponsors_path(@s,:type =>"Reject") %> 
+       <%= link_to 'Reject', sponsors_path(@s,:type =>"Reject") %>
        </div>
        </div>
    <%end%>
