@@ -16,8 +16,9 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-ENV["RAILS_ENV"] ||= 'test'
-require File.expand_path("../../config/environment",__FILE__)
+
+ENV['AILS_ENV'] ||= 'test'
+require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'factory_girl_rails'
 require 'simplecov'
@@ -93,7 +94,5 @@ RSpec.configure do |config|
 end
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
-end
-RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
 end

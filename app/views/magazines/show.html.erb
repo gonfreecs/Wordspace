@@ -14,7 +14,19 @@
   <strong>Image:</strong>
   <%= @magazine.image %>
 </p>
+
+<!-- Author: Mayar
+     Date: 5.4.2015
+     Description: Check if user is authorized to update and add articles to magazine -->
+
 <% if can? :update, @magazine %>
 <%= link_to 'Edit', edit_magazine_path(@magazine) %> 
-<% end %>|
-<%= link_to 'Back', magazines_path %>
+<%end%>
+
+<% if can? :update, @magazine %>
+    
+<%= link_to "New Article",  new_article_path(magazine_id: @magazine.id) %>
+
+<%end%>
+
+

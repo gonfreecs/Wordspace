@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label "Magazine name" %><br>
+    <%= f.text_field :name, autocomplete:"off" %>
   </div>
   <div class="field">
     <%= f.label :decription %><br>
@@ -24,6 +24,6 @@
     <%= f.file_field :image %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Magazine", class:"btn btn-outlined btn-grey" %>
   </div>
 <% end %>
