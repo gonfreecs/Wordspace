@@ -2,7 +2,7 @@
   # to upload avatar for user
    mount_uploader :avatar, AvatarUploader
 
-<<<<<<< HEAD
+
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable and :omniauthable
    	#:recoverable,

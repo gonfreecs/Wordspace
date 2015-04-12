@@ -1,4 +1,3 @@
-<<<<<<< HEAD
   Rails.application.routes.draw do
 
     resources :ads
@@ -15,6 +14,8 @@
         get 'delete'
       end
     end
+    resources :articles
+    resources :magazines
     resource :articles do
       collection do
        get 'bid'
