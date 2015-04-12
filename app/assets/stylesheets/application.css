@@ -31,13 +31,21 @@
      font-size: 16px;
  }
 
+.button-wrap{
+  background-color: transparent !important ;
+}
  a,
- a:hover,
+
  a:focus,
- a:active,
+
  a.active {
      outline: 0;
-    background-color: inherit;
+     color: #18bc9c;
+ }
+ a:hover,a:hover{
+   text-decoration: none ;
+   background-color: transparent ;
+   color: black ;
  }
 
  h1,
