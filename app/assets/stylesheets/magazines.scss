@@ -1,0 +1,34 @@
+// Place all the styles related to the magazines controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+  width: 40%;
+  min-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.field input[type=text], .field textarea {
+  width: 80%;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 12pt;
+  box-shadow: 0;
+  transition: box-shadow 0.3s;
+  border: 1px solid rgba(128, 0, 128, 0.2);
+}
+.field input[type=text]:focus, .field textarea:focus {
+  box-shadow: 0 0 3px rgba(128, 0, 128, 0.5);
+}
+.field input[type=text] {
+  height: 35px;
+}
+.field textarea {
+  min-height: 200px;
+  resize: none;
+  height: auto;
+}
+.field label {
+  margin-bottom: -5px;
+}

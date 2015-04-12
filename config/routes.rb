@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   Rails.application.routes.draw do
 
     resources :ads
@@ -19,14 +20,16 @@
        get 'bid'
   end
   end
-  resources :articles
+  # Search url matching
+  get '/search' => 'search#search'
+
   	resources :comments
   	resources :replies
     mount RedactorRails::Engine => '/redactor_rails'
     devise_for :users
     get 'main/index'
     root 'main#index'
-   resources:articles
+
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 
