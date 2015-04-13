@@ -28,27 +28,6 @@
        @ad = Ad.where(title: @article.ad_title, user_id: @bid.user_id)[0]
        @des = @ad.des.html_safe
      end
-
-
-     # Author: Mayar
-     # Date: 7.4.2015
-     # Description: adding magazine parameter to article of magazine
-     unless params[:magazine_id].nil?
-       @article.magazine_id = params[:magazine_id]
-     end
-
-     # Author: Mohammed El-Ansary
-     # 1.4.2015
-     # Filling the plain body which is used in the search
-     @article.plain_body = ActionView::Base.full_sanitizer
-       .sanitize(@article.body)
-     respond_to do |format|
-       if @article.save
-         format.html { redirect_to @article, notice: 'Article was created.' }
-       else
-         format.html { render :new }
-       end
-     end
    end
 
    # GET /articles/new
@@ -64,10 +43,20 @@
    # POST /articles.json
    def create
      @article.user = current_user
-
+     # Author: Mayar
+     # Date: 7.4.2015
+     # Description: adding magazine parameter to article of magazine
+     unless params[:magazine_id].nil?
+       @article.magazine_id = params[:magazine_id]
+     end
+     # Author: Mohammed El-Ansary
+     # 1.4.2015
+     # Filling the plain body which is used in the search
+     @article.plain_body = ActionView::Base.full_sanitizer
+       .sanitize(@article.body)
      respond_to do |format|
        if @article.save
-         format.html { redirect_to @article, notice: 'Article was successfully created.' }
+         format.html { redirect_to @article, notice: 'Article was created.' }
        else
          format.html { render :new }
        end

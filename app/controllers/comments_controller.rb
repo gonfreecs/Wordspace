@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  
+
     #loading all variables
 	load_and_authorize_resource
 	#rescue from invalid articles ids
@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 	    raise(CanCan::AccessDenied, 'Comment is not found')
 		  }
   def create
-  
+
   # @comment = Comment.new(params[:comment])
     if @comment.save
       flash[:notice] = 'Comment was successfully created.'
@@ -16,10 +16,9 @@ class CommentsController < ApplicationController
       flash[:notice] = "Error creating comment: #{@comment.errors}"
       redirect_to(@comment.article)
     end
-    
+
   end
- 
-  
+
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
@@ -42,7 +41,6 @@ class CommentsController < ApplicationController
       flash[:notice] = "Error creating comment: #{@comment.errors}"
       redirect_to(@comment.article)
     end
-    
   end
   def edit
   end

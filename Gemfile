@@ -1,10 +1,4 @@
 source 'https://rubygems.org'
-<<<<<<< HEAD
-# for avatar upload (carrierwave	)
-gem "carrierwave"
-gem "rmagick"
-=======
->>>>>>> 68a579fe7ce2e859013bfafec9639dbd53436e28
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -28,14 +22,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'redactor-rails'
-<<<<<<< HEAD
-gem "carrierwave"
-gem "mini_magick"
-=======
+
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'cancan'
->>>>>>> 68a579fe7ce2e859013bfafec9639dbd53436e28
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -44,15 +34,6 @@ gem 'cancan'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-<<<<<<< HEAD
-gem "twitter-bootstrap-rails"
-gem "font-awesome-rails"
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-   gem 'cancan'
-=======
-
 # Bootstrap styles gem
 gem 'twitter-bootstrap-rails'
 
@@ -73,8 +54,6 @@ group :development, :test do
   # 7.4.2015
   # Factory girl gem for tests
   gem 'factory_girl_rails'
->>>>>>> 68a579fe7ce2e859013bfafec9639dbd53436e28
-
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

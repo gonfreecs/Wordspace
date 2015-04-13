@@ -6,27 +6,6 @@
 # this file is here to facilitate running it.
 #
 
-<<<<<<< HEAD
-  puts "== Installing dependencies =="
-  system "gem install bundler --conservative"
-  system "bundle check || bundle install"
-
-  # puts "\n== Copying sample files =="
-  # unless File.exist?("config/database.yml")
-  #   system "cp config/database.yml.sample config/database.yml"
-  # end
-
-  puts "\n== Preparing database =="
-  system "bin/rake db:setup"
-
-  puts "\n== Removing old logs and tempfiles =="
-  system "rm -f log/*"
-  system "rm -rf tmp/cache"
-
-  puts "\n== Restarting application server =="
-  system "touch tmp/restart.txt"
-end
-=======
 require 'pathname'
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path("../../Gemfile",
   Pathname.new(__FILE__).realpath)
@@ -35,4 +14,3 @@ require 'rubygems'
 require 'bundler/setup'
 
 load Gem.bin_path('factory_girl_rails', 'setup')
->>>>>>> 68a579fe7ce2e859013bfafec9639dbd53436e28
