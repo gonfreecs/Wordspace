@@ -32,11 +32,10 @@
 
     def check_for_reject
       flash[:notice] = 'Widget was successfully created.'
-      if params[:type] == 'Reject'
-        @car = User.find(params[:format])
-        @car.update_attributes(is_sponsor: 0)
-        redirect_to sponsors_path
-      end
+      return unless  params[:type] == 'Reject'
+      @car = User.find(params[:format])
+      @car.update_attributes(is_sponsor: 0)
+      redirect_to sponsors_path
     end
 
     private

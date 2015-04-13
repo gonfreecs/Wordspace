@@ -23,11 +23,11 @@
      @comment = Comment.new(params[:comment])
      @replies = Reply.all
      @reply = Reply.new(params[:reply])
-     if !@article.ad_title.nil? && @article.is_sponsored
-       @bid = Bid.where(article_id: @article.id)[0]
-       @ad = Ad.where(title: @article.ad_title, user_id: @bid.user_id)[0]
-       @des = @ad.des.html_safe
-     end
+     return unless @article.is_sponsored
+     @bid = Bid.where(article_id: @article.id)[0]
+     @ad = Ad.where(title: @article.ad_title, user_id: @bid.user_id)[0]
+     @des = @ad.des.html_safe
+
    end
 
    # GET /articles/new
