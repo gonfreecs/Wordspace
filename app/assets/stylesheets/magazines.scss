@@ -7,6 +7,12 @@
   margin-right: auto;
   margin-left: auto;
 }
+.view-wrapper {
+  width: 72.5%;
+  min-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .field input[type=text], .field textarea {
   width: 80%;
   border: none;
@@ -31,4 +37,13 @@
 }
 .field label {
   margin-bottom: -5px;
+}
+.magimg {
+  width: 200px;
+  height: 150px;
+  border: 2px solid rgba(128, 0, 128, 0.2);
+  box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+}
+.modal-content, .modal-dialog{
+  -webkit-border-radius: 0;
 }
