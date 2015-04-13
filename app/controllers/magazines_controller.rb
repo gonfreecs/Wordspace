@@ -1,4 +1,3 @@
-
   # Author:Mohammed El-Ansary
   # 5.4.2015
   # Generated through scaffolding Magazine
