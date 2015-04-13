@@ -34,6 +34,7 @@ RSpec.describe MagazinesController, type: :controller do
     end
   end
 
+
     # Authou: Bassem
     # 11/4/2015
     # testing the method follow using rspec
@@ -63,12 +64,11 @@ RSpec.describe MagazinesController, type: :controller do
       request.env['HTTP_REFERER']
       @m1 = create(:magazine)
       @instance1 = Magazine.last
-      get :unfollow, id: @m1.id,
-                   magazine: FactoryGirl.attributes_for(:magazine)
-      #expect(@instance1.followers_count).to eq(1)
+      get :unfollow, id: @m1.id,magazine: FactoryGirl.attributes_for(:magazine)
       response.should redirect_to 'test'
     end
   end
+
 
 
 end

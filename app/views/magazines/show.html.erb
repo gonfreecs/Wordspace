@@ -1,3 +1,4 @@
+
         <div class="view-wrapper">
           <div class="row">
             <div class="col-sm-3">
@@ -5,17 +6,17 @@
             </div>
             <div class="col-sm-3">
               <h2><%= @magazine.name %></h2>
-              <!--user can  follow and unfollow magazine-->  
+              <!--user can  follow and unfollow magazine-->
 
-                  <% if can? :follow , @magazine %> 
+                  <% if can? :follow , @magazine %>
                   <%if (current_user.following?(@magazine)==false)%>
-                  
+
                   <%=link_to'<span class="label label-primary" style="cursor: pointer">Follow</span>'.html_safe, follow_magazine_path(@magazine),
                   method: :put ,
                   class: "Follow" %>
-                 
+
                     <%end%>
-                <%if (current_user.following?(@magazine)==true)%> 
+                <%if (current_user.following?(@magazine)==true)%>
 
                   <%=link_to'<span class="label label-primary" style="cursor: pointer">Unfollow</span>'.html_safe, unfollow_magazine_path(@magazine),
                   method: :put ,
@@ -26,11 +27,11 @@
             </div>
             <div class="col-sm-3">
               <br>
-              
-                  
 
-                       
-                      
+
+
+
+
 
               <a href="#" data-toggle="modal" data-target="#info">View info</a>
               <br>
@@ -58,8 +59,8 @@
              <%if can? :invite, @magazine%>
                   <%=link_to'<span class="label label-primary" style="cursor: pointer">Invite</span>'.html_safe ,controller: :magazines,action: :invite %>
                     <input type="text" name="FirstName" value="Enter user email">
-                    
-              <%end%> 
+
+              <%end%>
 
 
 
@@ -89,4 +90,3 @@
               </div>
             </div>
         </div>
-
