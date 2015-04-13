@@ -5,6 +5,10 @@
     class Bid < ActiveRecord::Base
       enum status: [:accepted, :rejected, :pending]
 
-      belongs_to :article
-      belongs_to :user
+      belongs_to :article, dependent: :destroy
+      belongs_to :user, dependent: :destroy
+      validates :user_id, presence:  true
+      validates :article_id, presence: true
+      validates :ad_id, presence: true
+      validates_numericality_of :offer, greater_than: 0
     end

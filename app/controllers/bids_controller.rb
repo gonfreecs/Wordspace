@@ -18,10 +18,12 @@ class BidsController < ApplicationController
     @bid = Bid.new(user_id: current_user.id, status: 'pending')
     @title = params[:title2]
     @ad = Ad.where(title:  @title, user_id: current_user.id)
-    @bid.ad_id = @ad[0].id
+    if @ad != []
+      @bid.ad_id = @ad[0].id
+    end
     @article_id = params[:article_id]
-    @offer = params[:offer2]
-    @offer3 = params[:offer3]
+    @offer = params[:offer3]
+    @offer3 = params[:offer2]
     if @offer != nil
       @bid.offer = @offer
     else
@@ -36,7 +38,7 @@ class BidsController < ApplicationController
     else
       flash[:notice] = "Error creating Bid: #{@bid.errors}"
 
-      redirect_to(@bid.article_id)
+      redirect_to :back
 
     end
   end
