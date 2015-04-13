@@ -1,4 +1,3 @@
-<<<<<<< HEAD
   Rails.application.routes.draw do
 
     resources :ads
@@ -8,23 +7,25 @@
         get 'destroy'
       end
     end
-    #adding resources
+    # adding resources
     resources :sponsors do
       collection do
         get 'control'
         get 'delete'
       end
     end
+    resources :articles
+    resources :magazines
     resource :articles do
       collection do
-       get 'bid'
-  end
-  end
-  # Search url matching
-  get '/search' => 'search#search'
+        get 'bid'
+      end
+    end
+    # Search url matching
+    get '/search' => 'search#search'
 
-  	resources :comments
-  	resources :replies
+    resources :comments
+    resources :replies
     mount RedactorRails::Engine => '/redactor_rails'
     devise_for :users
     get 'main/index'
