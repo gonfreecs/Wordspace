@@ -178,10 +178,11 @@
     cursor: pointer ;
 }
 .well{
+  margin: 0 auto;
+  top: 0% ;
   height: 300px ;
   width: 220px ;
   image-align: center ;
-  background-color: whiteh;
 }
 .well img {
     padding-right: 20px ;}
@@ -343,7 +344,12 @@ h5{
     	-webkit-transform: scale3d(1,1,1);
     	transform: scale3d(1,1,1);
     }
+    section {
+        width: 100% !important  ;
+        margin-left: auto;
+        margin-right: auto;
 
+    }
     .tabs-style-circle nav a {
     	overflow: visible;
     	color: #74777b;

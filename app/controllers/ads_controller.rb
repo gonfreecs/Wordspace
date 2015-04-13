@@ -2,8 +2,8 @@
 # Created at: 9/4/2015
 # this controller is for the ads which includes only creating a new ad,
 # Parameters of an ad are  title, user_id & description
-load_and_authorize_resource
 class AdsController < ApplicationController
+  load_and_authorize_resource
   def create
     @ad = Ad.new
     @ad.des = params[:des2]
