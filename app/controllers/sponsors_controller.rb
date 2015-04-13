@@ -6,11 +6,7 @@
 
     # GET /sponsors.json
     def index
-
-
       @reqspon = User.where("is_sponsor == '2'")
-
-
     end
     # Author: Omar Essam
     # created at: 4/4/2015
@@ -23,9 +19,7 @@
       @accepted_bids = Bid.where(user_id: current_user.id)
                        .accepted.order(created_at: :desc)
       @ads = Ad.where(user_id: current_user.id)
-
     end
-
 
     def check_for_approve
       flash[:notice] = 'Widget was successfully created.'

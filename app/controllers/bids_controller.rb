@@ -18,13 +18,11 @@ class BidsController < ApplicationController
     @bid = Bid.new(user_id: current_user.id, status: 'pending')
     @title = params[:title2]
     @ad = Ad.where(title:  @title, user_id: current_user.id)
-    if @ad != []
-      @bid.ad_id = @ad[0].id
-    end
+    @bid.ad_id = @ad[0].id if @ad != []
     @article_id = params[:article_id]
     @offer = params[:offer3]
     @offer3 = params[:offer2]
-    if @offer != nil
+    if !@offer.nil?
       @bid.offer = @offer
     else
       @bid.offer = @offer3
@@ -44,15 +42,12 @@ class BidsController < ApplicationController
   end
 
   def update
-
   end
 
   def destroy
-
     bid = Bid.find(params[:bid_id])
     bid.destroy
     redirect_to controller: :sponsors, action: :control
-
   end
 
   def edit

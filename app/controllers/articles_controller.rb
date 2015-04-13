@@ -4,9 +4,9 @@
    # loading all variables
    load_and_authorize_resource
    # rescue from invalid articles ids
-   rescue_from(ActiveRecord::RecordNotFound) {
+   rescue_from(ActiveRecord::RecordNotFound) do
      fail(CanCan::AccessDenied, 'Article is not found')
-   }
+   end
    # check if cancel => no updates performed
    before_filter :check_for_cancel, only:  [:create, :update]
    # GET /articles
@@ -86,15 +86,12 @@
    end
    # Cancel an update and return to article page
    def check_for_cancel
-     if params[:commit] == 'Cancel'
-       redirect_to @article
-     end
+     redirect_to @article if params[:commit] == 'Cancel'
    end
 
    def bid
      @ar = Article.find(params[:a2_id])
      redirect_to controller: :bids, action: :create, a_id: @ar.id
-
    end
 
    private
