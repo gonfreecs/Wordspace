@@ -30,15 +30,14 @@
     <div class="col-sm-12">
       <p><%= f.text_area :body,:class => "redactor", :rows => 40, :cols => 120%></p>
     </div>
-  </div>
-  <!-- Submit Article -->
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="actions">
-        <%=f.submit "Publish", :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
-      
 
-
+    <%= f.hidden_field :magazine_id, value: params[:magazine_id]%>
+    <!-- Submit Article -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="actions">
+          <%=f.submit "Publish", :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
+        </div>
       </div>
     </div>
   </div>

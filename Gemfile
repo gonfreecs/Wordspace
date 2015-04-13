@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
+
 # for avatar upload (carrierwave	)
 gem 'carrierwave'
 gem 'rmagick'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -40,9 +42,16 @@ gem 'acts_as_votable'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Bootstrap styles gem
 gem 'twitter-bootstrap-rails'
+
+# To include font-awesome icons
 gem 'font-awesome-rails'
-# simplecov to evaluate tests
+
+# Author: Mohammed El-Ansary
+# 7.4.2015
+# Simplecov to evaluate tests
 gem 'simplecov', group: :test
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,7 +59,9 @@ group :development, :test do
 
   # Rspec for tests
   gem 'rspec-rails', '~> 3.0'
-
+  # Author: Mohammed El-Ansary
+  # 7.4.2015
+  # Factory girl gem for tests
   gem 'factory_girl_rails'
 
   # Access an IRB console on exception pages or by using <%= console %> in views

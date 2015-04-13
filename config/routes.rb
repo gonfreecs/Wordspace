@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :magazines
+
   # adding resources
 
   resources :sponsors
