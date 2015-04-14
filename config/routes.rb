@@ -17,4 +17,6 @@
         get 'main/index'
         root 'main#index'
         resources :articles
+        # Search url matching
+        get '/search' => 'search#search'
       end
