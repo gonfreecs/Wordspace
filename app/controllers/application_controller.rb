@@ -15,7 +15,6 @@
 
       protected
 
-
       # fields for signing up
       def configure_permitted_parameters
         devise_parameter_sanitizer.for(:sign_up) do |u|
@@ -31,7 +30,6 @@
           u.permit(:username, :email, :password,
                    :password_confirmation, :current_password, :avatar,
                    :avatar_cache, :budget)
-
         end
       end
     end
