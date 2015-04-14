@@ -3,4 +3,8 @@
 
 *.log
 tmp/
+<<<<<<< HEAD
 vendor/bundle
+=======
+coverage/
+>>>>>>> ecee245503362cc428fc50fb9b1eeef0823cbac6
