@@ -41,7 +41,7 @@
       <p><font size="3"><%= @article.body.html_safe %></font></p>
     </div>
   </div>
-  <div class="col-md-2"></div>
+  <div class="col-md-2"></div> 
 </div>
 <!....This is the part where we call all comments.....>
 <%= render :partial => 'comment', :collection => @article.comments %>
