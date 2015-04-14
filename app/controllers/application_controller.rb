@@ -21,14 +21,14 @@
         u.permit(:email, :password, :is_female, :is_sponsor,
                  :firstname, :lastname)
       end
-      #mohab
-      #7.4.2015
+      # mohab
+      # 7.4.2015
       # add avatar ,email password field to account_update
-      #add budget
+      # add budget
       devise_parameter_sanitizer.for(:account_update) do |u|
         u.permit(:username, :email, :password,
                  :password_confirmation, :current_password, :avatar,
-                 :avatar_cache , :budget)
+                 :avatar_cache, :budget)
       end
     end
   end

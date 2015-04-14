@@ -84,13 +84,13 @@
           def set_article
             @article = Article.find(params[:id])
           end
-        #mohab
-        #5.4.2015
+          # mohab
+          # 5.4.2015
           # Never trust parameters from the scary internet
-          #add strong parameter promoted value and boolean promoted
+          # add strong parameter promoted value and boolean promoted
           def article_params
-            params.require(:article).permit(:title, :body, :user_id, :id, 
-                                             :image ,:promotevalue, 
-                                             :promoted)
+            params.require(:article).permit(:title, :body, :user_id, :id,
+                                            :image, :promotevalue,
+                                            :promoted)
           end
         end
