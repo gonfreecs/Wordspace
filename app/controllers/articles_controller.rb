@@ -20,6 +20,7 @@
 	  @comment = Comment.new(params[:comment])
 	  @replies = Reply.all
 	  @reply = Reply.new(params[:reply])
+		@report = Reportarticle.where("user_id = ? AND article_id = ?", current_user.id ,params[:id])
 
 
 	  end
@@ -70,6 +71,32 @@
 	      format.json { head :no_content }
 	    end
 	  end
+
+		def dismiss
+			@reportarticles=Reportarticle.where(:article_id => params[:a_id])
+			@reportarticles.each do|rep_art|
+			rep_art.is_dismissed = 1
+			if rep_art.save
+				flash[:notice] = 'Article was successfully dismissed.'
+			else
+				flash[:notice] = "Error dismissing article: #{rep_art.errors}"
+			end
+			end
+			redirect_to :back
+		end
+
+		def report
+			#Author:Mina Hany
+		  #3.4.2015
+		  #A hash is created containing user's id who wants to report an article
+		  #and that article's id and it is added to model contaioning reported requests
+			reportarticleh = {"user_id" => current_user.id,
+												"article_id" => params[:id],
+												"is_dismissed" => 0}
+			Reportarticle.create(reportarticleh)
+			 @article =Article.find( params[:id])
+			redirect_to @article
+		end
 
 	  private
 	  # Use callbacks to share common setup or constraints between actions.

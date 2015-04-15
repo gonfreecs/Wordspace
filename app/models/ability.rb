@@ -8,30 +8,37 @@ class Ability
  	can :show, Reply
  	if user != nil
  		can :update, Article do |article|
- 			 article.user_id == user.id	      
+ 			 article.user_id == user.id
  		end
  		can :create, Article
-		
+    can :report, Article
+
 		can :update, Comment do |c|
- 			 c.user_id == user.id	      
+ 			 c.user_id == user.id
  		end
  		can :destroy, Comment do |co|
- 			 co.user_id == user.id	
- 		end      
+ 			 co.user_id == user.id
+ 		end
 		can :create, Comment
-		
+		can :report, Comment
 		can :update, Reply do |r|
- 			 r.user_id == user.id	      
+ 			 r.user_id == user.id
  		end
  		can :destroy, Reply do |ro|
- 			 ro.user_id == user.id	
- 		end      
+ 			 ro.user_id == user.id
+ 		end
 		can :create, Reply
-		
+
 		if user.is_moderator
 			can :destroy, Article
 			can :destroy, Comment
 			can :destroy, Reply
+      can :ban, User
+      can :unban, User
+      can :dismiss, Reportarticle
+      can :dismiss, Reportcomment
+      can :dismiss, Article
+      can :dismiss, Comment
 		end
  	end
 

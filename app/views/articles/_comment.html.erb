@@ -4,7 +4,7 @@
 <div class="col-md-8">
 
 	 <!....This is the comment information.....>
-	<hr />
+	<br>
 	<% @user = User.find(comment.user_id) %>
 	<div class="row">
 	<div class="col-md-2">
@@ -33,13 +33,16 @@
 	<%= link_to '<font size ="5" color="black" ><span class = "fa fa-pencil-square-o" ></span></font>'.html_safe , edit_comment_path(comment)%>
 
 <% end %>
+<% if can? :report, comment %>
+    <%= link_to 'Report',action: "report",controller: "comments" %>
+   <% end %> 
 	</div><!-- /panel panel-heading -->
 	<div class="panel-body">
 	 <font size ="3"><%= comment.des %></font>
 	</div><!-- /panel-body -->
 	</div><!-- /panel panel-default -->
 </div><!-- /10 -->
-	<hr>
+	<br>
 </div> <!-- /row -->
 <div class ="row">
 	<div class="col-md-2"></div>
@@ -51,7 +54,7 @@
 		<div class="collapse" id="collapseExample">
 			<% @replies.each do|r| %>
 			<% if r.comment_id == comment.id %>
-			<hr />
+			<br />
 			<div class="row">
  	 <div class="col-md-1"></div>
  	 <div class="col-md-2">
@@ -82,11 +85,12 @@
 	<font size="3"><%= r.des %></font>
 	</div><!-- /panel-body -->
 	</div><!-- /panel panel-default -->
+
 </div><!-- /9 -->
 </div><!-- /row -->
   <% end %>
   <% end %>
-<hr />
+<br>
 <div class="row">
 <div class="col-md-3"></div>
 <div class="col-md-9">
@@ -102,7 +106,7 @@
   <%= f.hidden_field :comment_id, :value => comment.id %>
   <%= f.text_area :des, :class =>"form-control", :placeholder=>"Write your comment here...",:type=>"text" %>
 
-    <%= f.submit "Add Reply" ,:type=>"text", :class =>"btn btn-default"%>
+    <%= f.submit "Add Reply", :class =>"btn btn-default"%>
   <% end %>
 <% end %>
 </div>

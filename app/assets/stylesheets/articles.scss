@@ -44,10 +44,16 @@
     background:#D0D0D0!important;
 
 }
-.hr {
-  display: block!important;
-  border-width: 2px!important;
-}
+
 a:hover{
   cursor:pointer;
+}
+hr {
+    display: block!important;
+    margin-top: 0.5em!important;
+    margin-bottom: 0.5em!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    border-style: inset!important;
+    border-width: 3px!important;
 }

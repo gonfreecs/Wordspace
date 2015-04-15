@@ -1,18 +1,28 @@
 
-<!% @articles = Article.find(Reported_articles.where(:dismissed => 1).uniq.pluck(:article_id)) %>
-
-<% if @articles != nil %>
+<% @articles = Article.find((Reportarticle.where(is_dismissed:1)).uniq.pluck(:article_id)) %>
+<!% @articles = Article.where(:user_id=>10) %>
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<% if @articles != [] %>
 <% @articles.each do|a| %>
-  
-  <font size="4"><i><b><%=h User.find(a.user_id).firstname %> :</b></i></font><br />
-  &nbsp;&nbsp;&nbsp;<%=h a.body %><br />
-  
-  <%= link_to 'Delete', a, :confirm => 'Are you sure?', :method => :delete %>
-   
-  <br />
-  <br />
+<div class ="well">	<img src= <%= a.image %> height="180" width="180" class="center">
+  <h5><%= link_to a.title , @article %></h5>
+
+<h6>  By:  <%= User.find(a.user_id).firstname %>
+<%= User.find(a.user_id).lastname %></h6>
+
+
+
+
+  <%= link_to 'Delete', a, :confirm => 'Are you sure?', :method => :delete, :class =>"btn btn-default" %>
+</div>
+
   <% end %>
-  
+
    <% else %>
   <p> Nothing to display </p>
   <% end %>
+</div>
+<div class="col-md-2"></div>
+  </div>

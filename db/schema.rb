@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331143302) do
+ActiveRecord::Schema.define(version: 20150414220234) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -56,6 +56,22 @@ ActiveRecord::Schema.define(version: 20150331143302) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reportarticles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.integer  "is_dismissed"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "reportcomments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "comment_id"
+    t.integer  "is_dismissed"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "reports", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -80,6 +96,8 @@ ActiveRecord::Schema.define(version: 20150331143302) do
     t.string   "lastname"
     t.text     "about_me"
     t.boolean  "is_female",              default: false
+    t.integer  "is_banned"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

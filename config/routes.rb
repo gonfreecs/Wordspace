@@ -1,5 +1,32 @@
 Rails.application.routes.draw do
   #adding resources
+
+  get "users/reports" => 'users#reports', :as => :reports
+  get "users/banned_users" => 'users#banned_users', :as => :banned_users
+ resources :sponsors
+ resources :articles do
+ member do
+   get 'report'
+   get 'dismiss'
+ end
+end
+
+resources :users do
+member do
+  get 'reports'
+  get 'banned_users'
+  get 'ban'
+  get 'unban'
+end
+end
+ #specifying route for report action in comment controller
+ resources :comments do
+ member do
+   get 'report'
+   get 'dismiss'
+ end
+end
+#adding resources
   resources :articles
 	resources :comments
 	resources :replies
@@ -11,8 +38,6 @@ Rails.application.routes.draw do
  #get "moderators/reports" => 'moderators#reports', :as => :reports
  #get "moderators/banned_users" => 'moderators#banned_users', :as => :banned_users
  #resources :moderators
- get "users/reports" => 'users#reports', :as => :reports
- get "users/banned_users" => 'users#banned_users', :as => :banned_users
  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

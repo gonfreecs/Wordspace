@@ -1,3 +1,13 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user .panel-default> .panel-heading {
+  border-radius: 25px !important;
+    background:#D0D0D0!important;
+
+}
+
+.user .commenterImage img {
+    width:80%;
+    border-radius:50%;
+}
