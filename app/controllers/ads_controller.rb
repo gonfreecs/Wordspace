@@ -15,7 +15,7 @@ class AdsController < ApplicationController
         flash[:notice] = 'Ad was successfully created.'
         redirect_to controller: :sponsors, action: :control
       else
-        flash[:notice] = "Error creating Ad: #{@bid.errors}"
+        flash[:notice] = "Error creating Ad: #{@ad.errors}"
 
         redirect_to(controller: :sponsors, action: :control)
       end
