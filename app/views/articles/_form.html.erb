@@ -34,17 +34,16 @@
             <p>  <%= f.label :tag_list, "Tags (separated by commas)" %></p>
             <p><%= f.text_field :tag_list %></p>
           </div>
-       
+
       </div>
 
-
-      <!-- Submit Article -->
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="actions">
-            <%=f.submit "Publish", :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
-
-        </div>
+    </div>
+    <%= f.hidden_field :magazine_id, value: params[:magazine_id]%>
+    <!-- Submit Article -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="actions">
+          <%=f.submit "Publish", :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
         </div>
       </div>
 

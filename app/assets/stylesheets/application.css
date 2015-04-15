@@ -17,7 +17,6 @@
  *= require font-awesome
  *= require awesome-share-buttons 
  */
-
 /* Generic styles for basics and the navbar, copyrighted to wrapbootstra.com */
  body {
      overflow-x: hidden;
@@ -328,10 +327,10 @@
 	float: left;
 	overflow: hidden;
 	margin: 10px 1%;
-	min-width: 320px;
-	max-width: 480px;
-	max-height: 360px;
-	width: 48%;
+	min-width: 240px;
+	max-width: 400px;
+	max-height: 280px;
+	width: 31%;
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
@@ -343,6 +342,8 @@
 	min-height: 100%;
 	max-width: 100%;
 	opacity: 0.8;
+  size: 100%;
+  -o-object-fit: contain;
 }
 
 .grid figure figcaption {
@@ -366,6 +367,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
+  z-index: 0;
 }
 
 /* Anchor will cover the whole item by default */
@@ -379,6 +381,7 @@
 }
 
 .grid figure h2 {
+  font-size: 18pt;
 	word-spacing: -0.15em;
 	font-weight: 300;
 }
@@ -400,7 +403,9 @@
 /*---------------*/
 /***** Sadie *****/
 /*---------------*/
-
+figure.effect-sadie figcaption {
+  background: rgba(0, 0, 0, 0.1);
+}
 figure.effect-sadie figcaption::before {
 	position: absolute;
 	top: 0;
@@ -420,7 +425,7 @@ figure.effect-sadie h2 {
 	top: 50%;
 	left: 0;
 	width: 100%;
-	color: #484c61;
+	color: #efefef;
 	-webkit-transition: -webkit-transform 0.35s, color 0.35s;
 	transition: transform 0.35s, color 0.35s;
 	-webkit-transform: translate3d(0,-50%,0);
@@ -469,14 +474,6 @@ figure.effect-sadie:hover p {
 		width: 100%;
 	}
 }
-/* Styles for input radiobuttons and checkboxes from http://bootsnipp.com/snippets/featured/checkboxradio-css-only*/
-.btn span.fa {
-	opacity: 0;
-}
-.btn.active span.fa {
-	opacity: 1;
-}
-
 /* Styles for outlined buttons from http://bootsnipp.com/snippets/featured/outlined-flat-buttons */
 .btn {
 	letter-spacing: 1px;
@@ -569,17 +566,17 @@ figure.effect-sadie:hover p {
   position: relative;
   width: 540px;
 }
- 
+
 .polaroid img {
-  
+
   border: 10px solid #fff;
   border-bottom: 45px solid #fff;
   -webkit-box-shadow: 3px 3px 3px #777;
      -moz-box-shadow: 3px 3px 3px #777;
           box-shadow: 3px 3px 3px #777;
-          
+
 }
- 
+
 .polaroid p {
   position: absolute;
   text-align: center;
@@ -590,4 +587,36 @@ figure.effect-sadie:hover p {
 }
 .limitSize img{
   max-width: 890px  ;
+}
+/********************
+*****Search Bar******
+********************/
+#search-container {
+  height: 50px;
+  width: 100%;
+  background-color: rgba(248, 248, 248, 0.9);
+  position: fixed;
+  z-index: 1;
+  display: none;
+}
+#search-container div {
+  width: 72.5%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1000;
+}
+#search-container input[type="search"] {
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  border: none;
+  font-size: 170%;
+  background-color: transparent;
+  font-family: Helvetica;
+  line-height: 2em;
+}
+#search-container input[type="search"]:focus {
+  outline: none;
+  color: #555555;
 }
