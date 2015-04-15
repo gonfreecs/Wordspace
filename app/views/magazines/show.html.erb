@@ -12,7 +12,15 @@
       <h4><span class="label label-primary" style="cursor: pointer">Follow</span></h4>
       <a href="#" data-toggle="modal" data-target="#info">View info</a>
       <br>
-      <a href="#">Edit info</a>
+      <% if can? :update, @magazine %>
+      <%= link_to 'Edit Info', edit_magazine_path(@magazine) %>
+      <%end%>
+      <br>
+      <% if can? :update, @magazine %>
+
+      <%= link_to "New Article",  new_article_path(magazine_id: @magazine.id) %>
+
+      <%end%>
     </div>
   </div>
   <div class="row">
@@ -61,13 +69,3 @@
 <!-- Author: Mayar
      Date: 5.4.2015
      Description: Check if user is authorized to update and add articles to magazine -->
-
-<% if can? :update, @magazine %>
-<%= link_to 'Edit', edit_magazine_path(@magazine) %>
-<%end%>
-
-<% if can? :update, @magazine %>
-
-<%= link_to "New Article",  new_article_path(magazine_id: @magazine.id) %>
-
-<%end%>

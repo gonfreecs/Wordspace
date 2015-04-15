@@ -7,4 +7,8 @@ tmp/
 vendor/bundle
 =======
 coverage/
+<<<<<<< HEAD
 >>>>>>> ecee245503362cc428fc50fb9b1eeef0823cbac6
+=======
+>>>>>>> 7e82538ecad07b868cf6a42bca170df9527169a3
+>>>>>>> 44fa37e2e14485273707f18bdff5b56e94f460d7

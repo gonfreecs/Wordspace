@@ -4,8 +4,8 @@
 class CreateMagazineUserJoin < ActiveRecord::Migration
   def change
     create_table :magazines_users do |t|
-      t.column :magazine_id, :integer
-      t.column :user_id, :integer
+      t.column 'magazine_id', :integer
+      t.column 'user_id', :integer
     end
   end
 end
