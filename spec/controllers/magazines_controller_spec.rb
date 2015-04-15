@@ -1,5 +1,23 @@
 require 'rails_helper'
 RSpec.describe MagazinesController, type: :controller do
+
+  # Author: Mayar
+  # 8.4.2015
+  # Magazine Controller Tests for managesMagazine
+  describe 'PUT #update' do
+    it 'updates maagzine info correctly' do
+      @magazine = create(:magazine)
+      @user = create(:user)
+      sign_in @user
+      @magazine.users << @user
+      put :update, id: @magazine.id,
+                   magazine: FactoryGirl.attributes_for(:magazine,
+                                                        name: 'test')
+      @magazine.reload
+      @magazine.name.should == 'test'
+    end
+  end
+
   # Author: Mohammed El-Ansary
   # 9.4.2015
   # Magazine Controller Tests for CreateMagazine
@@ -34,7 +52,7 @@ RSpec.describe MagazinesController, type: :controller do
     end
   end
 
-    # Authou: Bassem
+    # Author: Bassem
     # 11/4/2015
     # testing the method follow using rspec
   describe 'GET #follow' do
@@ -52,7 +70,7 @@ RSpec.describe MagazinesController, type: :controller do
     end
   end
 
-  # Authou: Bassem
+  # Author: Bassem
   # 11/4/2015
   # testing the method unfollow using rspec
   describe 'GET #unfollow' do

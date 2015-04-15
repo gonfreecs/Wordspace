@@ -34,31 +34,41 @@
     def edit
     end
 
+    # To improve code style
+    def error
+      format.json do
+        render json: @magazine.errors, status: :unprocessable_entity
+      end
+    end
+
     # POST /magazines
     # POST /magazines.json
     def create
+      # Author:Mohammed El-Ansary
+      # 5.4.2015
+      # Adds current user to the magazine's list of contributers
+      # and also adds the magazine to the user's list of magazines
       @magazine.users << current_user
       respond_to do |format|
         if @magazine.save
-          format.html { redirect_to @magazine, notice: 'Magazine was successfully created.' }
+          format.html { redirect_to @magazine, notice: 'Successfully created.' }
           format.json { render :show, status: :created, location: @magazine }
         else
           format.html { render :new }
-          format.json { render json: @magazine.errors, status: :unprocessable_entity }
+          error
         end
       end
     end
 
-    # PATCH/PUT /magazines/1
-    # PATCH/PUT /magazines/1.json
+
     def update
       respond_to do |format|
         if @magazine.update(magazine_params)
-          format.html { redirect_to @magazine, notice: 'Magazine was successfully updated.' }
+          format.html { redirect_to @magazine, notice: 'Successfully updated.' }
           format.json { render :show, status: :ok, location: @magazine }
         else
           format.html { render :edit }
-          format.json { render json: @magazine.errors, status: :unprocessable_entity }
+          error
         end
       end
     end
@@ -68,28 +78,11 @@
     def destroy
       @magazine.destroy
       respond_to do |format|
-        format.html { redirect_to magazines_url, notice: 'Magazine was successfully destroyed.' }
+        format.html do
+          redirect_to magazines_url, notice: 'Successfully destroyed.'
+        end
         format.json { head :no_content }
       end
-    end
-
-
-    # Author:Bassem
-    # 31/03/2015
-    # Here is how the user follow a magazine
-    def follow
-      @magazine = Magazine.find(params[:id])
-      current_user.follow(@magazine)
-      redirect_to :back
-    end
-
-    # Author:Bassem
-    # 31/03/2015
-    # Here is how the user unfollow
-    def unfollow
-      @magazine = Magazine.find(params[:id])
-      current_user.stop_following(@magazine)
-      redirect_to :back
     end
 
     #def invite
@@ -114,8 +107,28 @@
       @magazine = Magazine.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameters from the scary internet
+    # only allow the white list through.
     def magazine_params
       params.require(:magazine).permit(:name, :decription, :image)
     end
+
+    # Author:Bassem
+    # 31/03/2015
+    # Here is how the user follow a magazine
+    def follow
+      @magazine = Magazine.find(params[:id])
+      current_user.follow(@magazine)
+      redirect_to :back
+    end
+
+    # Author:Bassem
+    # 31/03/2015
+    # Here is how the user unfollow
+    def unfollow
+      @magazine = Magazine.find(params[:id])
+      current_user.stop_following(@magazine)
+      redirect_to :back
+    end
+
   end
