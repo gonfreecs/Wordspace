@@ -27,7 +27,6 @@
       @car = User.find(params[:format])
       @car.update_attributes(is_sponsor: 1)
       redirect_to sponsors_path
-
     end
 
     def check_for_reject
