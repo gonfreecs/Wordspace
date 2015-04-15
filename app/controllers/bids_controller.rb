@@ -15,21 +15,21 @@ class BidsController < ApplicationController
   end
 
   def create
-    @bid = Bid.new(user_id: current_user.id, status: 'pending')
+
     @title = params[:title2]
     @ad = Ad.where(title:  @title, user_id: current_user.id)
-    @bid.ad_id = @ad[0].id if @ad != []
+    @ad_id = @ad[0].id if @ad != []
     @article_id = params[:article_id]
-    @offer = params[:offer3]
-    @offer3 = params[:offer2]
-    if !@offer.nil?
-      @bid.offer = @offer
+    @off3 = params[:offer3]
+    @off2 = params[:offer1]
+    if @off3 != ""
+      @offer = @off3.to_i
     else
-      @bid.offer = @offer3
+      @offer = @off2.to_i
 
     end
-    @bid.article_id = @article_id
-
+    @bid = Bid.new(user_id: current_user.id, status: 'pending',
+                   article_id: @article_id, ad_id: @ad_id, offer: @offer)
     if @bid.save
       flash[:notice] = 'Bid was successfully created.'
       redirect_to article_path(@bid.article_id)

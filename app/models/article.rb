@@ -4,7 +4,7 @@
     # adding relation between user and articles
     mount_uploader :image, ImgUploader
     belongs_to :user
-    has_many :bids
+    has_many :bids, dependent: :destroy
     has_one :ad
     # Check if image size is larger than 5 MB
     def image_size

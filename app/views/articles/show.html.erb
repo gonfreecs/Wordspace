@@ -44,8 +44,8 @@
 						<div class="dialog-inner">
 							<%= form_tag ({:controller => 'bids', :action => 'create', :article_id =>@article.id}) do %>
 							<h2>Choose one of our standard forms</h2>
-							<h5><%=radio_button_tag :offer2, 3, checked = true %>  3 cents/view</h5>
-							<h5><%= radio_button_tag :offer2, 7 %> 7 cents/view</h5>
+							<h5><%=radio_button_tag :offer1, 3, checked = true %>  3 cents/view</h5>
+							<h5><%= radio_button_tag :offer1, 7 %> 7 cents/view</h5>
 							<br>
 							<h2>Send a custom offer</h2>
 							<h5>	<%= number_field_tag :offer3, in: 1.0..20.0, step: 1.0 %>cents/view</h5>

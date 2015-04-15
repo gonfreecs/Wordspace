@@ -1,3 +1,4 @@
+  # User Model
   class User < ActiveRecord::Base
     # to upload avatar for user
     mount_uploader :avatar, AvatarUploader
@@ -11,8 +12,11 @@
     validates :lastname, presence: true
     # adding relation between user and articles
     has_many :articles
-    has_many :bids
-    has_many :ads
+    # Author: Omar Essam
+    # created at: 4/4/2015
+    # bids and ads relations
+    has_many :bids, dependent: :destroy
+    has_many :ads, dependent: :destroy
     has_and_belongs_to_many :magazines
     has_many :collaboration_invitation
     has_many :magazines, through: :collaboration_invitation
