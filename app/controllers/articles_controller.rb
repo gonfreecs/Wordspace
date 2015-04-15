@@ -86,10 +86,14 @@ def report
   #3.4.2015
   #A hash is created containing user's id who wants to report an article
   #and that article's id and it is added to model contaioning reported requests
+	@report = Reportarticle.where("user_id = ? AND article_id = ?", current_user.id ,params[:id])
+	if @report.present?
+		redirect_to @article and return
+	end
 	reportarticleh = {"user_id" => current_user.id,
 										"article_id" => params[:id]}
 	Reportarticle.create(reportarticleh)
-	 @article =Article.find( params[:id])
+	@article =Article.find(params[:id])
 	redirect_to @article
 end
 

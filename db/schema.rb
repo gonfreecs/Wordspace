@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327104939) do
+ActiveRecord::Schema.define(version: 20150406201640) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "user_id"
+    t.integer  "magazine_id", default: 0
   end
 
   create_table "comments", force: :cascade do |t|
@@ -28,6 +29,19 @@ ActiveRecord::Schema.define(version: 20150327104939) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "magazines", force: :cascade do |t|
+    t.string   "name"
+    t.text     "decription"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "magazines_users", force: :cascade do |t|
+    t.integer "magazine_id"
+    t.integer "user_id"
   end
 
   create_table "redactor_assets", force: :cascade do |t|
@@ -65,6 +79,16 @@ ActiveRecord::Schema.define(version: 20150327104939) do
 
   add_index "reportarticles", ["article_id"], name: "index_reportarticles_on_article_id"
   add_index "reportarticles", ["user_id"], name: "index_reportarticles_on_user_id"
+
+  create_table "requestjoiningmagazines", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "magazine_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "requestjoiningmagazines", ["magazine_id"], name: "index_requestjoiningmagazines_on_magazine_id"
+  add_index "requestjoiningmagazines", ["user_id"], name: "index_requestjoiningmagazines_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
