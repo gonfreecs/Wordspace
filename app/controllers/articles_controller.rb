@@ -23,6 +23,9 @@
      @replies = Reply.all
      @reply = Reply.new(params[:reply])
      return unless @article.is_sponsored
+     # Author: Omar Essam
+     # created at: 5/4/2015
+     # putting ads in article view
      @bid = Bid.where(article_id: @article.id)[0]
      @ad = Ad.where(title: @article.ad_title, user_id: @bid.user_id)[0]
      @des = @ad.des.html_safe
