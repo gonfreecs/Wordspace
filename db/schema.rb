@@ -10,17 +10,24 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 20150406201640) do
-
+ActiveRecord::Schema.define(version: 20150407210738) do
   create_table "articles", force: :cascade do |t|
-    t.string   "title"
+    t.text     "title"
     t.text     "body"
     t.string   "image"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "user_id"
     t.integer  "magazine_id", default: 0
+    t.text     "plain_body"
+  end
+
+  create_table "collaboration_invitations", force: :cascade do |t|
+    t.integer  "status"
+    t.integer  "User_id"
+    t.integer  "Magazine_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -30,6 +37,19 @@ ActiveRecord::Schema.define(version: 20150406201640) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer  "followable_id",                   null: false
+    t.string   "followable_type",                 null: false
+    t.integer  "follower_id",                     null: false
+    t.string   "follower_type",                   null: false
+    t.boolean  "blocked",         default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
+  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
   create_table "magazines", force: :cascade do |t|
     t.string   "name"

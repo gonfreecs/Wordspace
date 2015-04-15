@@ -1,21 +1,29 @@
 Rails.application.routes.draw do
+  resources :magazines
 
-  #adding resources
+  # adding resources
   resources :sponsors
   resources :articles do
   member do
     get 'report'
   end
 end
-	resources :comments
-	resources :replies
+  resources :articles
+  resources :comments
+  resources :replies
+  resources :collaboration_invitations do
+    collection do
+      get 'check_for_approve'
+      get 'check_for_reject'
+    end
+  end
   mount RedactorRails::Engine => '/redactor_rails'
   devise_for :users
   get 'main/index'
   root 'main#index'
- resources:articles
-
-
+  # Search url matching
+  get '/search' => 'search#search'
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -70,4 +78,3 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

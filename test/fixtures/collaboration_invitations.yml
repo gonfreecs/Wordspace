@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  User_id: 1
+  Magazine_id: 1
+
+two:
+  status: 1
+  User_id: 1
+  Magazine_id: 1
