@@ -33,6 +33,9 @@ class Ability
       # Author: Mayar
       # Date: 5.4.2015
       # Only managize managers can update magazines
+      can :showrequests, Magazine
+      can :approverequest, Magazine
+      can :rejectrequest, Magazine
       can :update, Magazine do |m|
         (m.users.include? user)
       end

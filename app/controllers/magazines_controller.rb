@@ -21,6 +21,10 @@ class MagazinesController < ApplicationController
   # GET /magazines/1
   # GET /magazines/1.json
   def show
+    @join = Requestjoiningmagazine.where(
+      'user_id = ? AND magazine_id = ?',
+      current_user.id,
+      params[:id])
     @users = @magazine.users
     @articles = Article.where(magazine_id: params[:id])
   end
@@ -90,6 +94,54 @@ class MagazinesController < ApplicationController
   def check_for_cancel
     return false if params[:commit] != 'Cancel'
     redirect_to @magazine
+  end
+
+  # Request joining a magazine
+  def join
+    joinh = { 'user_id' => current_user.id, 'magazine_id' => params[:id] }
+    Requestjoiningmagazine.create(joinh)
+    @magazine = Magazine.find(params[:id])
+    redirect_to @magazine
+  end
+
+  def showrequests
+    #Author:Mina Hany
+    #5.4.2015
+    #Obtain all requests having the magaine id and get the
+    #corresponding users and put them in array to view them
+    @request = Requestjoiningmagazine.where('magazine_id = ?', params[:id])
+    @users = []
+    @request.each do |r|
+      @users.push(User.find(r.user_id))
+    end
+  end
+
+  def approverequest
+    #Author:Mina Hany
+    #5.4.2015
+    #Remove the specified request from the joining requests and
+    #add the specified user to magaine's collaborators
+    @req = Requestjoiningmagazine.where(
+      "user_id = ? AND magazine_id = ?",
+      params[:user],
+      params[:id])
+    @req.destroy_all
+    @magazine = Magazine.find(params[:id])
+    @user = User.find(params[:user])
+    @magazine.users << @user
+    redirect_to action: :showrequests
+  end
+
+  def rejectrequest
+    #Author:Mina Hany
+    #5.4.2015
+    #Remove the specified request from the joining requests
+    @req = Requestjoiningmagazine.where(
+      "user_id = ? AND magazine_id = ?",
+      params[:user],
+      params[:id])
+    @req.destroy_all
+    redirect_to action: :showrequests
   end
 
   private

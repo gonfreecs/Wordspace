@@ -1,5 +1,9 @@
 # User Model
 class User < ActiveRecord::Base
+  # many-to-many relationship between user requests joining magazine
+  has_many :requestjoiningmagazines
+  has_many :magazines, through: :requestjoiningmagazines
+
   # to upload avatar for user
   mount_uploader :avatar, AvatarUploader
   has_many :magazines

@@ -1,5 +1,25 @@
 Rails.application.routes.draw do
   resources :magazines
+  resources :magazines do
+    member do
+      get 'join'
+    end
+  end
+  resources :magazines do
+    member do
+      get 'showrequests'
+    end
+  end
+  resources :magazines do
+    member do
+      get 'approverequest'
+    end
+  end
+  resources :magazines do
+    member do
+      get 'rejectrequest'
+    end
+  end
 
   # adding resources
   resources :sponsors

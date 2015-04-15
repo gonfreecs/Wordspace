@@ -39,7 +39,6 @@ gem 'twitter-bootstrap-rails'
 
 # To include font-awesome icons
 gem 'font-awesome-rails'
-
 # Author: Mohammed El-Ansary
 # 7.4.2015
 # Simplecov to evaluate tests
