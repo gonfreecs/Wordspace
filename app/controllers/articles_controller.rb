@@ -38,12 +38,32 @@
     def create
       @article.user = current_user
 
+<<<<<<< HEAD
       respond_to do |format|
         if @article.save
           format.html { redirect_to @article, notice: 'Article was created.' }
         else
           format.html { render :new }
         end
+=======
+    # Author: Mayar
+    # Date: 7.4.2015
+    # Description: adding magazine parameter to article of magazine
+    unless params[:magazine_id].nil?
+      @article.magazine_id = params[:magazine_id]
+    end
+
+    # Author: Mohammed El-Ansary
+    # 1.4.2015
+    # Filling the plain body which is used in the search
+    @article.plain_body = ActionView::Base.full_sanitizer
+      .sanitize(@article.body)
+    respond_to do |format|
+      if @article.save
+        format.html { redirect_to @article, notice: 'Article was created.' }
+      else
+        format.html { render :new }
+>>>>>>> 7e82538ecad07b868cf6a42bca170df9527169a3
       end
     end
 
@@ -84,8 +104,15 @@
       @article = Article.find(params[:id])
     end
 
+<<<<<<< HEAD
     # Never trust parameters from the scary internet
     def article_params
       params.require(:article).permit(:title, :body, :user_id, :id, :image)
     end
+=======
+  # Never trust parameters from the scary internet
+  def article_params
+    params.require(:article).permit(:title, :body, :user_id, :id, :image,
+                                    :magazine_id)
+>>>>>>> 7e82538ecad07b868cf6a42bca170df9527169a3
   end
