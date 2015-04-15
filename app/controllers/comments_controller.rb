@@ -49,15 +49,19 @@ class CommentsController < ApplicationController
   def new
   end
 
-  def report
-  #Author:Mina Hany
-  #8.4.2015
-  #A hash is created containing user's id who wants to report a comment
-  #and that comment's id and it is added to moedl contaioning reported requests
-  reportcommenth = {"user_id" => current_user.id,
+	def report
+  # Author:Mina Hany
+  # 8.4.2015
+  # A hash is created containing user's id who wants to report a comment
+  # and that comment's id and it is added to model contaioning reported requests
+	@report = Reportcomment.where("user_id = ? AND comment_id = ?", current_user.id, @comment.id)
+	@article =Article.find( params[:id])
+	if @report.present?
+		redirect_to @article and return
+	end
+	reportcommenth = { "user_id" => current_user.id,
                     "comment_id" => @comment.id}
   Reportcomment.create(reportcommenth)
-   @article =Article.find( params[:id])
   redirect_to @article
   end
 
