@@ -1,3 +1,4 @@
+
     # Article Controller
     class ArticlesController < ApplicationController
       # loading all variables
@@ -97,6 +98,6 @@
       # Never trust parameters from the scary internet
       def article_params
         params.require(:article).permit(:title, :body, :user_id, :id, :image,
-                                        :magazine_id)
+                                        :magazine_id, :tag_list)
       end
     end
