@@ -1,0 +1,43 @@
+<%= form_for @article, html: { multipart: true } do |f| %>
+  <!-- Check if there are any errors and display them -->
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="editor" >
+    <!-- Article Title -->
+    <div class="row">
+      <div class="col-sm-3 ">
+        <p>  <%= f.label :title,"Article Title" %></p>
+        <p><%= f.text_field :title %></p>
+      </div>
+      <!-- Article Image -->
+      <div class="col-sm-3 col-md-offset-1">
+        <p><%= f.label :image,"Article Poster" %></p>
+        <p><%= f.file_field :image %></p>
+      </div>
+    </div>
+    <!-- Redactor WYSIWIG Editor -->
+    <div class="row">
+      <div class="col-sm-12">
+        <p><%= f.text_area :body,:class => "redactor", :rows => 40, :cols => 120%></p>
+      </div>
+    </div>
+    <!-- Update Article -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="actions">
+          <%=f.submit "Save Changes", :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
+          <!-- Cancel Updates -->
+          <%=link_to 'Cancel', @article, :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
