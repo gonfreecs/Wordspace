@@ -1,2 +1,10 @@
 ---
+<<<<<<< HEAD
+<<<<<<< HEAD
+BUNDLE_DISABLE_SHARED_GEMS: '1'
+=======
 BUNDLE_BIN: bin
+>>>>>>> ecee245503362cc428fc50fb9b1eeef0823cbac6
+=======
+BUNDLE_BIN: bin
+>>>>>>> 44fa37e2e14485273707f18bdff5b56e94f460d7

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'main/index'
   root 'main#index'
   resources :articles
+  # Search url matching
+  get '/search' => 'search#search'
   # mohab
   # 1.4.2015
   # route to profile

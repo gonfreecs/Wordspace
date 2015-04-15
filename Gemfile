@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 # mohab
 # 3.4.2015
 # add tag gem
@@ -11,6 +12,7 @@ gem 'social-share-button'
 # for avatar upload (carrierwave	)
 gem 'carrierwave'
 gem 'rmagick'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
