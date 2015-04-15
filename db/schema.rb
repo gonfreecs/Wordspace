@@ -11,16 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20_150_407_210_738) do
+  create_table 'articles', force: :cascade do |t|
+    t.text 'title'
+    t.text 'body'
+    t.string 'image'
+    t.datetime 'created_at',              null: false
+    t.datetime 'updated_at',              null: false
+    t.integer 'user_id'
+    t.text 'plain_body'
+    t.integer 'magazine_id', default: 0
+  end
 
-ActiveRecord::Schema.define(version: 20150327090927) do
-
-  create_table "articles", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
+  create_table 'collaboration_invitations', force: :cascade do |t|
+    t.integer 'status'
+    t.integer 'User1_id'
+    t.integer 'User2_id'
+    t.integer 'Magazine_id'
+    t.datetime 'created_at',  null: false
+    t.datetime 'updated_at',  null: false
+  end
 
   create_table 'comments', force: :cascade do |t|
     t.integer 'article_id'
@@ -28,6 +38,32 @@ ActiveRecord::Schema.define(version: 20150327090927) do
     t.integer 'user_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+  end
+
+  create_table 'follows', force: :cascade do |t|
+    t.integer 'followable_id',                   null: false
+    t.string 'followable_type',                 null: false
+    t.integer 'follower_id',                     null: false
+    t.string 'follower_type',                   null: false
+    t.boolean 'blocked',         default: false, null: false
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+  end
+
+  add_index 'follows', %w(followable_id followable_type), name: 'fk_followables'
+  add_index 'follows', %w(follower_id follower_type), name: 'fk_follows'
+
+  create_table 'magazines', force: :cascade do |t|
+    t.string 'name'
+    t.text 'decription'
+    t.string 'image'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  create_table 'magazines_users', force: :cascade do |t|
+    t.integer 'magazine_id'
+    t.integer 'user_id'
   end
 
   create_table 'redactor_assets', force: :cascade do |t|
@@ -56,47 +92,46 @@ ActiveRecord::Schema.define(version: 20150327090927) do
     t.datetime 'updated_at', null: false
   end
 
-  create_table "taggings", force: :cascade do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context",       limit: 128
-    t.datetime "created_at"
+  create_table 'taggings', force: :cascade do |t|
+    t.integer 'tag_id'
+    t.integer 'taggable_id'
+    t.string 'taggable_type'
+    t.integer 'tagger_id'
+    t.string 'tagger_type'
+    t.string 'context',       limit: 128
+    t.datetime 'created_at'
   end
 
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index 'taggings', %w(tag_id taggable_id taggable_type context tagger_id tagger_type), name: 'taggings_idx', unique: true
+  add_index 'taggings', %w(taggable_id taggable_type context), name: 'index_taggings_on_taggable_id_and_taggable_type_and_context'
 
-  create_table "tags", force: :cascade do |t|
-    t.string  "name"
-    t.integer "taggings_count", default: 0
+  create_table 'tags', force: :cascade do |t|
+    t.string 'name'
+    t.integer 'taggings_count', default: 0
   end
 
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+  add_index 'tags', ['name'], name: 'index_tags_on_name', unique: true
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "is_sponsor",             default: 0
-    t.boolean  "is_moderator",           default: false
-    t.string   "firstname"
-    t.string   "lastname"
-    t.text     "about_me"
-    t.boolean  "is_female",              default: false
-    t.string   "avatar"
-
+  create_table 'users', force: :cascade do |t|
+    t.string 'email',                  default: '',    null: false
+    t.string 'encrypted_password',     default: '',    null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.integer 'sign_in_count',          default: 0,     null: false
+    t.datetime 'current_sign_in_at'
+    t.datetime 'last_sign_in_at'
+    t.string 'current_sign_in_ip'
+    t.string 'last_sign_in_ip'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.integer 'is_sponsor',             default: 0
+    t.boolean 'is_moderator',           default: false
+    t.string 'firstname'
+    t.string 'lastname'
+    t.text 'about_me'
+    t.boolean 'is_female',              default: false
+    t.string 'avatar'
   end
 
   add_index 'users', ['email'], name: 'index_users_on_email', unique: true
