@@ -180,12 +180,15 @@
 .well{
   margin: 0 auto;
   top: 0% ;
-  height: 300px ;
-  width: 220px ;
+  height: 20% ;
+  width: 100% ;
   image-align: center ;
 }
 .well img {
-    padding-right: 20px ;}
+    padding-right: 20px ;
+
+    }
+
 
 h5{
   color:black !important;
@@ -207,22 +210,7 @@ h5{
     	-webkit-font-smoothing: antialiased;
     	-moz-osx-font-smoothing: grayscale;
     }
-    .fa::before {
-    	z-index: 10;
-    	display: inline-block;
-    	margin: 0 0.4em 0 0;
-    	vertical-align: middle;
-    	text-transform: none;
-    	font-weight: normal;
-    	font-variant: normal;
-    	font-size: 1.3em;
-    	font-family: 'stroke7pixeden';
-    	line-height: 1;
-    	speak: none;
-    	-webkit-backface-visibility: hidden;
-    	-webkit-font-smoothing: antialiased;
-    	-moz-osx-font-smoothing: grayscale;
-    }
+    
     .icon-upload::before {
     	content: "\e68a";
     }

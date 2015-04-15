@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 20150408172909) do
     t.integer  "ad_id"
   end
 
+  create_table "collaboration_invitations", force: :cascade do |t|
+    t.integer  "status"
+    t.integer  "User1_id"
+    t.integer  "User2_id"
+    t.integer  "Magazine_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer  "article_id"
     t.text     "des"
@@ -51,6 +60,19 @@ ActiveRecord::Schema.define(version: 20150408172909) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer  "followable_id",                   null: false
+    t.string   "followable_type",                 null: false
+    t.integer  "follower_id",                     null: false
+    t.string   "follower_type",                   null: false
+    t.boolean  "blocked",         default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
+  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
   create_table "magazines", force: :cascade do |t|
     t.string   "name"

@@ -4,9 +4,9 @@
    # loading all variables
    load_and_authorize_resource
    # rescue from invalid articles ids
-   rescue_from(ActiveRecord::RecordNotFound) {
+   rescue_from(ActiveRecord::RecordNotFound) do
      fail(CanCan::AccessDenied, 'Article is not found')
-   }
+   end
    # check if cancel => no updates performed
    before_filter :check_for_cancel, only:  [:create, :update]
    # GET /articles
@@ -14,7 +14,6 @@
    def index
      @articles = Article.all
    end
-
    # GET /articles/1
    # GET /articles/1.json
    # inistantiation of Comment and Reply objects
@@ -23,11 +22,10 @@
      @comment = Comment.new(params[:comment])
      @replies = Reply.all
      @reply = Reply.new(params[:reply])
-     if !@article.ad_title.nil? && @article.is_sponsored
-       @bid = Bid.where(article_id: @article.id)[0]
-       @ad = Ad.where(title: @article.ad_title, user_id: @bid.user_id)[0]
-       @des = @ad.des.html_safe
-     end
+     return unless @article.is_sponsored
+     @bid = Bid.where(article_id: @article.id)[0]
+     @ad = Ad.where(title: @article.ad_title, user_id: @bid.user_id)[0]
+     @des = @ad.des.html_safe
    end
 
    # GET /articles/new
@@ -86,15 +84,12 @@
    end
    # Cancel an update and return to article page
    def check_for_cancel
-     if params[:commit] == 'Cancel'
-       redirect_to @article
-     end
+     redirect_to @article if params[:commit] == 'Cancel'
    end
 
    def bid
      @ar = Article.find(params[:a2_id])
      redirect_to controller: :bids, action: :create, a_id: @ar.id
-
    end
 
    private

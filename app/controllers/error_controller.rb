@@ -1,3 +1,4 @@
+
 class ErrorController < ApplicationController
   def show
   end
