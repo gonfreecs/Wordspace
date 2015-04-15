@@ -1,3 +1,5 @@
+# Author:Mina Hany
+# 3.3.2015
 # CommentsController
 class CommentsController < ApplicationController
   # loading all variables
@@ -49,7 +51,9 @@ class CommentsController < ApplicationController
 
   def new
   end
-
+  # Author:Omar El-hariry
+  # 1.4.2015
+  # change attribute value to indicate that the comment is dismissed
   def dismiss
     @reportcomments = Reportcomment.where(comment_id: params[:c_id])
     @reportcomments.each do|rep_com|

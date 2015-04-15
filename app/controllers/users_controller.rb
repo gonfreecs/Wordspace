@@ -1,3 +1,5 @@
+# Author:Omar El-hariry
+# 1.4.2015
 # User controller
 class UsersController < ApplicationController
   before_filter :authenticate_user!
@@ -11,7 +13,9 @@ class UsersController < ApplicationController
 
   def banned_users
   end
-
+  # Author:Omar El-hariry
+  # 1.4.2015
+  # change attribute value to indicate user is banned
   def ban
     @user = User.find(params[:u_id])
     @user.is_banned = 1
@@ -23,7 +27,9 @@ class UsersController < ApplicationController
       redirect_to :back
     end
   end
-
+  # Author:Omar El-hariry
+  # 1.4.2015
+  # change attribute value to indicate user is not banned
   def unban
     @user = User.find(params[:u_id])
     @user.is_banned = 0
@@ -35,7 +41,9 @@ class UsersController < ApplicationController
       redirect_to :back
     end
   end
-
+  # Author:Omar El-hariry
+  # 1.4.2015
+  # change attribute value to indicate article is dismissed
   def dismiss_article
     @reportarticles = Reportarticle.where(article_id: params[:a_id])
     @reportarticles.each do|rep_art|
@@ -48,7 +56,9 @@ class UsersController < ApplicationController
     end
     redirect_to :back
   end
-
+  # Author:Omar El-hariry
+  # 1.4.2015
+  # change attribute value to indicate comment is dismissed
   def dismiss_comment
     @reportcomments = Reportcomment.where(comment_id: params[:c_id])
     @reportcomments.each do|rep_com|

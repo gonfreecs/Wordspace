@@ -70,7 +70,9 @@
         format.json { head :no_content }
       end
     end
-
+    # Author:Omar El-hariry
+    # 1.4.2015
+    # an attribute value is set to indicate that report is dismissed
     def dismiss
       @reportarticles = Reportarticle.where(article_id: params[:a_id])
       @reportarticles.each do|rep_art|
