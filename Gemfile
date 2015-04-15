@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'redactor-rails'
+gem "mini_magick"
+gem 'carrierwave'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'cancan'

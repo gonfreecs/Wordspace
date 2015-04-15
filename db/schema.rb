@@ -12,7 +12,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20150407210738) do
-
   create_table "articles", force: :cascade do |t|
     t.text     "title"
     t.text     "body"
@@ -91,6 +90,26 @@ ActiveRecord::Schema.define(version: 20150407210738) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "reportarticles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reportarticles", ["article_id"], name: "index_reportarticles_on_article_id"
+  add_index "reportarticles", ["user_id"], name: "index_reportarticles_on_user_id"
+
+  create_table "reportcomments", force: :cascade do |t|
+    t.integer  "comment_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reportcomments", ["comment_id"], name: "index_reportcomments_on_comment_id"
+  add_index "reportcomments", ["user_id"], name: "index_reportcomments_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

@@ -1,5 +1,12 @@
 # User Model
 class User < ActiveRecord::Base
+  # many-to-many relation between user and comment
+  # user can report many comments
+  # comment can be reported by many users
+  has_many :reportcomments
+  has_many :comments, through: :reportcomments
+  has_many :reportarticles
+  has_many :articles, through: :reportarticles
   # to upload avatar for user
   mount_uploader :avatar, AvatarUploader
   has_many :magazines

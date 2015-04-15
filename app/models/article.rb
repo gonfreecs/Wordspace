@@ -1,5 +1,7 @@
 # Article Model
 class Article < ActiveRecord::Base
+  has_many :reportarticles
+  has_many :users, through: :reportarticles
   # adding The uploader to Image field
   # adding relation between user and articles
   mount_uploader :image, ImgUploader

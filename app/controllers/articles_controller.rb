@@ -88,6 +88,16 @@ class ArticlesController < ApplicationController
     return false if params[:commit] != 'Cancel'
     redirect_to @article
   end
+end
+
+# Report an article
+def report
+  reportarticlehash = { "user_id" => current_user.id,
+                    "article_id" => params[:id] }
+  Reportarticle.create(reportarticlehash)
+  @article = Article.find(params[:id])
+  redirect_to @article
+end
 
   private
 
@@ -101,4 +111,3 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :body, :user_id, :id, :image,
                                     :magazine_id)
   end
-end

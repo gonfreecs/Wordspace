@@ -3,9 +3,20 @@ Rails.application.routes.draw do
 
   # adding resources
   resources :sponsors
+  resources :articles do
+    member do
+      get 'report'
+    end
+  end
+  # specifying route for report action in comment controller
+  resources :comments do
+    member do
+      get 'report'
+    end
+  end
+  resources :replies
   resources :articles
   resources :comments
-  resources :replies
   resources :collaboration_invitations do
     collection do
       get 'check_for_approve'
@@ -16,7 +27,6 @@ Rails.application.routes.draw do
   devise_for :users
   get 'main/index'
   root 'main#index'
-  resources :articles
   # Search url matching
   get '/search' => 'search#search'
 end

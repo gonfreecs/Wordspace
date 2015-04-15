@@ -2,7 +2,6 @@
 # You don't need to be signed in to view Comments or replies. But, you need to be signed in in order to add any of them. Also you can delete or edit them if you wrote them. A moderator can delete any of them.
 class Ability
   include CanCan::Ability
-
   def initialize(user)
     can :show, Article
     can :show, Comment
@@ -13,6 +12,7 @@ class Ability
         article.user_id == user.id
       end
       can :create, Article
+      can :report, Article
       can :create, Magazine
       can :update, Comment do |c|
         c.user_id == user.id
@@ -20,8 +20,8 @@ class Ability
       can :destroy, Comment do |co|
         co.user_id == user.id
       end
+      can :report, Comment
       can :create, Comment
-
       can :update, Reply do |r|
         r.user_id == user.id
       end
