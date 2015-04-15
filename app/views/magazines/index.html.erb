@@ -20,6 +20,7 @@
         <td><%= magazine.image %></td>
         <td><%= link_to 'Show', magazine %></td>
         <td><%= link_to 'Edit', edit_magazine_path(magazine) %></td>
+
         <td> <% @articles.each do |article| %>
         <%= link_to 'New Article', magazine_article_path(article,magazine) %></td>
         <%end%>

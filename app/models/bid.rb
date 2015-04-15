@@ -7,4 +7,8 @@
 
       belongs_to :article
       belongs_to :user
+      validates :user_id, presence:  true
+      validates :article_id, presence: true
+      validates :ad_id, presence: true
+      validates_numericality_of :offer, greater_than: 0
     end

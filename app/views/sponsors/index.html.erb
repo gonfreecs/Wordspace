@@ -1,37 +1,37 @@
 <div class="editor" >
-<h1>Sponsoring requests</h1>
+  <h1>Sponsoring requests</h1>
 
-   <div class="row">
+  <div class="row">
     <div class="col-sm-3 ">
-    Name
+      Name
     </div>
-       <div class="col-sm-3 ">
-    email
+    <div class="col-sm-3 ">
+      email
     </div>
-   </div>
+  </div>
 
-    <% @reqspon.each do |s| %>
-
-      <div class="row">
-      <div class="col-sm-3 ">
+  <% @reqspon.each do |s| %>
+  
+  <div class="row">
+    <div class="col-sm-3 ">
       <% @s = s %>
       <%= s.firstname %>  &nbsp;<%= s.lastname %>
-      </div>
-      <div class="col-sm-3 ">
+    </div>
+    <div class="col-sm-3 ">
       <%= s.email %>
-      </div>
+    </div>
 
-      <div class="col-sm-3 ">
-       <%= link_to 'Approve', sponsors_path(@s,:type =>"Approve") %>
-       </div>
+    <div class="col-sm-3 ">
+      <%= link_to 'Approve', sponsors_path(@s,:type =>"Approve") %>
+    </div>
 
-       <div class="col-sm-3 ">
-       <%= link_to 'Reject', sponsors_path(@s,:type =>"Reject") %>
-       </div>
-       </div>
-   <%end%>
+    <div class="col-sm-3 ">
+      <%= link_to 'Reject', sponsors_path(@s,:type =>"Reject") %>
+    </div>
+  </div>
+  <%end%>
   <% if @reqspon.size == 0 %>
-    <em>No sponsoring requests are found</em>
+  <em>No sponsoring requests are found</em>
   <% end %>
 
 

@@ -10,8 +10,7 @@ class AdsController < ApplicationController
     @ad.title = params[:title2]
     @ad.user_id = params[:u_id]
     @ad.title = @ad.title.downcase
-    if Ad.where(title:  @ad.title, user_id: current_user.id) == [] &&
-       @ad.title != nill
+    if Ad.where(title:  @ad.title, user_id: current_user.id) == []
       if @ad.save
         flash[:notice] = 'Ad was successfully created.'
         redirect_to controller: :sponsors, action: :control
@@ -21,7 +20,7 @@ class AdsController < ApplicationController
         redirect_to(controller: :sponsors, action: :control)
       end
     else
-      flash[:notice] = 'title already exists or is empty'
+      flash[:notice] = 'title already exists'
       redirect_to controller: :sponsors, action: :control
     end
   end
