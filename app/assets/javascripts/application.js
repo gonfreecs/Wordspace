@@ -18,9 +18,8 @@
 //= require redactor-rails
 //= require redactor-rails/plugins
 //= require_tree .
-<<<<<<< HEAD
 //= require awesome-share-buttons
-=======
+
 function sbarp() {
     if($(document).width() > 990) {
       $('#search-container').css({top: 97});
@@ -62,4 +61,3 @@ $( document ).ready(function() {
     }
   });
 });
->>>>>>> 7e82538ecad07b868cf6a42bca170df9527169a3
