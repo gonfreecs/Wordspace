@@ -1,6 +1,5 @@
   Rails.application.routes.draw do
     resources :ads
-
     resources :bids do
       collection do
         get 'destroy'
@@ -20,8 +19,16 @@
         get 'bid'
       end
     end
+    resources :collaboration_invitations do
+      collection do
+        get 'check_for_approve'
+        get 'check_for_reject'
+      end
+    end
     # Search url matching
     get '/search' => 'search#search'
+
+
 
     resources :comments
     resources :replies
@@ -62,6 +69,7 @@
     #     resources :comments, :sales
     #     resource :seller
     #   end
+
 
     # Example resource route with more complex sub-resources:
     #   resources :products do

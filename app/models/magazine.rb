@@ -4,10 +4,12 @@
 class Magazine < ActiveRecord::Base
   # Author: Mohammed El-Ansary
   # 5.4.2015
+
   # The uploader to Image field
   # Relation between magazines and articles, users
   mount_uploader :image, ImgUploader
   has_many :articles
+
   has_and_belongs_to_many :users
 
   # Check if image size is larger than 5 MB
@@ -16,6 +18,7 @@ class Magazine < ActiveRecord::Base
   end
 
   validates :name, presence: true
+
   validates :decription, presence: true
   validates :image, presence: true
   validate :image_size

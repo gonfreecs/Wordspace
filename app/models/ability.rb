@@ -1,11 +1,12 @@
-      # this model is for CanCan abilities. Guests can only view the article.
-      # If the logged in user is the writer of the article he/she is viewing,
-      # he/she can edit it and if he/she is a moderator,
-      # he/she can delete the artcle
-      # You don't need to be signed in to view Comments or replies. But,
-      # you need to be signed in in order to add any of them.
-      #  Also you can delete or edit them if you wrote them.
-      # A moderator can delete any of them.
+
+# this model is for CanCan abilities. Guests can only view the article.
+# If the logged in user is the writer of the article he/she is viewing,
+# he/she can edit it and if he/she is a moderator,
+# he/she can delete the artcle
+# You don't need to be signed in to view Comments or replies. But,
+# you need to be signed in in order to add any of them.
+#  Also you can delete or edit them if you wrote them.
+# A moderator can delete any of them.
       # Author: Mayar
       # Date: 5.4.2015
       # Only managize managers can update magazines

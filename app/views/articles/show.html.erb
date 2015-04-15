@@ -1,110 +1,105 @@
 <% content_for :javascript_includes do %>
-<%= javascript_include_tag "dialog.js" %>
-<% end %>
-<div class="row">
-	<!-- empty column for layouts -->
-	<!-- main image for the article setting image width & hight to not get out of the border if there is no image for the article a default one is set-->
-	<div class="col-md-2"></div>
-	<div class="col-md-5">
-		<div class= "row" >
-			<div class="polaroid">
-				<p><%= @article.title.html_safe %></p>
-				<img src= <%= @article.image %> height="420" width="550">
-			</div>
-		</div>
-	</div>
-	<!-- this is the article info part -->
-	<div class="col-md-2">
-		<br>
-		<div class="col-md-offset-2">
-			<h5 > By: </h5> <p><%= @user.firstname %> <%= @user.lastname %> </p>
-			<h5> created at: </h5> <p> <%=  @article.created_at.to_s[0,10] %> </p>
-			<!-- this is the edit and delete buttons section. Using CanCan to check whether the user is able to edit or delete if yes the buttons are shown and if no the buttons are not, editing redirects to the edit page and the delete button asks if the user is sure he/she wants to delete then if the answer is yes the article is deleted -->
-			<% if can? :update, @article %>
-			<%= link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_article_path(@article), class: "btn btn-outlined btn-grey" %>
-			<% end %>
-			&nbsp; &nbsp;
-			<% if can? :destroy, @article %>
-			<%= link_to '<span class="fa fa-trash"></span>'.html_safe, article_path(@article),
-			method: :delete,
-			data: { confirm: 'Are you sure you want to delete this article?' }, class: "btn btn-outlined btn-grey" %>
-			<% end %>
-			<% if can? :bid, @article %>
-			<header class="codrops-header">
-				<div class="button-wrap"><a data-dialog="somedialog" class="trigger"><span class= "fa fa-money"> </span> </a></div>
-			</header>
-			<div id="somedialog" class="dialog">
-				<div class="dialog__overlay"></div>
-				<div class="dialog__content">
-					<div class="morph-shape">
-						<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 560 280" preserveAspectRatio="none">
-							<rect x="3" y="3" fill="none" width="556" height="276"/>
-						</svg>
-					</div>
-					<div class="dialog-inner">
-						<%= form_tag ({:controller => 'bids', :action => 'create', :article_id =>@article.id}) do %>
-						<h2>Choose one of our standard forms</h2>
-						<h5><%=radio_button_tag :offer2, 3, checked = true %>  3 cents/view</h5>
-						<h5><%= radio_button_tag :offer2, 7 %> 7 cents/view</h5>
-						<br>
-						<h2>Send a custom offer</h2>
-						<h5>	<%= number_field_tag :offer3, in: 1.0..20.0, step: 1.0 %>cents/view</h5>
-						<h5>	title of add	<%= text_field_tag :title2 %> </h5>
-						<button type="submit"> <font size="5"color=#0099FF><span class="fa fa-share-square-o"></span></font></button>	  <a class="action" type="" data-dialog-close><font size="5"color=#0099FF><span class="fa fa-times"></span></font></a><% end %>
-					</div>
+	<%= javascript_include_tag "dialog.js" %>
+	<% end %>
+	<div class="row">
+		<!-- empty column for layouts -->
+		<!-- main image for the article setting image width & hight to not get out of the border if there is no image for the article a default one is set-->
+		<div class="col-md-2"></div>
+		<div class="col-md-5">
+			<div class= "row" >
+				<div class="polaroid">
+					<p><%= @article.title.html_safe %></p>
+					<img src= <%= @article.image %> height="420" width="550">
 				</div>
 			</div>
-			<!-- Related demos -->
+		</div>
+		<!-- this is the article info part -->
+		<div class="col-md-2">
+			<br>
+			<div class="col-md-offset-2">
+				<h5 > By: </h5> <p><%= @user.firstname %> <%= @user.lastname %> </p>
+				<h5> created at: </h5> <p> <%=  @article.created_at.to_s[0,10] %> </p>
+				<!-- this is the edit and delete buttons section. Using CanCan to check whether the user is able to edit or delete if yes the buttons are shown and if no the buttons are not, editing redirects to the edit page and the delete button asks if the user is sure he/she wants to delete then if the answer is yes the article is deleted -->
+				<% if can? :update, @article %>
+				<%= link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_article_path(@article), class: "btn btn-outlined btn-grey" %>
+				<% end %>
+				&nbsp; &nbsp;
+				<% if can? :destroy, @article %>
+				<%= link_to '<span class="fa fa-trash"></span>'.html_safe, article_path(@article),
+				method: :delete,
+				data: { confirm: 'Are you sure you want to delete this article?' }, class: "btn btn-outlined btn-grey" %>
+				<% end %>
+				<% if can? :bid, @article %>
+				<header class="codrops-header">
+					<div class="button-wrap"><a data-dialog="somedialog" class="trigger"><span class= "fa fa-money"> </span> </a></div>
+				</header>
+				<div id="somedialog" class="dialog">
+					<div class="dialog__overlay"></div>
+					<div class="dialog__content">
+						<div class="morph-shape">
+							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 560 280" preserveAspectRatio="none">
+								<rect x="3" y="3" fill="none" width="556" height="276"/>
+							</svg>
+						</div>
+						<div class="dialog-inner">
+							<%= form_tag ({:controller => 'bids', :action => 'create', :article_id =>@article.id}) do %>
+							<h2>Choose one of our standard forms</h2>
+							<h5><%=radio_button_tag :offer2, 3, checked = true %>  3 cents/view</h5>
+							<h5><%= radio_button_tag :offer2, 7 %> 7 cents/view</h5>
+							<br>
+							<h2>Send a custom offer</h2>
+							<h5>	<%= number_field_tag :offer3, in: 1.0..20.0, step: 1.0 %>cents/view</h5>
+							<h5>	title of add	<%= text_field_tag :title2 %> </h5>
+							<button type="submit"> <font size="5"color=#0099FF><span class="fa fa-share-square-o"></span></font></button>	  <a class="action" type="" data-dialog-close><font size="5"color=#0099FF><span class="fa fa-times"></span></font></a><% end %>
+						</div>
+					</div>
+				</div>
+				<!-- Related demos -->
+				<% end %>
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2"></div>
+		<!-- this is the article section the article is simply put here and the limit size tag is simply for making sure that no image in the article is too big to be out of scope. col-md-8 is for handling layout-->
+		<div class="col-md-8">
+			<br>
+			<div class ="limitSize">
+				<p><font size="3"><%= @article.body.html_safe %></font></p>
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<% if @article.ad_title !=nil %>
+	<div class ="row">
+		<div class='col-md-2'></div>
+		<%= @des %>
+
+	</div>
+	<%end %>
+
+	<%= render :partial => 'comment', :collection => @article.comments %>
+
+	<div class="col-md-2"></div>
+	<% if can? :create, @comment %>
+		<%= form_for @comment do|f| %>
+			<%= f.hidden_field :article_id, :value => @article.id%>
+			<%= f.hidden_field :user_id, :value => current_user.id %>
+			<%= f.text_area :des %>
+			<%= f.submit "Add Comment" %>
 			<% end %>
-		</div>
-	</div>
-	<div class="col-md-2"></div>
-</div>
+			<% end %>
 
-<div class="row">
-	<div class="col-md-2"></div>
-	<!-- this is the article section the article is simply put here and the limit size tag is simply for making sure that no image in the article is too big to be out of scope. col-md-8 is for handling layout-->
-	<div class="col-md-8">
-		<br>
-		<div class ="limitSize">
-			<p><font size="3"><%= @article.body.html_safe %></font></p>
-		</div>
-	</div>
-	<div class="col-md-2"></div>
-</div>
-<% if @article.ad_title !=nil %>
-<div class ="row">
-	<div class='col-md-2'></div>
-	<%= @des %>
-</div>
-<%end %>
-<!....This is the part where we call all comments.....>
+			<script>
+			(function() {
 
-<%= render :partial => 'comment', :collection => @article.comments %>
+				var dlgtrigger = document.querySelector( '[data-dialog]' ),
+				somedialog = document.getElementById( dlgtrigger.getAttribute( 'data-dialog' ) ),
+				dlg = new DialogFx( somedialog );
 
-<div class="col-md-2"></div>
+				dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg) );
 
-<!....This is the form for creating a new comment.....>
-<% if can? :create, @comment %>
-<%= form_for @comment do|f| %>
-
-<%= f.hidden_field :article_id, :value => @article.id%>
-<%= f.hidden_field :user_id, :value => current_user.id %>
-
-<%= f.text_area :des %>
-
-<%= f.submit "Add Comment" %>
-<% end %>
-<% end %>
-
-<script>
-(function() {
-
-	var dlgtrigger = document.querySelector( '[data-dialog]' ),
-	somedialog = document.getElementById( dlgtrigger.getAttribute( 'data-dialog' ) ),
-	dlg = new DialogFx( somedialog );
-
-	dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg) );
-
-})();
-</script>
+			})();
+			</script>
