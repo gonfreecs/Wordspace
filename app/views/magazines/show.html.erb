@@ -1,24 +1,78 @@
 <% if @join.present? %>
 <%= flash[:notice] = "You have requested joining this magazine." %>
 <% end %>
-<p>
-  <strong>Name:</strong>
-  <%= @magazine.name %>
-</p>
+<div class="view-wrapper">
+  <div class="row">
+    <div class="col-sm-3">
+      <img class="magimg" src="<%= @magazine.image %>" alt="<%= @magazine.name %>"/>
+    </div>
+    <div class="col-sm-3">
+      <h2><%= @magazine.name %></h2>
+    </div>
+    <div class="col-sm-3">
+      <br>
+      <h4><span class="label label-success" style="cursor: pointer"><span class="fa fa-check"> </span>Following</span></h4>
+      <h4><span class="label label-primary" style="cursor: pointer">Follow</span></h4>
+      <a href="#" data-toggle="modal" data-target="#info">View info</a>
+      <br>
+      <% if can? :update, @magazine %>
+      <%= link_to 'Edit Info', edit_magazine_path(@magazine) %>
+      <%end%>
+      <br>
+      <% if can? :update, @magazine %>
 
-<p>
-  <strong>Decription:</strong>
-  <%= @magazine.decription %>
-</p>
+      <%= link_to "New Article",  new_article_path(magazine_id: @magazine.id) %>
 
-<p>
-  <strong>Image:</strong>
-  <%= @magazine.image %>
-</p>
-
-<%= link_to 'Edit', edit_magazine_path(@magazine) %> |
-<%= link_to 'Back', magazines_path %> |
-<%= link_to 'Join this magazine', action: "join" %> |
-<% if @magazine.users.exists?(current_user) %>
-<%= link_to 'View joining requests', action: 'showrequests'%>
-<% end %>
+      <%end%>
+      <%= link_to 'Join this magazine', action: "join" %>
+      <% if @magazine.users.exists?(current_user) %>
+      <%= link_to 'View joining requests', action: 'showrequests'%>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row grid">
+      <% if @articles.empty? %>
+        <h2>No articles yet</h2>
+      <% end %>
+      <% @articles.each do|a| %>
+        <figure class="effect-sadie">
+          <img src="<%= a.image %>" alt="<%= a.title %>"/>
+          <figcaption>
+            <h2><span><%= a.title %></span></h2>
+            <p><%= truncate(a.plain_body, :length => 80) %></p>
+            <%= link_to 'View more', a %>
+          </figcaption>
+        </figure>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="desc" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="desc">Description</h4>
+      </div>
+      <div class="modal-body">
+        <%= @magazine.decription %>
+      </div>
+      <div class="modal-header">
+        <h4 class="modal-title">Collaborators</h4>
+      </div>
+      <div class="modal-body">
+        <% @users.each do |u| %>
+          <!-- change to  link_to u.firstname, u -->
+          <img style="width: 50px; height: 50px;"src = "<%= u.avatar %>" alt="<%= u.firstname %>"/>
+          <a href ="#"> <%= u.firstname %></a>
+          <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Author: Mayar
+     Date: 5.4.2015
+     Description: Check if user is authorized to update and add articles to magazine -->
