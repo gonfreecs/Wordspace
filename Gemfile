@@ -9,7 +9,6 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
 gem 'social-share-button'
 # for avatar upload (carrierwave	)
-gem 'carrierwave'
 gem 'rmagick'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -57,11 +56,6 @@ gem 'font-awesome-rails'
 # Simplecov to evaluate tests
 gem 'simplecov', group: :test
 group :development, :test do
-  # mohab
-  # 3.4.2015
-  # rspec test and factory gems
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
