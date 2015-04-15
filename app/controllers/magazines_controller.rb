@@ -21,6 +21,8 @@ class MagazinesController < ApplicationController
   # GET /magazines/1
   # GET /magazines/1.json
   def show
+    @join = Requestjoiningmagazine
+    .where('user_id = ? AND magazine_id = ?', current_user.id, params[:id])
     @users = @magazine.users
     @articles = Article.where(magazine_id: params[:id])
   end
@@ -89,6 +91,17 @@ class MagazinesController < ApplicationController
   # Cancel an update and return to magazine page
   def check_for_cancel
     return false if params[:commit] != 'Cancel'
+    redirect_to @magazine
+  end
+
+  def join
+    #Author:Mina Hany
+    #4.4.2015
+    #A hash is created containing user's id who wants to join a magazine
+    #and that magazine's id and it is added to model contaioning joining requests
+    joinh = { "user_id" => current_user.id, "magazine_id" => params[:id] }
+    Requestjoiningmagazine.create(joinh)
+    @magazine = Magazine.find(params[:id])
     redirect_to @magazine
   end
 

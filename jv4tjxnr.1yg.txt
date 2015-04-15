@@ -1,0 +1,323 @@
+﻿Merge branch 'master' of https://github.com/MohammedAnsary/Wordspace into requestJoiningMagazine
+
+Conflicts:
+	Gemfile
+	Gemfile.lock
+	app/controllers/magazines_controller.rb
+	app/models/ability.rb
+	app/views/magazines/show.html.erb
+	db/development.sqlite3
+	db/schema.rb
+	log/development.log
+	tmp/cache/assets/development/sprockets/09e2a090befacdae0db10cafb1893a0a
+	tmp/cache/assets/development/sprockets/2b38c3fb549036de5c4666637a0c80c6
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch requestJoiningMagazine
+# Your branch is up-to-date with 'origin/requestJoiningMagazine'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   .DS_Store
+#	modified:   .bundle/config
+#	modified:   .gitignore
+#	new file:   .rspec
+#	modified:   Gemfile
+#	modified:   Gemfile.lock
+#	modified:   Rakefile
+#	modified:   UML Wordspace/edit_profile_sequencediagram.png
+#	new file:   UML Wordspace/s06_search_modified_v3.png
+#	new file:   UML Wordspace/s09_view_magazine_modified_v2.png
+#	new file:   UML Wordspace/s23_create_magazine.png
+#	modified:   UML Wordspace/sequence_diagram_s05.png
+#	modified:   UML Wordspace/sequence_diagram_s10.jpg
+#	modified:   UML Wordspace/sequence_diagram_s13.jpg
+#	modified:   UML Wordspace/sequence_diagram_s14.jpg
+#	modified:   UML Wordspace/sequence_diagram_s2.png
+#	modified:   UML Wordspace/sequence_diagram_s3.png
+#	modified:   UML Wordspace/sequence_diagram_s43.png
+#	modified:   UML Wordspace/sequence_diagram_s59.png
+#	new file:   WireFrames/CreateMagWireFrame.jpg
+#	new file:   WireFrames/ViewMag1WireFrame.jpg
+#	new file:   WireFrames/ViewMag2WireFrame.jpg
+#	new file:   WireFrames/WireFrameSearch1.jpg
+#	new file:   WireFrames/WireFrameSearch2.jpg
+#	new file:   WireFrames/WireFrameSearch3.jpg
+#	modified:   app/assets/javascripts/application.js
+#	modified:   app/assets/javascripts/articles.coffee
+#	modified:   app/assets/javascripts/comments.coffee
+#	modified:   app/assets/javascripts/error.coffee
+#	modified:   app/assets/javascripts/errors.coffee
+#	modified:   app/assets/javascripts/home.coffee
+#	modified:   app/assets/javascripts/magazines.coffee
+#	modified:   app/assets/javascripts/password.coffee
+#	modified:   app/assets/javascripts/redactor-rails/config.js
+#	modified:   app/assets/javascripts/replies.coffee
+#	new file:   app/assets/javascripts/search.coffee
+#	modified:   app/assets/stylesheets/application.css
+#	modified:   app/assets/stylesheets/articles.scss
+#	modified:   app/assets/stylesheets/articles.scss~
+#	modified:   app/assets/stylesheets/comments.scss
+#	modified:   app/assets/stylesheets/error.scss
+#	modified:   app/assets/stylesheets/errors.scss
+#	modified:   app/assets/stylesheets/home.scss
+#	modified:   app/assets/stylesheets/magazines.scss
+#	modified:   app/assets/stylesheets/password.scss
+#	modified:   app/assets/stylesheets/replies.scss
+#	modified:   app/assets/stylesheets/scaffolds.scss
+#	new file:   app/assets/stylesheets/search.scss
+#	modified:   app/controllers/application_controller.rb
+#	modified:   app/controllers/articles_controller.rb
+#	new file:   app/controllers/collaboration_invitations_controller.rb
+#	modified:   app/controllers/comments_controller.rb
+#	modified:   app/controllers/error_controller.rb
+#	modified:   app/controllers/errors_controller.rb
+#	modified:   app/controllers/magazines_controller.rb
+#	modified:   app/controllers/replies_controller.rb
+#	new file:   app/controllers/search_controller.rb
+#	modified:   app/controllers/sponsors_controller.rb
+#	modified:   app/helpers/articles_helper.rb
+#	modified:   app/helpers/comments_helper.rb
+#	modified:   app/helpers/error_helper.rb
+#	modified:   app/helpers/errors_helper.rb
+#	modified:   app/helpers/home_helper.rb
+#	modified:   app/helpers/magazines_helper.rb
+#	modified:   app/helpers/password_helper.rb
+#	modified:   app/helpers/replies_helper.rb
+#	new file:   app/helpers/search_helper.rb
+#	modified:   app/models/ability.rb
+#	modified:   app/models/article.rb
+#	new file:   app/models/collaboration_invitation.rb
+#	modified:   app/models/comment.rb
+#	new file:   app/models/follow.rb
+#	modified:   app/models/magazine.rb
+#	modified:   app/models/redactor_rails/asset.rb
+#	modified:   app/models/redactor_rails/document.rb
+#	modified:   app/models/redactor_rails/picture.rb
+#	modified:   app/models/reply.rb
+#	modified:   app/models/user.rb
+#	modified:   app/uploaders/avatar_uploader.rb
+#	modified:   app/uploaders/img_uploader.rb
+#	modified:   app/uploaders/redactor_rails_document_uploader.rb
+#	modified:   app/uploaders/redactor_rails_picture_uploader.rb
+#	new file:   app/views/articles/_add_article_form.html.erb
+#	modified:   app/views/articles/_comment.html.erb
+#	modified:   app/views/articles/_edit_form.html.erb
+#	modified:   app/views/articles/_form.html.erb
+#	modified:   app/views/articles/create.html.erb
+#	modified:   app/views/articles/destroy.html.erb
+#	modified:   app/views/articles/edit.html.erb
+#	modified:   app/views/articles/index.html.erb
+#	modified:   app/views/articles/index.json.jbuilder
+#	new file:   app/views/articles/magazine.html.erb
+#	modified:   app/views/articles/new.html.erb
+#	modified:   app/views/articles/show.html.erb
+#	modified:   app/views/articles/show.json.jbuilder
+#	modified:   app/views/articles/update.html.erb
+#	new file:   app/views/collaboration_invitations/index.html.erb
+#	modified:   app/views/comments/edit.html.erb
+#	modified:   app/views/devise/confirmations/new.html.erb
+#	modified:   app/views/devise/mailer/confirmation_instructions.html.erb
+#	modified:   app/views/devise/mailer/reset_password_instructions.html.erb
+#	modified:   app/views/devise/mailer/unlock_instructions.html.erb
+#	modified:   app/views/devise/passwords/edit.html.erb
+#	modified:   app/views/devise/passwords/new.html.erb
+#	modified:   app/views/devise/registrations/edit.html.erb
+#	modified:   app/views/devise/registrations/new.html.erb
+#	modified:   app/views/devise/sessions/new.html.erb
+#	modified:   app/views/devise/shared/_links.html.erb
+#	modified:   app/views/devise/unlocks/new.html.erb
+#	modified:   app/views/error/show.html.erb
+#	modified:   app/views/errors/show.html.erb
+#	new file:   app/views/invitations/index.html.erb
+#	modified:   app/views/layouts/application.html.erb
+#	new file:   app/views/magazines/_edit_form.html.erb
+#	modified:   app/views/magazines/_form.html.erb
+#	new file:   app/views/magazines/article.html.erb
+#	modified:   app/views/magazines/edit.html.erb
+#	modified:   app/views/magazines/index.html.erb
+#	modified:   app/views/magazines/index.json.jbuilder
+#	modified:   app/views/magazines/new.html.erb
+#	modified:   app/views/magazines/show.html.erb
+#	modified:   app/views/magazines/show.json.jbuilder
+#	modified:   app/views/main/index.html.erb
+#	modified:   app/views/replies/edit.html.erb
+#	modified:   app/views/replies/edit.html.erb~
+#	new file:   app/views/search/search.html.erb
+#	modified:   app/views/sponsors/index.html.erb
+#	new file:   bin/bundler
+#	new file:   bin/byebug
+#	new file:   bin/erubis
+#	new file:   bin/htmldiff
+#	new file:   bin/ldiff
+#	new file:   bin/nokogiri
+#	new file:   bin/rackup
+#	modified:   bin/rails
+#	modified:   bin/rake
+#	new file:   bin/rdoc
+#	new file:   bin/ri
+#	new file:   bin/rspec
+#	new file:   bin/sass
+#	new file:   bin/sass-convert
+#	new file:   bin/scss
+#	new file:   bin/sdoc
+#	new file:   bin/sdoc-merge
+#	modified:   bin/setup
+#	modified:   bin/spring
+#	new file:   bin/sprockets
+#	new file:   bin/thor
+#	new file:   bin/tilt
+#	modified:   config/initializers/devise.rb
+#	modified:   config/locales/devise.en.yml
+#	modified:   config/routes.rb
+#	new file:   coverage/.last_run.json
+#	new file:   coverage/.resultset.json
+#	new file:   coverage/assets/0.9.0/application.css
+#	new file:   coverage/assets/0.9.0/application.js
+#	new file:   coverage/assets/0.9.0/colorbox/border.png
+#	new file:   coverage/assets/0.9.0/colorbox/controls.png
+#	new file:   coverage/assets/0.9.0/colorbox/loading.gif
+#	new file:   coverage/assets/0.9.0/colorbox/loading_background.png
+#	new file:   coverage/assets/0.9.0/favicon_green.png
+#	new file:   coverage/assets/0.9.0/favicon_red.png
+#	new file:   coverage/assets/0.9.0/favicon_yellow.png
+#	new file:   coverage/assets/0.9.0/loading.gif
+#	new file:   coverage/assets/0.9.0/magnify.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-icons_222222_256x240.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-icons_2e83ff_256x240.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-icons_454545_256x240.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-icons_888888_256x240.png
+#	new file:   coverage/assets/0.9.0/smoothness/images/ui-icons_cd0a0a_256x240.png
+#	new file:   coverage/index.html
+#	modified:   db/migrate/20150311225001_devise_create_users.rb
+#	modified:   db/migrate/20150319170047_create_comments.rb
+#	modified:   db/migrate/20150320035247_add_avatar_to_users.rb
+#	modified:   db/migrate/20150320160850_create_replies.rb
+#	new file:   db/migrate/20150401001416_change_column_type.rb
+#	new file:   db/migrate/20150401162533_add_plain_body_to_articles.rb
+#	modified:   db/migrate/20150405101413_create_magazines.rb
+#	modified:   db/migrate/20150405102658_add_magazine_id_to_articles.rb
+#	modified:   db/migrate/20150405142118_create_magazine_user_join.rb
+#	new file:   db/migrate/20150407010833_acts_as_follower_migration.rb
+#	new file:   db/migrate/20150407210738_create_collaboration_invitations.rb
+#	modified:   db/schema.rb
+#	modified:   db/test.sqlite3
+#	modified:   log/development.log
+#	modified:   public/system/redactor_assets/pictures/1/wallpaper-Hotline-Miami-2---Wrong-Number2560x1440.jpg
+#	modified:   public/system/redactor_assets/pictures/2/wallpaper-Hotline-Miami-2---Wrong-Number2560x1440.jpg
+#	new file:   public/system/redactor_assets/pictures/6/Screenshot_from_2015-03-23_21_25_13.png
+#	new file:   public/system/redactor_assets/pictures/7/Screenshot_from_2015-03-12_17_32_48.png
+#	new file:   public/system/redactor_assets/pictures/8/Screenshot_from_2015-03-23_21_05_08.png
+#	new file:   public/uploads/article/image/1/test.png
+#	modified:   public/uploads/article/image/1/wallpaper-Hotline-Miami-2---Wrong-Number2560x1440.jpg
+#	deleted:    public/uploads/article/image/17/wallpaper-Hotline-Miami-2---Wrong-Number2560x1440.jpg
+#	modified:   public/uploads/article/image/18/wallpaper-Hotline-Miami-2---Wrong-Number2560x1440.jpg
+#	modified:   public/uploads/article/image/19/Screen_Shot_2015-03-16_at_4.24.24_PM.png
+#	modified:   public/uploads/article/image/19/download.jpg
+#	new file:   public/uploads/article/image/2/test.png
+#	modified:   public/uploads/article/image/2/wallpaper-Hotline-Miami-2---Wrong-Number2560x1440.jpg
+#	modified:   public/uploads/article/image/20/Screen_Shot_2015-03-18_at_4.03.57_PM.png
+#	modified:   public/uploads/article/image/20/download.jpg
+#	modified:   public/uploads/article/image/21/Screen_Shot_2015-03-16_at_4.24.24_PM.png
+#	modified:   public/uploads/article/image/21/download.jpg
+#	modified:   public/uploads/article/image/22/Screenshot_from_2015-03-12_17_30_52.png
+#	new file:   public/uploads/article/image/23/1.jpg
+#	new file:   public/uploads/article/image/23/16.jpg
+#	new file:   public/uploads/article/image/23/Screenshot_from_2015-03-23_18_51_06.png
+#	new file:   public/uploads/article/image/23/Screenshot_from_2015-03-23_20_52_31.png
+#	new file:   public/uploads/article/image/23/test.png
+#	new file:   public/uploads/article/image/24/1.jpg
+#	new file:   public/uploads/article/image/24/Screenshot_from_2015-03-23_20_52_31.png
+#	new file:   public/uploads/article/image/24/test.png
+#	new file:   public/uploads/article/image/25/1.jpg
+#	new file:   public/uploads/article/image/25/Screenshot_from_2015-03-26_20_49_02.png
+#	new file:   public/uploads/article/image/25/test.png
+#	new file:   public/uploads/article/image/26/1.jpg
+#	new file:   public/uploads/article/image/26/Screenshot_from_2015-03-11_11_06_38.png
+#	new file:   public/uploads/article/image/27/1.jpg
+#	new file:   public/uploads/article/image/27/Free-Wallpaper-Nature-Scenes.jpg
+#	new file:   public/uploads/article/image/28/1.jpg
+#	new file:   public/uploads/article/image/28/Screenshot_from_2015-03-10_15_18_06.png
+#	new file:   public/uploads/article/image/29/1.jpg
+#	new file:   public/uploads/article/image/29/Screenshot_from_2015-03-26_20_49_02.png
+#	new file:   public/uploads/article/image/29/test.png
+#	new file:   public/uploads/article/image/3/test.png
+#	modified:   public/uploads/article/image/3/wallpaper-Hotline-Miami-2---Wrong-Number2560x1440.jpg
+#	new file:   public/uploads/article/image/30/Screenshot_from_2015-03-23_18_51_06.png
+#	new file:   public/uploads/article/image/30/test.png
+#	new file:   public/uploads/article/image/31/Screenshot_from_2015-03-10_15_18_06.png
+#	new file:   public/uploads/article/image/31/test.png
+#	new file:   public/uploads/article/image/32/Free-Wallpaper-Nature-Scenes.jpg
+#	new file:   public/uploads/article/image/32/test.png
+#	new file:   public/uploads/article/image/33/test.png
+#	modified:   public/uploads/article/image/4/wallpaper-Hotline-Miami-2---Wrong-Number2560x1440.jpg
+#	modified:   public/uploads/magazine/image/1/Free-Wallpaper-Nature-Scenes.jpg
+#	new file:   public/uploads/magazine/image/1/test.png
+#	modified:   public/uploads/magazine/image/2/Free-Wallpaper-Nature-Scenes.jpg
+#	new file:   public/uploads/magazine/image/2/test.png
+#	new file:   public/uploads/magazine/image/3/1.jpg
+#	new file:   public/uploads/magazine/image/3/far7a_1.jpg
+#	new file:   public/uploads/magazine/image/3/test.png
+#	new file:   public/uploads/magazine/image/4/4.jpg
+#	new file:   public/uploads/magazine/image/4/flee.jpg
+#	new file:   public/uploads/magazine/image/4/test.png
+#	new file:   public/uploads/magazine/image/5/7.jpg
+#	new file:   public/uploads/magazine/image/5/anybody.jpg
+#	new file:   public/uploads/magazine/image/5/test.png
+#	new file:   public/uploads/magazine/image/6/anybody.jpg
+#	new file:   public/uploads/magazine/image/6/test.png
+#	new file:   public/uploads/magazine/image/7/1.jpg
+#	new file:   public/uploads/magazine/image/7/test.png
+#	new file:   public/uploads/magazine/image/8/1.jpg
+#	new file:   public/uploads/magazine/image/9/7.jpg
+#	modified:   public/uploads/tmp/1426691257-1136-0448/wallpaper-Hotline-Miami-2---Wrong-Number2560x1440.jpg
+#	modified:   public/uploads/user/avatar/9/mohab.jpg
+#	new file:   spec/controllers/articles_controller_spec.rb
+#	new file:   spec/controllers/magazines_controller_spec.rb
+#	new file:   spec/controllers/search_controller_spec.rb
+#	new file:   spec/factories/article.rb
+#	new file:   spec/factories/magazine.rb
+#	new file:   spec/factories/user.rb
+#	new file:   spec/models/magazine_spec.rb
+#	new file:   spec/photos/test.png
+#	new file:   spec/rails_helper.rb
+#	new file:   spec/spec_helper.rb
+#	modified:   test/controllers/articles_controller_test.rb
+#	modified:   test/controllers/comments_controller_test.rb
+#	modified:   test/controllers/error_controller_test.rb
+#	modified:   test/controllers/errors_controller_test.rb
+#	modified:   test/controllers/home_controller_test.rb
+#	modified:   test/controllers/magazines_controller_test.rb
+#	modified:   test/controllers/password_controller_test.rb
+#	modified:   test/controllers/replies_controller_test.rb
+#	new file:   test/controllers/search_controller_test.rb
+#	modified:   test/fixtures/articles.yml
+#	new file:   test/fixtures/collaboration_invitations.yml
+#	modified:   test/fixtures/comments.yml
+#	modified:   test/fixtures/magazines.yml
+#	modified:   test/fixtures/replies.yml
+#	modified:   test/fixtures/users.yml
+#	modified:   test/models/article_test.rb
+#	new file:   test/models/collaboration_invitation_test.rb
+#	modified:   test/models/comment_test.rb
+#	modified:   test/models/magazine_test.rb
+#	modified:   test/models/reply_test.rb
+#	modified:   test/models/user_test.rb
+#
+

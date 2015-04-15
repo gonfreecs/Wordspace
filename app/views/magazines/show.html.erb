@@ -1,3 +1,6 @@
+<% if @join.present? %>
+<%= flash[:notice] = "You have requested joining this magazine." %>
+<% end %>
 <div class="view-wrapper">
   <div class="row">
     <div class="col-sm-3">
@@ -21,6 +24,8 @@
       <%= link_to "New Article",  new_article_path(magazine_id: @magazine.id) %>
 
       <%end%>
+      <! link to request joining magazine>
+      <%= link_to 'Join this magazine', action: "join" %>
     </div>
   </div>
   <div class="row">
