@@ -15,6 +15,11 @@ class Ability
       can :update, Article do |article|
         article.user_id == user.id
       end
+      if user.is_banned == 1
+        cannot :manage, Article
+        cannot :manage, Magazine
+        cannot :manage, User
+      end
       can :create, Article
       can :report, Article
       can :create, Magazine

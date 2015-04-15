@@ -24,8 +24,8 @@
       @comment = Comment.new(params[:comment])
       @replies = Reply.all
       @reply = Reply.new(params[:reply])
-      @report = Reportarticle.whe
-      re('user_id = ? AND article_id = ?', current_user.id, params[:id])
+      @report = Reportarticle.where('user_id = ? AND article_id = ?',
+                                    current_user.id, params[:id])
     end
 
     # GET /articles/new
@@ -65,8 +65,10 @@
     def destroy
       @article.destroy
       respond_to do |format|
-        format.html { redirect_to :back, notice: 'Article
-        was successfully destroyed.' }
+        format.html do
+          redirect_to :back, notice: 'Article
+           was successfully destroyed.'
+        end
         format.json { head :no_content }
       end
     end

@@ -46,12 +46,12 @@
 			</div> <!-- /row -->
 			<div class ="row">
 				<div class="col-md-2"></div>
-				<a data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				<a data-toggle="collapse" data-target=<%='#'%><%= comment.id%> aria-expanded="false" aria-controls="collapseExample">
 					<font size ="5" color="black" >&nbsp;&nbsp;&nbsp;&nbsp;replies <span class = "fa fa-chevron-circle-right" ></span></font>
 				</a>
 			</div><!-- /row-->
 
-			<div class="collapse" id="collapseExample">
+			<div class="collapse" id= <%= comment.id%>>
 				<% @replies.each do|r| %>
 				<% if r.comment_id == comment.id %>
 				<br />

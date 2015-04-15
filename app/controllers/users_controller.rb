@@ -71,4 +71,6 @@ class UsersController < ApplicationController
     end
     redirect_to :back
   end
+  def destroy
+  end
 end
