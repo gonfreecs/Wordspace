@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to(:back)
+    redirect_to :back
   end
   def index
   end
@@ -75,11 +75,11 @@ class CommentsController < ApplicationController
   #A hash is created containing user's id who wants to report a comment
   #and that comment's id and it is added to moedl contaioning reported requests
   reportcommenth = {"user_id" => current_user.id,
-                    "comment_id" => @comment.id,
+                    "comment_id" => params[:id],
 										"is_dismissed" => 0}
   Reportcomment.create(reportcommenth)
-   @article =Article.find( params[:id])
-  redirect_to @article
+   #@article =Article.find( params[:id])
+  redirect_to :back
   end
 
 	  # Never trust parameters from the scary internet, only allow the white list through.

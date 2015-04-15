@@ -1,37 +1,36 @@
+<% @comments = Comment.where("id IN (?)", Reportcomment.where(is_dismissed:1).uniq.pluck(:comment_id)) %>
 
-<% @comments = Comment.find((Reportcomment.where(is_dismissed:1)).uniq.pluck(:comment_id)) %>
-<!% @comments = Comment.where(:user_id => 10) %>
 
 <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-      <% if @comments != [] %>
-      <% @comments.each do|c| %>
-<div class="col-md-2">
-  <div class="commenterImage">
-  <img src= "http://fc00.deviantart.net/fs71/f/2013/012/5/f/portrait_of_anime__black_skinned_boy__by_sunoflove-d5r9fau.png" >
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <% if @comments != [] %>
+    <% @comments.each do|c| %>
+    <div class="col-md-2">
+      <div class="commenterImage">
+        <img src= "http://fc00.deviantart.net/fs71/f/2013/012/5/f/portrait_of_anime__black_skinned_boy__by_sunoflove-d5r9fau.png" >
+      </div>
+    </div><!-- /col-sm-1 -->
+    <div class="col-md-10">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+
+          <strong><font size="5"><%= User.find(c.user_id).firstname %></font></strong> <span class="text-muted">on <%= c.created_at.to_s[0,10] %></span>
+          <%= link_to '<font size ="5" color="black" ><span class = "fa fa-trash" ></span></font>'.html_safe , c,
+          :confirm => 'Are you sure?',
+          :method => :delete %>
+
+        </div><!-- /panel panel-heading -->
+        <div class="panel-body">
+          <font size ="3"><%= c.des %></font>
+        </div><!-- /panel-body -->
+      </div><!-- /panel panel-default -->
+    </div><!-- /10 -->
+    <%end%>
+
+    <% else %>
+    <p> Nothing to display </p>
+    <% end %>
   </div>
-</div><!-- /col-sm-1 -->
-<div class="col-md-10">
-<div class="panel panel-default">
-  <div class="panel-heading">
-
-<strong><font size="5"><%= User.find(c.user_id).firstname %></font></strong> <span class="text-muted">on <%= c.created_at.to_s[0,10] %></span>
-<%= link_to '<font size ="5" color="black" ><span class = "fa fa-trash" ></span></font>'.html_safe , c,
-:confirm => 'Are you sure?',
-:method => :delete %>
-
-</div><!-- /panel panel-heading -->
-<div class="panel-body">
- <font size ="3"><%= c.des %></font>
-</div><!-- /panel-body -->
-</div><!-- /panel panel-default -->
-</div><!-- /10 -->
-<%end%>
-
-   <% else %>
-  <p> Nothing to display </p>
-  <% end %>
-</div>
   <div class="col-md-2"></div>
 </div> <!-- /row -->

@@ -35,8 +35,10 @@ class Ability
 			can :destroy, Reply
       can :ban, User
       can :unban, User
-      can :dismiss, Reportarticle
-      can :dismiss, Reportcomment
+      can :dismiss_article, User
+      can :dismiss_comment, User
+      #can :dismiss, Reportarticle
+      #can :dismiss, Reportcomment
       can :dismiss, Article
       can :dismiss, Comment
 		end

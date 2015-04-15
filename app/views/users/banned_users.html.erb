@@ -6,29 +6,29 @@
 
 <div class="row">
   <div class="col-md-2"></div>
-<div class="col-md-1">
-  <div class="commenterImage">
-  <img src= "http://fc00.deviantart.net/fs71/f/2013/012/5/f/portrait_of_anime__black_skinned_boy__by_sunoflove-d5r9fau.png" >
-  </div>
-</div><!-- /col-sm-1 -->
-<br>
-<div class="col-md-7">
-<!div class="panel panel-default">
-  <!div class="panel-heading">
-<strong><font size="5"><%= u.firstname %></font></strong>
-<%= link_to "Un-ban" , :controller => :users, :action => :unban,:class =>"btn btn-primary" %>
-<br>
-<br>
-<hr>
-<!/div><!-- /panel panel-heading -->
-<!/div><!-- /panel panel-default -->
-</div><!-- /10 -->
+  <div class="col-md-1">
+    <div class="commenterImage">
+      <img src= "http://fc00.deviantart.net/fs71/f/2013/012/5/f/portrait_of_anime__black_skinned_boy__by_sunoflove-d5r9fau.png" >
+    </div>
+  </div><!-- /col-sm-1 -->
+  <br>
+  <div class="col-md-7">
+    <!div class="panel panel-default">
+    <!div class="panel-heading">
+    <strong><font size="5"><%= u.firstname %></font></strong>
+    <%= link_to "Un-ban" , :controller => :users, :action => :unban,:class =>"btn btn-primary", :u_id => u.id %>
+    <br>
+    <br>
+    <hr>
+    <!/div><!-- /panel panel-heading -->
+    <!/div><!-- /panel panel-default -->
+  </div><!-- /10 -->
   <div class="col-md-2"></div>
 
 </div> <!-- /row -->
 
-  <% end %>
+<% end %>
 
-   <% else %>
-  <p> Nothing to display </p>
-  <% end %>
+<% else %>
+<p> Nothing to display </p>
+<% end %>

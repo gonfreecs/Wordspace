@@ -17,6 +17,8 @@ member do
   get 'banned_users'
   get 'ban'
   get 'unban'
+  get 'dismiss_article'
+  get 'dismiss_comment'
 end
 end
  #specifying route for report action in comment controller
