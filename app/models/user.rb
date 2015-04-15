@@ -6,10 +6,13 @@ class User < ActiveRecord::Base
 
   # to upload avatar for user
   mount_uploader :avatar, AvatarUploader
-
+  has_many :magazines
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # :recoverable,
+
+  has_many :collaboration_invitation
+  has_many :magazines, through: :collaboration_invitation
 
   # making firstname and lastname required
   validates :firstname, presence: true
