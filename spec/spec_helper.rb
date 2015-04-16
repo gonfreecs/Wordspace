@@ -24,11 +24,13 @@ require 'simplecov'
 require 'capybara/rails'
 require 'capybara/rspec'
 
+
 SimpleCov.start
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+  config.render_views
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
@@ -98,3 +100,9 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
 end
+
+Capybara.server_port = 3000
+
+# To ensure that browser tests can find the test server process,
+# always include the port number in URLs.
+Capybara.always_include_port = true
