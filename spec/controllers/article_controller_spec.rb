@@ -1,10 +1,11 @@
 require 'rails_helper'
+require 'capybara/rails'
 RSpec.describe ArticlesController, type: :controller do
   # Author: Andrew Magdy
   # 9.4.2015
-  # Article Controller Tests for CreateMagazine
+  # Article Controller Tests for CreateArticle
   describe 'POST #create' do
-    it 'allows signed in users to create magazines' do
+    it 'allows signed in users to create articles' do
       @user = create(:user)
       sign_in @user
       post :create, article: FactoryGirl.attributes_for(:article)
@@ -25,13 +26,15 @@ RSpec.describe ArticlesController, type: :controller do
       expect(@instance1) != @instance2
     end
   end
+
   # Fails due to bad controller implementation to be fixed
-  # describe 'GET #show' do
-  #  it 'allows anybody to view article' do
-  #    @m1 = create(:article)
-  #    get :show, id: @m1.id,
-  #               article: FactoryGirl.attributes_for(:article)
-  #    expect(assigns(:article)).to match(@m1)
-  #  end
-  # end
+  describe 'GET #show' do
+     it 'allows anybody to view article' do
+      @m1 = create(:article)
+      get :show, id: @m1.id,
+                 article: FactoryGirl.attributes_for(:article)
+      expect(assigns(:article)).to match(@m1)
+     end
+  end
+
 end

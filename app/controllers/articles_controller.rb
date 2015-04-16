@@ -23,11 +23,9 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   # inistantiation of Comment and Reply objects
+  # show should be fixed
   def show
-    @user = User.find(@article.user_id)
-    @comment = Comment.new(params[:comment])
-    @replies = Reply.all
-    @reply = Reply.new(params[:reply])
+
   end
 
   # GET /articles/new
