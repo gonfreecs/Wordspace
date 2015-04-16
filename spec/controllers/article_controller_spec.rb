@@ -29,16 +29,28 @@ RSpec.describe ArticlesController, type: :controller do
 
 
 
-  describe "the signin process", :type => :feature do
+  describe "Categories", :type => :feature do
         before :each do
           @m1 = create(:article,category_list: 'Cat1,Cat2')
         end
 
-        it "signs me in" do
-          visit '/category/Cat1'
+        it "views category" do
+          visit '/categories/Cat1'
           save_and_open_page
-          expect(page).to have_link(@m1, :href => "articles/?",@m1.id)
+          expect(page).to have_link("Show", :href => article_path(@m1))
         end
-      end
+   end
+
+   describe "Tags", :type => :feature do
+         before :each do
+           @m1 = create(:article,tag_list: 'Cat1,Cat2')
+         end
+
+         it "views tag" do
+           visit '/tags/Cat1'
+           save_and_open_page
+           expect(page).to have_link("Show", :href => article_path(@m1))
+         end
+    end
 
 end

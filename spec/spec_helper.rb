@@ -24,7 +24,9 @@ require 'simplecov'
 require 'capybara/rails'
 require 'capybara/rspec'
 
-
+Capybara.run_server = true
+Capybara.server_port = 3000
+Capybara.app_host = "http://127.0.0.1:#{Capybara.server_port}"
 SimpleCov.start
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -100,9 +102,3 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
 end
-
-Capybara.server_port = 3000
-
-# To ensure that browser tests can find the test server process,
-# always include the port number in URLs.
-Capybara.always_include_port = true
