@@ -37,4 +37,16 @@ RSpec.describe ArticlesController, type: :controller do
      end
   end
 
+  describe "the signin process", :type => :feature do
+        before :each do
+          @m1 = create(:article,category_list: 'Cat1,Cat2')
+        end
+
+        it "signs me in" do
+          visit '/articles/'
+          save_and_open_page
+          expect(page).to have_link("Show", :href => '/articles/1')
+        end
+      end
+
 end

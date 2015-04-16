@@ -21,6 +21,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'factory_girl_rails'
 require 'simplecov'
+require 'capybara/rails'
 require 'capybara/rspec'
 
 SimpleCov.start
