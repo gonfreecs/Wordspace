@@ -9,6 +9,9 @@ class MagazinesController < ApplicationController
     fail(CanCan::AccessDenied, 'Magazine is not found')
   end
   before_action :set_magazine, only: [:show, :edit, :update, :destroy]
+  # check if cancel => no updates performed
+  before_action :check_for_cancel, only: [:create, :update]
+
   # GET /magazines
   # GET /magazines.json
   def index
@@ -18,6 +21,8 @@ class MagazinesController < ApplicationController
   # GET /magazines/1
   # GET /magazines/1.json
   def show
+    @users = @magazine.users
+    @articles = Article.where(magazine_id: params[:id])
   end
 
   # GET /magazines/new
@@ -35,6 +40,7 @@ class MagazinesController < ApplicationController
       render json: @magazine.errors, status: :unprocessable_entity
     end
   end
+
   # POST /magazines
   # POST /magazines.json
   def create
@@ -78,6 +84,12 @@ class MagazinesController < ApplicationController
       end
       format.json { head :no_content }
     end
+  end
+
+  # Cancel an update and return to magazine page
+  def check_for_cancel
+    return false if params[:commit] != 'Cancel'
+    redirect_to @magazine
   end
 
   private

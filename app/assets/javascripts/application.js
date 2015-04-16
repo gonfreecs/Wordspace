@@ -18,6 +18,7 @@
 //= require redactor-rails
 //= require redactor-rails/plugins
 //= require_tree .
+//= require awesome-share-buttons
 function sbarp() {
     if($(document).width() > 990) {
       $('#search-container').css({top: 97});

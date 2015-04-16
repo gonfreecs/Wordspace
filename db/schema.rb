@@ -11,17 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405142118) do
+ActiveRecord::Schema.define(version: 20150415190221) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "title"
     t.text     "body"
     t.string   "image"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "user_id"
+    t.integer  "promotevalue"
+    t.boolean  "promoted"
     t.text     "plain_body"
-    t.integer  "magazine_id", default: 0
+    t.integer  "magazine_id",  default: 0
+  end
+
+  create_table "collaboration_invitations", force: :cascade do |t|
+    t.integer  "status"
+    t.integer  "User_id"
+    t.integer  "Magazine_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -31,6 +41,19 @@ ActiveRecord::Schema.define(version: 20150405142118) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer  "followable_id",                   null: false
+    t.string   "followable_type",                 null: false
+    t.integer  "follower_id",                     null: false
+    t.string   "follower_type",                   null: false
+    t.boolean  "blocked",         default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
+  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
   create_table "magazines", force: :cascade do |t|
     t.string   "name"
@@ -92,12 +115,12 @@ ActiveRecord::Schema.define(version: 20150405142118) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "",         null: false
+    t.string   "encrypted_password",     default: "",         null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,          null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -111,6 +134,7 @@ ActiveRecord::Schema.define(version: 20150405142118) do
     t.text     "about_me"
     t.boolean  "is_female",              default: false
     t.string   "avatar"
+    t.integer  "budget",                 default: 1000000000
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
