@@ -3,20 +3,6 @@
 # Test for add article to magazine
 require 'rails_helper'
 RSpec.describe ArticlesController, type: :controller do
-  describe 'PUT #update with promotion value' do
-    it 'article promoted' do
-      @article = create(:article)
-      @user = create(:user)
-      sign_in @user
-     @article.user = @user
-      put :update, id: @article.id,
-                   article: FactoryGirl.attributes_for(:article,
-                                                        promoted: true,
-                                                        promotevalue: 2000000)
-      @article.reload
-      @article.promoted.should == true
-    end
-  end
   describe 'POST #create' do
     it 'allows signed in users to create articles on their magazines' do
       @user = create(:user)

@@ -1,5 +1,4 @@
 
-
     # Article Controller
     class ArticlesController < ApplicationController
       # loading all variables
@@ -90,19 +89,15 @@
       end
 
       private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_article
-    @article = Article.find(params[:id])
-  end
-  # mohab
-  # 5.4.2015
-  # Never trust parameters from the scary internet
-  # add strong parameter promoted value and boolean promoted
-  def article_params
-    params.require(:article).permit(:title, :body, :user_id, :id,
-                                    :image, :promotevalue,
-                                    :promoted, :magazine_id,
-                                    :tag_list)
-  end
-end
 
+      # Use callbacks to share common setup or constraints between actions.
+      def set_article
+        @article = Article.find(params[:id])
+      end
+
+      # Never trust parameters from the scary internet
+      def article_params
+        params.require(:article).permit(:title, :body, :user_id, :id, :image,
+                                        :magazine_id, :tag_list)
+      end
+    end
