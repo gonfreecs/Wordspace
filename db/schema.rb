@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415190221) do
+ActiveRecord::Schema.define(version: 20150407210738) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "title"
@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(version: 20150415190221) do
 
   create_table "collaboration_invitations", force: :cascade do |t|
     t.integer  "status"
-    t.integer  "User_id"
+    t.integer  "User1_id"
+    t.integer  "User2_id"
     t.integer  "Magazine_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
