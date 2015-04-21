@@ -1,12 +1,4 @@
 source 'https://rubygems.org'
-gem 'acts-as-taggable-on', '~> 3.4'
-# mohab
-# 1/4/2015
-# for social share button
-gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
-gem 'social-share-button'
-# for avatar upload (carrierwave	)
-gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
