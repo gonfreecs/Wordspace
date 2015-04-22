@@ -1,63 +1,57 @@
-	<div class="row">
-	<!-- empty column for layouts -->
-	<!-- main image for the article setting image width & hight to not get out of the border if there is no image for the article a default one is set-->
-	<div class="col-md-2"></div>
-		<div class="col-md-5">
-		<div class= "row" >
-		<div class="polaroid">
-		 <p><%= @article.title.html_safe %></p>
-
-		<img src= <%= @article.image %> height="420" width="550">
-		</div>
-		</div>
-
-
-
-	</div>
-	<!-- this is the article info part -->
-	 <div class="col-md-2">
-	 <br>
-	  <div class="col-md-offset-2">
-
-	<%= awesome_share_buttons(@article) %>
-	  <h5 > By: </h5> <p><%= @user.firstname %> <%= @user.lastname %> </p>
-	 <h5> created at: </h5> <p> <%=  @article.created_at.to_s[0,10] %> </p>
-	 <!-- this is the edit and delete buttons section. Using CanCan to check whether the user is able to edit or delete if yes the buttons are shown and if no the buttons are not, editing redirects to the edit page and the delete button asks if the user is sure he/she wants to delete then if the answer is yes the article is deleted -->
-	 	<% if can? :update, @article %>
-		<%= link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_article_path(@article), class: "btn btn-outlined btn-grey" %>
-
-		<% end %>
-		&nbsp; &nbsp;
-
-		<% if can? :destroy, @article %>
-	        <%= link_to '<span class="glyphicon glyphicon-trash"></span>'.html_safe, article_path(@article),
-	              method: :delete,
-	              data: { confirm: 'Are you sure you want to delete this article?' }, class: "btn btn-outlined btn-grey" %>
-	      <% end %>
-	    </div>
-	  </div>
-	  <div class="col-md-2"></div>
-	</div>
-	<div class="row">
-	  <div class="col-md-2"></div>
-	  <!-- this is the article section the article is simply put here and the limit size tag is simply for making sure that no image in the article is too big to be out of scope. col-md-8 is for handling layout-->
-	  <div class="col-md-8">
-	    <br>
-	    <div class ="limitSize">
-	      <p><font size="3"><%= @article.body.html_safe %></font></p>
-	    </div>
-	  </div>
-	  <div class="col-md-2"></div>
-	</div>
-	<!....This is the part where we call all comments.....>
-	<%= render :partial => 'comment', :collection => @article.comments %>
-	<div class="col-md-2"></div>
-	<!....This is the form for creating a new comment.....>
-	<% if can? :create, @comment %>
-	  <%= form_for @comment do|f| %>
-	    <%= f.hidden_field :article_id, :value => @article.id%>
-	    <%= f.hidden_field :user_id, :value => current_user.id %>
-	    <%= f.text_area :des %>
-	    <%= f.submit "Add Comment" %>
-	  <% end %>
-	<% end %>
+<div class="row">
+  <!-- empty column for layouts -->
+  <!-- main image for the article setting image width & hight to not get out of the border if there is no image for the article a default one is set-->
+  <div class="col-md-2"></div>
+  <div class="col-md-5">
+    <div class= "row" >
+      <div class="polaroid">
+        <p><%= @article.title.html_safe %></p>
+        <img src= <%= @article.image %> height="420" width="550">
+      </div>
+    </div>
+  </div>
+  <!-- this is the article info part -->
+  <div class="col-md-2">
+    <br>
+    <div class="col-md-offset-2">
+      <h5 > By: </h5>
+      <p><%= @user.firstname %> <%= @user.lastname %> </p>
+      <h5> created at: </h5>
+      <p> <%=  @article.created_at.to_s[0,10] %> </p>
+      <!-- this is the edit and delete buttons section. Using CanCan to check whether the user is able to edit or delete if yes the buttons are shown and if no the buttons are not, editing redirects to the edit page and the delete button asks if the user is sure he/she wants to delete then if the answer is yes the article is deleted -->
+      <% if can? :update, @article %>
+        <%= link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_article_path(@article), class: "btn btn-outlined btn-grey" %>
+      <% end %>
+      &nbsp; &nbsp;
+	<% if can? :destroy, @article %>
+        <%= link_to '<span class="glyphicon glyphicon-trash"></span>'.html_safe, article_path(@article),
+              method: :delete,
+              data: { confirm: 'Are you sure you want to delete this article?' }, class: "btn btn-outlined btn-grey" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <!-- this is the article section the article is simply put here and the limit size tag is simply for making sure that no image in the article is too big to be out of scope. col-md-8 is for handling layout-->
+  <div class="col-md-8">
+    <br>
+    <div class ="limitSize">
+      <p><font size="3"><%= @article.body.html_safe %></font></p>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<!....This is the part where we call all comments.....>
+<%= render :partial => 'comment', :collection => @article.comments %>
+<div class="col-md-2"></div>
+<!....This is the form for creating a new comment.....>
+<% if can? :create, @comment %>
+  <%= form_for @comment do|f| %>
+    <%= f.hidden_field :article_id, :value => @article.id%>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.text_area :des %>
+    <%= f.submit "Add Comment" %>
+  <% end %>
+<% end %>
