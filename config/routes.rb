@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # adding resources
-  resources :users do
+  resources :users, only: [:follow, :unfollow] do
     member do
       put 'follow' => 'users#follow'
       put 'unfollow' => 'users#unfollow'
