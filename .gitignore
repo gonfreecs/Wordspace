@@ -3,9 +3,7 @@
 
 *.log
 tmp/
-vendor/bundle
 coverage/
-
 
 bin/setup
 
