@@ -6,16 +6,10 @@ class Ability
     can :show, Article
     can :show, Comment
     can :show, Reply
-
     unless user.nil?
       can :update, Article do |article|
         article.user_id == user.id
       end
-
-      can :follow, User do |other|
-        other.id != user.id
-      end
-      can :unfollow, User
       can :create, Article
 
       can :update, Comment do |c|

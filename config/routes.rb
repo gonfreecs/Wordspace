@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
   # adding resources
-  resources :users do
-    member do
-      put 'follow' => 'users#follow'
-      put 'unfollow' => 'users#unfollow'
-    end
-  end
   resources :sponsors
   resources :articles
   resources :comments

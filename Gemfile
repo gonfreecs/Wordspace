@@ -38,9 +38,6 @@ gem 'mini_magick'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# Add following action
-gem 'acts_as_follower'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'twitter-bootstrap-rails'
