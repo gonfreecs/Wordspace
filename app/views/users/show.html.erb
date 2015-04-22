@@ -7,6 +7,17 @@
     <div class="row">
       <div class="col-sm-10">
         <h1 class=""><%= @user.firstname %></h1>
+        <% if can? :follow , @user %>
+          <%if (current_user.following?(@user))%>
+            <%=link_to'<span class="label label-primary" style="cursor: pointer">Unfollow</span>'.html_safe, unfollow_user_path(@user),
+                method: :put ,
+                class: "unfollow" %>
+          <%else%>
+            <%=link_to'<span class="label label-primary" style="cursor: pointer">Follow</span>'.html_safe, follow_user_path(@user),
+                 method: :put ,
+                 class: "Follow" %>
+          <%end%>
+        <%end%>
         <!--  <button type="button" class="btn btn-success">Book me!</button>  <button type="button" class="btn btn-info">Send me a message</button>
 <br> -->
       </div>
@@ -67,7 +78,7 @@
               <div class="panel-heading">
                 <h4><%= @user.email %></h4>
               </div>
-              <div class="panel-body"> 
+              <div class="panel-body">
                 <h4><%= @user.about_me %></h4>
               </div>
             </div>

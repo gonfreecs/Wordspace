@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   # to upload avatar for user
   mount_uploader :avatar, AvatarUploader
 
+  # Adds the Abilitiy To follow and be followed
+  acts_as_followable
+  acts_as_follower
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   #:recoverable,
