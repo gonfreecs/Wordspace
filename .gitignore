@@ -1,6 +1,5 @@
-
 *.lock
-
 *.log
-tmp/
-coverage/
+tmp/*
+coverage/*
+log/*
