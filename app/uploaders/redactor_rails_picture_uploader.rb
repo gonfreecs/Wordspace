@@ -1,5 +1,4 @@
 # encoding: utf-8
-# RedactorRailsPictureUploader
 class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   include RedactorRails::Backend::CarrierWave
 
@@ -49,8 +48,7 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   end
 
   # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here,
-  # see uploader/store.rb for details.
+  # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
   #   "something.jpg" if original_filename
   # end

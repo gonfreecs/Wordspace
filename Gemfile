@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'redactor-rails'
+
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'cancan'
@@ -33,7 +34,6 @@ gem 'cancan'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
 # Bootstrap styles gem
 gem 'twitter-bootstrap-rails'
 
@@ -54,7 +54,6 @@ group :development, :test do
   # 7.4.2015
   # Factory girl gem for tests
   gem 'factory_girl_rails'
-
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
