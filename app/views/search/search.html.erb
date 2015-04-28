@@ -1,11 +1,14 @@
 <div style="width: 72.5%; text-align: left; margin-left: auto; margin-right: auto;">
-  <% if @articles.empty? %>
+  <% if @articles.empty? && @magazines.empty? %>
     <h1>No results found for "<%= @query_str %>"</h1>
   <% else %>
     <h1>Search results for "<%= @query_str %>"</h1>
   <% end %>
 </div>
 <div class="row grid">
+  <% if !@articles.empty? %>
+  <h3>Articles</h3>
+  <% end %>
   <% @articles.each do|a| %>
   <figure class="effect-sadie">
     <img src="<%= a.image %>" alt="<%= a.title %>"/>
@@ -13,6 +16,20 @@
       <h2><span><%= a.title %></span></h2>
       <p><%= truncate(a.plain_body, :length => 80) %></p>
       <%= link_to 'View more', a %>
+    </figcaption>
+  </figure>
+  <% end %>
+</div>
+<div class="row grid">
+  <% if !@magazines.empty? %>
+  <h3>Magazines</h3>
+  <% end %>
+  <% @magazines.each do|m| %>
+  <figure class="effect-sadie">
+    <img src="<%= m.image %>" alt="<%= m.name %>"/>
+    <figcaption>
+      <h2><span><%= m.name %></span></h2>
+      <%= link_to 'View magazine', m %>
     </figcaption>
   </figure>
   <% end %>

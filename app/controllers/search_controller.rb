@@ -8,6 +8,7 @@ class SearchController < ApplicationController
       @query_string = '%' << @query_str.gsub('_', '\\_').gsub('%', '\\%') << '%'
       @articles = Article.where('(title LIKE ?) OR (plain_body LIKE ?)',
                                 @query_string, @query_string)
+      @magazines = Magazine.where('(name LIKE ?)', @query_string)
     else
       redirect_to(:back)
     end
