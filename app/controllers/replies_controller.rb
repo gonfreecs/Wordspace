@@ -1,4 +1,4 @@
-# RepliesController
+# Author: Omar El-Hariry
 class RepliesController < ApplicationController
   # loading all variables
   load_and_authorize_resource

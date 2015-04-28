@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 require 'pathname'
+<<<<<<< HEAD
+=======
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path("../../Gemfile",
+  Pathname.new(__FILE__).realpath)
+>>>>>>> master
 
 # path to your application root.
 APP_ROOT = Pathname.new File.expand_path('../../',  __FILE__)
