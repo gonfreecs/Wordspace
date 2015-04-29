@@ -5,6 +5,8 @@
         get 'destroy'
       end
     end
+
+
     # adding resources
     resources :sponsors do
       collection do
@@ -27,6 +29,11 @@
     end
     # Search url matching
     get '/search' => 'search#search'
+
+    get 'tags/:tag', to: 'articles#index', as: :tag
+    get 'categories/:category', to: 'articles#index', as: :category
+    get 'main/index'
+
 
 
 

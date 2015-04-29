@@ -1,7 +1,13 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/spec/controllers/magazines_controller_spec.rb": [
+        1,
+        1,
+=======
       "/Users/Mayar/Desktop/conflictsManage/spec/controllers/articles_controller_spec.rb": [
+>>>>>>> master
         null,
         null,
         null,
@@ -22,7 +28,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/spec/rails_helper.rb": [
+=======
       "/Users/Mayar/Desktop/conflictsManage/spec/rails_helper.rb": [
+>>>>>>> master
         null,
         1,
         1,
@@ -74,7 +84,13 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/app/controllers/magazines_controller.rb": [
+        null,
+        null,
+=======
       "/Users/Mayar/Desktop/conflictsManage/app/controllers/articles_controller.rb": [
+>>>>>>> master
         null,
         1,
         null,
@@ -267,11 +283,15 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/app/controllers/application_controller.rb": [
+=======
       "/Users/Mayar/Desktop/conflictsManage/app/controllers/magazines_controller.rb": [
         null,
         null,
         null,
         1,
+>>>>>>> master
         null,
         1,
         null,
@@ -374,7 +394,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/spec/controllers/search_controller_spec.rb": [
+=======
       "/Users/Mayar/Desktop/conflictsManage/spec/controllers/search_controller_spec.rb": [
+>>>>>>> master
         null,
         null,
         null,
@@ -406,7 +430,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/app/controllers/search_controller.rb": [
+=======
       "/Users/Mayar/Desktop/conflictsManage/app/controllers/search_controller.rb": [
+>>>>>>> master
         null,
         null,
         null,
@@ -430,7 +458,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/spec/models/magazine_spec.rb": [
+=======
       "/Users/Mayar/Desktop/conflictsManage/spec/models/magazine_spec.rb": [
+>>>>>>> master
         null,
         null,
         null,
@@ -464,7 +496,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/app/models/magazine.rb": [
+=======
       "/Users/Mayar/Desktop/conflictsManage/app/models/magazine.rb": [
+>>>>>>> master
         null,
         null,
         null,
@@ -488,7 +524,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/app/uploaders/img_uploader.rb": [
+=======
       "/Users/Mayar/Desktop/conflictsManage/app/uploaders/img_uploader.rb": [
+>>>>>>> master
         null,
         null,
         1,
@@ -541,13 +581,29 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/app/models/ability.rb": [
+        null,
+=======
       "/Users/Mayar/Desktop/conflictsManage/app/models/article.rb": [
+>>>>>>> master
         null,
         1,
         null,
         null,
         1,
         1,
+<<<<<<< HEAD
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        0,
+=======
+>>>>>>> master
         null,
         null,
         1,
@@ -582,7 +638,13 @@
         4,
         0,
         null,
+<<<<<<< HEAD
+        null
+      ],
+      "/Users/andrewmagdy/Documents/Git/Wordspace/app/models/article.rb": [
+=======
         4,
+>>>>>>> master
         null,
         4,
         0,
@@ -593,6 +655,13 @@
         4,
         null,
         null,
+<<<<<<< HEAD
+        1,
+        1,
+        1,
+        1,
+=======
+>>>>>>> master
         null,
         null,
         4,
@@ -609,7 +678,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/app/models/comment.rb": [
+=======
       "/Users/Mayar/Desktop/conflictsManage/app/models/comment.rb": [
+>>>>>>> master
         null,
         1,
         null,
@@ -621,7 +694,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/Users/andrewmagdy/Documents/Git/Wordspace/app/models/reply.rb": [
+=======
       "/Users/Mayar/Desktop/conflictsManage/app/models/reply.rb": [
+>>>>>>> master
         null,
         1,
         null,
@@ -632,6 +709,10 @@
         null
       ]
     },
+<<<<<<< HEAD
+    "timestamp": 1428696143
+=======
     "timestamp": 1428840524
+>>>>>>> master
   }
 }
