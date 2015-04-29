@@ -22,15 +22,16 @@
           <div class="col-sm-3">
             <!--left col-->
             <ul class="list-group">
-              <li class="list-group-item text-muted" contenteditable="false">Profile</li>
-              <li class="list-group-item text-right"><span class="pull-left"><strong class="">firstname</strong></span> <%= @user.firstname %></li>
-              <li class="list-group-item text-right"><span class="pull-left"><strong class="">lastname</strong></span> <%= @user.lastname %></li>
+              <li class="list-group-item text-muted">Profile <i class=""></i>
+              </li>
+              <li class="list-group-item text-right"><span class="pull-left"><strong class="">firstnaem</strong></span>  <%= @user.firstname %></li>
+              <li class="list-group-item text-right"><span class="pull-left"><strong class="">lastname</strong></span>  <%= @user.lastname %></li>
               <li class="list-group-item text-right"><span class="pull-left"><strong class="">Gender</strong></span> <% if @user.is_female %>
                   female
                     <%else%>
                   male
-                    </li>
-              <%end%>
+                    <%end%>
+              </li>
             </ul>
             <div class="panel panel-default">
               <div class="panel-heading">Insured / Bonded?
@@ -67,7 +68,7 @@
               <div class="panel-heading">
                 <h4><%= @user.email %></h4>
               </div>
-              <div class="panel-body"> 
+              <div class="panel-body">
                 <h4><%= @user.about_me %></h4>
               </div>
             </div>
