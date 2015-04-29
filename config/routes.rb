@@ -8,6 +8,10 @@ Rails.application.routes.draw do
       put 'unfollow' => 'users#unfollow'
     end
   end
+  # mohab
+  # 1.4.2015
+  # route to profile
+  resources :users, only: :show
   resources :sponsors
   resources :articles
   resources :comments
@@ -49,4 +53,3 @@ Rails.application.routes.draw do
     # Search url matching
     get '/search' => 'search#search'
   end
-

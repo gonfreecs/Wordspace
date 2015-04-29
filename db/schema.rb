@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408172909) do
+ActiveRecord::Schema.define(version: 20150408180159) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "user_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150408172909) do
     t.datetime "updated_at", null: false
     t.string   "title"
   end
+
   create_table "articles", force: :cascade do |t|
     t.text     "title"
     t.text     "body"
@@ -27,9 +28,9 @@ ActiveRecord::Schema.define(version: 20150408172909) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "user_id"
+    t.boolean  "is_sponsored", default: false
     t.text     "plain_body"
     t.integer  "magazine_id",  default: 0
-    t.boolean  "is_sponsored", default: false
     t.string   "ad_title"
   end
 
@@ -64,7 +65,6 @@ ActiveRecord::Schema.define(version: 20150408172909) do
   add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
-
   create_table "magazines", force: :cascade do |t|
     t.string   "name"
     t.text     "decription"
@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 20150408172909) do
     t.integer "magazine_id"
     t.integer "user_id"
   end
-
 
   create_table "redactor_assets", force: :cascade do |t|
     t.integer  "user_id"
