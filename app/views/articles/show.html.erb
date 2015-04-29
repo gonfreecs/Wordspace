@@ -22,7 +22,7 @@
             <div class= "row" >
             <p>Tags: <%= @article.tag_list %></p>
         </div>
-          <h5 > By: </h5> <p><%= @user.firstname %> <%= @user.lastname %> </p>
+          <h5 > By: </h5> <p><%= link_to  @user.firstname  , @user %>  </p>
          <h5> created at: </h5> <p> <%=  @article.created_at.to_s[0,10] %> </p>
          <!-- this is the edit and delete buttons section. Using CanCan to check whether the user is able to edit or delete if yes the buttons are shown and if no the buttons are not, editing redirects to the edit page and the delete button asks if the user is sure he/she wants to delete then if the answer is yes the article is deleted -->
          	<% if can? :update, @article %>
