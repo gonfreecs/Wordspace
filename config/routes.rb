@@ -1,4 +1,5 @@
   Rails.application.routes.draw do
+    root 'articles#index'
     resources :ads
     resources :bids do
       collection do
@@ -42,7 +43,7 @@
     mount RedactorRails::Engine => '/redactor_rails'
     devise_for :users
     get 'main/index'
-    root 'main#index'
+
 
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
