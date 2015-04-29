@@ -30,13 +30,21 @@
      font-size: 16px;
  }
 
+.button-wrap{
+  background-color: transparent !important ;
+}
  a,
- a:hover,
+
  a:focus,
- a:active,
+
  a.active {
      outline: 0;
      color: #18bc9c;
+ }
+ a:hover,a:hover{
+   text-decoration: none ;
+   background-color: transparent ;
+   color: black ;
  }
 
  h1,
@@ -561,6 +569,7 @@ figure.effect-sadie:hover p {
 	padding:13px 40px;
 }
 /*--------Article --------*/
+
 .polaroid {
   position: relative;
   width: 540px;

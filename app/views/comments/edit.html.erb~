@@ -1,0 +1,10 @@
+
+<%= form_for @comment do|f| %>
+
+  <%= f.hidden_field :article_id %>
+  <%= f.hidden_field :user_id %>
+   
+    <%= f.text_area :des %>
+    
+    <%= f.submit "Add Comment" %>
+  <% end %>

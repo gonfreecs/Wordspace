@@ -1,6 +1,4 @@
-
 *.lock
-
 *.log
 tmp/
 coverage/
