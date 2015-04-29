@@ -15,6 +15,7 @@
  *= require redactor-rails
  *= redactor-rails/plugins
  *= require font-awesome
+ *= require awesome-share-buttons
  */
 /* Generic styles for basics and the navbar, copyrighted to wrapbootstra.com */
  body {
@@ -30,21 +31,15 @@
      font-size: 16px;
  }
 
-.button-wrap{
-  background-color: transparent !important ;
-}
  a,
-
+ a:hover,
  a:focus,
-
+ a:active,
  a.active {
      outline: 0;
      color: #18bc9c;
- }
- a:hover,a:hover{
-   text-decoration: none ;
-   background-color: transparent ;
-   color: black ;
+     background-color: transparent;
+     text-decoration:none;
  }
 
  h1,
@@ -481,6 +476,15 @@ figure.effect-sadie:hover p {
 		width: 100%;
 	}
 }
+
+/* Styles for input radiobuttons and checkboxes from http://bootsnipp.com/snippets/featured/checkboxradio-css-only*/
+.btn span.fa {
+	opacity: 0;
+}
+.btn.active span.fa {
+	opacity: 1;
+}
+
 /* Styles for outlined buttons from http://bootsnipp.com/snippets/featured/outlined-flat-buttons */
 .btn {
 	letter-spacing: 1px;
@@ -509,67 +513,8 @@ figure.effect-sadie:hover p {
             transition: all 0.3s;
 }
 
-.btn-outlined.btn-theme {
-    background: none;
-    color: #6f5499;
-	border-color: #6f5499;
-}
 
-.btn-outlined.btn-theme:hover,
-.btn-outlined.btn-theme:active {
-    color: #FFF;
-    background: #6f5499;
-    border-color: #6f5499;
-}
-
-.btn-outlined.btn-grey {
-    background: none;
-    color: #777777;
-	border-color: #777777;
-}
-
-.btn-outlined.btn-grey:hover,
-.btn-outlined.btn-grey:active {
-    color: #FFF;
-    background: #777777;
-    border-color: #777777;
-}
-
-.btn-outlined.btn-white {
-    background: none;
-    color: #FFFFFF;
-	border-color: #FFFFFF;
-}
-
-.btn-outlined.btn-white:hover,
-.btn-outlined.btn-white:active {
-    color: #6f5499;
-    background: #FFFFFF;
-    border-color: #FFFFFF;
-}
-
-.btn-xs{
-	font-size:11px;
-	line-height:14px;
-	border: 1px solid;
-	padding:5px 10px;
-}
-
-.btn-sm{
-	font-size:12px;
-	line-height:16px;
-	border: 2px solid;
-	padding:8px 15px;
-}
-
-.btn-lg{
-	font-size:18px;
-	line-height:22px;
-	border: 4px solid;
-	padding:13px 40px;
-}
 /*--------Article --------*/
-
 .polaroid {
   position: relative;
   width: 540px;

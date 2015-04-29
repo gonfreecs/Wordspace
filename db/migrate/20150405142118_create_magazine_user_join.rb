@@ -10,7 +10,7 @@ class CreateMagazineUserJoin < ActiveRecord::Migration
 =======
       t.column :magazine_id, :integer
       t.column :user_id, :integer
->>>>>>> ecee245503362cc428fc50fb9b1eeef0823cbac6
+>>>>>>> 7693c4f1a04bb6d36a0b2109e941b06c2e89550f
     end
   end
 end

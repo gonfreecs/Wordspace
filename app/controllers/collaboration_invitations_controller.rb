@@ -6,7 +6,7 @@
     # Date: 8.4.2015
     # Showing invitations to that user
     def index
-      @reqinv = CollaborationInvitation.where(user_id: current_user.id)
+      @reqinv = CollaborationInvitation.where(User_id: current_user.id)
     end
 
     # Author: Mayar
