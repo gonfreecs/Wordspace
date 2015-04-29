@@ -1,5 +1,3 @@
-
-
 <%= form_for @article, html: { multipart: true } do |f| %>
 <!-- Check if there are any errors and display them -->
 <% if @article.errors.any? %>
@@ -39,8 +37,6 @@
         <%=f.submit "Save Changes", :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
         <!-- Cancel Updates -->
         <%=link_to 'Cancel', @article, :class => 'btn btn-outlined btn-grey', 'data-wow-delay'=>'0.7s' %>
-
-
       </div>
     </div>
   </div>

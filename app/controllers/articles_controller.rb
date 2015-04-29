@@ -1,4 +1,4 @@
- # Authors: Omar Essam, Mayar, & Mohammed El-Ansary
+ # Authors: Omar Essam, Mayar, Andrew & Mohammed El-Ansary
  # created at: unknown
  class ArticlesController < ApplicationController
    # loading all variables
@@ -12,7 +12,13 @@
    # GET /articles
    # GET /articles.json
    def index
-     @articles = Article.all
+     if params[:tag]
+       @articles = Article.tagged_with(params[:tag], on: 'tags')
+     elsif params[:category]
+       @articles = Article.tagged_with(params[:category], on: 'categories')
+     else
+       @articles = Article.all
+     end
    end
    # GET /articles/1
    # GET /articles/1.json
@@ -106,6 +112,6 @@
    # only allow the white list through.
    def article_params
      params.require(:article).permit(:title, :body, :user_id, :id, :image,
-                                     :magazine_id)
+                                     :magazine_id, :tag_list, :category_list)
    end
  end

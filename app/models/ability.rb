@@ -19,6 +19,7 @@
         include CanCan::Ability
         def initialize(user)
           can :show, Article
+          can :index, Article
           can :show, Comment
           can :show, Reply
           can :show, Magazine

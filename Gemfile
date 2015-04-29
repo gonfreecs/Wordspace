@@ -25,12 +25,17 @@ gem 'redactor-rails'
 
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'acts-as-taggable-on', '~> 3.4'
 gem 'cancan'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# rspec for testing
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
