@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20150428200432) do
+ActiveRecord::Schema.define(version: 20150408172909) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "user_id"
@@ -21,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150428200432) do
     t.datetime "updated_at", null: false
     t.string   "title"
   end
+
   create_table "articles", force: :cascade do |t|
     t.text     "title"
     t.text     "body"
@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 20150428200432) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "user_id"
-    t.boolean  "is_sponsored", default: false
-    t.string   "ad_title"
     t.text     "plain_body"
     t.integer  "magazine_id",  default: 0
+    t.boolean  "is_sponsored", default: false
+    t.string   "ad_title"
   end
 
   create_table "bids", force: :cascade do |t|
@@ -44,14 +44,6 @@ ActiveRecord::Schema.define(version: 20150428200432) do
     t.integer  "ad_id"
   end
 
-  create_table "collaboration_invitations", force: :cascade do |t|
-    t.integer  "status"
-    t.integer  "User_id"
-    t.integer  "Magazine_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.integer  "article_id"
     t.text     "des"
@@ -59,6 +51,19 @@ ActiveRecord::Schema.define(version: 20150428200432) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer  "followable_id",                   null: false
+    t.string   "followable_type",                 null: false
+    t.integer  "follower_id",                     null: false
+    t.string   "follower_type",                   null: false
+    t.boolean  "blocked",         default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
+  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
   create_table "magazines", force: :cascade do |t|
     t.string   "name"
@@ -98,6 +103,26 @@ ActiveRecord::Schema.define(version: 20150428200432) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

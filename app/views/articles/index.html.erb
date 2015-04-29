@@ -1,18 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Articles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row grid">
     <% @articles.each do |article| %>
 
       <figure class="effect-sadie">
@@ -25,9 +11,4 @@
       </figure>
 
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Article', new_article_path %>
+  </div>
