@@ -1,4 +1,3 @@
-# Comment Model
 class Comment < ActiveRecord::Base
   # A comment belongs to an Article
   # and has many replies

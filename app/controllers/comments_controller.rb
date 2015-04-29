@@ -1,4 +1,4 @@
-# CommentsController
+# Author: Omar El-Hariry
 class CommentsController < ApplicationController
   # loading all variables
   load_and_authorize_resource
@@ -27,6 +27,7 @@ class CommentsController < ApplicationController
   end
 
   def show
+    # @user=User.find(@article.user_id)
     @reply = Reply.new(params[:reply])
   end
 
