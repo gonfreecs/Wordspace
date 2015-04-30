@@ -1,0 +1,17 @@
+/home/mohab/.rvm/rubies/ruby-2.2.0/bin/ruby -r ./siteconf20150430-2974-862ti8.rb extconf.rb 
+checking for clock_gettime() in -lrt... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling hitimes_interval.c
+compiling hitimes_instant_osx.c
+compiling hitimes_instant_clock_gettime.c
+compiling hitimes_instant_windows.c
+compiling hitimes_stats.c
+compiling hitimes.c
+linking shared-object hitimes/2.2/hitimes.so
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 hitimes.so ./.gem.20150430-2974-19d2gum/hitimes/2.2
