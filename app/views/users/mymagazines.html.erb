@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <div class="editor" >
   <h1>My Magazines</h1>
 
@@ -8,7 +10,7 @@
 
      </div>
 
-      <% Magazine.each do |magazine| %>
+      <% @magazines.each do |magazine| %>
 
         <div class="row">
         <div class="col-sm-3 ">

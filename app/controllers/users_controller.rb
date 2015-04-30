@@ -7,11 +7,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @magazines = Array.new
-    Magazine.all.each do |magazine|
-      if magazine.users.include?(current_user)
-        @magazines << magazine
-      end
+    @users = User.all
   end
 
   # GET /users/1
@@ -68,8 +64,12 @@ class UsersController < ApplicationController
     end
   end
 
-  def mymagazine
-
+  def mymagazines
+    @magazines = Array.new
+    Magazine.all.each do |magazine|
+      if magazine.users.include?(current_user)
+        @magazines << magazine
+      end
     end
 
   end

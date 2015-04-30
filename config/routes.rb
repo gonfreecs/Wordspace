@@ -17,14 +17,7 @@
     end
     resources :articles
     resources :magazines
-    # Author: Mayar
-    # Date: 28.4.2015
-    # adding route
-    resources :users do
-        collection do
-          get 'mymagazines'
-        end
-      end
+
     resource :articles do
       collection do
         get 'bid'
@@ -51,6 +44,15 @@
     mount RedactorRails::Engine => '/redactor_rails'
     devise_for :users
     get 'main/index'
+
+    # Author: Mayar
+    # Date: 28.4.2015
+    # adding route
+    resources :users do
+        collection do
+          get 'mymagazines'
+        end
+      end
 
 
     # The priority is based upon order of creation: first created -> highest priority.

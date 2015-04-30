@@ -1,31 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<div class="editor" >
-  <h1>My Magazines</h1>
+<h1>Listing Users</h1>
 
-     <div class="row">
-      <div class="col-sm-3 ">
-      Magazine Name
-      </div>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-     </div>
-
-      <% @magazines.each do |magazine| %>
-
-        <div class="row">
-        <div class="col-sm-3 ">
-        <%= magazine.name %>
-        </div>
-
-        <div class="col-sm-3 ">
-          <%= link_to 'Show', magazine %>
-
-        </div>
-         </div>
-     <%end%>
-    <% if @magazines.size == 0 %>
-      <em>You are currently not managing any magazine</em>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
+  </tbody>
+</table>
 
+<br>
 
-  </div>
+<%= link_to 'New User', new_user_path %>
