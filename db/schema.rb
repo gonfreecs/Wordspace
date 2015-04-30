@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20150428220446) do
 
   create_table "ads", force: :cascade do |t|
@@ -29,9 +28,9 @@ ActiveRecord::Schema.define(version: 20150428220446) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "user_id"
+    t.boolean  "is_sponsored", default: false
     t.text     "plain_body"
     t.integer  "magazine_id",  default: 0
-    t.boolean  "is_sponsored", default: false
     t.string   "ad_title"
   end
 
