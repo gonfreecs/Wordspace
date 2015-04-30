@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428220446) do
+ActiveRecord::Schema.define(version: 20150430081228) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "user_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150428220446) do
     t.integer  "magazine_id",  default: 0
     t.boolean  "is_sponsored", default: false
     t.string   "ad_title"
+    t.boolean  "homepagelist"
   end
 
   create_table "bids", force: :cascade do |t|
@@ -152,6 +153,7 @@ ActiveRecord::Schema.define(version: 20150428220446) do
     t.text     "about_me"
     t.boolean  "is_female",              default: false
     t.string   "avatar"
+    t.boolean  "curator"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
