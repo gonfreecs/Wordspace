@@ -1,4 +1,21 @@
 source 'https://rubygems.org'
+<<<<<<< HEAD
+=======
+
+# mohab
+# 3.4.2015
+# add tag gem
+gem 'acts-as-taggable-on', '~> 3.4'
+# mohab
+# 1/4/2015
+# for social share button
+gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
+gem 'social-share-button'
+# for avatar upload (carrierwave	)
+gem 'carrierwave'
+
+
+>>>>>>> 1e22977469234bc6647f6ca913479a10f9096a9f
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -22,7 +39,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'redactor-rails'
-
+# mohab
+# 1/4/2015
+# for social share button
+gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
+gem 'social-share-button'
 gem 'carrierwave'
 gem 'mini_magick'
 
