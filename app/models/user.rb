@@ -2,11 +2,13 @@
   class User < ActiveRecord::Base
     # to upload avatar for user
     mount_uploader :avatar, AvatarUploader
+    # Adds the Abilitiy To follow and be followed
+    acts_as_followable
+    acts_as_follower
 
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable and :omniauthable
     #:recoverable,
-
     # making firstname and lastname required
     validates :firstname, presence: true
     validates :lastname, presence: true
@@ -19,7 +21,7 @@
     has_many :ads, dependent: :destroy
     has_and_belongs_to_many :magazines
     has_many :collaboration_invitation
-    #has_many :magazines, through: :collaboration_invitation
+    # has_many :magazines, through: :collaboration_invitation
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable and :omniauthable
     #:recoverable,

@@ -10,11 +10,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
-  def show
-  end
-
   # GET /users/new
   def new
     @user = User.new
@@ -74,6 +69,29 @@ class UsersController < ApplicationController
         @magazines << magazine
       end
     end
+  end
+  # mohab
+  # 1.4.2015
+  # show profile page
+  before_filter :authenticate_user!
+
+  def show
+    @user = User.find(params[:id])
+    @articles = @user.articles
+  end
+  # Andrew
+  # 8.4.15
+  # Follow User
+  def follow
+    @user = User.find(params[:id])
+    current_user.follow(@user)
+    redirect_to :back
+  end
+
+  def unfollow
+    @user = User.find(params[:id])
+    current_user.stop_following(@user)
+    redirect_to :back
   end
 
   private

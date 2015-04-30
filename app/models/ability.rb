@@ -23,11 +23,15 @@ class Ability
     can :show, Comment
     can :show, Reply
     can :show, Magazine
-    
+
           return if user.nil?
           can :update, Article do |article|
             article.user_id == user.id
           end
+          can :follow, User do |other|
+            other.id != user.id
+          end
+          can :unfollow, User
           can :create, Article
           can :create, Magazine
           can :update, Comment do |c|
