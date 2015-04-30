@@ -1,0 +1,11 @@
+/home/mohab/.rvm/rubies/ruby-2.2.0/bin/ruby -r ./siteconf20150430-23191-18j6ldq.rb extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 debug_inspector.so ./.gem.20150430-23191-wezxix

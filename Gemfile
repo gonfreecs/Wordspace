@@ -22,7 +22,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'redactor-rails'
-
+# mohab
+# 1/4/2015
+# for social share button
+gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
+gem 'social-share-button'
 gem 'carrierwave'
 gem 'mini_magick'
 

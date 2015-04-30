@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require redactor-rails
 //= require redactor-rails/plugins
+//= require awesome-share-buttons
 //= require_tree .
 function sbarp() {
     if($(document).width() > 990) {
