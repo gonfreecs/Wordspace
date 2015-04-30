@@ -37,14 +37,6 @@
     get 'main/index'
 
 
-
-
-    resources :comments
-    resources :replies
-    mount RedactorRails::Engine => '/redactor_rails'
-    devise_for :users
-    get 'main/index'
-
     # Author: Mayar
     # Date: 28.4.2015
     # adding route
@@ -53,6 +45,14 @@
           get 'mymagazines'
         end
       end
+
+    resources :comments
+    resources :replies
+    mount RedactorRails::Engine => '/redactor_rails'
+    devise_for :users
+    get 'main/index'
+
+
 
 
     # The priority is based upon order of creation: first created -> highest priority.
