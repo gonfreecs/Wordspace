@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class="editor" >
+  <h1>My Magazines</h1>
+
+     <div class="row">
+      <div class="col-sm-3 ">
+      Magazine Name
+      </div>
+
+     </div>
+
+      <% @magazines.each do |magazine| %>
+
+        <div class="row">
+        <div class="col-sm-3 ">
+        <%= magazine.name %>
+        </div>
+
+        <div class="col-sm-3 ">
+          <%= link_to 'Show', magazine %>
+
+        </div>
+         </div>
+     <%end%>
+    <% if @magazines.size == 0 %>
+      <em>You are currently not managing any magazine</em>
+    <% end %>
+
+
+  </div>

@@ -17,6 +17,14 @@
     end
     resources :articles
     resources :magazines
+    # Author: Mayar
+    # Date: 28.4.2015
+    # adding route
+    resources :users do
+        collection do
+          get 'mymagazines'
+        end
+      end
     resource :articles do
       collection do
         get 'bid'
