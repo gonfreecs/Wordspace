@@ -1,6 +1,6 @@
 <div class="row grid">
     <% @articles.each do |article| %>
-
+    <% if article.homepagelist%>
       <figure class="effect-sadie">
         <img src= <%= article.image%> alt="img02"/>
         <figcaption>
@@ -9,7 +9,6 @@
           <a <%= link_to 'Show', article %></a>
         </figcaption>
       </figure>
-
+    <% end %>
     <% end %>
   </div>
-
