@@ -1,15 +1,28 @@
-<div class="row grid">
+<p id="notice"><%= notice %></p>
+<h1>Listing Articles</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
     <% @articles.each do |article| %>
-
-      <figure class="effect-sadie">
-        <img src= <%= article.image%> alt="img02"/>
-        <figcaption>
-          <h2><%= article.title%></h2>
-          <p>Demo text goes here until user clicks to read more.</p>
-          <a <%= link_to 'Show', article %></a>
-        </figcaption>
-      </figure>
-
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.body.html_safe %></td>
+        <td><%= article.image %></td>
+        <td><%= link_to 'Show', article %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
-  </div>
-
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Article', new_article_path %>
+<h1>Articles#index</h1>
+<p>Find me in app/views/articles/index.html.erb</p>

@@ -1,5 +1,4 @@
-# ErrorController
-# no comment
+# ErrorsController
 class ErrorsController < ApplicationController
   def show
   end

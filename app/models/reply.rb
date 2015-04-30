@@ -1,3 +1,4 @@
+# Reply Model
 class Reply < ActiveRecord::Base
   # A Reply belongs to a comment and have a field for description
 
