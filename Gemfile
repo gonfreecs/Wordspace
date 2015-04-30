@@ -1,12 +1,4 @@
 source 'https://rubygems.org'
-gem 'acts-as-taggable-on', '~> 3.4'
-# mohab
-# 1/4/2015
-# for social share button
-gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
-gem 'social-share-button'
-# for avatar upload (carrierwave	)
-gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -30,26 +22,46 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'redactor-rails'
+
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'acts-as-taggable-on', '~> 3.4'
+gem 'cancan'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# rspec for testing
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
 
 # Add following action
 gem 'acts_as_follower'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Bootstrap styles gem
 gem 'twitter-bootstrap-rails'
+
+# To include font-awesome icons
 gem 'font-awesome-rails'
+
+# Author: Mohammed El-Ansary
+# 7.4.2015
+# Simplecov to evaluate tests
+gem 'simplecov', group: :test
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'cancan'
 
+  # Rspec for tests
+  gem 'rspec-rails', '~> 3.0'
+  # Author: Mohammed El-Ansary
+  # 7.4.2015
+  # Factory girl gem for tests
+  gem 'factory_girl_rails'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
