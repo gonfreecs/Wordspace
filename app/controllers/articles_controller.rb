@@ -119,7 +119,7 @@ class ArticlesController < ApplicationController
   # Never trust parameters from the scary internet
   def article_params
     params.require(:article).permit(:title, :body, :user_id, :id, :image,
-                                    :tag_list, :category_list, :magazine_id)
+                                    :tag_list, :category_list, :magazine_id,
+                                    :homepagelist)
   end
 end
-
