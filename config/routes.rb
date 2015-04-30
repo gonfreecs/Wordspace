@@ -1,7 +1,6 @@
   Rails.application.routes.draw do
-    
     root 'articles#index'
-    
+    resources :payments
     resources :ads
     resources :articles
     resources :magazines
@@ -14,25 +13,24 @@
     resources :users, only: :show
 
     resources :users, only: [:follow, :unfollow] do
-    member do
-      put 'follow' => 'users#follow'
-      put 'unfollow' => 'users#unfollow'
+      member do
+        put 'follow' => 'users#follow'
+        put 'unfollow' => 'users#unfollow'
+      end
     end
-  end
 
     resources :bids do
       collection do
         get 'destroy'
       end
     end
-   # adding resources
+    # adding resources
     resources :sponsors do
       collection do
         get 'control'
         get 'delete'
       end
     end
-    
 
     resource :articles do
       collection do

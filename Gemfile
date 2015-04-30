@@ -56,6 +56,10 @@ gem 'font-awesome-rails'
 # 7.4.2015
 # Simplecov to evaluate tests
 gem 'simplecov', group: :test
+# Author: Mohammed El-Ansary
+# 30.4.2015
+# To integrate stripe API
+gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
