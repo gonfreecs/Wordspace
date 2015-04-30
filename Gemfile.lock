@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/evansobkowicz/awesome-share-buttons.git
+  revision: eadb9ba540732e4db156ead649dcb662f41e105a
+  specs:
+    awesome-share-buttons (1.1)
+      coffee-rails
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -174,6 +182,9 @@ GEM
       simplecov-html (~> 0.9.0)
     simplecov-html (0.9.0)
     slop (3.6.0)
+    social-share-button (0.1.8)
+      coffee-rails
+      sass-rails
     spring (1.3.3)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -214,6 +225,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 3.4)
   acts_as_follower
+  awesome-share-buttons!
   byebug
   cancan
   carrierwave
@@ -230,6 +242,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simplecov
+  social-share-button
   spring
   sqlite3
   turbolinks
