@@ -16,6 +16,40 @@
 		<!-- this is the article info part -->
 		<div class="col-md-2">
 			<br>
+			<% if @article.homepagelist%>
+				<% if current_user.curator %>
+					<%= form_for @article do|f| %>
+						<%= f.hidden_field :article_id, :value => @article.id%>
+						<%= f.hidden_field :title, :value => @article.title%>
+						<%= f.hidden_field :user_id, :value => current_user.id %>
+						<%= f.hidden_field :body, :value => @article.body%>
+						<%= f.hidden_field :image, :value => @article.image%>
+						<%= f.hidden_field :plain_body, :value => @article.plain_body %>
+						<%= f.hidden_field :magazine_id, :value => @article.magazine_id%>
+						<%= f.hidden_field :is_sponsored, :value => @article.is_sponsored%>
+						<%= f.hidden_field :ad_title, :value => @article.ad_title %>
+						<%= f.hidden_field :homepagelist, :value => false %>
+						<%= f.submit "Delete from List" %>
+						<% end %>
+						<% end %>
+					<% else %>
+		<div class="col-md-2"></div>
+			<% if current_user.curator %>
+					<%= form_for @article do|f| %>
+						<%= f.hidden_field :article_id, :value => @article.id%>
+						<%= f.hidden_field :title, :value => @article.title%>
+						<%= f.hidden_field :user_id, :value => current_user.id %>
+						<%= f.hidden_field :body, :value => @article.body%>
+						<%= f.hidden_field :image, :value => @article.image%>
+						<%= f.hidden_field :plain_body, :value => @article.plain_body %>
+						<%= f.hidden_field :magazine_id, :value => @article.magazine_id%>
+						<%= f.hidden_field :is_sponsored, :value => @article.is_sponsored%>
+						<%= f.hidden_field :ad_title, :value => @article.ad_title %>
+						<%= f.hidden_field :homepagelist, :value => true %>
+						<%= f.submit "Add List" %>
+						<% end %>
+						<% end %>
+					<% end %>
 			<div class="col-md-offset-2">
 				<h5 > By: </h5> <p><%= @user.firstname %> <%= @user.lastname %> </p>
 				<h5> created at: </h5> <p> <%=  @article.created_at.to_s[0,10] %> </p>
