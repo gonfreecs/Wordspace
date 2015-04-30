@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Mayar/Desktop/mymagazines/spec/controllers/articles_controller_spec.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/spec/controllers/articles_controller_spec.rb": [
         null,
         null,
         null,
@@ -22,7 +22,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/spec/rails_helper.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -74,7 +74,7 @@
         1,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/controllers/articles_controller.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/controllers/articles_controller.rb": [
         null,
         null,
         1,
@@ -201,7 +201,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/controllers/application_controller.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/controllers/application_controller.rb": [
         null,
         null,
         1,
@@ -212,9 +212,9 @@
         null,
         null,
         1,
-        11,
-        11,
-        11,
+        10,
+        10,
+        10,
         null,
         null,
         1,
@@ -234,7 +234,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/spec/controllers/magazines_controller_spec.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/spec/controllers/magazines_controller_spec.rb": [
         1,
         1,
         null,
@@ -289,7 +289,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/controllers/magazines_controller.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/controllers/magazines_controller.rb": [
         null,
         null,
         null,
@@ -398,7 +398,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/spec/controllers/search_controller_spec.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/spec/controllers/search_controller_spec.rb": [
         null,
         null,
         null,
@@ -430,7 +430,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/controllers/search_controller.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/controllers/search_controller.rb": [
         null,
         null,
         null,
@@ -454,7 +454,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/spec/controllers/users_controller_spec.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/spec/controllers/users_controller_spec.rb": [
         1,
         null,
         null,
@@ -525,7 +525,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/controllers/users_controller.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/controllers/users_controller.rb": [
         null,
         null,
         null,
@@ -535,12 +535,7 @@
         null,
         null,
         1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
+        0,
         null,
         null,
         null,
@@ -604,6 +599,29 @@
         null,
         null,
         null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
         1,
         null,
         null,
@@ -618,7 +636,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/spec/helpers/users_helper_spec.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/spec/helpers/users_helper_spec.rb": [
         null,
         null,
         null,
@@ -635,7 +653,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/spec/models/magazine_spec.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/spec/models/magazine_spec.rb": [
         null,
         null,
         null,
@@ -669,7 +687,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/models/magazine.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/models/magazine.rb": [
         null,
         null,
         null,
@@ -696,7 +714,7 @@
         1,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/uploaders/img_uploader.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/uploaders/img_uploader.rb": [
         null,
         null,
         1,
@@ -747,117 +765,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/spec/requests/users_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/Mayar/Desktop/mymagazines/spec/routing/users_routing_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/Mayar/Desktop/mymagazines/spec/views/users/edit.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/Mayar/Desktop/mymagazines/spec/views/users/index.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/Mayar/Desktop/mymagazines/spec/views/users/new.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/Mayar/Desktop/mymagazines/spec/views/users/show.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/Mayar/Desktop/mymagazines/app/models/article.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/models/article.rb": [
         null,
         1,
         null,
@@ -878,7 +786,7 @@
         1,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/models/ability.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/models/ability.rb": [
         null,
         null,
         null,
@@ -910,6 +818,10 @@
         0,
         null,
         4,
+        0,
+        null,
+        4,
+        4,
         4,
         4,
         0,
@@ -950,7 +862,7 @@
         null,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/models/comment.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/models/comment.rb": [
         1,
         null,
         1,
@@ -959,7 +871,7 @@
         1,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/models/reply.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/models/reply.rb": [
         1,
         null,
         null,
@@ -968,7 +880,7 @@
         1,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/models/bid.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/models/bid.rb": [
         null,
         null,
         null,
@@ -984,7 +896,7 @@
         1,
         null
       ],
-      "/Users/Mayar/Desktop/mymagazines/app/models/ad.rb": [
+      "/Users/Mayar/Desktop/magazinesConflicts/app/models/ad.rb": [
         null,
         null,
         null,
@@ -997,6 +909,6 @@
         null
       ]
     },
-    "timestamp": 1430432303
+    "timestamp": 1430434707
   }
 }
