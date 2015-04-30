@@ -1,0 +1,136 @@
+<html>
+<head>
+  <%= stylesheet_link_tag    'application', media: 'all','data-turbolinks-track' => true %>
+</head>
+<hr class=" ">
+<div class="container target">
+  <div class="row">
+    <div class="col-sm-10">
+      <h1 class=""><%= @user.firstname %> <br />
+        <% if @user.is_banned != 1 %>
+        <%= link_to "Ban" ,:controller => :users, :action => :ban, :class =>"btn btn-primary", :u_id=>@user.id %>
+        <% else %>
+        <%= link_to "Un-ban" ,:controller => :users, :action => :unban,:class =>"btn btn-primary", :u_id =>@user.id %>
+        <% end %>
+      </h1>
+      <!--  <button type="button" class="btn btn-success">Book me!</button>  <button type="button" class="btn btn-info">Send me a message</button>
+      <br> -->
+    </div>
+    <% if @user.avatar != nil %>
+    <% if @user.avatar.url == nil %>
+    <div class="col-sm-2"><a  class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.rlsandbox.com/img/profile.jpg"></a>
+      <%else%>
+      <div class="col-sm-2"><a  class="pull-right"><img title="profile image" class="img-circle img-responsive" <%=image_tag(@user.avatar.url)   %></a>
+      </div>
+      <%end%>
+      <%end%>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        <!--left col-->
+        <ul class="list-group">
+          <li class="list-group-item text-muted" contenteditable="false">Profile</li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong class="">firstname</strong></span> <%= @user.firstname %></li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong class="">lastname</strong></span> <%= @user.lastname %></li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong class="">Gender</strong></span> <% if @user.is_female %>
+            female
+            <%else%>
+            male
+          </li>
+          <%end%>
+        </ul>
+        <div class="panel panel-default">
+          <div class="panel-heading">Insured / Bonded?
+
+          </div>
+          <div class="panel-body"><i style="color:green" class="fa fa-check-square"></i> Yes, I am insured and bonded.
+
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Magazine <i class="fa fa-link fa-1x"></i>
+          </div>
+          <div class="panel-body">
+          </div>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i>
+          </li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong class="">Shares</strong></span> 0</li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong class="">Likes</strong></span> 0</li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong class="">Articles</strong></span> <%= @user.articles.count %></li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong class="">Followers</strong></span> 0</li>
+        </ul>
+        <div class="panel panel-default">
+          <div class="panel-heading">Social Media</div>
+          <div class="panel-body">	<i class="fa fa-facebook fa-2x"></i>  <i class="fa fa-github fa-2x"></i>
+            <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i>  <i class="fa fa-google-plus fa-2x"></i>
+          </div>
+        </div>
+      </div>
+      <!--/col-3-->
+      <div class="col-sm-9" style="" contenteditable="false">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4><%= @user.email %></h4>
+          </div>
+          <div class="panel-body">
+            <h4><%= @user.about_me %></h4>
+          </div>
+        </div>
+        <div class="panel panel-default target">
+          <div class="panel-heading" contenteditable="false">
+            <h2>Articles</h2>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <% @articles.each do |article| %>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <img alt="300x200" src= <%= article.image %>>
+                  <div class="caption">
+                    <h3>
+                      <%=article.title%>
+                    </h3>
+                    <p>
+                    </p>
+                    <p>
+                      <%= link_to 'Show',article %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default target">
+          <div class="panel-heading" contenteditable="false">
+            <h2>Like</h2>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default target">
+          <div class="panel-heading" contenteditable="false">
+            <h2>Follow</h2>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default target">
+          <div class="panel-heading" contenteditable="false">
+            <h2>Share</h2>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+            </div>
+          </div>
+        </div>
+      </footer>
+      </html>
