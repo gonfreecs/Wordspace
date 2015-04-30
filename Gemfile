@@ -37,6 +37,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
+# Add following action
+gem 'acts_as_follower'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # Bootstrap styles gem
