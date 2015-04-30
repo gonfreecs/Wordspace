@@ -44,8 +44,9 @@ RSpec.describe UsersController, type: :controller do
       @user = create(:user)
       sign_in @user
       @magazine = create(:magazine)
+      @magazine.users << @user
       get :mymagazines, magazines: FactoryGirl.attributes_for(:user)
-      expect(assgins(:magazines)).to match_array([@magazine])
+      expect(assigns(:magazines)).to match_array([@magazine])
     end
   end
 
