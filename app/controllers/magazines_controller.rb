@@ -76,11 +76,19 @@ class MagazinesController < ApplicationController
 
   # DELETE /magazines/1
   # DELETE /magazines/1.json
+  # Author : Mina Hany
+  # 5.1.2015
+  # Mina did the part responsible for redirecting the user to home page
+  # if he is not a moderator
   def destroy
     @magazine.destroy
     respond_to do |format|
       format.html do
-        redirect_to magazines_url, notice: 'Successfully destroyed.'
+        if current_user.is_moderator
+          redirect_to magazines_url, notice: 'Successfully destroyed.'
+        else
+          redirect_to root_path
+        end
       end
       format.json { head :no_content }
     end

@@ -21,6 +21,12 @@
       <%= link_to "New Article",  new_article_path(magazine_id: @magazine.id) %>
 
       <%end%>
+      <br>
+      <% if can? :destroy, @magazine %>
+
+      <%= link_to "Delete this magazine", @magazine, :confirm => 'Are you sure?', :method => :delete %>
+
+      <%end%>
     </div>
   </div>
   <div class="row">

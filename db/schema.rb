@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428220446) do
+ActiveRecord::Schema.define(version: 20150501111244) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "user_id"
@@ -113,6 +113,16 @@ ActiveRecord::Schema.define(version: 20150428220446) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "reportreplies", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "reply_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reportreplies", ["reply_id"], name: "index_reportreplies_on_reply_id"
+  add_index "reportreplies", ["user_id"], name: "index_reportreplies_on_user_id"
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
