@@ -1,7 +1,8 @@
+<div style="width: 30%; margin-left: auto; margin-right: auto;">
 <%= form_tag payments_path do %>
   <article>
     <label class="amount">
-      <span>Amount: <%= @amount %></span>
+      <span>Amount: $<%= @amount/100 %> </span>
       <input type="hidden" name="value" value="<%= @amount %>"/>
     </label>
   </article>
@@ -11,3 +12,4 @@
           data-description="Add funds to wallet"
           data-amount="<%= @amount %>"></script>
 <% end %>
+</div>
