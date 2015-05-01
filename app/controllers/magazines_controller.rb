@@ -48,6 +48,8 @@ class MagazinesController < ApplicationController
     @colab.magazines.delete(@magazine)
     @colab.save
     @magazine.save
+    redirect_to :back
+
   end
 
   # POST /magazines
