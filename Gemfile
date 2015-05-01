@@ -22,15 +22,27 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'redactor-rails'
-
+# mohab
+# 1/4/2015
+# for social share button
+gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
+gem 'social-share-button'
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'acts-as-taggable-on', '~> 3.4'
 gem 'cancan'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# rspec for testing
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
+# Add following action
+gem 'acts_as_follower'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -4,3 +4,4 @@ tmp/*
 coverage/*
 log/*
 public/*
+log/development.log

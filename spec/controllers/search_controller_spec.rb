@@ -20,9 +20,11 @@ RSpec.describe SearchController, type: :controller do
       create(:article, title: 'Mohammed', plain_body: 'Ansary')
       m1 = create(:magazine, name: 'xxxxtestxxxx')
       create(:magazine, name: 'magazine')
+      u1 = create(:user, firstname: 'xxxxtestxxxx')
       get :search, query: 'xxxxtestxxxx'
       expect(assigns(:articles)).to match_array([a1, a2])
       expect(assigns(:magazines)).to match_array([m1])
+      expect(assigns(:users)).to match_array([u1])
     end
     it 'redirects to same page if empty query' do
       request.env['HTTP_REFERER']

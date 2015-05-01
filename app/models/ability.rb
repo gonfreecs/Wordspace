@@ -15,19 +15,26 @@
       # Author: Omar Essam
       # Date: 4.4.2015
       # only sponsors can create ads and view sponsors control page
-      class Ability
-        include CanCan::Ability
-        def initialize(user)
-          can :show, Article
-          can :show, Comment
-          can :show, Reply
-          can :show, Magazine
+class Ability
+  include CanCan::Ability
+  def initialize(user)
+    can :show, Article
+    can :index, Article
+    can :show, Comment
+    can :show, Reply
+    can :show, Magazine
+
           return if user.nil?
           can :update, Article do |article|
             article.user_id == user.id
           end
+          can :follow, User do |other|
+            other.id != user.id
+          end
+          can :unfollow, User
           can :create, Article
           can :create, Magazine
+          can :controls, User
           can :update, Comment do |c|
             c.user_id == user.id
           end
@@ -35,7 +42,6 @@
             co.user_id == user.id
           end
           can :create, Comment
-
           can :update, Reply do |r|
             r.user_id == user.id
           end
@@ -46,6 +52,26 @@
           can :update, Magazine do |m|
             (m.users.include? user)
           end
+         # 5.4.2015
+         # check  promote  if current user
+         # and not promoted before
+         # and user budget is classified as gold or silver or bronze
+         can :promotion, Article do |article|
+           article.promoted == false
+           article.user_id == user.id
+         end
+          can :promotion_gold, Article do |article|
+           article.user_id == user.id
+           user.budget > 4_000_000
+         end
+         can :promotion_silver, Article do |article|
+           article.user_id == user.id
+           user.budget > 40_000
+         end
+         can :promotion_bronze, Article do |article|
+           article.user_id == user.id
+           user.budget > 4000
+         end
           if user.is_moderator
             can :destroy, Article
             can :destroy, Comment
