@@ -1,4 +1,4 @@
-/home/mohab/.rvm/rubies/ruby-2.2.0/bin/ruby -r ./siteconf20150430-23191-1fdexyq.rb extconf.rb 
+/home/mohab/.rvm/rubies/ruby-2.2.0/bin/ruby -r ./siteconf20150501-12728-1e4yt7x.rb extconf.rb 
 checking for sqlite3.h... yes
 checking for sqlite3_libversion_number() in -lsqlite3... yes
 checking for rb_proc_arity()... yes
@@ -25,4 +25,4 @@ compiling statement.c
 linking shared-object sqlite3/sqlite3_native.so
 
 make "DESTDIR=" install
-/usr/bin/install -m 0755 sqlite3_native.so ./.gem.20150430-23191-1v3li6q/sqlite3
+/usr/bin/install -m 0755 sqlite3_native.so ./.gem.20150501-12728-r463fh/sqlite3
