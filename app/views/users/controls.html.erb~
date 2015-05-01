@@ -22,9 +22,9 @@
 					<div class= "col-md-2">
 						<nav>
 							<ul>
-								<li><font size="6"><a href="#section-circle-1" class="fa fa-tasks" ><span>My <br> Articles</span></a></font></li>
-								<li><font size="6"><a href="#section-circle-2" class="fa fa-star"><span>Promoted <br> Articles</span></a></font></li>
-								<li><font size="6"><a href="#section-circle-3" class="fa fa-flag "><span>Sponsered <br>   Articles</span></a></font></li>
+								<li><font size="6"><a href="#section-circle-1" class="fa fa-flag" ><span>My <br> Articles</span></a></font></li>
+								<li><font size="6"><a href="#section-circle-2" class="fa fa-tasks"><span>Promoted <br> Articles</span></a></font></li>
+								<li><font size="6"><a href="#section-circle-3" class="fa fa-flag-o "><span>Sponsered <br>   Articles</span></a></font></li>
 							</ul>
 						</nav>
 					</div>
