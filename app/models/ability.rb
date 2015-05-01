@@ -44,6 +44,7 @@ class Ability
           can :update, Reply do |r|
             r.user_id == user.id
           end
+          can :report, Reply
           can :destroy, Reply do |ro|
             ro.user_id == user.id
           end

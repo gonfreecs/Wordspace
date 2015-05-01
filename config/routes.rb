@@ -1,12 +1,18 @@
   Rails.application.routes.draw do
-    
+
     root 'articles#index'
-    
+
     resources :ads
     resources :articles
     resources :magazines
     resources :comments
     resources :replies
+    resources :replies do
+    member do
+      get 'report'
+    end
+  end
+
 
     mount RedactorRails::Engine => '/redactor_rails'
     devise_for :users
@@ -32,7 +38,7 @@
         get 'delete'
       end
     end
-    
+
 
     resource :articles do
       collection do

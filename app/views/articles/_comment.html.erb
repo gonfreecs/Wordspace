@@ -17,7 +17,6 @@
   <% if can? :update, comment %>
     <%= link_to 'Edit', edit_comment_path(comment)%>
   <% end %>
-  
   </div>
    <div class="row">
  	 <div class="col-md-1"></div>
@@ -39,6 +38,9 @@
   <% if can? :update, r %>
     <%= link_to 'Edit', edit_reply_path(r)%>
   <% end %>
+	<% if can? :report, r %>
+	<%= link_to 'Report',action: "report",controller: "replies",reply_id: r %>
+	<% end %>
   <br />
   <br />
   <% end %>
@@ -46,13 +48,13 @@
   <!....This is the form for creating a new reply.....>
   <% if can? :create, comment %>
   <%= form_for @reply do|f| %>
-  
+
   <%= f.hidden_field :article_id, :value => comment.article_id %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.hidden_field :comment_id, :value => comment.id %>
-   
+
     <%= f.text_area :des %>
-    
+
     <%= f.submit "Add Reply" %>
   <% end %>
 <% end %>
