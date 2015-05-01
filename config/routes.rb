@@ -6,7 +6,11 @@
 
     resources :ads
     resources :articles
-    resources :magazines
+    resources :magazines do
+      collection do
+        get 'removeco'
+      end
+    end
     resources :comments
     resources :replies
 
