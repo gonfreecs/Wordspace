@@ -86,6 +86,24 @@ class MagazinesController < ApplicationController
     end
   end
 
+  # Author:Bassem
+  # 31/03/2015
+  # Here is how the user follow a magazine
+  def follow
+    @magazine = Magazine.find(params[:id])
+    current_user.follow(@magazine)
+    redirect_to :back
+  end
+
+  # Author:Bassem
+  # 31/03/2015
+  # Here is how the user unfollow
+  def unfollow
+    @magazine = Magazine.find(params[:id])
+    current_user.stop_following(@magazine)
+    redirect_to :back
+  end
+
   # Cancel an update and return to magazine page
   def check_for_cancel
     return false if params[:commit] != 'Cancel'

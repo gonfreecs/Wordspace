@@ -41,6 +41,14 @@
           put 'unlike' => 'articles#downvote'
         end
       end
+    # follow and unfollow a magazine
+    resources :magazines do
+          member do
+            put 'follow' => 'magazines#follow'
+            put 'unfollow' => 'magazines#unfollow'
+            put 'invite' => 'magazines#invite'
+          end
+        end
     resource :articles do
       collection do
         get 'bid'

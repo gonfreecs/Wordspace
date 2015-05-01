@@ -50,4 +50,40 @@ RSpec.describe MagazinesController, type: :controller do
       expect(assigns(:magazine)).to match(@m1)
     end
   end
+
+  # Authou: Bassem
+  # 11/4/2015
+  # testing the method follow using rspec
+  describe 'GET #follow' do
+    it 'allows signed in users to follow magazines' do
+      request.env['HTTP_REFERER'] = 'test'
+      @user = create(:user)
+      sign_in @user
+      request.env['HTTP_REFERER']
+      @m1 = create(:magazine)
+      @instance1 = Magazine.last
+      get :follow, id: @m1.id,
+                   magazine: FactoryGirl.attributes_for(:magazine)
+      # expect(@instance1.followers_count).to eq(1)
+      response.should redirect_to 'test'
+    end
+  end
+
+  # Authou: Bassem
+  # 11/4/2015
+  # testing the method unfollow using rspec
+  describe 'GET #unfollow' do
+    it 'allows signed in users to follow magazines' do
+      request.env['HTTP_REFERER'] = 'test'
+      @user = create(:user)
+      sign_in @user
+      request.env['HTTP_REFERER']
+      @m1 = create(:magazine)
+      @instance1 = Magazine.last
+      get :unfollow, id: @m1.id,
+                     magazine: FactoryGirl.attributes_for(:magazine)
+      # expect(@instance1.followers_count).to eq(1)
+      response.should redirect_to 'test'
+    end
+  end
 end

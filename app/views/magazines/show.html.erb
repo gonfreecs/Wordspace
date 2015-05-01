@@ -5,11 +5,29 @@
     </div>
     <div class="col-sm-3">
       <h2><%= @magazine.name %></h2>
+
+      <!--user can  follow and unfollow magazine-->
+
+      <% if can? :follow , @magazine %>
+      <%if (current_user.following?(@magazine)==false)%>
+
+      <%=link_to'<span class="label label-primary" style="cursor: pointer">Follow</span>'.html_safe, follow_magazine_path(@magazine),
+      method: :put ,
+      class: "Follow" %>
+
+      <%end%>
+      <%if (current_user.following?(@magazine)==true)%>
+
+      <%=link_to'<span class="label label-primary" style="cursor: pointer">Unfollow</span>'.html_safe, unfollow_magazine_path(@magazine),
+      method: :put ,
+      class: "unfollow" %>
+      <%end%>
+      <%= @magazine.followers_count%>
+      <%end%>
+
     </div>
     <div class="col-sm-3">
       <br>
-      <h4><span class="label label-success" style="cursor: pointer"><span class="fa fa-check"> </span>Following</span></h4>
-      <h4><span class="label label-primary" style="cursor: pointer">Follow</span></h4>
       <a href="#" data-toggle="modal" data-target="#info">View info</a>
       <br>
       <% if can? :update, @magazine %>
@@ -26,17 +44,17 @@
   <div class="row">
     <div class="row grid">
       <% if @articles.empty? %>
-        <h2>No articles yet</h2>
+      <h2>No articles yet</h2>
       <% end %>
       <% @articles.each do|a| %>
-        <figure class="effect-sadie">
-          <img src="<%= a.image %>" alt="<%= a.title %>"/>
-          <figcaption>
-            <h2><span><%= a.title %></span></h2>
-            <p><%= truncate(a.plain_body, :length => 80) %></p>
-            <%= link_to 'View more', a %>
-          </figcaption>
-        </figure>
+      <figure class="effect-sadie">
+        <img src="<%= a.image %>" alt="<%= a.title %>"/>
+        <figcaption>
+          <h2><span><%= a.title %></span></h2>
+          <p><%= truncate(a.plain_body, :length => 80) %></p>
+          <%= link_to 'View more', a %>
+        </figcaption>
+      </figure>
       <% end %>
     </div>
   </div>
@@ -57,15 +75,15 @@
       </div>
       <div class="modal-body">
         <% @users.each do |u| %>
-          <!-- change to  link_to u.firstname, u -->
-          <img style="width: 50px; height: 50px;"src = "<%= u.avatar %>" alt="<%= u.firstname %>"/>
-          <a href ="#"> <%= u.firstname %></a>
-          <br>
+        <!-- change to  link_to u.firstname, u -->
+        <img style="width: 50px; height: 50px;"src = "<%= u.avatar %>" alt="<%= u.firstname %>"/>
+        <a href ="#"> <%= u.firstname %></a>
+        <br>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 <!-- Author: Mayar
-     Date: 5.4.2015
-     Description: Check if user is authorized to update and add articles to magazine -->
+Date: 5.4.2015
+Description: Check if user is authorized to update and add articles to magazine -->
