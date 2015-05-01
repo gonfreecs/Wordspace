@@ -1,5 +1,5 @@
 <div style="width: 72.5%; text-align: left; margin-left: auto; margin-right: auto;">
-  <% if @articles.empty? && @magazines.empty? %>
+  <% if @articles.empty? && @magazines.empty? && @users.empty?%>
     <h1>No results found for "<%= @query_str %>"</h1>
   <% else %>
     <h1>Search results for "<%= @query_str %>"</h1>
@@ -33,4 +33,24 @@
     </figcaption>
   </figure>
   <% end %>
+</div>
+<div class="row grid">
+  <% if !@users.empty? %>
+  <% @count = 0 %>
+  <h3>People</h3>
+  <% end %>
+  <div class="row">
+  <% @users.each do|u| %>
+    <% if @count % 4 == 0 %>
+  </div>
+  <br>
+  <div class="row">
+    <% end %>
+    <div class="col-sm-3">
+      <span><img style="width: 50px; height: 50px;" src="<%= u.avatar %>" alt="<%= u.firstname %>"/></span>
+      <%= link_to u.firstname << " " << u.lastname, u%>
+    </div>
+    <% @count = @count + 1 %>
+  <% end %>
+  </div>
 </div>
