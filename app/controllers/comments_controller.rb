@@ -9,6 +9,11 @@ class CommentsController < ApplicationController
   def create
     # @comment = Comment.new(params[:comment])
     if @comment.save
+      @article = Article.find(@comment.article_id)
+      @user = User.find(@article.user_id)
+      @num = @user.notifier + 1
+      @user.notifier = @num
+      @user.save
       flash[:notice] = 'Comment was successfully created.'
       redirect_to(@comment.article)
     else

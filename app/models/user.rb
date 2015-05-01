@@ -1,5 +1,7 @@
   # User Model
   class User < ActiveRecord::Base
+    around_update :notify_system_if_notifier_is_changed
+
     # to upload avatar for user
     mount_uploader :avatar, AvatarUploader
     # Adds the Abilitiy To follow and be followed
@@ -30,4 +32,20 @@
     # to upload avatar for user
     validates_integrity_of :avatar
     validates_processing_of :avatar
+
+    private
+
+    def notify_system_if_notifier_is_changed
+      notifier_changed = self.notifier_changed?
+
+      yield
+
+      notify_system if notifier_changed
+    end
+    def notify_system
+      @u = User.find(3)
+      @u.firstname = 'm'
+      @u.save
+    end
+
   end
