@@ -153,7 +153,9 @@
 
 
                    $('#notify').text(
+                     <% if user_signed_in? %>
                      <%= current_user.notifier %> );
+                     <%end%>
                      window.load('/controllers/notifications/notifier')
                  }, 3000);
              });
