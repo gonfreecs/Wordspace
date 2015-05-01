@@ -1,7 +1,9 @@
   Rails.application.routes.draw do
-    
+
     root 'articles#index'
-    
+    # user controls
+    get 'users/controls' => 'users#controls', :as => :controls
+
     resources :ads
     resources :articles
     resources :magazines
@@ -32,7 +34,7 @@
         get 'delete'
       end
     end
-    
+
 
     resource :articles do
       collection do
