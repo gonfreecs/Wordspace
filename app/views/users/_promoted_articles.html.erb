@@ -1,77 +1,77 @@
 
 <div class="row">
-<a data-toggle="collapse" data-target='#1000' aria-expanded="false" aria-controls="collapseExample">
-  <font size ="5" color="black" >&nbsp;&nbsp;&nbsp;&nbsp;With Value 1000 <span class = "fa fa-chevron-circle-right" ></span></font>
-</a></div>
-<div class ="row">
-<div class="collapse" id= '1000'>
+  <a data-toggle="collapse" data-target='#1000' aria-expanded="false" aria-controls="collapseExample">
+    <font size ="5" color="black" >&nbsp;&nbsp;&nbsp;&nbsp;With Value 1000 <span class = "fa fa-chevron-circle-right" ></span></font>
+  </a></div>
+  <div class ="row">
+    <div class="collapse" id= '1000'>
 
-  <% @promoted_articles_1000 = Article.where(:user_id => current_user.id,:promotevalue => 1000000 ) %>
-  <% if @promoted_articles_1000 != [] %>
-  <%  @promoted_articles_1000.each do |a|%>
-  <div class ="col-md-4">
-    <div class ="well">
-      <img src= <%= a.image %> height="200" width="170" class="center">
-      <h5><%= link_to a.title , a %></h5>
-      <h6>  By:  <%= User.find(a.user_id).firstname %>
-        <%= User.find(a.user_id).lastname %></h6>
-      </div>
-    </div>
-    <%end%>
-    <%else%>
-    <font size=2 ><p> Nothing to display </p></font>
+      <% @promoted_articles_1000 = Article.where(:user_id => current_user.id,:promotevalue => 1000000 ) %>
+      <% if @promoted_articles_1000 != [] %>
+      <%  @promoted_articles_1000.each do |a|%>
+      <div class ="col-md-4">
+        <div class ="well">
+          <img src= <%= a.image %> height="200" width="170" class="center">
+          <h5><%= link_to a.title , a %></h5>
+          <h6>  By:  <%= User.find(a.user_id).firstname %>
+            <%= User.find(a.user_id).lastname %></h6>
+          </div>
+        </div>
         <%end%>
-  </div>
-</div>
-
-<div class="row">
-<a data-toggle="collapse" data-target='#2000' aria-expanded="false" aria-controls="collapseExample">
-  <font size ="5" color="black" >&nbsp;&nbsp;&nbsp;&nbsp;With Value 2000 <span class = "fa fa-chevron-circle-right" ></span></font>
-</a></div>
-<div class ="row">
-<div class="collapse" id= '2000'>
-
-  <% @promoted_articles_2000 = Article.where(:user_id => current_user.id,:promotevalue => 2000000 ) %>
-  <% if @promoted_articles_2000 != [] %>
-  <%  @promoted_articles_2000.each do |a|%>
-  <div class ="col-md-4">
-    <div class ="well">
-      <img src= <%= a.image %> height="200" width="170" class="center">
-      <h5><%= link_to a.title , a %></h5>
-      <h6>  By:  <%= User.find(a.user_id).firstname %>
-        <%= User.find(a.user_id).lastname %></h6>
-      </div>
-    </div>
-    <%end%>
-    <%else%>
-    <font size=2 ><p> Nothing to display </p></font>
+        <%else%>
+        <font size=2 ><p> Nothing to display </p></font>
         <%end%>
-
-  </div>
-</div>
-
-<div class="row">
-<a data-toggle="collapse" data-target='#3000' aria-expanded="false" aria-controls="collapseExample">
-  <font size ="5" color="black" >&nbsp;&nbsp;&nbsp;&nbsp;With Value 3000 <span class = "fa fa-chevron-circle-right" ></span></font>
-</a></div>
-<div class ="row">
-<div class="collapse" id= '3000'>
-
-  <% @promoted_articles_3000 = Article.where(:user_id => current_user.id,:promotevalue => 3000000 ) %>
-  <% if @promoted_articles_3000 != [] %>
-  <%  @promoted_articles_3000.each do |a|%>
-  <div class ="col-md-4">
-    <div class ="well">
-      <img src= <%= a.image %> height="200" width="170" class="center">
-      <h5><%= link_to a.title , a %></h5>
-      <h6>  By:  <%= User.find(a.user_id).firstname %>
-        <%= User.find(a.user_id).lastname %></h6>
       </div>
     </div>
-    <%end%>
-    <%else%>
-    <font size=2 ><p> Nothing to display </p></font>
-    <%end%>
 
-  </div>
-</div>
+    <div class="row">
+      <a data-toggle="collapse" data-target='#2000' aria-expanded="false" aria-controls="collapseExample">
+        <font size ="5" color="black" >&nbsp;&nbsp;&nbsp;&nbsp;With Value 2000 <span class = "fa fa-chevron-circle-right" ></span></font>
+      </a></div>
+      <div class ="row">
+        <div class="collapse" id= '2000'>
+
+          <% @promoted_articles_2000 = Article.where(:user_id => current_user.id,:promotevalue => 2000000 ) %>
+          <% if @promoted_articles_2000 != [] %>
+          <%  @promoted_articles_2000.each do |a|%>
+          <div class ="col-md-4">
+            <div class ="well">
+              <img src= <%= a.image %> height="200" width="170" class="center">
+              <h5><%= link_to a.title , a %></h5>
+              <h6>  By:  <%= User.find(a.user_id).firstname %>
+                <%= User.find(a.user_id).lastname %></h6>
+              </div>
+            </div>
+            <%end%>
+            <%else%>
+            <font size=2 ><p> Nothing to display </p></font>
+            <%end%>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <a data-toggle="collapse" data-target='#3000' aria-expanded="false" aria-controls="collapseExample">
+            <font size ="5" color="black" >&nbsp;&nbsp;&nbsp;&nbsp;With Value 3000 <span class = "fa fa-chevron-circle-right" ></span></font>
+          </a></div>
+          <div class ="row">
+            <div class="collapse" id= '3000'>
+
+              <% @promoted_articles_3000 = Article.where(:user_id => current_user.id,:promotevalue => 3000000 ) %>
+              <% if @promoted_articles_3000 != [] %>
+              <%  @promoted_articles_3000.each do |a|%>
+              <div class ="col-md-4">
+                <div class ="well">
+                  <img src= <%= a.image %> height="200" width="170" class="center">
+                  <h5><%= link_to a.title , a %></h5>
+                  <h6>  By:  <%= User.find(a.user_id).firstname %>
+                    <%= User.find(a.user_id).lastname %></h6>
+                  </div>
+                </div>
+                <%end%>
+                <%else%>
+                <font size=2 ><p> Nothing to display </p></font>
+                <%end%>
+
+              </div>
+            </div>
