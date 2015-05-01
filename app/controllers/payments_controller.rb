@@ -2,12 +2,16 @@
 # 30.4.2015
 # Stripe payment
 class PaymentsController < ApplicationController
+  def index
+  end
+
   def new
+    @amount = params[:amount].gsub(/\D/, '').to_i * 100
   end
 
   def create
     # Amount in cents
-    @amount = 500
+    @amount = params[:value].gsub(/\D/, '').to_i
 
     customer = Stripe::Customer.create(
       email: 'example@stripe.com',
@@ -23,6 +27,6 @@ class PaymentsController < ApplicationController
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to charges_path
+      redirect_to payments_path
   end
 end
