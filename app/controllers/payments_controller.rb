@@ -5,6 +5,9 @@ class PaymentsController < ApplicationController
   def index
   end
 
+  # Display the amount entered by the user
+  # and waits for him to enter credit card
+  # credentials to complete the payment
   def new
     @amount = params[:amount].gsub(/\D/, '').to_i * 100
     if (@amount <= 0)
@@ -15,11 +18,12 @@ class PaymentsController < ApplicationController
     end
   end
 
+  # Completes the payment and updates the user's balance
   def create
-    # Amount in cents
     if (!user_signed_in?)
       redirect_to new_user_session_path
     end
+    # Amount in cents
     @amount = params[:value].gsub(/\D/, '').to_i
     if (@amount <= 0)
       redirect_to payments_path
