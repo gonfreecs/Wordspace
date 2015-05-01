@@ -39,7 +39,7 @@
     <%= link_to 'Edit', edit_reply_path(r)%>
   <% end %>
 	<% if can? :report, r %>
-	<%= link_to 'Report',action: "report",controller: "replies",reply_id: r %>
+	<%= link_to 'Report',action: "report",controller: "replies",id: r.id,article_id: @article.id%>
 	<% end %>
   <br />
   <br />

@@ -46,21 +46,20 @@ class RepliesController < ApplicationController
   end
 
   def report
-      # Author:Mina Hany
-      # 8.4.2015
-      # A hash is created containing user's id who wants to report a comment
-      # and that comment's id and it is added to model contaioning reported requests
-      @report = Reportreply.where(
-                                  "user_id = ? AND reply_id = ?", current_user.id, :reply_id)
-      @article = Article.find(params[:id])
-      if @report.present?
-        redirect_to @article && return
-      end
-      reportreplyhash = { "user_id" => current_user.id,
-                         "reply_id" => @reply.id }
-      Reportreply.create(reportreplyhash)
-      redirect_to @article
-    end
+    # Author:Mina Hany
+    # 8.4.2015
+    # A hash is created containing user's id who wants to report a reply
+    # and that reply's id and it is added to model contaianing
+    # reporting requests
+    @report = Reportreply.where('user_id = ? AND reply_id = ?',
+                                current_user.id, :id)
+    @article = Article.find(params[:article_id])
+    redirect_to @article && return if @report.present?
+    reportreplyhash = { 'user_id' => current_user.id,
+                        'reply_id' => :id }
+    Reportreply.create(reportreplyhash)
+    redirect_to @article
+  end
 
   def reply_params
     params.require(:reply).permit(:user_id, :article_id, :comment_id, :des)
