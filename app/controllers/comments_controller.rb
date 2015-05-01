@@ -6,8 +6,10 @@ class CommentsController < ApplicationController
   rescue_from(ActiveRecord::RecordNotFound) do
     fail(CanCan::AccessDenied, 'Comment is not found')
   end
+  # Author: Mayar
+  # Date: 1.5.2015
+  # Incrementing user notifier whenever anyone comments 
   def create
-    # @comment = Comment.new(params[:comment])
     if @comment.save
       @article = Article.find(@comment.article_id)
       @user = User.find(@article.user_id)
