@@ -5,10 +5,9 @@
     <h1>Search results for "<%= @query_str %>"</h1>
   <% end %>
 </div>
+<% if !@articles.empty? %>
 <div class="row grid">
-  <% if !@articles.empty? %>
   <h3>Articles</h3>
-  <% end %>
   <% @articles.each do|a| %>
   <figure class="effect-sadie">
     <img src="<%= a.image %>" alt="<%= a.title %>"/>
@@ -20,10 +19,10 @@
   </figure>
   <% end %>
 </div>
+<% end %>
+<% if !@magazines.empty? %>
 <div class="row grid">
-  <% if !@magazines.empty? %>
   <h3>Magazines</h3>
-  <% end %>
   <% @magazines.each do|m| %>
   <figure class="effect-sadie">
     <img src="<%= m.image %>" alt="<%= m.name %>"/>
@@ -34,9 +33,10 @@
   </figure>
   <% end %>
 </div>
+<% end %>
+<% if !@users.empty? %>
+<% @count = 0 %>
 <div class="row grid">
-  <% if !@users.empty? %>
-  <% @count = 0 %>
   <h3>People</h3>
   <% end %>
   <div class="row">
@@ -51,6 +51,6 @@
       <%= link_to u.firstname << " " << u.lastname, u%>
     </div>
     <% @count = @count + 1 %>
-  <% end %>
   </div>
 </div>
+<% end %>
