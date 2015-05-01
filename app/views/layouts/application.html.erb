@@ -79,12 +79,11 @@
 
                   <li   class="dropdown">
                       <% if current_user.notifier > 0 %>
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="fa fa-user"></span> <p>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 
                         <p id = "notify">
-                          Notifications
-                        </p>  <span class="caret"></span></a>
-                      <ul class="dropdown-menu" role="menu" style="width: 500%">
+                          <span class="caret"></span></p></a>
+                      <ul class="dropdown-menu" role="menu" style="width: 700%">
                         <% @articles = [] %>
                         <% Comment.all.order(created_at: :desc).each do |c| %>
                         <% if Article.find(c.article_id).user_id == current_user.id %>
@@ -152,8 +151,10 @@
              function() {
                  setInterval(function() {
 
+
                    $('#notify').text(
                      <%= current_user.notifier %> );
+                     window.load('/controllers/notifications/notifier')
                  }, 3000);
              });
         </script>

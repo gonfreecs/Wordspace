@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   end
   # Author: Mayar
   # Date: 1.5.2015
-  # Incrementing user notifier whenever anyone comments 
+  # Incrementing user notifier whenever anyone comments
   def create
     if @comment.save
       @article = Article.find(@comment.article_id)

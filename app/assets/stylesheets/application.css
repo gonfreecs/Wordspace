@@ -628,3 +628,7 @@ figure.effect-sadie:hover p {
   outline: none;
   color: #555555;
 }
+
+#notify {
+  font-size: 12px;
+}
