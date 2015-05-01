@@ -15,14 +15,13 @@ class BidsController < ApplicationController
   end
 
   def create
-
     @title = params[:title2]
     @ad = Ad.where(title:  @title, user_id: current_user.id)
     @ad_id = @ad[0].id if @ad != []
     @article_id = params[:article_id]
     @off3 = params[:offer3]
     @off2 = params[:offer1]
-    if @off3 != ""
+    if @off3 != ''
       @offer = @off3.to_i
     else
       @offer = @off2.to_i

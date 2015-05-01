@@ -34,8 +34,13 @@
         get 'delete'
       end
     end
-
-
+    # like and unlike articles
+    resources :articles do
+        member do
+          put 'like' => 'articles#upvote'
+          put 'unlike' => 'articles#downvote'
+        end
+      end
     resource :articles do
       collection do
         get 'bid'

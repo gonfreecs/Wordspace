@@ -8,6 +8,9 @@
     belongs_to :user
     has_many :bids, dependent: :destroy
     has_one :ad
+
+    # ability to be liked
+    acts_as_votable
     # Check if image size is larger than 5 MB
     def image_size
       errors[:image] << 'should be less than 5MB' if image.size > 5.megabytes

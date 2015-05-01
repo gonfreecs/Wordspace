@@ -6,6 +6,8 @@
     acts_as_followable
     acts_as_follower
 
+    # Ability to like articles
+    acts_as_voter
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable and :omniauthable
     #:recoverable,
