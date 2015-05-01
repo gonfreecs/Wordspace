@@ -1,4 +1,3 @@
-<% @my_articles = Article.where(:user_id => current_user.id) %>
 <% if @my_articles != [] %>
 <%  @my_articles.each do |a|%>
 <div class ="col-md-4">

@@ -1,4 +1,3 @@
-<% @sponsered_articles = Article.where(:user_id => current_user.id,:is_sponsored => true) %>
 <% if @sponsered_articles != [] %>
 <%  @sponsered_articles.each do |a|%>
 <div class ="col-md-4">
