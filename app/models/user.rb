@@ -1,5 +1,8 @@
   # User Model
   class User < ActiveRecord::Base
+    # A many-to-many relationship between reply and user
+    has_many :reportreplies
+    has_many :replies, through: :reportreplies
     # to upload avatar for user
     mount_uploader :avatar, AvatarUploader
     # Adds the Abilitiy To follow and be followed

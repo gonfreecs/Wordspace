@@ -45,6 +45,10 @@ class RepliesController < ApplicationController
   def new
   end
 
+  def report
+    
+  end
+
   def reply_params
     params.require(:reply).permit(:user_id, :article_id, :comment_id, :des)
   end

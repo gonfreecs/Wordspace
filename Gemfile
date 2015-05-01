@@ -30,6 +30,9 @@ gem 'social-share-button'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'tzinfo-data'
+gem 'coffee-script-source', '1.8.0'
+
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'cancan'
 
