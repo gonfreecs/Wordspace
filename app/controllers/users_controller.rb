@@ -24,4 +24,9 @@ class UsersController < ApplicationController
     current_user.stop_following(@user)
     redirect_to :back
   end
+  # Hariry
+  # 29.4.2015
+  # control panel for user's articles
+  def controls
+  end
 end

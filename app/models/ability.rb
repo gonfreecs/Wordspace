@@ -34,6 +34,7 @@ class Ability
           can :unfollow, User
           can :create, Article
           can :create, Magazine
+          can :controls, User
           can :update, Comment do |c|
             c.user_id == user.id
           end
