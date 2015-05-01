@@ -6,7 +6,6 @@
 
     resources :ads
     resources :articles
-    resources :magazines
     resources :comments
     resources :replies
 
@@ -21,6 +20,12 @@
       put 'unfollow' => 'users#unfollow'
     end
   end
+
+  resources :magazines do
+      collection do
+        get 'leave'
+      end
+    end
 
     resources :bids do
       collection do

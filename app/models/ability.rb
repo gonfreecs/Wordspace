@@ -52,6 +52,10 @@ class Ability
           can :update, Magazine do |m|
             (m.users.include? user)
           end
+
+          can :leave, Magazine do |m|
+            (m.users.include? user)
+          end
          # 5.4.2015
          # check  promote  if current user
          # and not promoted before

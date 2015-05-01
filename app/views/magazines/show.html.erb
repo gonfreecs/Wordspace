@@ -57,6 +57,12 @@
       </div>
       <div class="modal-body">
         <% @users.each do |u| %>
+
+        <% if current_user.id == u.id %>
+        <% if can? :leave , @magazine   %>
+        <%= link_to '<span style = "color: red" class="fa fa-trash"></span>'.html_safe,controller: :magazines, action: :leave, m_id: @magazine.id %>
+          <% end %>
+          <% end %>
           <!-- change to  link_to u.firstname, u -->
           <img style="width: 50px; height: 50px;"src = "<%= u.avatar %>" alt="<%= u.firstname %>"/>
           <a href ="#"> <%= u.firstname %></a>

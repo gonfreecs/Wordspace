@@ -41,6 +41,15 @@ class MagazinesController < ApplicationController
     end
   end
 
+  def leave
+    @magazine = Magazine.find(params[:m_id])
+    @colab = current_user
+    @magazine.users.delete(@colab)
+    @colab.magazines.delete(@magazine)
+    @colab.save
+    @magazine.save
+  end
+
   # POST /magazines
   # POST /magazines.json
   def create
