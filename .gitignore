@@ -4,4 +4,3 @@ tmp/*
 coverage/*
 log/*
 public/*
-db/*
