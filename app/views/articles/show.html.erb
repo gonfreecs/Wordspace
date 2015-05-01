@@ -23,6 +23,30 @@
 			</div>
 				<h5 > By: </h5> <p><%= link_to  @user.firstname  , @user %>  </p>
 				<h5> created at: </h5> <p> <%=  @article.created_at.to_s[0,10] %> </p>
+				<% if @article.promoted %>
+		<% else%>
+			<% if can? :promotion , @article %>
+				<%= form_for @article do|f| %>
+					<% if can? :promotion_gold, @article %>
+					<%= f.select :promotevalue, [[1000000,1000000],[2000000,200000],[3000000,3000000]] %>
+						<% else %>
+						<% if can? :promotion_silver, @article %>
+					<%= f.select :promotevalue, [[10000,10000],[20000,20000],[30000,3000]] %>
+						<% else%>
+						<% if can? :promotion_bronze, @article %>
+					<%= f.select :promotevalue, [[100,100],[200,200],[300,300]] %>
+						<% end %>
+						<% end %>
+						<% end %>
+					<%= f.hidden_field :promoted, :value => true%>
+					<%= f.hidden_field :title, :value => @article.title%>
+					<%= f.hidden_field :user_id, :value => current_user.id %>
+					<%= f.hidden_field :id, :value => @article.id%>
+					<%= f.hidden_field :image, :value => @article.image%>
+					<%= f.submit "Promote Article" %>
+			 	<% end %>
+				<% end %>
+				<% end %>
 				<!-- this is the edit and delete buttons section. Using CanCan to check whether the user is able to edit or delete if yes the buttons are shown and if no the buttons are not, editing redirects to the edit page and the delete button asks if the user is sure he/she wants to delete then if the answer is yes the article is deleted -->
 				<% if can? :update, @article %>
 				<%= link_to '<span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_article_path(@article), class: "btn btn-outlined btn-grey" %>

@@ -23,7 +23,7 @@ class Ability
     can :show, Comment
     can :show, Reply
     can :show, Magazine
-    
+
           return if user.nil?
           can :update, Article do |article|
             article.user_id == user.id
@@ -51,6 +51,26 @@ class Ability
           can :update, Magazine do |m|
             (m.users.include? user)
           end
+         # 5.4.2015
+         # check  promote  if current user
+         # and not promoted before
+         # and user budget is classified as gold or silver or bronze
+         can :promotion, Article do |article|
+           article.promoted == false
+           article.user_id == user.id
+         end
+          can :promotion_gold, Article do |article|
+           article.user_id == user.id
+           user.budget > 4_000_000
+         end
+         can :promotion_silver, Article do |article|
+           article.user_id == user.id
+           user.budget > 40_000
+         end
+         can :promotion_bronze, Article do |article|
+           article.user_id == user.id
+           user.budget > 4000
+         end
           if user.is_moderator
             can :destroy, Article
             can :destroy, Comment
