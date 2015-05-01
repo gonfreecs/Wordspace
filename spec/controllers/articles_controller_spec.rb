@@ -16,4 +16,29 @@ RSpec.describe ArticlesController, type: :controller do
       expect(assigns(:article).magazine_id).to match(@magazine.id)
     end
   end
+  describe 'PUT #update/homepagelist' do
+    it 'curator can add article to homepagelist' do
+      @user = create(:user, :curator => true)
+      sign_in @user
+      @article = create(:article, :user_id  => @user.id)
+      put :update, id: @article.id,
+                   article: FactoryGirl.attributes_for(:article,
+                                                       homepagelist:
+                                                      'true')
+      @article.reload
+      expect(assigns(:article).homepagelist).to match(true)
+    end
+  end
+  it 'curator can remove article to homepagelist' do
+    @user = create(:user, :curator => true)
+    sign_in @user
+    @article = create(:article, :user_id  => @user.id,
+                     :homepagelist => true )
+    put :update, id: @article.id,
+                 article: FactoryGirl.attributes_for(:article,
+                                                     homepagelist:
+                                                    'false')
+    @article.reload
+    expect(assigns(:article).homepagelist).to match(false)
+  end
 end
