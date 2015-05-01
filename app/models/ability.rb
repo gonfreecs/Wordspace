@@ -8,6 +8,8 @@ class Ability
     can :show, Comment
     can :show, Reply
     can :show, Magazine
+    can :join, Magazine
+
     unless user.nil?
       can :update, Article do |article|
         article.user_id == user.id
