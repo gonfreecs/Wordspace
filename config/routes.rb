@@ -1,6 +1,9 @@
   Rails.application.routes.draw do
+
     root 'articles#index'
     resources :payments
+    # user controls
+    get 'users/controls' => 'users#controls', :as => :controls
     resources :ads
     resources :articles
     resources :magazines

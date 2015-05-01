@@ -1,0 +1,14 @@
+<% if @my_articles != [] %>
+<%  @my_articles.each do |a|%>
+<div class ="col-md-4">
+  <div class ="well">
+    <img src= <%= a.image %> height="200" width="170" class="center">
+    <h5><%= link_to a.title , a %></h5>
+    <h6>  By:  <%= User.find(a.user_id).firstname %>
+      <%= User.find(a.user_id).lastname %></h6>
+    </div>
+  </div>
+  <%end%>
+  <%else%>
+  <font size=3><p>Nothing to display</p></font>
+  <%end%>

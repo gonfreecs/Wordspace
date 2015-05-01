@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20150501130429) do
     t.text     "plain_body"
     t.integer  "magazine_id",  default: 0
     t.string   "ad_title"
+    t.integer  "promotevalue"
+    t.boolean  "promoted"
   end
 
   create_table "bids", force: :cascade do |t|
@@ -133,12 +135,12 @@ ActiveRecord::Schema.define(version: 20150501130429) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "",         null: false
+    t.string   "encrypted_password",     default: "",         null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,          null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -153,6 +155,7 @@ ActiveRecord::Schema.define(version: 20150501130429) do
     t.boolean  "is_female",              default: false
     t.string   "avatar"
     t.decimal  "balance",                default: 0.0
+    t.integer  "budget",                 default: 1000000000
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
