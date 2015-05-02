@@ -6,9 +6,16 @@
     <h5><%= link_to a.title , a %></h5>
     <h6>  By:  <%= User.find(a.user_id).firstname %>
       <%= User.find(a.user_id).lastname %></h6>
-    </div>
   </div>
+<<<<<<< HEAD
   <%end%>
   <%else%>
-  <font size=3><p>Nothing to display</p></font>
+  <font size=2><p>Nothing to display</p></font>
   <%end%>
+=======
+</div>
+<%end%>
+<%else%>
+<font size=3><p>Nothing to display</p></font>
+<%end%>
+>>>>>>> 102b2e8f37bf3ce926557d81c183ff553f1e3a62

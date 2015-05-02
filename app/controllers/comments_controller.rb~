@@ -30,8 +30,13 @@ class CommentsController < ApplicationController
   def show
   		 #@user=User.find(@article.user_id)
 	  @reply = Reply.new(params[:reply])
+<<<<<<< HEAD
 	  @reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
     redirect_to(@comment.article)
+=======
+	  #@reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
+    #redirect_to(@comment.article)
+>>>>>>> 7693c4f1a04bb6d36a0b2109e941b06c2e89550f
   end
   def update
 

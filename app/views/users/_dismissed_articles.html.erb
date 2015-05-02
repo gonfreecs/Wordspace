@@ -1,0 +1,28 @@
+
+<% @articles = Article.where("id IN (?)", Reportarticle.where(is_dismissed:1).uniq.pluck(:article_id)) %>
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <% if @articles != [] %>
+    <% @articles.each do|a| %>
+    <div class ="well">	<img src= <%= a.image %> height="180" width="180" class="center">
+      <h5><%= link_to a.title , @article %></h5>
+
+      <h6>  By:  <%= User.find(a.user_id).firstname %>
+        <%= User.find(a.user_id).lastname %></h6>
+
+
+
+
+        <%= link_to '<font size ="5" color="black" ><span class = "fa fa-trash" ></span></font>'.html_safe, a, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+
+      <% end %>
+
+      <% else %>
+      <p> Nothing to display </p>
+      <% end %>
+    </div>
+    <div class="col-md-2"></div>
+  </div>

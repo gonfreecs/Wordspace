@@ -1,0 +1,56 @@
+
+
+<% content_for :javascript_includes do %>
+<%= javascript_include_tag "cbpFWTabs.js" %>
+<% end %>
+<% content_for :javascript_includes do %>
+<%= javascript_include_tag "modernizr.custom.js" %>
+<% end %>
+<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<h1><span class="fa fa-cog"></span> Moderator Controls </h1>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+
+	<div class= "row">
+		<div class="col-md-2"></div>
+		<div class = "col-md-8">
+			<section>
+				<div class="tabs tabs-style-circle">
+					<div class= "col-md-2">
+						<nav>
+							<ul>
+								<li><font size="6"><a href="#section-circle-1" class="fa fa-flag" ><span>Reported <br> Articles</span></a></font></li>
+								<li><font size="6"><a href="#section-circle-2" class="fa fa-tasks"><span>Dismissed <br> Articles</span></a></font></li>
+								<li><font size="6"><a href="#section-circle-3" class="fa fa-flag-o "><span>Reported <br>   Comments</span></a></font></li>
+								<li><font size="6"><a href="#section-circle-4" class="fa fa-bars "><span>Dismissed <br>  Comments</span></a></font></li>
+							</ul>
+						</nav>
+					</div>
+					<div class= "col-md-10">
+						<div class="content-wrap">
+							<section id="section-circle-1">
+								<%= render :partial => 'reported_articles' %>
+								</section>
+								<section id="section-circle-2">
+									<%= render :partial => 'dismissed_articles' %>
+
+									</section>
+									<section id="section-circle-3"> <%= render :partial => 'reported_comments' %> </section>
+										<section id="section-circle-4"><p><%= render :partial => 'dismissed_comments' %></p></section>
+									</div><!-- /content -->
+								</div>
+							</div><!-- /tabs -->
+						</section>
+					</div>
+				</div>
+
+				<script>
+				(function() {
+					[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+						new CBPFWTabs( el );
+					});
+				})();
+				</script>

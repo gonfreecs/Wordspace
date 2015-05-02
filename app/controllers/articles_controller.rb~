@@ -13,6 +13,10 @@
 
 	  # GET /articles/1
 	  # GET /articles/1.json
+<<<<<<< HEAD
+=======
+	  #inistantiation of Comment and Reply objects 
+>>>>>>> 7693c4f1a04bb6d36a0b2109e941b06c2e89550f
 	   def show
 	  @user=User.find(@article.user_id)
 	  @comment = Comment.new(params[:comment])
@@ -20,12 +24,16 @@
 	  @replies = Reply.all
 	  @reply = Reply.new(params[:reply])
 	  #@reply.update_attributes(:user_id=>@comment.user_id, :comment_id=>@comment.id, :article_id=>@comment.article_id)
+<<<<<<< HEAD
   	if @article.title != 	nil
 		@bid=Bid.where({article_id: @article.id})
 		@sponsor=@bid.user_id
 	@ad= Ad.where({user_id: @sponsor , title: @article.title})
 	@des=@ad.des.html_safe
 	end
+=======
+  
+>>>>>>> 7693c4f1a04bb6d36a0b2109e941b06c2e89550f
 	  end
 
 	  # GET /articles/new

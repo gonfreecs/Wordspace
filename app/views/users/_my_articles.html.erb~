@@ -11,5 +11,5 @@
   </div>
   <%end%>
   <%else%>
-  <font size=3><p>Nothing to display</p></font>
+  <font size=2><p>Nothing to display</p></font>
   <%end%>
