@@ -40,13 +40,15 @@ class MagazinesController < ApplicationController
       render json: @magazine.errors, status: :unprocessable_entity
     end
   end
-
+  # Author:Andrew
+  # 2.5.2015
+  # Removes User From Magazine
   def leave
     @magazine = Magazine.find(params[:m_id])
-    @colab = current_user
-    @magazine.users.delete(@colab)
-    @colab.magazines.delete(@magazine)
-    @colab.save
+    @user = current_user
+    @magazine.users.delete(@user)
+    @user.magazines.delete(@magazine)
+    @user.save
     @magazine.save
     redirect_to :back
 
