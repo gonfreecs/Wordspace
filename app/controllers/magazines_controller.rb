@@ -38,11 +38,8 @@ class MagazinesController < ApplicationController
   @magazine.users.delete(@colab)
   @colab.magazines.delete(@magazine)
   @colab.save
-  if @magazine.save
+  @magazine.save
     redirect_to :back
-  else
-    redirect_to :back
-  end
 end
   # GET /magazines/1/edit
   def edit

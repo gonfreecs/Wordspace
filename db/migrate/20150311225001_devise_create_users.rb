@@ -39,6 +39,4 @@
       # add_index :users, :confirmation_token,   unique: true
       # add_index :users, :unlock_token,         unique: true
     end
->>>>>>> c0e5e2e47d6db96b399bec9d5f6cc7d901395721
-  end
 end
