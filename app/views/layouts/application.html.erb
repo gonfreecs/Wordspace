@@ -59,7 +59,7 @@
                       <li><%= link_to "Write Article", new_article_path %></li>
 
 
-                      <% if current_user.is_sponsor %>
+                      <% if current_user.is_sponsor == 1 %>
                       <li>
                         <%= link_to "Sponsor Controls", '/sponsors/control' %>
                       </li>
