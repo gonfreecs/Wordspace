@@ -6,8 +6,10 @@ class RepliesController < ApplicationController
   rescue_from(ActiveRecord::RecordNotFound) do
     fail(CanCan::AccessDenied, 'Reply is not found')
   end
+
+  # POST action
+  # Create and save reply inistance
   def create
-    # @reply = Reply.new(params[:reply])
     if @reply.save
       flash[:notice] = 'reply was successfully created.'
       redirect_to(@reply.comment.article)
@@ -16,6 +18,9 @@ class RepliesController < ApplicationController
       redirect_to(@reply.comment.article)
     end
   end
+
+  # Delete action
+  # Delete reply inistance
 
   def destroy
     @reply = Reply.find(params[:id])
@@ -28,6 +33,9 @@ class RepliesController < ApplicationController
 
   def show
   end
+
+  # PUT action
+  # update comment inistance
 
   def update
     if @reply.update(params[:reply])
@@ -44,6 +52,9 @@ class RepliesController < ApplicationController
 
   def new
   end
+
+  # Never trust parameters from the scary internet,
+  # only allow the white list through.
 
   def reply_params
     params.require(:reply).permit(:user_id, :article_id, :comment_id, :des)
