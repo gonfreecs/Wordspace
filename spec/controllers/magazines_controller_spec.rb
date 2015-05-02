@@ -20,6 +20,9 @@ RSpec.describe MagazinesController, type: :controller do
   # 2.5.2015
   # Magazine Controller Tests for remove collaborators
   describe 'GET #removeco' do
+    before(:each) do
+      request.env['HTTP_REFERER'] = 'test'
+    end
     it 'removes collaborators correctly' do
       @magazine2 = create(:magazine)
       @user1 = create(:user)
@@ -31,6 +34,7 @@ RSpec.describe MagazinesController, type: :controller do
 
       expect(assigns(:magazine).users).to match_array([@user1])
       expect(assigns(:colab).magazines).to match_array([])
+      response.should redirect_to 'test'
 
   end
 end
