@@ -1,8 +1,20 @@
-# Author: Hariry
-# 29.4.2015
-# Test for user controls view
 require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
+
+  # Author: Mayar
+  # Date: 30.4.2015
+  # checking mymagazines action
+  describe 'GET #mymagazines' do
+    it 'allows signed in user to get the magazines he is managing' do
+      @user = create(:user)
+      sign_in @user
+      @magazine = create(:magazine)
+      @magazine.users << @user
+      get :mymagazines, magazines: FactoryGirl.attributes_for(:user)
+      expect(assigns(:magazines)).to match_array([@magazine])
+    end
+  end
+
   # Author: Hariry
   # 29.4.2015
   # Test for user to view all his articles

@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/spec/controllers/articles_controller_spec.rb": [
+=======
       "/home/ansary/Master/spec/controllers/articles_controller_spec.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
@@ -22,7 +26,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/spec/rails_helper.rb": [
+=======
       "/home/ansary/Master/spec/rails_helper.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         1,
         1,
@@ -74,9 +82,15 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/controllers/articles_controller.rb": [
+        null,
+        null,
+=======
       "/home/ansary/Master/app/controllers/articles_controller.rb": [
         null,
         null,
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         1,
         null,
         1,
@@ -201,7 +215,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/controllers/application_controller.rb": [
+=======
       "/home/ansary/Master/app/controllers/application_controller.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         1,
@@ -212,9 +230,15 @@
         null,
         null,
         1,
+<<<<<<< HEAD
+        10,
+        10,
+        10,
+=======
         12,
         12,
         12,
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         1,
@@ -234,7 +258,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/spec/controllers/magazines_controller_spec.rb": [
+=======
       "/home/ansary/Master/spec/controllers/magazines_controller_spec.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         1,
         1,
         null,
@@ -289,7 +317,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/controllers/magazines_controller.rb": [
+=======
       "/home/ansary/Master/app/controllers/magazines_controller.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
@@ -398,7 +430,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/spec/controllers/search_controller_spec.rb": [
+=======
       "/home/ansary/Master/spec/controllers/search_controller_spec.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
@@ -430,7 +466,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/controllers/search_controller.rb": [
+=======
       "/home/ansary/Master/app/controllers/search_controller.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
@@ -454,7 +494,90 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/spec/controllers/users_controller_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+=======
       "/home/ansary/Master/spec/controllers/users_controller_spec.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
+        null,
+        null,
+        null,
+        1,
+<<<<<<< HEAD
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+=======
+        1,
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+<<<<<<< HEAD
+        1,
+        null,
+=======
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
+        null,
+        null,
+        null,
+        null,
+        null,
+<<<<<<< HEAD
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/controllers/users_controller.rb": [
         null,
         null,
         null,
@@ -464,12 +587,69 @@
         null,
         null,
         1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+=======
         1,
         1,
         1,
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
@@ -478,22 +658,13 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+<<<<<<< HEAD
+        3,
         1,
         null,
         null,
         null,
-        null,
-        null,
-        1,
-        1,
-        1,
+=======
         1,
         1,
         1,
@@ -503,25 +674,23 @@
         null
       ],
       "/home/ansary/Master/app/controllers/users_controller.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
         1,
         null,
+<<<<<<< HEAD
+=======
         null,
         null,
         1,
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         1,
         0,
         0,
         null,
         null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
         null,
         null,
         1,
@@ -530,6 +699,46 @@
         0,
         null,
         null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+<<<<<<< HEAD
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Mayar/Desktop/myMagazinesConflicts/spec/helpers/users_helper_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Mayar/Desktop/myMagazinesConflicts/spec/models/magazine_spec.rb": [
+=======
         null,
         null,
         1,
@@ -542,6 +751,7 @@
         null
       ],
       "/home/ansary/Master/spec/models/magazine_spec.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
@@ -575,7 +785,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/models/magazine.rb": [
+=======
       "/home/ansary/Master/app/models/magazine.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
@@ -592,7 +806,7 @@
         null,
         null,
         1,
-        12,
+        13,
         null,
         null,
         1,
@@ -602,7 +816,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/uploaders/img_uploader.rb": [
+=======
       "/home/ansary/Master/app/uploaders/img_uploader.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         1,
@@ -617,7 +835,11 @@
         null,
         null,
         1,
+<<<<<<< HEAD
+        18,
+=======
         22,
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
@@ -643,7 +865,11 @@
         null,
         null,
         1,
+<<<<<<< HEAD
+        32,
+=======
         40,
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
@@ -653,28 +879,47 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/models/article.rb": [
+=======
       "/home/ansary/Master/app/models/article.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         1,
         null,
         null,
         1,
         1,
+<<<<<<< HEAD
         1,
         1,
         1,
         1,
         null,
+=======
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
+        1,
+        1,
+        1,
+        1,
+        null,
+<<<<<<< HEAD
+=======
         1,
         10,
         null,
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         1,
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/models/ability.rb": [
+=======
       "/home/ansary/Master/app/models/ability.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
@@ -702,12 +947,19 @@
         5,
         null,
         5,
+<<<<<<< HEAD
+=======
+        4,
+        0,
+        null,
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         4,
         0,
         null,
         4,
         0,
         null,
+        4,
         4,
         4,
         4,
@@ -767,6 +1019,13 @@
         4,
         null,
         0,
+<<<<<<< HEAD
+        null,
+        null,
+        null
+      ],
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/models/comment.rb": [
+=======
         null,
         null,
         null
@@ -774,13 +1033,22 @@
       "/home/ansary/Master/app/models/comment.rb": [
         1,
         null,
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
+        1,
+        null,
         1,
         1,
         1,
+<<<<<<< HEAD
         1,
+        null
+      ],
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/models/reply.rb": [
+=======
         null
       ],
       "/home/ansary/Master/app/models/reply.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         1,
         null,
         null,
@@ -789,7 +1057,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/models/bid.rb": [
+=======
       "/home/ansary/Master/app/models/bid.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
@@ -805,11 +1077,18 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/Users/Mayar/Desktop/myMagazinesConflicts/app/models/ad.rb": [
+        null,
+=======
       "/home/ansary/Master/app/models/ad.rb": [
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
         null,
         null,
         null,
         null,
+        1,
+        1,
         1,
         1,
         1,
@@ -818,6 +1097,10 @@
         null
       ]
     },
+<<<<<<< HEAD
+    "timestamp": 1430476186
+=======
     "timestamp": 1430504928
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
   }
 }

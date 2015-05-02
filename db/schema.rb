@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20150501130429) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "user_id"
-    t.boolean  "is_sponsored", default: false
     t.text     "plain_body"
     t.integer  "magazine_id",  default: 0
+    t.boolean  "is_sponsored", default: false
     t.string   "ad_title"
     t.integer  "promotevalue"
     t.boolean  "promoted"

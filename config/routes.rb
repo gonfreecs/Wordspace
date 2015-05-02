@@ -1,9 +1,11 @@
   Rails.application.routes.draw do
 
+
     root 'articles#index'
     resources :payments
     # user controls
     get 'users/controls' => 'users#controls', :as => :controls
+
     resources :ads
     resources :articles
     resources :magazines
@@ -12,6 +14,15 @@
 
     mount RedactorRails::Engine => '/redactor_rails'
     devise_for :users
+
+    # Author: Mayar
+    # Date: 28.4.2015
+    # adding route
+    resources :users do
+      collection do
+        get 'mymagazines'
+      end
+    end
 
     resources :users, only: :show
 
@@ -27,7 +38,7 @@
         get 'destroy'
       end
     end
-    # adding resources
+
     resources :sponsors do
       collection do
         get 'control'
