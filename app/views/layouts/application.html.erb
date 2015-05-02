@@ -54,7 +54,8 @@
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="fa fa-user"></span> <%=current_user.firstname %> <span class="caret"></span></a>
                       <ul class="dropdown-menu" role="menu" style="width: 100%">
                         <li><%= link_to "Write Article", new_article_path %></li>
-                        <% if current_user.is_sponsor %>
+
+                        <% if current_user.is_sponsor == 1%>
                         <li>
                           <%= link_to "Sponsor Controls", '/sponsors/control' %>
                         </li>
@@ -62,7 +63,6 @@
 
                         <li><%= link_to "New Magazine", new_magazine_path%></li>
                         <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
-                        <li><%= link_to "New Magazine", new_magazine_path%></li>
                         <li><%= link_to "My Magazines",'/users/mymagazines'%></li>
                         <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete%></li>
                         <li><%= link_to "Invitations", collaboration_invitations_path %></li>
