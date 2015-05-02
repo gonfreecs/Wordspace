@@ -50,4 +50,20 @@ RSpec.describe MagazinesController, type: :controller do
       expect(assigns(:magazine)).to match(@m1)
     end
   end
+  # Author: Andrew
+  # 2.5.2015
+  # Test for user to leave Magazine
+  describe 'GET #leave' do
+    it 'allows users to leave magazines' do
+      @user = create(:user)
+      @user1 = create(:user, email: 'hamada@hads.com')
+      sign_in @user1
+      @magazine = create(:magazine)
+      @magazine.users << @user
+      @magazine.users << @user1
+      @request.env['HTTP_REFERER'] = ''
+      get :leave, m_id: @magazine.id
+      expect(assigns(:magazine).users).to match_array([@user])
+    end
+  end
 end
