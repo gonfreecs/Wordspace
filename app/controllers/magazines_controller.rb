@@ -39,9 +39,9 @@ class MagazinesController < ApplicationController
   @colab.magazines.delete(@magazine)
   @colab.save
   if @magazine.save
-    redirect_to :back
+    redirect_to root_path
   else
-    redirect_to :back
+    redirect_to root_path
   end
 end
   # GET /magazines/1/edit
