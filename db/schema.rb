@@ -171,8 +171,8 @@ ActiveRecord::Schema.define(version: 20150501130429) do
     t.boolean  "is_female",              default: false
     t.string   "avatar"
     t.integer  "budget",                 default: 1000000000
-    t.integer  "is_banned"
     t.decimal  "balance",                default: 0.0
+    t.integer  "is_banned"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
