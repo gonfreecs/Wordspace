@@ -1,6 +1,7 @@
 # Author: Mohammed El-Ansary
 # 1.4.2015
 # Controller responsible for searching for articles
+
 class SearchController < ApplicationController
   def search
     @query_str = ActionView::Base.full_sanitizer.sanitize(params[:query])
@@ -8,6 +9,15 @@ class SearchController < ApplicationController
       @query_string = '%' << @query_str.gsub('_', '\\_').gsub('%', '\\%') << '%'
       @articles = Article.where('(title LIKE ?) OR (plain_body LIKE ?)',
                                 @query_string, @query_string)
+      # Author: Mohammed El-Ansary
+      # 29.4.2015
+      # search for magazines
+      @magazines = Magazine.where('(name LIKE ?)', @query_string)
+      # Author: Mohammed El-Ansary
+      # 1.5.2015
+      # search for people too!
+      @users = User.where('(firstname LIKE ?) OR (lastname LIKE ?)',
+                          @query_string, @query_string)
     else
       redirect_to(:back)
     end
