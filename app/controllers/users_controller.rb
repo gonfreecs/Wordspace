@@ -163,7 +163,11 @@ class UsersController < ApplicationController
   # 29.4.2015
   # control panel for user's articles
   def controls
+<<<<<<< HEAD
     @my_articles = Article.where(:user_id => current_user.id)
+=======
+  	@my_articles = Article.where(:user_id => current_user.id)
+>>>>>>> 102b2e8f37bf3ce926557d81c183ff553f1e3a62
     @sponsered_articles = Article.where(:user_id => current_user.id,:is_sponsored => true)
     @promoted_articles_1000 = Article.where(:user_id => current_user.id,:promotevalue => 1000000 )
     @promoted_articles_2000 = Article.where(:user_id => current_user.id,:promotevalue => 2000000 )

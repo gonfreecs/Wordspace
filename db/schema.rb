@@ -172,7 +172,10 @@ ActiveRecord::Schema.define(version: 20150501130429) do
     t.string   "avatar"
     t.integer  "budget",                 default: 1000000000
     t.decimal  "balance",                default: 0.0
+<<<<<<< HEAD
     t.integer  "is_banned"
+=======
+>>>>>>> 102b2e8f37bf3ce926557d81c183ff553f1e3a62
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
