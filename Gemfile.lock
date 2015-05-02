@@ -266,6 +266,7 @@ DEPENDENCIES
   spring
   sqlite3
   stripe!
+  tabs_on_rails
   turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
