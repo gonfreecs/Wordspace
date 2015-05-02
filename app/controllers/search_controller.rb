@@ -1,6 +1,8 @@
 # Author: Mohammed El-Ansary
 # 1.4.2015
 # Controller responsible for searching for articles
+# 1.5.2015
+# magazines and people too!
 class SearchController < ApplicationController
   def search
     @query_str = ActionView::Base.full_sanitizer.sanitize(params[:query])
