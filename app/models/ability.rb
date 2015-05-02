@@ -77,6 +77,12 @@ class Ability
           can :update, Magazine do |m|
             (m.users.include? user)
           end
+          # Author: Omar Essam
+          # created at: 2/5/2015
+          # This is for removing collaborators
+          can :removeco, Magazine do |m|
+            (m.users.first == user)
+          end
          # 5.4.2015
          # check  promote  if current user
          # and not promoted before
@@ -110,7 +116,7 @@ class Ability
               can :dismiss_article, User
               can :dismiss_comment, User
           end
-          return unless user.is_sponsor
+          return unless user.is_sponsor == 1
           can :create, Bid
           can :show, :sponsor
           can :control, :sponsor
