@@ -1,7 +1,17 @@
 *.lock
 *.log
+<<<<<<< HEAD
 tmp/*
 coverage/*
 log/*
 public/*
 log/development.log
+=======
+log/*
+tmp/*
+coverage/*
+bin/setup
+bin/rails
+bin/rake
+bin/setup
+>>>>>>> e68f7ef8ecf62eb7ca08090e46bb9a67766e65dd
