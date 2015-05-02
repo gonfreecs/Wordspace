@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20150501130429) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "user_id"
-    t.boolean  "is_sponsored", default: false
     t.text     "plain_body"
     t.integer  "magazine_id",  default: 0
+    t.boolean  "is_sponsored", default: false
     t.string   "ad_title"
     t.integer  "promotevalue"
     t.boolean  "promoted"
@@ -114,6 +114,22 @@ ActiveRecord::Schema.define(version: 20150501130429) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reportarticles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.integer  "is_dismissed"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "reportcomments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "comment_id"
+    t.integer  "is_dismissed"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -154,8 +170,12 @@ ActiveRecord::Schema.define(version: 20150501130429) do
     t.text     "about_me"
     t.boolean  "is_female",              default: false
     t.string   "avatar"
-    t.decimal  "balance",                default: 0.0
     t.integer  "budget",                 default: 1000000000
+    t.decimal  "balance",                default: 0.0
+<<<<<<< HEAD
+    t.integer  "is_banned"
+=======
+>>>>>>> 102b2e8f37bf3ce926557d81c183ff553f1e3a62
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

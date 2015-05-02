@@ -40,6 +40,8 @@
  a.active {
      outline: 0;
      color: #18bc9c;
+     background-color: transparent;
+     text-decoration:none;
  }
  a:hover,a:hover{
    text-decoration: none ;
@@ -481,6 +483,16 @@ figure.effect-sadie:hover p {
 		width: 100%;
 	}
 }
+
+/* Styles for input radiobuttons and checkboxes from http://bootsnipp.com/snippets/featured/checkboxradio-css-only*/
+.btn span.fa {
+	opacity: 0;
+}
+.btn.active span.fa {
+	opacity: 1;
+}
+
+
 /* Styles for outlined buttons from http://bootsnipp.com/snippets/featured/outlined-flat-buttons */
 .btn {
 	letter-spacing: 1px;

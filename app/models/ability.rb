@@ -1,3 +1,4 @@
+
       # this model is for CanCan abilities. Guests can only view the article.
       # If the logged in user is the writer of the article he/she is viewing,
       # he/she can edit it and if he/she is a moderator,
@@ -5,7 +6,24 @@
       # You don't need to be signed in to view Comments or replies. But,
       # you need to be signed in in order to add any of them.
       #  Also you can delete or edit them if you wrote them.
-      # A moderator can delete any of them.
+      # Author: Hariry
+      # Date: 2.3.2015
+      # Guests can view comments only
+      # Author: Hariry
+      # Date: 2.3.2015
+      # User can add a comment on an article
+      # Author: Hariry
+      # Date: 2.3.2015
+      # User can delete or edit his comment
+      # Author: Hariry
+      # Date: 31.3.2015
+      # Moderators can ban users
+      # Author: Hariry
+      # Date: 31.3.2015
+      # Moderator can view and dismiss reported articles and comments
+      # Author: Hariry
+      # Date: 29.4.2015
+      # User can view his articles controls
       # Author: Mayar
       # Date: 5.4.2015
       # Only managize managers can update magazines
@@ -31,8 +49,14 @@ class Ability
           can :follow, User do |other|
             other.id != user.id
           end
+          if user.is_banned == 1
+            cannot :manage, Article
+            cannot :manage, Magazine
+            cannot :manage, User
+          end
           can :unfollow, User
           can :create, Article
+          can :report, Article
           can :create, Magazine
           can :controls, User
           can :update, Comment do |c|
@@ -42,6 +66,7 @@ class Ability
             co.user_id == user.id
           end
           can :create, Comment
+          can :report, Comment
           can :update, Reply do |r|
             r.user_id == user.id
           end
@@ -78,6 +103,12 @@ class Ability
             can :destroy, Reply
             can :index, :sponsor
             can :destroy, Magazine
+              can :reports, User
+              can :banned_users, User
+              can :ban, User
+              can :unban, User
+              can :dismiss_article, User
+              can :dismiss_comment, User
           end
           return unless user.is_sponsor
           can :create, Bid
