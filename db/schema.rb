@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428220446) do
+ActiveRecord::Schema.define(version: 20150501130429) do
 
   create_table "ads", force: :cascade do |t|
     t.integer  "user_id"
@@ -154,6 +154,7 @@ ActiveRecord::Schema.define(version: 20150428220446) do
     t.text     "about_me"
     t.boolean  "is_female",              default: false
     t.string   "avatar"
+    t.decimal  "balance",                default: 0.0
     t.integer  "budget",                 default: 1000000000
   end
 

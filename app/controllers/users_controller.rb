@@ -105,5 +105,16 @@ class UsersController < ApplicationController
   # through.
   def user_params
     params[:user]
+
+  # Hariry
+  # 29.4.2015
+  # control panel for user's articles
+  def controls
+  	@my_articles = Article.where(:user_id => current_user.id)
+    @sponsered_articles = Article.where(:user_id => current_user.id,:is_sponsored => true)
+    @promoted_articles_1000 = Article.where(:user_id => current_user.id,:promotevalue => 1000000 )
+    @promoted_articles_2000 = Article.where(:user_id => current_user.id,:promotevalue => 2000000 )
+    @promoted_articles_3000 = Article.where(:user_id => current_user.id,:promotevalue => 3000000 )
+
   end
 end
