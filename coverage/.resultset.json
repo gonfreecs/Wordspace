@@ -1,7 +1,13 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/Bassem/Desktop/Wordspace-master/spec/controllers/articles_controller_spec.rb": [
+=======
+      "/home/oessam/GUC/Semester 6/SE/Wordspace/r/spec/controllers/magazines_controller_spec.rb": [
+        1,
+        1,
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         null,
         null,
@@ -12,16 +18,15 @@
         1,
         1,
         1,
-        1,
         null,
         null,
         1,
         1,
-        1,
         null,
         null,
         null,
         null,
+<<<<<<< HEAD
         null,
         null,
         null,
@@ -51,39 +56,20 @@
         null
       ],
       "/Users/Bassem/Desktop/Wordspace-master/spec/rails_helper.rb": [
+=======
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         1,
         1,
         1,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
+        1,
+        1,
         1,
         null,
         1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
         1,
         null,
         null,
@@ -91,124 +77,51 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
+<<<<<<< HEAD
         null
       ],
       "/Users/Bassem/Desktop/Wordspace-master/app/controllers/articles_controller.rb": [
         null,
         null,
+=======
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         1,
-        null,
         1,
-        null,
         1,
-        0,
-        null,
-        null,
         1,
-        null,
-        null,
         1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
         1,
         1,
         null,
         null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
         1,
         1,
-        2,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
+        1,
+        1,
+        1,
         null,
         1,
         1,
         null,
         null,
         1,
+        1,
+        1,
+<<<<<<< HEAD
         0,
         0,
+=======
+        1,
+        null,
+        1,
         null,
         null,
-        null,
-        null,
+        null
+      ],
+      "/home/oessam/GUC/Semester 6/SE/Wordspace/r/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -219,9 +132,113 @@
         null,
         null,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+<<<<<<< HEAD
+        null,
+=======
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/oessam/GUC/Semester 6/SE/Wordspace/r/app/controllers/magazines_controller.rb": [
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
+        null,
+        null,
+        null,
         1,
         1,
         1,
+<<<<<<< HEAD
+=======
+        0,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         1,
         null,
         null,
@@ -245,9 +262,19 @@
         null,
         null,
         null,
+<<<<<<< HEAD
         null
       ],
       "/Users/Bassem/Desktop/Wordspace-master/app/controllers/application_controller.rb": [
+=======
+        null,
+        1,
+        6,
+        null,
+        null
+      ],
+      "/home/oessam/GUC/Semester 6/SE/Wordspace/r/app/controllers/application_controller.rb": [
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         null,
         1,
@@ -258,9 +285,15 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         3,
         3,
         3,
+=======
+        5,
+        5,
+        5,
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         null,
         1,
@@ -280,7 +313,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/Bassem/Desktop/Wordspace-master/app/models/magazine.rb": [
+=======
+      "/home/oessam/GUC/Semester 6/SE/Wordspace/r/app/models/magazine.rb": [
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         null,
         null,
@@ -297,7 +334,11 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         1,
+=======
+        7,
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         null,
         1,
@@ -307,7 +348,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/Bassem/Desktop/Wordspace-master/app/uploaders/img_uploader.rb": [
+=======
+      "/home/oessam/GUC/Semester 6/SE/Wordspace/r/app/uploaders/img_uploader.rb": [
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         null,
         1,
@@ -322,7 +367,11 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         4,
+=======
+        9,
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         null,
         null,
@@ -348,7 +397,11 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         8,
+=======
+        12,
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         null,
         null,
@@ -358,6 +411,7 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/Bassem/Desktop/Wordspace-master/app/models/article.rb": [
         null,
         1,
@@ -383,6 +437,9 @@
         null
       ],
       "/Users/Bassem/Desktop/Wordspace-master/app/models/ability.rb": [
+=======
+      "/home/oessam/GUC/Semester 6/SE/Wordspace/r/app/models/ability.rb": [
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         null,
         null,
@@ -442,6 +499,12 @@
         null,
         null,
         null,
+        4,
+        0,
+        null,
+        null,
+        null,
+        null,
         null,
         3,
         0,
@@ -466,6 +529,7 @@
         0,
         0,
         null,
+<<<<<<< HEAD
         3,
         3,
         3,
@@ -475,59 +539,101 @@
         null,
         3,
         3,
+=======
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         0,
         null,
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/Bassem/Desktop/Wordspace-master/app/models/comment.rb": [
+=======
+      "/home/oessam/GUC/Semester 6/SE/Wordspace/r/app/models/article.rb": [
+        null,
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         1,
+        null,
         null,
         1,
         1,
         1,
         1,
+        1,
+<<<<<<< HEAD
         null
       ],
       "/Users/Bassem/Desktop/Wordspace-master/app/models/reply.rb": [
+=======
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         1,
         null,
+        1,
+        0,
         null,
+        1,
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/Bassem/Desktop/Wordspace-master/app/models/bid.rb": [
         null,
         null,
         null,
         null,
         1,
+=======
+      "/home/oessam/GUC/Semester 6/SE/Wordspace/r/app/models/comment.rb": [
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         1,
         null,
-        1,
-        1,
         1,
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/Bassem/Desktop/Wordspace-master/app/models/ad.rb": [
         null,
         null,
+=======
+      "/home/oessam/GUC/Semester 6/SE/Wordspace/r/app/models/reply.rb": [
+        1,
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
         null,
         null,
         1,
         1,
+        1,
+        null
+<<<<<<< HEAD
+      ]
+    },
+    "timestamp": 1430507212
+=======
+      ],
+      "/home/oessam/GUC/Semester 6/SE/Wordspace/r/app/models/collaboration_invitation.rb": [
+        null,
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1430507212
+    "timestamp": 1430565237
+>>>>>>> 41722b5855067ae1b64a8824f96a5072c0151f86
   }
 }

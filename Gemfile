@@ -39,10 +39,6 @@ gem 'acts_as_votable'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# rspec for testing
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
-end
 
 # Add following action
 gem 'acts_as_follower'
@@ -59,6 +55,10 @@ gem 'font-awesome-rails'
 # 7.4.2015
 # Simplecov to evaluate tests
 gem 'simplecov', group: :test
+# Author: Mohammed El-Ansary
+# 30.4.2015
+# To integrate stripe API
+gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -76,5 +76,8 @@ group :development, :test do
   gem 'spring'
   gem 'capybara'
   gem 'guard-rspec'
+
+  # Using and modifying tabs in rails
+  gem 'tabs_on_rails'
 
 end

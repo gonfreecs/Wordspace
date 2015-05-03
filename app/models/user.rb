@@ -23,7 +23,7 @@
     has_many :ads, dependent: :destroy
     has_and_belongs_to_many :magazines
     has_many :collaboration_invitation
-    has_many :magazines, through: :collaboration_invitation
+
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable and :omniauthable
     #:recoverable,

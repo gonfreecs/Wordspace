@@ -15,6 +15,34 @@
 # Author: Omar Essam
 # Date: 4.4.2015
 # only sponsors can create ads and view sponsors control page
+# Author: Hariry
+# Date: 2.3.2015
+# Guests can view comments only
+# Author: Hariry
+# Date: 2.3.2015
+# User can add a comment on an article
+# Author: Hariry
+# Date: 2.3.2015
+# User can delete or edit his comment
+# Author: Hariry
+# Date: 31.3.2015
+# Moderators can ban users
+# Author: Hariry
+# Date: 31.3.2015
+# Moderator can view and dismiss reported articles and comments
+# Author: Hariry
+# Date: 29.4.2015
+# User can view his articles controls
+# Author: Mayar
+# Date: 5.4.2015
+# Only managize managers can update magazines
+# Author: Omar Essam
+# Date: 1.4.2015
+# only sponsors can send bid requests
+# Author: Omar Essam
+# Date: 4.4.2015
+# only sponsors can create ads and view sponsors control page
+
 class Ability
   include CanCan::Ability
   def initialize(user)
@@ -23,6 +51,7 @@ class Ability
     can :show, Comment
     can :show, Reply
     can :show, Magazine
+
 
     return if user.nil?
     can :upvote, Article
@@ -33,8 +62,14 @@ class Ability
     can :follow, User do |other|
       other.id != user.id
     end
+    if user.is_banned == 1
+      cannot :manage, Article
+      cannot :manage, Magazine
+      cannot :manage, User
+    end
     can :unfollow, User
     can :create, Article
+    can :report, Article
     can :create, Magazine
     can :controls, User
     can :update, Comment do |c|
@@ -44,6 +79,7 @@ class Ability
       co.user_id == user.id
     end
     can :create, Comment
+    can :report, Comment
     can :update, Reply do |r|
       r.user_id == user.id
     end
@@ -53,6 +89,12 @@ class Ability
     can :create, Reply
     can :update, Magazine do |m|
       (m.users.include? user)
+    end
+    # Author: Omar Essam
+    # created at: 2/5/2015
+    # This is for removing collaborators
+    can :removeco, Magazine do |m|
+      (m.users.first == user)
     end
     # 5.4.2015
     # check  promote  if current user
@@ -80,8 +122,14 @@ class Ability
       can :destroy, Reply
       can :index, :sponsor
       can :destroy, Magazine
+      can :reports, User
+      can :banned_users, User
+      can :ban, User
+      can :unban, User
+      can :dismiss_article, User
+      can :dismiss_comment, User
     end
-    return unless user.is_sponsor
+    return unless user.is_sponsor == 1
     can :create, Bid
     can :show, :sponsor
     can :control, :sponsor
@@ -91,7 +139,7 @@ class Ability
     can :create, Ad
     can :bid, Article do|a|
       !a.is_sponsored && Bid
-        .where(user_id:  user.id, article_id: a.id) == []
+      .where(user_id:  user.id, article_id: a.id) == []
     end
-        end
-      end
+  end
+end
