@@ -1,67 +1,124 @@
 <div class="comment">
-<div class="row">
-<div class="col-md-2"></div>
-<div class="col-md-8">
-<div class="well">
-<div class="row">
-	 <!....This is the comment information.....>
-  <font size="5" <i><b><%=h User.find(comment.user_id).firstname %> said:</b></i></font><br />
-  <font size="3"><%=h comment.des %></font>
-   <!....This is the check to see whether you are allowed to edit or delete a comment.....>
-    <!....And thus showing the corresponding buttons or not .....>
-  <% if can? :destroy, comment %>
-  <%= link_to 'Delete', comment,
-    :confirm => 'Are you sure?',
-    :method => :delete %>
-  <% end %>
-  <% if can? :update, comment %>
-    <%= link_to 'Edit', edit_comment_path(comment)%>
-  <% end %>
-  </div>
-   <div class="row">
- 	 <div class="col-md-1"></div>
- 	 <div class="col-md-11">
-   <!....This is where we loop to show all replies.....>
-   <!....but only if the reply and the comment have the same comment id.....>
-   <br />
-  <% @replies.each do|r| %>
-  <% if r.comment_id == comment.id %>
-  <font size="4"><i><b><%=h User.find(r.user_id).firstname %> replied:</b></i></font><br />
-  &nbsp;&nbsp;&nbsp;<%=h r.des %><br />
-   <!....This is the check to see whether you are allowed to edit or delete a comment.....>
-    <!....And thus showing the corresponding buttons or not .....>
-  <% if can? :destroy, r %>
-  <%= link_to 'Delete', r,
-    :confirm => 'Are you sure?',
-    :method => :delete %>
-  <% end %>
-  <% if can? :update, r %>
-    <%= link_to 'Edit', edit_reply_path(r)%>
-  <% end %>
-	<% if can? :report, r %>
-	<%= link_to 'Report',action: "report",controller: "replies",id: r.id,article_id: @article.id%>
-	<% end %>
-  <br />
-  <br />
-  <% end %>
-  <% end %>
-  <!....This is the form for creating a new reply.....>
-  <% if can? :create, comment %>
-  <%= form_for @reply do|f| %>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
 
-  <%= f.hidden_field :article_id, :value => comment.article_id %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.hidden_field :comment_id, :value => comment.id %>
+			<!--....This is the comment information.....-->
+			<br>
+			<% @user = User.find(comment.user_id) %>
+			<div class="row">
+				<div class="col-md-2">
+					<div class="commenterImage">
+						<img src= "http://fc00.deviantart.net/fs71/f/2013/012/5/f/portrait_of_anime__black_skinned_boy__by_sunoflove-d5r9fau.png" >
+					</div>
+					<!div class="thumbnail">
+					<!img class="img-responsive user-photo" src= "@user.avatar.url" >
+					<!/div><!-- /thumbnail -->
+				</div><!-- /col-sm-1 -->
 
-    <%= f.text_area :des %>
+				<div class="col-md-10">
+					<div class="panel panel-default">
+						<div class="panel-heading">
 
-    <%= f.submit "Add Reply" %>
-  <% end %>
-<% end %>
-</div>
-</div>
-  </div>
-  </div>
-  <div class ="col-md-2"></div>
-</div>
+							<strong><font size="5"><%= User.find(comment.user_id).firstname %></font></strong> <span class="text-muted">on <%= comment.created_at.to_s[0,10] %></span>
+							<!....This is the check to see whether you are allowed to edit or delete a comment.....>
+							<!....And thus showing the corresponding buttons or not .....>
+							<% if can? :destroy, comment or current_user.is_moderator %>
+							<%= link_to '<font size ="5" color="black" ><span class = "fa fa-trash" ></span></font>'.html_safe , comment,
+							:confirm => 'Are you sure?',
+							:method => :delete %>
+							<% end %>
+							<% if can? :update, comment %>
+
+							<%= link_to '<font size ="5" color="black" ><span class = "fa fa-pencil-square-o" ></span></font>'.html_safe , edit_comment_path(comment)%>
+
+							<% end %>
+							<% if can? :report, comment %>
+							<%= link_to '<font size ="5" color="black" ><span class = "fa fa-ban fa-fw" ></span></font>'.html_safe,action: "report",controller: "comments", :id => comment.id %>
+							<% end %>
+						</div><!-- /panel panel-heading -->
+						<div class="panel-body">
+							<font size ="3"><%= comment.des %></font>
+						</div><!-- /panel-body -->
+					</div><!-- /panel panel-default -->
+				</div><!-- /10 -->
+				<br>
+			</div> <!-- /row -->
+			<div class ="row">
+				<div class="col-md-2"></div>
+				<a data-toggle="collapse" data-target=<%='#'%><%= comment.id%> aria-expanded="false" aria-controls="collapseExample">
+					<font size ="5" color="black" >&nbsp;&nbsp;&nbsp;&nbsp;replies <span class = "fa fa-chevron-circle-right" ></span></font>
+				</a>
+			</div><!-- /row-->
+
+			<div class="collapse" id= <%= comment.id%>>
+				<% @replies.each do|r| %>
+				<% if r.comment_id == comment.id %>
+				<br />
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-2">
+						<div class="commenterImage">
+							<img src= "http://fc00.deviantart.net/fs71/f/2013/012/5/f/portrait_of_anime__black_skinned_boy__by_sunoflove-d5r9fau.png" >
+						</div>
+					</div><!-- /2 -->
+					<!....This is where we loop to show all replies.....>
+					<!....but only if the reply and the comment have the same comment id.....>
+
+					<div class="col-md-9">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+
+								<strong><font size="5"><%= User.find(r.user_id).firstname %></font></strong> <span class="text-muted">on <%= r.created_at.to_s[0,10] %></span>
+								<!....This is the check to see whether you are allowed to edit or delete a comment.....>
+								<!....And thus showing the corresponding buttons or not .....>
+								<% if can? :destroy, r or current_user.is_moderator %>
+								<%= link_to '<font size ="5" color="black" ><span class = "fa fa-trash" ></span></font>'.html_safe, r,
+								:confirm => 'Are you sure?',
+								:method => :delete %>
+								<% end %>
+								<% if can? :update, r %>
+								<%= link_to '<font size ="5" color="black" ><span class = "fa fa-pencil-square-o" ></span></font>'.html_safe, edit_reply_path(r)%>
+								<% end %>
+								<% if can? :report, r %>
+								<%= link_to '<font size ="5" color="black" ><span class = "fa fa-ban fa-fw" ></span></font>'.html_safe,action: "report",controller: "replies",id: r.id,article_id: @article.id%>
+								<% end %>
+							  <br />
+							</div><!-- /panel panel-heading -->
+							<div class="panel-body">
+								<font size="3"><%= r.des %></font>
+							</div><!-- /panel-body -->
+						</div><!-- /panel panel-default -->
+
+					</div><!-- /9 -->
+				</div><!-- /row -->
+				<% end %>
+				<% end %>
+				<br>
+				<div class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-9">
+						<!....This is the form for creating a new reply.....>
+
+
+
+						<% if can? :create, comment %>
+						<%= form_for @reply do|f| %>
+
+						<%= f.hidden_field :article_id, :value => comment.article_id %>
+						<%= f.hidden_field :user_id, :value => current_user.id %>
+						<%= f.hidden_field :comment_id, :value => comment.id %>
+						<%= f.text_area :des, :class =>"form-control", :placeholder=>"Write your comment here...",:type=>"text" %>
+
+						<%= f.submit "Add Reply", :class =>"btn btn-default"%>
+						<% end %>
+						<% end %>
+					</div>
+
+				</div>
+			</div><!-- /collapse -->
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+	<br>
 </div>

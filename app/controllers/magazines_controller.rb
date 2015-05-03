@@ -29,7 +29,18 @@ class MagazinesController < ApplicationController
   def new
     @magazine = Magazine.new
   end
-
+  # Author: Omar Essam
+  # created at: 2/5/2015
+  # this code is for removing a collaborator
+  def removeco
+  @magazine = Magazine.find(params[:m_id])
+  @colab= @magazine.users.find(params[:u_id])
+  @magazine.users.delete(@colab)
+  @colab.magazines.delete(@magazine)
+  @colab.save
+  @magazine.save
+    redirect_to :back
+end
   # GET /magazines/1/edit
   def edit
   end
