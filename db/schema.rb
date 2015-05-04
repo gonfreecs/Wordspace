@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150501130429) do
     t.integer  "magazine_id",  default: 0
     t.boolean  "is_sponsored", default: false
     t.string   "ad_title"
+    t.boolean  "homepagelist"
     t.integer  "promotevalue"
     t.boolean  "promoted"
   end
@@ -170,9 +171,10 @@ ActiveRecord::Schema.define(version: 20150501130429) do
     t.text     "about_me"
     t.boolean  "is_female",              default: false
     t.string   "avatar"
+    t.boolean  "curator"
     t.integer  "budget",                 default: 1000000000
-    t.decimal  "balance",                default: 0.0
     t.integer  "is_banned"
+    t.decimal  "balance",                default: 0.0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

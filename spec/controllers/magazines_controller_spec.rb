@@ -26,18 +26,17 @@ RSpec.describe MagazinesController, type: :controller do
     it 'removes collaborators correctly' do
       @magazine2 = create(:magazine)
       @user1 = create(:user)
-      @user2 = create(:user, email:"o@o.com")
+      @user2 = create(:user, email: 'o@o.com')
       sign_in @user1
       @magazine2.users << @user1
       @magazine2.users << @user2
-      get :removeco, m_id: @magazine2.id,u_id: @user2.id, magazine: FactoryGirl.attributes_for(:magazine)
+      get :removeco, m_id: @magazine2.id, u_id: @user2.id, magazine: FactoryGirl.attributes_for(:magazine)
 
       expect(assigns(:magazine).users).to match_array([@user1])
       expect(assigns(:colab).magazines).to match_array([])
       response.should redirect_to 'test'
-
+    end
   end
-end
   # Author: Mohammed El-Ansary
   # 9.4.2015
   # Magazine Controller Tests for CreateMagazine

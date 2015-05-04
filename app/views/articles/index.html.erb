@@ -1,15 +1,13 @@
 <div class="row grid">
     <% @articles.each do |article| %>
-
+    <% if article.homepagelist%>
       <figure class="effect-sadie">
         <img src= <%= article.image%> alt="img02"/>
         <figcaption>
           <h2><%= article.title%></h2>
-          <p>Demo text goes here until user clicks to read more.</p>
           <a <%= link_to 'Show', article %></a>
         </figcaption>
       </figure>
-
+    <% end %>
     <% end %>
   </div>
-

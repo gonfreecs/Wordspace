@@ -1,6 +1,5 @@
 require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
-
   # Author: Mayar
   # Date: 30.4.2015
   # checking mymagazines action
@@ -34,9 +33,9 @@ RSpec.describe UsersController, type: :controller do
     it 'allows logged user to view his promoted articles' do
       @user = create(:user)
       sign_in @user
-      @article = create(:article, user_id: @user.id, promotevalue: 1000000)
-      @article2 = create(:article, user_id: @user.id, promotevalue: 2000000)
-      @article3 = create(:article, user_id: @user.id, promotevalue: 3000000)
+      @article = create(:article, user_id: @user.id, promotevalue: 1_000_000)
+      @article2 = create(:article, user_id: @user.id, promotevalue: 2_000_000)
+      @article3 = create(:article, user_id: @user.id, promotevalue: 3_000_000)
       get :controls, user: FactoryGirl.attributes_for(:user)
       expect(assigns(:promoted_articles_1000)).to match_array([@article])
       expect(assigns(:promoted_articles_2000)).to match_array([@article2])
