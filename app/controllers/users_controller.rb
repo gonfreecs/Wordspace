@@ -81,69 +81,69 @@ class UsersController < ApplicationController
     @articles = @user.articles
   end
 
-    def reports
-    end
+  def reports
+  end
 
-    def banned_users
-    end
-    # Author:Omar El-hariry
-    # 1.4.2015
-    # change attribute value to indicate user is banned
-    def ban
-      @user = User.find(params[:u_id])
-      @user.is_banned = 1
-      if @user.save
-        flash[:notice] = 'User was successfully unbanned.'
-        redirect_to :back
-      else
-        flash[:notice] = "Error banning user: #{@user.errors}"
-        redirect_to :back
-      end
-    end
-    # Author:Omar El-hariry
-    # 1.4.2015
-    # change attribute value to indicate user is not banned
-    def unban
-      @user = User.find(params[:u_id])
-      @user.is_banned = 0
-      if @user.save
-        flash[:notice] = 'User was successfully unbanned.'
-        redirect_to :back
-      else
-        flash[:notice] = "Error unbaning user: #{@user.errors}"
-        redirect_to :back
-      end
-    end
-    # Author:Omar El-hariry
-    # 1.4.2015
-    # change attribute value to indicate article is dismissed
-    def dismiss_article
-      @reportarticles = Reportarticle.where(article_id: params[:a_id])
-      @reportarticles.each do|rep_art|
-        rep_art.is_dismissed = 1
-        if rep_art.save
-          flash[:notice] = 'Article was successfully dismissed.'
-        else
-          flash[:notice] = "Error dismissing article: #{rep_art.errors}"
-        end
-      end
+  def banned_users
+  end
+  # Author:Omar El-hariry
+  # 1.4.2015
+  # change attribute value to indicate user is banned
+  def ban
+    @user = User.find(params[:u_id])
+    @user.is_banned = 1
+    if @user.save
+      flash[:notice] = 'User was successfully unbanned.'
+      redirect_to :back
+    else
+      flash[:notice] = "Error banning user: #{@user.errors}"
       redirect_to :back
     end
-    # Author:Omar El-hariry
-    # 1.4.2015
-    # change attribute value to indicate comment is dismissed
-    def dismiss_comment
-      @reportcomments = Reportcomment.where(comment_id: params[:c_id])
-      @reportcomments.each do|rep_com|
-        rep_com.is_dismissed = 1
-        if rep_com.save
-          flash[:notice] = 'Article was successfully dismissed.'
-        else
-          flash[:notice] = "Error dismissing article: #{rep_com.errors}"
-        end
-      end
+  end
+  # Author:Omar El-hariry
+  # 1.4.2015
+  # change attribute value to indicate user is not banned
+  def unban
+    @user = User.find(params[:u_id])
+    @user.is_banned = 0
+    if @user.save
+      flash[:notice] = 'User was successfully unbanned.'
+      redirect_to :back
+    else
+      flash[:notice] = "Error unbaning user: #{@user.errors}"
       redirect_to :back
     end
+  end
+  # Author:Omar El-hariry
+  # 1.4.2015
+  # change attribute value to indicate article is dismissed
+  def dismiss_article
+    @reportarticles = Reportarticle.where(article_id: params[:a_id])
+    @reportarticles.each do|rep_art|
+      rep_art.is_dismissed = 1
+      if rep_art.save
+        flash[:notice] = 'Article was successfully dismissed.'
+      else
+        flash[:notice] = "Error dismissing article: #{rep_art.errors}"
+      end
+    end
+    redirect_to :back
+  end
+  # Author:Omar El-hariry
+  # 1.4.2015
+  # change attribute value to indicate comment is dismissed
+  def dismiss_comment
+    @reportcomments = Reportcomment.where(comment_id: params[:c_id])
+    @reportcomments.each do|rep_com|
+      rep_com.is_dismissed = 1
+      if rep_com.save
+        flash[:notice] = 'Article was successfully dismissed.'
+      else
+        flash[:notice] = "Error dismissing article: #{rep_com.errors}"
+      end
+    end
+    redirect_to :back
+  end
   # Andrew
   # 8.4.15
   # Follow User
@@ -163,11 +163,11 @@ class UsersController < ApplicationController
   # 29.4.2015
   # control panel for user's articles
   def controls
-  	@my_articles = Article.where(:user_id => current_user.id)
-    @sponsered_articles = Article.where(:user_id => current_user.id,:is_sponsored => true)
-    @promoted_articles_1000 = Article.where(:user_id => current_user.id,:promotevalue => 1000000 )
-    @promoted_articles_2000 = Article.where(:user_id => current_user.id,:promotevalue => 2000000 )
-    @promoted_articles_3000 = Article.where(:user_id => current_user.id,:promotevalue => 3000000 )
+    @my_articles = Article.where(user_id: current_user.id)
+    @sponsered_articles = Article.where(user_id: current_user.id, is_sponsored: true)
+    @promoted_articles_1000 = Article.where(user_id: current_user.id, promotevalue: 1_000_000)
+    @promoted_articles_2000 = Article.where(user_id: current_user.id, promotevalue: 2_000_000)
+    @promoted_articles_3000 = Article.where(user_id: current_user.id, promotevalue: 3_000_000)
   end
 
   private
@@ -175,7 +175,7 @@ class UsersController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     if params[:id] != 'sign_in'
-    @user = User.find(params[:id])
+      @user = User.find(params[:id])
     end
   end
   # Never trust parameters from the scary internet, only allow the white list

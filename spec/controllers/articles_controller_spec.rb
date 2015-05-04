@@ -18,9 +18,9 @@ RSpec.describe ArticlesController, type: :controller do
   end
   describe 'PUT #update/homepagelist' do
     it 'curator can add article to homepagelist' do
-      @user = create(:user, :curator => true)
+      @user = create(:user, curator: true)
       sign_in @user
-      @article = create(:article, :user_id  => @user.id)
+      @article = create(:article, user_id: @user.id)
       put :update, id: @article.id,
                    article: FactoryGirl.attributes_for(:article,
                                                        homepagelist:
@@ -30,10 +30,10 @@ RSpec.describe ArticlesController, type: :controller do
     end
   end
   it 'curator can remove article to homepagelist' do
-    @user = create(:user, :curator => true)
+    @user = create(:user, curator: true)
     sign_in @user
-    @article = create(:article, :user_id  => @user.id,
-                     :homepagelist => true )
+    @article = create(:article, user_id: @user.id,
+                                homepagelist: true)
     put :update, id: @article.id,
                  article: FactoryGirl.attributes_for(:article,
                                                      homepagelist:

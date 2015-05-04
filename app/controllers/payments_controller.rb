@@ -13,14 +13,14 @@ class PaymentsController < ApplicationController
     if (@amount <= 0)
       redirect_to payments_path
     end
-    if (current_user.nil?)
+    if current_user.nil?
       redirect_to new_user_session_path
     end
   end
 
   # Completes the payment and updates the user's balance
   def create
-    if (!user_signed_in?)
+    unless user_signed_in?
       redirect_to new_user_session_path
     end
     # Amount in cents
