@@ -56,6 +56,10 @@ gem 'font-awesome-rails'
 # 7.4.2015
 # Simplecov to evaluate tests
 gem 'simplecov', group: :test
+# Author: Mohammed El-Ansary
+# 30.4.2015
+# To integrate stripe API
+gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -71,4 +75,6 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Using and modifying tabs in rails
+  gem 'tabs_on_rails'
 end

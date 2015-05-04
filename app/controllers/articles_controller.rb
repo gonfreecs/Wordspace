@@ -29,6 +29,8 @@ class ArticlesController < ApplicationController
      @comment = Comment.new(params[:comment])
      @replies = Reply.all
      @reply = Reply.new(params[:reply])
+     @report = Reportarticle.where('user_id = ? AND article_id = ?',
+                                   current_user.id, params[:id])
      return unless @article.is_sponsored
      # Author: Omar Essam
      # created at: 5/4/2015
@@ -92,6 +94,35 @@ class ArticlesController < ApplicationController
        format.json { head :no_content }
      end
    end
+   # Author:Omar El-hariry
+   # 1.4.2015
+   # an attribute value is set to indicate that report is dismissed
+   def dismiss
+     @reportarticles = Reportarticle.where(article_id: params[:a_id])
+     @reportarticles.each do|rep_art|
+       rep_art.is_dismissed = 1
+       if rep_art.save
+         flash[:notice] = 'Article was successfully dismissed.'
+       else
+         flash[:notice] = "Error dismissing article: #{rep_art.errors}"
+       end
+     end
+     redirect_to :back
+   end
+
+   def report
+     # Author:Mina Hany
+     # 3.4.2015
+     # A hash is created containing user's id who wants to report an article
+     # and that article's id and it is added to model contaioning
+     # reported requests
+     reportarticleh = { 'user_id' => current_user.id,
+                        'article_id' => params[:id],
+                        'is_dismissed' => 0 }
+     Reportarticle.create(reportarticleh)
+     @article = Article.find(params[:id])
+     redirect_to :back
+   end
    # Cancel an update and return to article page
    def check_for_cancel
      redirect_to @article if params[:commit] == 'Cancel'
@@ -108,6 +139,7 @@ class ArticlesController < ApplicationController
    def set_article
      @article = Article.find(params[:id])
    end
+
 
   private
 

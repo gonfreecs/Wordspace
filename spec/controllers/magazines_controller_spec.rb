@@ -16,7 +16,28 @@ RSpec.describe MagazinesController, type: :controller do
       @magazine.name.should == 'test'
     end
   end
+  # Author: Omar
+  # 2.5.2015
+  # Magazine Controller Tests for remove collaborators
+  describe 'GET #removeco' do
+    before(:each) do
+      request.env['HTTP_REFERER'] = 'test'
+    end
+    it 'removes collaborators correctly' do
+      @magazine2 = create(:magazine)
+      @user1 = create(:user)
+      @user2 = create(:user, email:"o@o.com")
+      sign_in @user1
+      @magazine2.users << @user1
+      @magazine2.users << @user2
+      get :removeco, m_id: @magazine2.id,u_id: @user2.id, magazine: FactoryGirl.attributes_for(:magazine)
 
+      expect(assigns(:magazine).users).to match_array([@user1])
+      expect(assigns(:colab).magazines).to match_array([])
+      response.should redirect_to 'test'
+
+  end
+end
   # Author: Mohammed El-Ansary
   # 9.4.2015
   # Magazine Controller Tests for CreateMagazine
