@@ -111,13 +111,16 @@ RSpec.describe MagazinesController, type: :controller do
     it 'allows signed magazine owners to invite users to be admins' do
       request.env['HTTP_REFERER'] = 'test'
       @user = create(:user)
+      @user2 = create(:user, email: 'o@oo.com')
       sign_in @user
       request.env['HTTP_REFERER']
       @m1 = create(:magazine)
       @instance1 = Magazine.last
-      get :invite, id: @m1.id,
+      @instance1.users << @user
+      get :invite, id: @instance1.id,
                    magazine: FactoryGirl.attributes_for(:magazine)
       response.should redirect_to 'test'
+
     end
   end
 end
