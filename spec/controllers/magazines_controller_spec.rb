@@ -120,7 +120,6 @@ RSpec.describe MagazinesController, type: :controller do
       get :invite, id: @instance1.id,
                    magazine: FactoryGirl.attributes_for(:magazine)
       response.should redirect_to 'test'
-
     end
   end
 end

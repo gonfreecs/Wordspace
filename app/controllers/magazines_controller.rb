@@ -22,7 +22,7 @@ class MagazinesController < ApplicationController
   # GET /magazines/1.json
   def show
     @users = @magazine.users
-    #@userx = CollaborationInvitation.all.find_by_id(:user_id)
+    # @userx = CollaborationInvitation.all.find_by_id(:user_id)
     @allUsers = User.all - @users #- @userx
     @articles = Article.where(magazine_id: params[:id])
   end
