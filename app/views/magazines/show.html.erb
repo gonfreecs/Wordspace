@@ -5,11 +5,32 @@
     </div>
     <div class="col-sm-3">
       <h2><%= @magazine.name %></h2>
+
+      <!--user can  follow and unfollow magazine-->
+
+      <% if can? :follow , @magazine %>
+      <%if (current_user.following?(@magazine)==false)%>
+
+      <%=link_to'<span class="label label-primary" style="cursor: pointer">Follow</span>'.html_safe, follow_magazine_path(@magazine),
+      method: :put ,
+      class: "Follow" %>
+
+      <%end%>
+      <%if (current_user.following?(@magazine)==true)%>
+
+      <%=link_to'<span class="label label-primary" style="cursor: pointer">Unfollow</span>'.html_safe, unfollow_magazine_path(@magazine),
+      method: :put ,
+      class: "unfollow" %>
+      <%end%>
+      <%= @magazine.followers_count%>
+      <%end%>
     </div>
+
     <div class="col-sm-3">
       <br>
-      <h4><span class="label label-success" style="cursor: pointer"><span class="fa fa-check"> </span>Following</span></h4>
-      <h4><span class="label label-primary" style="cursor: pointer">Follow</span></h4>
+      <br>
+      <br>
+      <br>
       <a href="#" data-toggle="modal" data-target="#info">View info</a>
       <br>
       <% if can? :update, @magazine %>
@@ -40,6 +61,17 @@
       <% end %>
     </div>
   </div>
+  <div class="row">
+    <%if can? :invite, @magazine %>
+    <% @allUsers.each do |u| %>
+    <br>
+    <%= u.firstname %> <%=link_to'<span class="label label-primary" style="cursor: pointer">Invite</span>'.html_safe ,
+    controller: :magazines, action: :invite, method: :put, u_id: u.id%>
+    <%end%>
+    <%end%>
+
+
+  </div>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="desc" aria-hidden="true">
@@ -61,9 +93,9 @@
         <img style="width: 50px; height: 50px;"src = "<%= u.avatar %>" alt="<%= u.firstname %>"/>
         <a href ="#"> <%= u.firstname %></a>
         <% if can? :removeco , @magazine   %>
-          <% if current_user.id != u.id %>
+        <% if current_user.id != u.id %>
         <%= link_to '<span style = "color: red" class="fa fa-trash"></span>'.html_safe,controller: :magazines, action: :removeco, m_id: @magazine.id, u_id: u.id %>
-          <% end %>
+        <% end %>
         <% end %>
 
         <br>

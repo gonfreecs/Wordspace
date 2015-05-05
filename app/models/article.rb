@@ -4,6 +4,8 @@
     # adding relation between user and articles
     acts_as_taggable
     acts_as_taggable_on :categories
+    # likes and dislikes
+    acts_as_votable
     mount_uploader :image, ImgUploader
     belongs_to :user
     has_many :bids, dependent: :destroy

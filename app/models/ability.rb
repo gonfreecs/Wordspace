@@ -49,6 +49,13 @@ class Ability
     can :follow, User do |other|
       other.id != user.id
     end
+    can :upvote, Article
+    can :downvote, Article
+    can :follow, Magazine
+    can :unfollow, Magazine
+    can :invite, Magazine do |m|
+      (m.users.include? user)
+    end
     if user.is_banned == 1
       cannot :manage, Article
       cannot :manage, Magazine

@@ -36,13 +36,12 @@ gem 'cancan'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# rspec for testing
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
-end
 
 # Add following action
 gem 'acts_as_follower'
+
+# Likes and dislikes
+gem 'acts_as_votable'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -66,6 +65,8 @@ group :development, :test do
 
   # Rspec for tests
   gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
+  gem 'guard'
   # Author: Mohammed El-Ansary
   # 7.4.2015
   # Factory girl gem for tests
@@ -77,4 +78,5 @@ group :development, :test do
   gem 'spring'
   # Using and modifying tabs in rails
   gem 'tabs_on_rails'
+
 end

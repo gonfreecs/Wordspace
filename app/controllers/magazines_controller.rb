@@ -22,6 +22,8 @@ class MagazinesController < ApplicationController
   # GET /magazines/1.json
   def show
     @users = @magazine.users
+    # @userx = CollaborationInvitation.all.user_id
+    @allUsers = User.all - @users #- @userx
     @articles = Article.where(magazine_id: params[:id])
   end
 
@@ -95,6 +97,35 @@ end
       end
       format.json { head :no_content }
     end
+  end
+
+  # Author:Bassem
+  # 31/03/2015
+  # Here is how the user follow a magazine
+  def follow
+    @magazine = Magazine.find(params[:id])
+    current_user.follow(@magazine)
+    redirect_to :back
+  end
+
+  # Author:Bassem
+  # 31/03/2015
+  # Here is how the user unfollow
+  def unfollow
+    @magazine = Magazine.find(params[:id])
+    current_user.stop_following(@magazine)
+    redirect_to :back
+  end
+  # Author:Bassem
+  # Invite users to be collaborators
+  def invite
+    @user_emails = User.all.pluck(:email)
+    inviteUser = { 'user_id' => User.all.find_by_email('2@gmail.com').id, 'Magazine_id' => params[:id] }
+    CollaborationInvitation.create(inviteUser)
+    @magazine = Magazine.find(params[:id])
+    redirect_to :back
+     rescue ActionController::RedirectBackError
+       redirect_to root_path
   end
 
   # Cancel an update and return to magazine page
