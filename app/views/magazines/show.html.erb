@@ -64,12 +64,13 @@
   <div class="row">
     <%if can? :invite, @magazine %>
     <% @allUsers.each do |u| %>
+  
+
     <br>
     <%= u.firstname %> <%=link_to'<span class="label label-primary" style="cursor: pointer">Invite</span>'.html_safe ,
     controller: :magazines, action: :invite, method: :put, u_id: u.id%>
     <%end%>
     <%end%>
-
 
   </div>
 </div>

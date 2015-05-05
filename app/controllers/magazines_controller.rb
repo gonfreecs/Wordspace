@@ -22,7 +22,7 @@ class MagazinesController < ApplicationController
   # GET /magazines/1.json
   def show
     @users = @magazine.users
-    # @userx = CollaborationInvitation.all.user_id
+    #@userx = CollaborationInvitation.all.find_by_id(:user_id)
     @allUsers = User.all - @users #- @userx
     @articles = Article.where(magazine_id: params[:id])
   end
@@ -120,7 +120,7 @@ end
   # Invite users to be collaborators
   def invite
     @user_emails = User.all.pluck(:email)
-    inviteUser = { 'user_id' => User.all.find_by_email('2@gmail.com').id, 'Magazine_id' => params[:id] }
+    inviteUser = { 'user_id' => User.all.find_by_email(@user_emails).id || User.last.id || User.first.id, 'Magazine_id' => params[:id] }
     CollaborationInvitation.create(inviteUser)
     @magazine = Magazine.find(params[:id])
     redirect_to :back
