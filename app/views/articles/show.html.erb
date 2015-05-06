@@ -143,6 +143,37 @@
 	</div>
 	<%end %>
 
+	<!--this is the part where user can like or unlike articles-->
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+
+
+			<div class="caption" style="text-align:center;">
+				<% if can? :upvote, @article %>
+				<%= @article.get_upvotes.size%> <%= link_to  '<span class="fa fa-thumbs-up">'.html_safe, like_article_path(@article),
+				method: :put ,
+				class: "like" %>
+				<%else%>
+				<%= @article.get_upvotes.size%> <span class="fa fa-thumbs-up">
+					<%end %>
+
+
+					<% if can? :downvote, @article %>
+					<%= @article.get_downvotes.size%> <%= link_to  '<span class="fa fa-thumbs-down">'.html_safe, unlike_article_path(@article),
+					method: :put ,
+					class: "like" %>
+					<%else%>
+					<%= @article.get_downvotes.size%> <span class="fa fa-thumbs-down">
+						<%end %>
+
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
 	<br>
 
 	<div class="row">

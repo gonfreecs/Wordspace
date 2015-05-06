@@ -133,6 +133,24 @@ class ArticlesController < ApplicationController
     redirect_to controller: :bids, action: :create, a_id: @ar.id
   end
 
+  # Author:Bassem
+  # 31/03/2015
+  # Here is how the user like an article
+  def upvote
+    @article = Article.find(params[:id])
+    @article.upvote_from current_user
+    redirect_to @article
+  end
+
+  # Author:Bassem
+  # 31/03/2015
+  # Here is how the user unlike an article
+  def downvote
+    @article = Article.find(params[:id])
+    @article.downvote_from current_user
+    redirect_to @article
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

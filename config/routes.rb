@@ -52,6 +52,21 @@
       end
     end
 
+    resources :articles do
+        member do
+          put 'like' => 'articles#upvote'
+          put 'unlike' => 'articles#downvote'
+        end
+      end
+      # follow and unfollow a magazine
+    resources :magazines do
+          member do
+            put 'follow' => 'magazines#follow'
+            put 'unfollow' => 'magazines#unfollow'
+            get 'invite' => 'magazines#invite'
+          end
+        end
+
     resource :articles do
       collection do
         get 'bid'
